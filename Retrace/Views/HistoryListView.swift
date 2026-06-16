@@ -31,20 +31,6 @@ struct HistoryListView: View {
       .padding(.top, Popup.verticalSeparatorPadding)
   }
 
-  @ViewBuilder
-  private func bottomSeparator() -> some View {
-    Divider()
-      .padding(.horizontal, Popup.horizontalSeparatorPadding)
-      .padding(.bottom, Popup.verticalSeparatorPadding)
-  }
-
-  @ViewBuilder
-  private func separator() -> some View {
-    Divider()
-      .padding(.horizontal, Popup.horizontalSeparatorPadding)
-      .padding(.vertical, Popup.verticalSeparatorPadding)
-  }
-
   var body: some View {
     VStack(spacing: 0) {
       topSeparator()
