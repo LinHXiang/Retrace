@@ -24,7 +24,7 @@ struct ContentView: View {
             )
 
             VStack(alignment: .leading, spacing: 0) {
-              HistoryListView(
+              CommandHistoryListView(
                 searchFocused: $searchFocused
               )
 

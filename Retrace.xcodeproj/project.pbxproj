@@ -67,7 +67,7 @@
 		DA7A753E26A52F0F00DC16EF /* NSImage+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A753D26A52F0F00DC16EF /* NSImage+Names.swift */; };
 		DA81D674252A056B009977BC /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81D673252A056B009977BC /* Throttler.swift */; };
 		DAA072D12C4089D3006DDFD2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072D02C4089D3006DDFD2 /* VisualEffectView.swift */; };
-		DAA072D52C40AC52006DDFD2 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072D42C40AC52006DDFD2 /* HistoryListView.swift */; };
+		DAA072D52C40AC52006DDFD2 /* CommandHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072D42C40AC52006DDFD2 /* CommandHistoryListView.swift */; };
 		DAA072D72C41C574006DDFD2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072D62C41C574006DDFD2 /* AppState.swift */; };
 		DAA072D92C41C5AD006DDFD2 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072D82C41C5AD006DDFD2 /* Footer.swift */; };
 		DAA072DB2C41C5DD006DDFD2 /* FooterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA072DA2C41C5DD006DDFD2 /* FooterItem.swift */; };
@@ -260,7 +260,7 @@
 		DA81D673252A056B009977BC /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		DA86E873255C4DF700D1929F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAA072D02C4089D3006DDFD2 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		DAA072D42C40AC52006DDFD2 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		DAA072D42C40AC52006DDFD2 /* CommandHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHistoryListView.swift; sourceTree = "<group>"; };
 		DAA072D62C41C574006DDFD2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DAA072D82C41C5AD006DDFD2 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		DAA072DA2C41C5DD006DDFD2 /* FooterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterItem.swift; sourceTree = "<group>"; };
@@ -403,7 +403,7 @@
 				DA1969192C3F369800258481 /* HeaderView.swift */,
 				2F0EC7782E7727E3003E2EA9 /* HeightReaderModifier.swift */,
 				DA1969112C3F0DD200258481 /* CommandHistoryItemView.swift */,
-				DAA072D42C40AC52006DDFD2 /* HistoryListView.swift */,
+				DAA072D42C40AC52006DDFD2 /* CommandHistoryListView.swift */,
 				2F0EC7882E7743D9003E2EA9 /* HoverSelectionModifier.swift */,
 				DA19690D2C3EEFA900258481 /* KeyboardShortcutView.swift */,
 				DA19691E2C3F5F0600258481 /* KeyHandlingView.swift */,
@@ -690,7 +690,7 @@
 			files = (
 				DA19691C2C3F3EAC00258481 /* Collection+Surrounding.swift in Sources */,
 				DA1969142C3F11D600258481 /* PreviewItemView.swift in Sources */,
-				DAA072D52C40AC52006DDFD2 /* HistoryListView.swift in Sources */,
+				DAA072D52C40AC52006DDFD2 /* CommandHistoryListView.swift in Sources */,
 				2F578C422EFFE8920088B759 /* SlideoutContentView.swift in Sources */,
 				2F578C432EFFE8920088B759 /* SlideoutView.swift in Sources */,
 				DAB082962A2B7B850053E463 /* AppStoreReview.swift in Sources */,

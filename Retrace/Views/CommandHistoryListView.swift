@@ -1,7 +1,7 @@
 import Defaults
 import SwiftUI
 
-struct HistoryListView: View {
+struct CommandHistoryListView: View {
   @FocusState.Binding var searchFocused: Bool
 
   @Environment(AppState.self) private var appState
