@@ -2,7 +2,7 @@
 
 Retrace is a minimal macOS menu bar app for searching recent terminal commands.
 
-It is based on Retrace, but the data source is terminal command history instead
+It is based on Maccy, but the data source is terminal command history instead
 of clipboard history. The MVP supports macOS and zsh only.
 
 ## MVP
