@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MultipleSelectionListView<Element, ID, Content>: View
+struct HistoryItemListView<Element, ID, Content>: View
     where ID: Hashable, Content: View, ID == Element.ID, Element: Identifiable {
   var items: [Element]
   var content: (Element?, Element, Element?, Int) -> Content
