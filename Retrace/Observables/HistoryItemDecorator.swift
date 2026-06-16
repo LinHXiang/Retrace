@@ -22,7 +22,7 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   var text: String { item.previewableText.shortened(to: 10_000) }
 
   func hash(into hasher: inout Hasher) {
-    // We need to hash title and attributedTitle, so SwiftUI knows it needs to update the view if they chage
+    // We need to hash title and attributedTitle, so SwiftUI knows it needs to update the view if they change.
     hasher.combine(id)
     hasher.combine(title)
     hasher.combine(attributedTitle)

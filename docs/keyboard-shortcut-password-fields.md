@@ -31,7 +31,7 @@ If you want to use a keyboard shortcut that is used by the system (and produces 
    - Click 'Add your own rule'
    - Paste the following JSON configuration (see example below)
    - Instructions for editing different key combinations: modify the `key_code` and `modifiers` values as needed
-   - Give your rule a name (Example: "Remap Option+C to Cmd+Shift+C for clipboard manager")
+   - Give your rule a name (Example: "Remap Option+C to Cmd+Shift+C for Retrace")
 
 3. **Example Karabiner Rule**
    This example remaps `Option+C` to `Cmd+Shift+C`:
