@@ -188,13 +188,9 @@ class SearchTests: XCTestCase {
   }
 
   @MainActor
-  func testRegexpSearch() { // swiftlint:disable:this function_body_length
+  func testRegexpSearchMatchesQuantifiers() {
     Defaults[.searchMode] = Search.Mode.regexp
-    items = [
-      HistoryItemDecorator(historyItemWithTitle("foo bar baz")),
-      HistoryItemDecorator(historyItemWithTitle("foo bar zaz")),
-      HistoryItemDecorator(historyItemWithTitle("xxx yyy zzz"))
-    ]
+    prepareSearchItems()
 
     XCTAssertEqual(search(""), [
       Search.SearchResult(score: nil, object: items[0], ranges: []),
@@ -235,6 +231,13 @@ class SearchTests: XCTestCase {
         ranges: [range(from: 0, to: -1, in: items[2])]
       )
     ])
+  }
+
+  @MainActor
+  func testRegexpSearchMatchesAnchorsAndCharacterClasses() {
+    Defaults[.searchMode] = Search.Mode.regexp
+    prepareSearchItems()
+
     XCTAssertEqual(search("^foo"), [
       Search.SearchResult(
         score: nil,
