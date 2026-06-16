@@ -202,13 +202,13 @@ class History: ItemsContainer {
   }
 
   private func updateVisibleShortcuts() {
-    let visibleItems = self.visibleItems.filter(\.isVisible)
-    for item in visibleItems {
+    let visibleHistoryItems = visibleItems
+    for item in visibleHistoryItems {
       item.shortcuts = []
     }
 
     var index = 1
-    for item in visibleItems.prefix(9) {
+    for item in visibleHistoryItems.prefix(9) {
       item.shortcuts = KeyShortcut.create(character: String(index))
       index += 1
     }
