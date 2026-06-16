@@ -3,10 +3,10 @@ import SwiftUI
 
 @Observable
 class NavigationManager {
-  private var history: History
+  private var history: CommandHistory
   private var footer: Footer
 
-  init(history: History, footer: Footer) {
+  init(history: CommandHistory, footer: Footer) {
     self.history = history
     self.footer = footer
   }

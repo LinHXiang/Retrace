@@ -76,8 +76,8 @@ struct TerminalCommandHistory {
 }
 
 @Observable
-class History: ItemsContainer {
-  static let shared = History()
+class CommandHistory: ItemsContainer {
+  static let shared = CommandHistory()
 
   var items: [CommandHistoryItemDecorator] = []
   var searchQuery: String = "" {

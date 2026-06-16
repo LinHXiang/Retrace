@@ -6,11 +6,11 @@ import SwiftUI
 
 @Observable
 class AppState {
-  static let shared = AppState(history: History.shared, footer: Footer())
+  static let shared = AppState(history: CommandHistory.shared, footer: Footer())
 
   var appDelegate: AppDelegate?
   var popup: Popup
-  var history: History
+  var history: CommandHistory
   var footer: Footer
   var navigator: NavigationManager
   var preview: SlideoutController
@@ -33,7 +33,7 @@ class AppState {
   private let about = About()
   private var settingsWindowController: SettingsWindowController?
 
-  init(history: History, footer: Footer) {
+  init(history: CommandHistory, footer: Footer) {
     self.history = history
     self.footer = footer
     popup = Popup()

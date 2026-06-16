@@ -140,7 +140,7 @@ class Popup {
 
   private func handleKeyDown(_ event: NSEvent) -> NSEvent? {
     if isHotKeyCode(Int(event.keyCode)) {
-      if let item = History.shared.pressedShortcutItem {
+      if let item = CommandHistory.shared.pressedShortcutItem {
         AppState.shared.navigator.select(item: item)
         Task { @MainActor in
           AppState.shared.history.select(item)
