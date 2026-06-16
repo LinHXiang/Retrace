@@ -7,7 +7,6 @@
 "Size" = "Størrelse:";
 "SizeTooltip" = "Antall ønskede elementer i historikk.\nStandard: 200.";
 "CurrentSizeTooltip" = "Gjeldende størrelse på disken.";
-"SortBy" = "Sorter etter:";
 "LastCopiedAt" = "Tidspunkt siste kopiering";
 "FirstCopiedAt" = "Tidspunkt første kopiering";
 "NumberOfCopies" = "Antall ganger kopiert";
