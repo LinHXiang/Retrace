@@ -9,10 +9,8 @@ protocol ItemsContainer {
 }
 
 extension ItemsContainer {
-    var containerVisible: Bool { true }
+  var containerVisible: Bool { true }
 }
-
-private extension ItemsContainer where Item: HasVisibility {}
 
 extension ItemsContainer where Item: HasVisibility {
 
