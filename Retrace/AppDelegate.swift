@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
   func applicationWillFinishLaunching(_ notification: Notification) { // swiftlint:disable:this function_body_length
+    migrateUserDefaults()
+
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
 
@@ -53,8 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    migrateUserDefaults()
-
     panel = FloatingPanel(
       contentRect: NSRect(origin: .zero, size: Defaults[.windowSize]),
       identifier: Bundle.main.bundleIdentifier ?? "com.freeorz.retrace",
@@ -87,6 +87,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       UserDefaults.standard.removeObject(forKey: "hideTitle")
 
       Defaults[.migrations]["2024-07-01-version-2"] = true
+    }
+
+    if Defaults[.migrations]["2026-06-17-retrace-menu-icon"] != true {
+      if let menuIcon = UserDefaults.standard.string(forKey: "menuIcon"),
+         menuIcon != MenuIcon.retrace.rawValue {
+        Defaults[.menuIcon] = .retrace
+      }
+
+      Defaults[.migrations]["2026-06-17-retrace-menu-icon"] = true
     }
 
     // The following defaults are not used in Retrace 2.x

@@ -3,9 +3,6 @@ import Defaults
 
 enum MenuIcon: String, CaseIterable, Identifiable, Defaults.Serializable {
   case retrace
-  case clipboard
-  case scissors
-  case paperclip
 
   var id: Self { self }
 
@@ -13,12 +10,6 @@ enum MenuIcon: String, CaseIterable, Identifiable, Defaults.Serializable {
     switch self {
     case .retrace:
       return NSImage(named: .retraceStatusBar)!
-    case .clipboard:
-      return NSImage(named: .clipboard)!
-    case .scissors:
-      return NSImage(named: .scissors)!
-    case .paperclip:
-      return NSImage(named: .paperclip)!
     }
   }
 }
