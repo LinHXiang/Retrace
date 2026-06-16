@@ -2,8 +2,7 @@ import Foundation
 import Defaults
 
 class HistoryItem {
-  var firstCopiedAt: Date = Date.now
-  var lastCopiedAt: Date = Date.now
+  var recordedAt: Date = Date.now
   var title = ""
   var command: String?
 

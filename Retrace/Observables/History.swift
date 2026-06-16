@@ -153,8 +153,7 @@ class History: ItemsContainer {
     all = entries.prefix(Defaults[.size]).map { entry in
       let item = HistoryItem(command: entry.command)
       if let timestamp = entry.timestamp {
-        item.firstCopiedAt = timestamp
-        item.lastCopiedAt = timestamp
+        item.recordedAt = timestamp
       }
       item.title = item.generateTitle()
       return HistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)

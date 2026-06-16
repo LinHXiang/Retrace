@@ -20,8 +20,8 @@ struct PreviewItemView: View {
 
         HStack(spacing: 3) {
           Text("Recorded")
-          Text(item.item.lastCopiedAt, style: .date)
-          Text(item.item.lastCopiedAt, style: .time)
+          Text(item.item.recordedAt, style: .date)
+          Text(item.item.recordedAt, style: .time)
         }
       }
     }
