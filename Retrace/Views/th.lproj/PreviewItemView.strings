@@ -2,6 +2,4 @@
 "FirstCopyTime" = "เวลาคัดลอกครั้งแรก:";
 "LastCopyTime" = "เวลาคัดลอกสุดท้าย:";
 "NumberOfCopies" = "จำนวนการคัดลอก:";
-"PinKey" = "กด {pinKey} เพื่อปักหมุด";
-"UnpinKey" = "กด {pinKy} เพื่อลบเข็มกลัด";
 "PreviewKey" = "กด {previewKey} เพื่อสลับตัวอย่าง";

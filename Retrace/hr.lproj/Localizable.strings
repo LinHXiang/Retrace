@@ -5,7 +5,6 @@
 "quit" = "Zatvori program";
 "preferences" = "Postavke …";
 "preferences_advanced" = "Napredno";
-"preferences_pins" = "Pribadače";
 "copy_modifiers_config" = "• Za kopiranje elementa odaberi zajedno s pritisnutom tipkom %@.";
 "format_modifiers_config" = "• Za kopiranje, uklanjanje formata i umetanje elementa odaberi zajedno s pritisnutom tipkom %@.";
 "accessibility_alert_message" = "„Retrace” želi upravljati ovim računalom koristeći funkcije pristupačnosti.";

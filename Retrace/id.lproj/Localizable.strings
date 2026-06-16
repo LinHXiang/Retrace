@@ -4,7 +4,6 @@
 "quit" = "Keluar";
 "preferences" = "Preferensi…";
 "preferences_advanced" = "Lanjutan";
-"preferences_pins" = "Semat";
 "copy_modifiers_config" = "• Memilih dengan menekan %@ untuk menyalin.";
 "format_modifiers_config" = "• Memilih dengan menekan %@ untuk menyalin, membersikan format lalu menempel.";
 "search_placeholder" = "Ketik untuk mencari…";

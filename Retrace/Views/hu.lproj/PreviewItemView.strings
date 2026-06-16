@@ -2,6 +2,4 @@
 "FirstCopyTime" = "Első másolás ideje:";
 "LastCopyTime" = "Utolsó másolás ideje:";
 "NumberOfCopies" = "Másolások száma:";
-"PinKey" = "Nyomd meg a {pinKey} gombokat a kitűzéshez és a kitűzés levételéhez.";
-"UnpinKey" = "Nyomd meg a {pinKey} gombokat a kitűzés levételéhez.";
 "PreviewKey" = "Nyomja meg a {previewKey} gombot az előnézet váltásához.";

@@ -12,10 +12,6 @@
 "SearchVisibilityAlways" = "Selalu";
 "SearchVisibilityDuringSearch" = "Saat pencarian";
 "ActiveScreen" = "Layar aktif";
-"PinTo" = "Sematkan ke:";
-"PinToTop" = "Atas";
-"PinToBottom" = "Bawah";
-"PinToTooltip" = "Mengubah lokasi item tersemat.\nDefault: Atas.";
 "PreviewDelay" = "Jeda pratinjau:";
 "PreviewDelayTooltip" = "Jeda (dalam milidetik) sampai pop-up pratinjau ditampilkan.\nDefault: 1500.";
 "HighlightMatches" = "Sorot pencarian:";

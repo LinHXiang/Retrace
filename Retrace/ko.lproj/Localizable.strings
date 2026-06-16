@@ -5,7 +5,6 @@
 "quit" = "종료";
 "preferences" = "설정…";
 "preferences_advanced" = "고급";
-"preferences_pins" = "고정";
 "copy_modifiers_config" = "• %@와 함께 선택시 항목을 복사합니다.";
 "format_modifiers_config" = "• %@와 함께 선택시 항목을 복사하여 서식없이 붙여넣기 합니다.";
 "accessibility_alert_message" = "“Retrace”가 손쉬운 사용 기능을 사용하여 이 컴퓨터를 제어하려고 합니다.";

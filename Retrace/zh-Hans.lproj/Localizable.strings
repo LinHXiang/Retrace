@@ -5,7 +5,6 @@
 "quit" = "退出";
 "preferences" = "偏好设置…";
 "preferences_advanced" = "高级";
-"preferences_pins" = "固定";
 "copy_modifiers_config" = "• 按住 %@ 选择项目以复制。";
 "format_modifiers_config" = "• 按住 %@ 选择项目以复制并匹配格式粘贴。";
 "accessibility_alert_message" = "“Retrace“想要使用“辅助功能”控制此计算机。";

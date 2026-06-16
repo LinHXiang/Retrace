@@ -5,7 +5,6 @@
 "quit" = "Beenden";
 "preferences" = "Einstellungen…";
 "preferences_advanced" = "Erweitert";
-"preferences_pins" = "Pins";
 "copy_modifiers_config" = "• Drücke %@, um den gewählten Eintrag zu kopieren.";
 "format_modifiers_config" = "• Drücke %@, um den gewählten Eintrag zu kopieren und unformatiert einzufügen.";
 "accessibility_alert_message" = "“Retrace” möchte diesen Computer mittels Bedienungshilfen steuern.";

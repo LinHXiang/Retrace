@@ -5,7 +5,6 @@
 "quit" = "Zatvori";
 "preferences" = "Podešavanja…";
 "preferences_advanced" = "Napredno";
-"preferences_pins" = "Zakačke";
 "copy_modifiers_config" = "• Označi sa %@ da kopiraš stavku.";
 "format_modifiers_config" = "• Označi sa %@ kopiraš, očistiš formatiranje i zalijepiš stavku.";
 "accessibility_alert_message" = "“Retrace” želi da kontroliše ovaj računar koristeći funkcije pristupačnosti.";

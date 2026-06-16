@@ -5,7 +5,6 @@
 "quit" = "ออก";
 "preferences" = "ตั้งค่า…";
 "preferences_advanced" = "ขั้นสูง";
-"preferences_pins" = "ปักหมุด";
 "copy_modifiers_config" = "• เลือกแล้วกด %@ เพื่อคัดลอก";
 "format_modifiers_config" = "• เลือกแล้วกด %@ เพื่อคัดลอก, ล้างรูปแบบและวางรายการ";
 "accessibility_alert_message" = "“Retrace” ต้องการใช้สิทธิ์ฟีเจอร์การช่วยการเข้าถึง";

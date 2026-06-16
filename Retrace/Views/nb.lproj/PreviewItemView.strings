@@ -2,6 +2,4 @@
 "FirstCopyTime" = "Tidspunkt første kopiering:";
 "LastCopyTime" = "Tidspunkt siste kopiering:";
 "NumberOfCopies" = "Antall ganger kopiert:";
-"PinKey" = "Trykk {pinKey} for å merke.";
-"UnpinKey" = "Trykk {pinKey} for å avmerke.";
 "PreviewKey" = "Trykk {previewKey} for å veksle forhåndsvisning.";

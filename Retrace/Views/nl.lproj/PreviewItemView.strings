@@ -2,6 +2,4 @@
 "FirstCopyTime" = "Eerste kopie:";
 "LastCopyTime" = "Laatste kopie:";
 "NumberOfCopies" = "Aantal kopieën:";
-"PinKey" = "Druk op {pinKey} om te pinnen.";
-"UnpinKey" = "Druk op {pinKey} om te ontpinnen.";
 "PreviewKey" = "Druk op {previewKey} om voorbeeld te schakelen.";

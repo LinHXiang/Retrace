@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Întotdeauna";
 "SearchVisibilityDuringSearch" = "În timpul căutării";
 "ActiveScreen" = "Ecranul activ";
-"PinTo" = "Fixează la:";
-"PinToTop" = "Sus";
-"PinToBottom" = "Jos";
-"PinToTooltip" = "Schimbă poziția elementelor fixate.\nImplicit: Sus.";
 "ImageHeight" = "Înălțimea imaginii:";
 "ImageHeightTooltip" = "Înălțime maximă pentru previzualizarea imaginii.\nImplicit: 40.\nSugestie: Setează la 16 pentru a semăna cu elementele de tip text.";
 "PreviewDelay" = "Temporizare previzualizare:";

@@ -5,7 +5,6 @@
 "quit" = "יציאה";
 "preferences" = "העדפות…";
 "preferences_advanced" = "מתקדם";
-"preferences_pins" = "נעוצים";
 "copy_modifiers_config" = "• יש לבחור תוך לחיצה על %@ כדי להעתיק פריט.";
 "format_modifiers_config" = "• יש לבחור תוך לחיצה על %@ כדי להעתיק, להסיר עיצוב ולהדביק פריט.";
 "accessibility_alert_message" = "„Retrace” רוצה להשתלט על המחשב הזה דרך יכולות הנגישות.";

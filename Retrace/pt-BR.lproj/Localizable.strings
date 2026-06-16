@@ -14,7 +14,6 @@
 "system_settings_name" = "Ajustes do Sistema";
 "system_settings_pane" = "Privacidade e Segurança";
 "system_preferences_pane" = "Privacidade e Segurança";
-"preferences_pins" = "Fixar";
 "quit_tooltip" = "Sair do aplicativo.";
 "format_modifiers_config" = "• Selecione com %@ pressionado para copiar, limpar a formatação e colar o item.";
 "accessibility_alert_comment" = "Conceda acesso a este aplicativo em {pane}, localizado em {settings}.\n\nClique + botão, selecione Retrace e ative a caixa de seleção próxima a ele.";

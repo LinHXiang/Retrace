@@ -4,7 +4,6 @@
 "quit_tooltip" = "Alkalmazás bezárása.";
 "about" = "Névjegy";
 "quit" = "Bezárás";
-"preferences_pins" = "Rögzítések";
 "format_modifiers_config" = "• Válassz a(z) %@ lenyomásával az elem másolásához, formázásának törléséhez és beillesztéséhez.";
 "key_used_error" = "A billentyű már használatban van.";
 "accessibility_alert_deny" = "Elutasít";

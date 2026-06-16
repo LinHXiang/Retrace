@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Altijd";
 "SearchVisibilityDuringSearch" = "Tijdens het zoeken";
 "ActiveScreen" = "Actief scherm";
-"PinTo" = "Maak vast:";
-"PinToTop" = "Boven";
-"PinToBottom" = "Onder";
-"PinToTooltip" = "Wijzig de locatie van vastgemaakte items.\nStandaard: Boven.";
 "ImageHeight" = "Afbeeldingshoogte:";
 "ImageHeightTooltip" = "Maximale hoogte afbeeldingsvoorbeeld.\nStandaard: 40.\nHint: Stel in op 16 zodat het lijkt op tekstitems.";
 "PreviewDelay" = "Vertraging:";

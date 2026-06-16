@@ -5,7 +5,6 @@
 "quit" = "終了";
 "preferences" = "設定…";
 "preferences_advanced" = "詳細";
-"preferences_pins" = "ピン留め";
 "copy_modifiers_config" = "• %を押しながら選択すると項目をコピーします。";
 "format_modifiers_config" = "• %@を押しながら選択すると項目をコピーし、 書式なしで貼り付けます。";
 "accessibility_alert_message" = "“Retrace”は、アクセシビリティ機能を使用してこのコンピュータを制御することを求めています。";

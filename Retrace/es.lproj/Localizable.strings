@@ -5,7 +5,6 @@
 "quit" = "Salir";
 "preferences" = "Preferencias…";
 "preferences_advanced" = "Avanzado";
-"preferences_pins" = "Anclas";
 "copy_modifiers_config" = "• Para copiar el elemento, seleccionar con %@ presionado.";
 "format_modifiers_config" = "• Para copiar, borrar el formato y pegar el elemento el elemento, seleccionar con %@ presionado.";
 "accessibility_alert_message" = "“Retrace” requiere controlar esta computadora mediante las funciones de accesibilidad.";

@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Mindig";
 "SearchVisibilityDuringSearch" = "A keresés során";
 "ActiveScreen" = "Aktív képernyő";
-"PinTo" = "Kitűzés:";
-"PinToTop" = "Fent";
-"PinToBottom" = "Lent";
-"PinToTooltip" = "Változtasd meg a kitűzött elemek helyét.\nAlapértelmezett: Fent.";
 "ImageHeight" = "Kép magassága:";
 "ImageHeightTooltip" = "Az előnézeti kép maximum magassága.\nAlapértelmezett: 40.\nTipp: Allítsd 16-ra, hogy akkora legyen, mint a szövegek.";
 "PreviewDelay" = "Előnézet késleltetése:";

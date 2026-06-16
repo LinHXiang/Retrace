@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Sempre";
 "SearchVisibilityDuringSearch" = "Durante a pesquisa";
 "ActiveScreen" = "Ecrã ativo";
-"PinTo" = "Fixar em:";
-"PinToTop" = "Topo";
-"PinToBottom" = "Final";
-"PinToTooltip" = "Altera a localização de elementos fixados.\nPadrão: Topo.";
 "ImageHeight" = "Altura da imagem:";
 "ImageHeightTooltip" = "Altura máxima da pré-visualização de imagem.\nPadrão: 40.\nDica: Defina 16 para parecer elementos de texto.";
 "PreviewDelay" = "Atraso de pré-visualização:";

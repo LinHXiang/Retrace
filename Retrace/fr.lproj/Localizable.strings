@@ -5,7 +5,6 @@
 "quit" = "Quitter";
 "preferences" = "Préférences…";
 "preferences_advanced" = "Avancé";
-"preferences_pins" = "Épingles";
 "copy_modifiers_config" = "• Selectionnez avec %@ pressé pour copier un élément.";
 "format_modifiers_config" = "• Selectionnez avec %@ pressé pour copier, reformater et coller l'élément.";
 "accessibility_alert_message" = "“Retrace” souhaite contrôler cet ordinateur en utilisant des fonctions d'accessibilité.";

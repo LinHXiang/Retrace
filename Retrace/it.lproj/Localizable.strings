@@ -5,7 +5,6 @@
 "quit" = "Chiudi";
 "preferences" = "Preferenze…";
 "preferences_advanced" = "Avanzate";
-"preferences_pins" = "Bloccati";
 "copy_modifiers_config" = "• Seleziona con %@ premuto per copiare l'elemento.";
 "format_modifiers_config" = "• Seleziona con %@ premuto per copiare, eliminare la formattazione e incollare l'elemento.";
 "accessibility_alert_message" = "“Retrace” vorrebbe controllare questo computer utilizzando le funzionalità di accessibilità.";

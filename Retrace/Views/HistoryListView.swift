@@ -11,8 +11,8 @@ struct HistoryListView: View {
 
   @Default(.showFooter) private var showFooter
 
-  private var unpinnedItems: [HistoryItemDecorator] {
-    appState.history.unpinnedItems.filter(\.isVisible)
+  private var visibleItems: [HistoryItemDecorator] {
+    appState.history.visibleItems.filter(\.isVisible)
   }
 
   private var topPadding: CGFloat {
@@ -54,7 +54,7 @@ struct HistoryListView: View {
 
     ScrollView {
       ScrollViewReader { proxy in
-        MultipleSelectionListView(items: unpinnedItems) { previous, item, next, index in
+        MultipleSelectionListView(items: visibleItems) { previous, item, next, index in
           HistoryItemView(item: item, previous: previous, next: next, index: index)
         }
         .padding(.top, Popup.verticalSeparatorPadding)
@@ -74,7 +74,7 @@ struct HistoryListView: View {
           if scenePhase == .active {
             searchFocused = true
             appState.navigator.isKeyboardNavigating = true
-            appState.navigator.select(item: appState.history.unpinnedItems.first ?? appState.history.pinnedItems.first)
+            appState.navigator.select(item: appState.history.visibleItems.first)
           } else {
             modifierFlags.flags = []
             appState.navigator.isKeyboardNavigating = true

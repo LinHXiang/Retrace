@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Vienmēr";
 "SearchVisibilityDuringSearch" = "Meklēšanas laikā";
 "ActiveScreen" = "Aktīvais ekrāns";
-"PinTo" = "Piespraust pie:";
-"PinToTop" = "Augšas";
-"PinToBottom" = "Apakšas";
-"PinToTooltip" = "Mainiet piesprausto vienumu atrašanās vietu.\nNoklusējums: augšā.";
 "ImageHeight" = "Attēla augstums:";
 "ImageHeightTooltip" = "Maksimālais attēla priekšskatījuma augstums.\nNoklusējums: 40.\nIeteikums: iestatiet uz 16, lai izskatītos kā teksta vienumi.";
 "PreviewDelay" = "Priekšskatījuma aizkave:";

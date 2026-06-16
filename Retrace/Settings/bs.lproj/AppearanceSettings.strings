@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Uvijek";
 "SearchVisibilityDuringSearch" = "Tokom pretrage";
 "ActiveScreen" = "Aktivni zaslon";
-"PinTo" = "Zakači na:";
-"PinToTop" = "Vrh";
-"PinToBottom" = "Dno";
-"PinToTooltip" = "Promjeni lokaciju zakačenih stavki.\nZadano: Vrh.";
 "ImageHeight" = "Visina slike:";
 "ImageHeightTooltip" = "Maksimalna visina pregleda slike.\nZadano: 40.\nSavjet: Postavite na 16 da izgledaju kao tekstualne stavke.";
 "PreviewDelay" = "Kašnjenje pregleda:";

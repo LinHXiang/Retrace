@@ -5,7 +5,6 @@
 "quit_tooltip" = "Zapri aplikacijo.";
 "about" = "Informacije";
 "preferences" = "Nastavitve…";
-"preferences_pins" = "Pini";
 "copy_modifiers_config" = "• Izberite s pritisnjenim %@, da kopirate element.";
 "accessibility_alert_deny" = "Zavrni";
 "accessibility_alert_open" = "Odprite sistemske nastavitve";

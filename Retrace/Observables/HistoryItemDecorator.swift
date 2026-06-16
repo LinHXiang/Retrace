@@ -24,9 +24,6 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   // 10k characters seems to be more than enough on large displays
   var text: String { item.previewableText.shortened(to: 10_000) }
 
-  var isPinned: Bool { false }
-  var isUnpinned: Bool { true }
-
   func hash(into hasher: inout Hasher) {
     // We need to hash title and attributedTitle, so SwiftUI knows it needs to update the view if they chage
     hasher.combine(id)

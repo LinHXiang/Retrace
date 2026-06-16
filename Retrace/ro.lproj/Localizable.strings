@@ -4,7 +4,6 @@
 "quit_tooltip" = "Închide aplicația.";
 "quit" = "Închide";
 "preferences_advanced" = "Avansat";
-"preferences_pins" = "Elemente fixate";
 "copy_modifiers_config" = "• Selectează cu %@ apăsat pentru a copia un element.";
 "format_modifiers_config" = "• Selectează cu %@ apăsat pentru a copia, elimina formatarea și lipi un element.";
 "accessibility_alert_message" = "“Retrace” dorește să controleze acest calculator utilizând funcțiile de accesibilitate.";

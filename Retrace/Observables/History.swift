@@ -86,7 +86,7 @@ class History: ItemsContainer {
         updateItems(search.search(string: searchQuery, within: all))
 
         if searchQuery.isEmpty {
-          AppState.shared.navigator.select(item: unpinnedItems.first)
+          AppState.shared.navigator.select(item: visibleItems.first)
         } else {
           AppState.shared.navigator.highlightFirst()
         }
@@ -95,9 +95,6 @@ class History: ItemsContainer {
       }
     }
   }
-
-  var pinnedItems: [HistoryItemDecorator] { [] }
-  var unpinnedItems: [HistoryItemDecorator] { items }
 
   var pressedShortcutItem: HistoryItemDecorator? {
     guard let event = NSApp.currentEvent else {
@@ -193,11 +190,11 @@ class History: ItemsContainer {
       return item
     }
 
-    updateUnpinnedShortcuts()
+    updateVisibleShortcuts()
   }
 
   private func updateShortcuts() {
-    updateUnpinnedShortcuts()
+    updateVisibleShortcuts()
   }
 
   @MainActor
@@ -206,14 +203,14 @@ class History: ItemsContainer {
     item.item.title = title
   }
 
-  private func updateUnpinnedShortcuts() {
-    let visibleUnpinnedItems = unpinnedItems.filter(\.isVisible)
-    for item in visibleUnpinnedItems {
+  private func updateVisibleShortcuts() {
+    let visibleItems = self.visibleItems.filter(\.isVisible)
+    for item in visibleItems {
       item.shortcuts = []
     }
 
     var index = 1
-    for item in visibleUnpinnedItems.prefix(9) {
+    for item in visibleItems.prefix(9) {
       item.shortcuts = KeyShortcut.create(character: String(index))
       index += 1
     }

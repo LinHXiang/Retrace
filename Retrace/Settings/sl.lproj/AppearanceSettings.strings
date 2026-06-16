@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Vedno";
 "SearchVisibilityDuringSearch" = "Med iskanjem";
 "ActiveScreen" = "Aktivni zaslon";
-"PinTo" = "Pripni:";
-"PinToTop" = "Zgoraj";
-"PinToBottom" = "Spodaj";
-"PinToTooltip" = "Spremenite lokacijo pripetih elementov.\nPrivzeto: Zgoraj.";
 "ImageHeight" = "Višina slike:";
 "ImageHeightTooltip" = "Največja višina predogleda slike.\nPrivzeto: 40.\nNamig: nastavite na 16, da bodo slike videti kot besedilni elementi.";
 "PreviewDelay" = "Zakasnitev predogleda:";

@@ -5,7 +5,6 @@
 "quit" = "Sair";
 "preferences" = "Preferências…";
 "preferences_advanced" = "Avançado";
-"preferences_pins" = "Fixar";
 "copy_modifiers_config" = "• Selecione com %@ pressionado para copiar o elemento.";
 "format_modifiers_config" = "• Selecione com %@ pressionado para copiar, limpar a formatação e colar o elemento.";
 "accessibility_alert_message" = "“Retrace” gostaria de controlar este computador usando as funções de acessibilidade.";

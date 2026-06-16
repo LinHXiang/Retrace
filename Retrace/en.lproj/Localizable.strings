@@ -5,7 +5,6 @@
 "quit" = "Quit";
 "preferences" = "Preferences…";
 "preferences_advanced" = "Advanced";
-"preferences_pins" = "Pins";
 "copy_modifiers_config" = "• Select with %@ pressed to copy command.";
 "format_modifiers_config" = "• Select with %@ pressed to copy command.";
 "accessibility_alert_message" = "“Retrace” would like to control this computer using accessibility features.";

@@ -3,7 +3,6 @@
 "quit" = "Wyjdź";
 "preferences" = "Ustawienia…";
 "preferences_advanced" = "Zaawansowane";
-"preferences_pins" = "Przypięte";
 "copy_modifiers_config" = "• Wybierz z %@ aby skopiować.";
 "format_modifiers_config" = "• Wybierz %@ aby skopiować i wkleić z wyczyszczonym formatowaniem.";
 "accessibility_alert_message" = "“Retrace” chce kontrolować Twój komputer używając funkcji dostępności.";

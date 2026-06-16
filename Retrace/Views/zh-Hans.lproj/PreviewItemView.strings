@@ -2,6 +2,4 @@
 "FirstCopyTime" = "首次复制时间:";
 "LastCopyTime" = "上次复制时间:";
 "NumberOfCopies" = "复制次数:";
-"PinKey" = "按 {pinKey} (取消)固定。";
-"UnpinKey" = "按 {pinKey} (取消)固定。";
 "PreviewKey" = "按 {previewKey} 切换预览。";

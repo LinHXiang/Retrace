@@ -5,7 +5,6 @@
 "quit" = "إغلاق";
 "preferences" = "التفضيلات…";
 "preferences_advanced" = "متقدم";
-"preferences_pins" = "مثبتة";
 "copy_modifiers_config" = "• حدد مع الضغط على %@ لنسخ العنصر.";
 "format_modifiers_config" = "• حدد مع الضغط على %@ للنسخ ومسح التنسيق ولصق العنصر.";
 "accessibility_alert_message" = "“\"Retrace\" يرغب في التحكم في هذا الكمبيوتر باستخدام ميزات إمكانية الوصول.";

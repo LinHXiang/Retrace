@@ -4,7 +4,6 @@
 "quit" = "Uždaryti";
 "preferences" = "Parinktys…";
 "preferences_advanced" = "Išplėstiniai nustatymai";
-"preferences_pins" = "Prisegtukai";
 "copy_modifiers_config" = "• Pasirinkite paspaudę %@, kad nukopijuotumėte elementą.";
 "format_modifiers_config" = "• Pasirinkite paspaudę %@, kad nukopijuotumėte, panaikintumėte formatavimą ir įklijuotumėte elementą.";
 "accessibility_alert_message" = "„Retrace“ norėtų valdyti šį kompiuterį naudodamasis prieinamumo funkcijomis.";
