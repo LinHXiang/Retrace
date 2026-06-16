@@ -1,12 +1,12 @@
 "Title" = "外观";
-"PopupAt" = "弹窗位置：";
+"PopupAt" = "命令窗口位置：";
 "PopupAtCursor" = "光标";
 "PopupAtMenuBarIcon" = "菜单栏图标";
 "PopupAtWindowCenter" = "窗口中心";
 "PopupAtScreenCenter" = "屏幕中央";
 "PopupAtLastPosition" = "最后位置";
 "PopupAtLastLocationReset" = "重置位置";
-"PopupAtTooltip" = "更改弹窗显示的位置。\n默认：光标。";
+"PopupAtTooltip" = "更改命令窗口显示的位置。\n默认：光标。";
 "SearchVisibilityAlways" = "始终";
 "SearchVisibilityDuringSearch" = "在搜索过程中";
 "ActiveScreen" = "活动屏幕";

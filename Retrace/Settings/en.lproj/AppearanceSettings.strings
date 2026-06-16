@@ -1,12 +1,12 @@
 "Title" = "Appearance";
-"PopupAt" = "Popup at:";
+"PopupAt" = "Command window at:";
 "PopupAtCursor" = "Cursor";
 "PopupAtMenuBarIcon" = "Menu icon";
 "PopupAtWindowCenter" = "Window center";
 "PopupAtScreenCenter" = "Screen center";
 "PopupAtLastPosition" = "Last position";
 "PopupAtLastLocationReset" = "Reset position";
-"PopupAtTooltip" = "Change the location where popup appears.\nDefault: Cursor.";
+"PopupAtTooltip" = "Change where the command window appears.\nDefault: Cursor.";
 "SearchVisibilityAlways" = "Always";
 "SearchVisibilityDuringSearch" = "During search";
 "ActiveScreen" = "Active screen";
