@@ -14,11 +14,11 @@ body:
       options:
         - label: I have verified that there isn't already an issue reporting the same bug to prevent duplication.
           required: false
-        - label: I have seen the [FAQ](https://github.com/p0deje/Maccy?tab=readme-ov-file#faq).
+        - label: I have seen the [FAQ](https://github.com/LinHXiang/Retrace?tab=readme-ov-file#faq).
           required: false
   - type: input
     attributes:
-      label: Maccy Version (see 'About' window)
+      label: Retrace Version (see 'About' window)
       placeholder: e.g. 0.29.0
     validations:
       required: false
@@ -30,8 +30,8 @@ body:
       required: false
   - type: textarea
     attributes:
-      label: Maccy Settings
-      description: Provide the output from running 'defaults read org.p0deje.Maccy' in Terminal.app.
+      label: Retrace Settings
+      description: Provide the output from running 'defaults read com.freeorz.retrace' in Terminal.app.
       render: Shell
     validations:
       required: false
