@@ -16,32 +16,32 @@ extension ItemsContainer where Item: HasVisibility {
 
   var visibleItems: [Item] {
     guard containerVisible else { return [] }
-    return self.items.lazy.filter(\.isVisible)
+    return items.lazy.filter(\.isVisible)
   }
 
   var firstVisibleItem: Item? {
     guard containerVisible else { return nil }
-    return self.items.first(where: \.isVisible)
+    return items.first(where: \.isVisible)
   }
   func firstVisibleItem(where predicate: (Item) -> Bool) -> Item? {
     guard containerVisible else { return nil }
-    return self.items.first { $0.isVisible && predicate($0) }
+    return items.first { $0.isVisible && predicate($0) }
   }
   var lastVisibleItem: Item? {
     guard containerVisible else { return nil }
-    return self.items.last(where: \.isVisible)
+    return items.last(where: \.isVisible)
   }
   func lastVisibleItem(where predicate: (Item) -> Bool) -> Item? {
     guard containerVisible else { return nil }
-    return self.items.last { $0.isVisible && predicate($0) }
+    return items.last { $0.isVisible && predicate($0) }
   }
 }
 
 extension ItemsContainer where Item: HasVisibility, Item: Equatable {
   func visibleItem(before: Item) -> Item? {
-    return self.items.item(before: before, where: \.isVisible)
+    return items.item(before: before, where: \.isVisible)
   }
   func visibleItem(after: Item) -> Item? {
-    return self.items.item(after: after, where: \.isVisible)
+    return items.item(after: after, where: \.isVisible)
   }
 }
