@@ -1,6 +1,6 @@
 import Defaults
-import Logging
 import Observation
+import OSLog
 import SwiftUI
 
 enum SlideoutState {
@@ -64,7 +64,7 @@ enum ResizingMode {
 
 @Observable
 class SlideoutController {
-  let logger = Logger(label: "com.freeorz.retrace")
+  private let logger = Logger(subsystem: "com.freeorz.retrace", category: "slideout")
   private static let animationDuration = 0.25
 
   let onContentResize: (CGFloat) -> Void
@@ -201,14 +201,14 @@ class SlideoutController {
   }
 
   func startResize(mode: ResizingMode) {
-    logger.info("Starting resize with mode \(mode)")
+    logger.info("Starting resize with mode \(String(describing: mode))")
     resizingMode = mode
     contentWidth = contentResizeWidth
     slideoutWidth = slideoutResizeWidth
   }
 
   func endResize() {
-    logger.info("Ended resize. Mode was \(resizingMode)")
+    logger.info("Ended resize. Mode was \(String(describing: self.resizingMode))")
     switch resizingMode {
     case .none:
       return

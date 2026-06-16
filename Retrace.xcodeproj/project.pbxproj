@@ -13,7 +13,6 @@
 		2F0EC77F2E773DBA003E2EA9 /* MultipleSelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0EC77E2E773DBA003E2EA9 /* MultipleSelectionListView.swift */; };
 		2F0EC7892E7743D9003E2EA9 /* HoverSelectionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0EC7882E7743D9003E2EA9 /* HoverSelectionModifier.swift */; };
 		2F1091D72F2B6E8400F5C454 /* AsyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1091D62F2B6E8100F5C454 /* AsyncView.swift */; };
-		2F12271E2E5C932200A1592A /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 2F12271D2E5C932200A1592A /* Logging */; };
 		2F1A79C02C6DFB7800C98EBD /* SearchVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A79BF2C6DFB7800C98EBD /* SearchVisibility.swift */; };
 		2F39CB0A2AD9AE1F00B749FD /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 2F39CB092AD9AE1F00B749FD /* Settings */; };
 		2F578C3D2EFFE8400088B759 /* ItemsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F578C3C2EFFE8400088B759 /* ItemsProtocol.swift */; };
@@ -386,7 +385,6 @@
 				DA009955256414E60030E697 /* KeyboardShortcuts in Frameworks */,
 				DAC0CA3E2C88E7A4003BF498 /* Fuse in Frameworks */,
 				DA5F46512020E9FB00425C11 /* Carbon.framework in Frameworks */,
-				2F12271E2E5C932200A1592A /* Logging in Frameworks */,
 				DA13D7D02C19F8C300FA9E23 /* Defaults in Frameworks */,
 				DA5154D82564102900C01004 /* Sauce in Frameworks */,
 				2F39CB0A2AD9AE1F00B749FD /* Settings in Frameworks */,
@@ -668,7 +666,6 @@
 				DA13D7C92C19F52B00FA9E23 /* LaunchAtLogin */,
 				DA13D7CF2C19F8C300FA9E23 /* Defaults */,
 				DAC0CA3D2C88E7A4003BF498 /* Fuse */,
-				2F12271D2E5C932200A1592A /* Logging */,
 			);
 			productName = Retrace;
 			productReference = DAEE38431E3DBEB100DD2966 /* Retrace.app */;
@@ -750,7 +747,6 @@
 				DA13D7C82C19F43E00FA9E23 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				DA13D7CE2C19F8C300FA9E23 /* XCRemoteSwiftPackageReference "Defaults" */,
 				DAC0CA3C2C88E7A4003BF498 /* XCRemoteSwiftPackageReference "fuse-swift" */,
-				2F12271C2E5C932200A1592A /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = DAEE38441E3DBEB100DD2966 /* Products */;
 			projectDirPath = "";
@@ -1405,14 +1401,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2F12271C2E5C932200A1592A /* XCRemoteSwiftPackageReference "swift-log" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-log";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.4;
-			};
-		};
 		2F39CB082AD9AE1F00B749FD /* XCRemoteSwiftPackageReference "Settings" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Settings.git";
@@ -1464,11 +1452,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F12271D2E5C932200A1592A /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F12271C2E5C932200A1592A /* XCRemoteSwiftPackageReference "swift-log" */;
-			productName = Logging;
-		};
 		2F39CB092AD9AE1F00B749FD /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F39CB082AD9AE1F00B749FD /* XCRemoteSwiftPackageReference "Settings" */;
