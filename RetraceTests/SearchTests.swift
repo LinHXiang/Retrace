@@ -36,13 +36,9 @@ class SearchTests: XCTestCase {
   }
 
   @MainActor
-  func testSimpleSearch() { // swiftlint:disable:this function_body_length
+  func testSimpleSearchMatchesCommonQueries() {
     Defaults[.searchMode] = Search.Mode.exact
-    items = [
-      HistoryItemDecorator(historyItemWithTitle("foo bar baz")),
-      HistoryItemDecorator(historyItemWithTitle("foo bar zaz")),
-      HistoryItemDecorator(historyItemWithTitle("xxx yyy zzz"))
-    ]
+    prepareSearchItems()
 
     XCTAssertEqual(search(""), [
       Search.SearchResult(score: nil, object: items[0], ranges: []),
@@ -78,6 +74,13 @@ class SearchTests: XCTestCase {
         ranges: [range(from: 0, to: 2, in: items[1])]
       )
     ])
+  }
+
+  @MainActor
+  func testSimpleSearchRejectsFuzzyQueries() {
+    Defaults[.searchMode] = Search.Mode.exact
+    prepareSearchItems()
+
     XCTAssertEqual(search("za"), [
       Search.SearchResult(
         score: nil,
@@ -259,6 +262,15 @@ class SearchTests: XCTestCase {
 
   private func search(_ string: String) -> [Search.SearchResult] {
     return Search().search(string: string, within: items)
+  }
+
+  @MainActor
+  private func prepareSearchItems() {
+    items = [
+      HistoryItemDecorator(historyItemWithTitle("foo bar baz")),
+      HistoryItemDecorator(historyItemWithTitle("foo bar zaz")),
+      HistoryItemDecorator(historyItemWithTitle("xxx yyy zzz"))
+    ]
   }
 
   // swiftlint:disable:next identifier_name
