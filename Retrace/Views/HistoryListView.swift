@@ -39,7 +39,7 @@ struct HistoryListView: View {
 
     ScrollView {
       ScrollViewReader { proxy in
-        HistoryItemListView(items: visibleItems) { item in
+        IdentifiableListView(items: visibleItems) { item in
           CommandHistoryItemView(item: item)
         }
         .padding(.top, Popup.verticalSeparatorPadding)
