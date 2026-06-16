@@ -44,13 +44,6 @@
         "identifier" : "DA360DAF1E3DF137005C6F6B",
         "name" : "RetraceTests"
       }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:Retrace.xcodeproj",
-        "identifier" : "DA0EE7B5204657830025FC60",
-        "name" : "RetraceUITests"
-      }
     }
   ],
   "version" : 1
