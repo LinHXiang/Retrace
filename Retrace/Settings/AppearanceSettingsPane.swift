@@ -6,7 +6,6 @@ import Settings
 struct AppearanceSettingsPane: View {
   @Default(.popupPosition) private var popupAt
   @Default(.popupScreen) private var popupScreen
-  @Default(.previewDelay) private var previewDelay
   @Default(.highlightMatch) private var highlightMatch
   @Default(.menuIcon) private var menuIcon
   @Default(.showInStatusBar) private var showInStatusBar
@@ -28,13 +27,6 @@ struct AppearanceSettingsPane: View {
     let formatter = NumberFormatter()
     formatter.minimum = 30
     formatter.maximum = 200
-    return formatter
-  }()
-
-  private let previewDelayFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.minimum = 200
-    formatter.maximum = 100_000
     return formatter
   }()
 
@@ -66,16 +58,6 @@ struct AppearanceSettingsPane: View {
             .help(Text("PopupAtLastLocationReset", tableName: "AppearanceSettings"))
             .disabled(windowPosition == _windowPosition.defaultValue)
           }
-        }
-      }
-
-      Settings.Section(label: { Text("PreviewDelay", tableName: "AppearanceSettings") }) {
-        HStack {
-          TextField("", value: $previewDelay, formatter: previewDelayFormatter)
-            .frame(width: 120)
-            .help(Text("PreviewDelayTooltip", tableName: "AppearanceSettings"))
-          Stepper("", value: $previewDelay, in: 200...100_000)
-            .labelsHidden()
         }
       }
 
