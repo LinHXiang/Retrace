@@ -17,7 +17,7 @@ private struct ConditionalWidthModifier: ViewModifier {
 extension View {
   fileprivate func conditionalWidth(_ width: CGFloat, condition: Bool)
     -> some View {
-    self.modifier(
+    modifier(
       ConditionalWidthModifier(width: width, condition: condition)
     )
   }

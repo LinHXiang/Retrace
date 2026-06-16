@@ -51,7 +51,7 @@ struct ToolbarButton<Label: View>: View {
     tableName: String,
     replacementKey: String
   ) -> some View {
-    self.modifier(
+    modifier(
       KeyboardShortcutHelpModifier(
         name: name,
         key: key,
