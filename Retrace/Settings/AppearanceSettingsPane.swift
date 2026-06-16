@@ -16,20 +16,6 @@ struct AppearanceSettingsPane: View {
 
   @State private var screens = NSScreen.screens
 
-  private let numberOfItemsFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.minimum = 0
-    formatter.maximum = 100
-    return formatter
-  }()
-
-  private let titleLengthFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.minimum = 30
-    formatter.maximum = 200
-    return formatter
-  }()
-
   var body: some View {
     Settings.Container(contentWidth: 650) {
       Settings.Section(label: { Text("PopupAt", tableName: "AppearanceSettings") }) {
