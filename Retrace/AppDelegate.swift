@@ -76,10 +76,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   private func migrateUserDefaults() {
     if Defaults[.migrations]["2024-07-01-version-2"] != true {
-      // Start 2.x from scratch.
+      // Keep the old one-time migration flag so existing installs do not rerun it.
       Defaults.reset(.migrations)
 
-      // Inverse hide* configuration keys.
+      // Migrate old inverse hide* configuration keys.
       Defaults[.showFooter] = !UserDefaults.standard.bool(forKey: "hideFooter")
       Defaults[.showSearch] = !UserDefaults.standard.bool(forKey: "hideSearch")
       Defaults[.showTitle] = !UserDefaults.standard.bool(forKey: "hideTitle")
