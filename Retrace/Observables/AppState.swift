@@ -51,8 +51,8 @@ class AppState: Sendable {
 
   @MainActor
   func select() {
-    if !navigator.selection.isEmpty {
-      history.select(navigator.selection.first)
+    if let item = navigator.selectedHistoryItem {
+      history.select(item)
     } else if let item = footer.selectedItem {
       item.action()
     } else {

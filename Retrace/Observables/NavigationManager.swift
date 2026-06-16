@@ -11,10 +11,10 @@ class NavigationManager { // swiftlint:disable:this type_body_length
     self.footer = footer
   }
 
-  var selection: Selection<HistoryItemDecorator> = Selection() {
+  var selectedHistoryItem: HistoryItemDecorator? {
     willSet {
-      selection.forEach { item in item.isSelected = false }
-      newValue.forEach { item in item.isSelected = true }
+      selectedHistoryItem?.isSelected = false
+      newValue?.isSelected = true
     }
   }
 
@@ -82,20 +82,20 @@ class NavigationManager { // swiftlint:disable:this type_body_length
       selectInFooter(footerItem)
     } else {
       leadHistoryItem = nil
-      selection = .init()
+      selectedHistoryItem = nil
       footer.selectedItem = nil
     }
   }
 
   private func selectInHistory(_ item: HistoryItemDecorator) {
     leadHistoryItem = item
-    selection = .init(item)
+    selectedHistoryItem = item
     footer.selectedItem = nil
   }
 
   private func selectInFooter(_ item: FooterItem) {
     leadHistoryItem = nil
-    selection = .init()
+    selectedHistoryItem = nil
     footer.selectedItem = item
   }
 
