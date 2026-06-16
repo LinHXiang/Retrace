@@ -3,7 +3,7 @@ import Defaults
 import KeyboardShortcuts
 import Observation
 
-enum PopupState {
+private enum PopupState {
   // Default; shortcut will toggle the popup
   case toggle
   // In this mode, every additional press of the main key
