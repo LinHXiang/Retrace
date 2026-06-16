@@ -25,7 +25,6 @@ struct ContentView: View {
 
             VStack(alignment: .leading, spacing: 0) {
               HistoryListView(
-                searchQuery: $appState.history.searchQuery,
                 searchFocused: $searchFocused
               )
 
