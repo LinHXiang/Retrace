@@ -1,6 +1,6 @@
 Hello! 👋
-This is Maccy.
-Clipboard manager for Mac. 💻
+This is Retrace.
+Command history for Mac. 💻
 Search as you type. 🔍
 Open source. ⚙️
 No fluff! 😛

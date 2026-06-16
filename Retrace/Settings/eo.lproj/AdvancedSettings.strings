@@ -1,0 +1,10 @@
+"Title" = "Altnivelaj agordoj";
+"TurnOff" = "Malŝalti";
+"TurnOffDescription" = "Provizore ignori ĉiujn novajn kopiojn.\nVi verŝajne uzos tion en programo kaj malŝaltos la aplikaĵon dum kopiado de tiklaj datumoj.";
+"TurnOffShellScript" = "defaults write com.freeorz.retrace ignoreEvents true\n# kopii datumojn\ndefaults write com.freeorz.retrace ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "";
+"TurnOffNextShellScript" = "defaults write com.freeorz.retrace ignoreOnlyNextEvent true\n# kopii datumojn";
+"ClearHistoryOnQuit" = "Forigi la historion dum forlaso";
+"ClearHistoryOnQuitTooltip" = "Aŭtomate forigi ĉiujn nefiksitajn erojn antaŭ ol forlasi la aplikaĵon.";
+"ClearSystemClipboard" = "Forigi ankaŭ la sisteman tondujon";
+"ClearSystemClipboardTooltip" = "Kiam ŝaltita, forigo de la historio ankaŭ forigus la nunan sisteman tondujon.";
