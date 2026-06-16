@@ -6,7 +6,7 @@ extension View {
   }
 }
 
-struct MouseMovedViewModifier: ViewModifier {
+private struct MouseMovedViewModifier: ViewModifier {
   let mouseMoved: () -> Void
 
   init(_ mouseMoved: @escaping () -> Void) {
