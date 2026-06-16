@@ -56,7 +56,7 @@ class AppState {
     } else if let item = footer.selectedItem {
       item.action()
     } else {
-      Clipboard.shared.copy(history.searchQuery)
+      CommandPasteboard.shared.copy(history.searchQuery)
       history.searchQuery = ""
     }
   }

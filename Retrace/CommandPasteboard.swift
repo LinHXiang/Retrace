@@ -1,7 +1,7 @@
 import AppKit
 
-class Clipboard {
-  static let shared = Clipboard()
+class CommandPasteboard {
+  static let shared = CommandPasteboard()
 
   private let pasteboard = NSPasteboard.general
 

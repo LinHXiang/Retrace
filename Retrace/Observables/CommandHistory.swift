@@ -178,7 +178,7 @@ class CommandHistory: ItemsContainer {
     }
 
     AppState.shared.popup.close()
-    Clipboard.shared.copy(item.item)
+    CommandPasteboard.shared.copy(item.item)
 
     Task {
       searchQuery = ""
