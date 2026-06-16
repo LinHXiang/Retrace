@@ -6,7 +6,7 @@ import Settings
 
 struct GeneralSettingsPane: View {
   @Default(.searchMode) private var searchMode
-  @Default(.size) private var size
+  @Default(.commandHistorySize) private var commandHistorySize
 
   private let sizeFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
@@ -62,10 +62,10 @@ struct GeneralSettingsPane: View {
         label: { Text("HistorySize", tableName: "GeneralSettings") }
       ) {
         HStack {
-          TextField("", value: $size, formatter: sizeFormatter)
+          TextField("", value: $commandHistorySize, formatter: sizeFormatter)
             .frame(width: 80)
             .help(Text("HistorySizeTooltip", tableName: "GeneralSettings"))
-          Stepper("", value: $size, in: 1...999)
+          Stepper("", value: $commandHistorySize, in: 1...999)
             .labelsHidden()
         }
       }

@@ -17,7 +17,7 @@ extension Defaults.Keys {
   static let searchVisibility = Key<SearchVisibility>("searchVisibility", default: .always)
   static let showSpecialSymbols = Key<Bool>("showSpecialSymbols", default: true)
   static let showTitle = Key<Bool>("showTitle", default: true)
-  static let size = Key<Int>("historySize", default: 200)
+  static let commandHistorySize = Key<Int>("historySize", default: 200)
   static let windowSize = Key<NSSize>("windowSize", default: NSSize(width: 450, height: 800))
   static let windowPosition = Key<NSPoint>("windowPosition", default: NSPoint(x: 0.5, y: 0.8))
   static let previewWidth = Key<CGFloat>("previewWidth", default: 400)
