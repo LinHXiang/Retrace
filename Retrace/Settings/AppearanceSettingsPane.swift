@@ -7,8 +7,6 @@ struct AppearanceSettingsPane: View {
   @Default(.popupPosition) private var popupAt
   @Default(.popupScreen) private var popupScreen
   @Default(.highlightMatch) private var highlightMatch
-  @Default(.menuIcon) private var menuIcon
-  @Default(.showInStatusBar) private var showInStatusBar
   @Default(.showSearch) private var showSearch
   @Default(.searchVisibility) private var searchVisibility
   @Default(.showFooter) private var showFooter
@@ -67,20 +65,8 @@ struct AppearanceSettingsPane: View {
         }
         .help(Text("ShowSpecialSymbolsTooltip", tableName: "AppearanceSettings"))
 
-        HStack {
-          Defaults.Toggle(key: .showInStatusBar) {
-            Text("ShowMenuIcon", tableName: "AppearanceSettings")
-          }
-
-          Picker("", selection: $menuIcon) {
-            ForEach(MenuIcon.allCases) { icon in
-              Image(nsImage: icon.image)
-            }
-          }
-          .labelsHidden()
-          .scaledToFit()
-          .disabled(!showInStatusBar)
-          .controlSize(.small)
+        Defaults.Toggle(key: .showInStatusBar) {
+          Text("ShowMenuIcon", tableName: "AppearanceSettings")
         }
 
         Defaults.Toggle(key: .showRecentCommandInMenuBar) {

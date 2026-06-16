@@ -9,7 +9,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     statusItem.behavior = .removalAllowed
     statusItem.button?.action = #selector(performStatusItemClick)
-    statusItem.button?.image = Defaults[.menuIcon].image
+    statusItem.button?.image = NSImage(named: .retraceStatusBar)
     statusItem.button?.imagePosition = .imageLeft
     statusItem.button?.target = self
     return statusItem
@@ -35,13 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
     }
 
-    Task {
-      for await value in Defaults.updates(.menuIcon, initial: false) {
-        statusItem.button?.image = value.image
-      }
-    }
-
-    synchronizeMenuIconText()
+    synchronizeStatusItemTitle()
     Task {
       for await value in Defaults.updates(.showRecentCommandInMenuBar) {
         if value {
@@ -89,15 +83,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       Defaults[.migrations]["2024-07-01-version-2"] = true
     }
 
-    if Defaults[.migrations]["2026-06-17-retrace-menu-icon"] != true {
-      if let menuIcon = UserDefaults.standard.string(forKey: "menuIcon"),
-         menuIcon != MenuIcon.retrace.rawValue {
-        Defaults[.menuIcon] = .retrace
-      }
-
-      Defaults[.migrations]["2026-06-17-retrace-menu-icon"] = true
-    }
-
     // The following defaults are not used in Retrace 2.x
     // and should be removed in 3.x.
     // - LaunchAtLogin__hasMigrated
@@ -115,7 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
-  private func synchronizeMenuIconText() {
+  private func synchronizeStatusItemTitle() {
     _ = withObservationTracking {
       AppState.shared.menuBarCommandText
     } onChange: {
@@ -123,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if Defaults[.showRecentCommandInMenuBar] {
           self.statusItem.button?.title = AppState.shared.menuBarCommandText
         }
-        self.synchronizeMenuIconText()
+        self.synchronizeStatusItemTitle()
       }
     }
   }
