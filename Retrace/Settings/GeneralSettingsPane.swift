@@ -5,10 +5,6 @@ import LaunchAtLogin
 import Settings
 
 struct GeneralSettingsPane: View {
-  private let notificationsURL = URL(
-    string: "x-apple.systempreferences:com.apple.preference.notifications?id=\(Bundle.main.bundleIdentifier ?? "")"
-  )
-
   @Default(.searchMode) private var searchMode
   @Default(.size) private var size
 
@@ -71,14 +67,6 @@ struct GeneralSettingsPane: View {
             .help(Text("HistorySizeTooltip", tableName: "GeneralSettings"))
           Stepper("", value: $size, in: 1...999)
             .labelsHidden()
-        }
-      }
-
-      Settings.Section(title: "") {
-        if let notificationsURL = notificationsURL {
-          Link(destination: notificationsURL, label: {
-            Text("NotificationsAndSounds", tableName: "GeneralSettings")
-          })
         }
       }
     }

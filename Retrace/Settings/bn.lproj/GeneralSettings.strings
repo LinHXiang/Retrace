@@ -10,7 +10,6 @@
 "Mixed" = "মিশ্রিত";
 "HistorySize" = "History size:";
 "HistorySizeTooltip" = "Maximum number of commands to show.";
-"NotificationsAndSounds" = "বিজ্ঞপ্তি এবং শব্দ 􀱁";
 "OpenTooltip" = "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।";
 "ShowPreview" = "পূর্বরূপ:";
 "ShowPreviewTooltip" = "অতিরিক্ত তথ্য সহ পূর্বরূপ দেখান।\nডিফল্ট: ⌃Space।";

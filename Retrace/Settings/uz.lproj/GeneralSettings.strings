@@ -3,7 +3,6 @@
 "Mixed" = "Aralash";
 "HistorySize" = "History size:";
 "HistorySizeTooltip" = "Maximum number of commands to show.";
-"NotificationsAndSounds" = "Bildirishnoma va tovushlar 􀱁";
 "LaunchAtLogin" = "Kirish paytida ishga tushirish";
 "CheckForUpdates" = "Yangilanishlarni avtomatik ravishda tekshirish";
 "CheckNow" = "Hozir tekshir";
