@@ -11,10 +11,6 @@ class Footer: ItemsContainer {
     }
   }
 
-  var containerVisible: Bool {
-    return true
-  }
-
   init() {
     items = [
       FooterItem(
