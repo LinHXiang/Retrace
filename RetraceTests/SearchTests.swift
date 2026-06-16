@@ -49,29 +49,29 @@ class SearchTests: XCTestCase {
       Search.SearchResult(
         score: nil,
         object: items[0],
-        ranges: [range(from: 10, to: 10, in: items[0])]
+        ranges: [range(startOffset: 10, endOffset: 10, in: items[0])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 8, to: 8, in: items[1])]
+        ranges: [range(startOffset: 8, endOffset: 8, in: items[1])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[2],
-        ranges: [range(from: 8, to: 8, in: items[2])]
+        ranges: [range(startOffset: 8, endOffset: 8, in: items[2])]
       )
     ])
     XCTAssertEqual(search("foo"), [
       Search.SearchResult(
         score: nil,
         object: items[0],
-        ranges: [range(from: 0, to: 2, in: items[0])]
+        ranges: [range(startOffset: 0, endOffset: 2, in: items[0])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 0, to: 2, in: items[1])]
+        ranges: [range(startOffset: 0, endOffset: 2, in: items[1])]
       )
     ])
   }
@@ -85,14 +85,14 @@ class SearchTests: XCTestCase {
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 8, to: 9, in: items[1])]
+        ranges: [range(startOffset: 8, endOffset: 9, in: items[1])]
       )
     ])
     XCTAssertEqual(search("yyy"), [
       Search.SearchResult(
         score: nil,
         object: items[2],
-        ranges: [range(from: 4, to: 6, in: items[2])]
+        ranges: [range(startOffset: 4, endOffset: 6, in: items[2])]
       )
     ])
     XCTAssertEqual(search("fbb"), [])
@@ -113,29 +113,29 @@ class SearchTests: XCTestCase {
       Search.SearchResult(
         score: 0.08,
         object: items[1],
-        ranges: [range(from: 8, to: 8, in: items[1]), range(from: 10, to: 10, in: items[1])]
+        ranges: [range(startOffset: 8, endOffset: 8, in: items[1]), range(startOffset: 10, endOffset: 10, in: items[1])]
       ),
       Search.SearchResult(
         score: 0.08,
         object: items[2],
-        ranges: [range(from: 8, to: 10, in: items[2])]
+        ranges: [range(startOffset: 8, endOffset: 10, in: items[2])]
       ),
       Search.SearchResult(
         score: 0.1,
         object: items[0],
-        ranges: [range(from: 10, to: 10, in: items[0])]
+        ranges: [range(startOffset: 10, endOffset: 10, in: items[0])]
       )
     ])
     XCTAssertEqual(search("foo"), [
       Search.SearchResult(
         score: 0.0,
         object: items[0],
-        ranges: [range(from: 0, to: 2, in: items[0])]
+        ranges: [range(startOffset: 0, endOffset: 2, in: items[0])]
       ),
       Search.SearchResult(
         score: 0.0,
         object: items[1],
-        ranges: [range(from: 0, to: 2, in: items[1])]
+        ranges: [range(startOffset: 0, endOffset: 2, in: items[1])]
       )
     ])
   }
@@ -149,24 +149,24 @@ class SearchTests: XCTestCase {
       Search.SearchResult(
         score: 0.08,
         object: items[1],
-        ranges: [range(from: 5, to: 5, in: items[1]), range(from: 8, to: 9, in: items[1])]
+        ranges: [range(startOffset: 5, endOffset: 5, in: items[1]), range(startOffset: 8, endOffset: 9, in: items[1])]
       ),
       Search.SearchResult(
         score: 0.54,
         object: items[0],
-        ranges: [range(from: 5, to: 5, in: items[0]), range(from: 9, to: 10, in: items[0])]
+        ranges: [range(startOffset: 5, endOffset: 5, in: items[0]), range(startOffset: 9, endOffset: 10, in: items[0])]
       ),
       Search.SearchResult(
         score: 0.58,
         object: items[2],
-        ranges: [range(from: 8, to: 10, in: items[2])]
+        ranges: [range(startOffset: 8, endOffset: 10, in: items[2])]
       )
     ])
     XCTAssertEqual(search("yyy"), [
       Search.SearchResult(
         score: 0.04,
         object: items[2],
-        ranges: [range(from: 4, to: 6, in: items[2])]
+        ranges: [range(startOffset: 4, endOffset: 6, in: items[2])]
       )
     ])
     XCTAssertEqual(search("fbb"), [
@@ -174,15 +174,15 @@ class SearchTests: XCTestCase {
         score: 0.6666666666666666,
         object: items[0],
         ranges: [
-          range(from: 0, to: 0, in: items[0]),
-          range(from: 4, to: 4, in: items[0]),
-          range(from: 8, to: 8, in: items[0])
+          range(startOffset: 0, endOffset: 0, in: items[0]),
+          range(startOffset: 4, endOffset: 4, in: items[0]),
+          range(startOffset: 8, endOffset: 8, in: items[0])
         ]
       ),
       Search.SearchResult(
         score: 0.6666666666666666,
         object: items[1],
-        ranges: [range(from: 0, to: 0, in: items[1]), range(from: 4, to: 4, in: items[1])])
+        ranges: [range(startOffset: 0, endOffset: 0, in: items[1]), range(startOffset: 4, endOffset: 4, in: items[1])])
     ])
     XCTAssertEqual(search("m"), [])
   }
@@ -201,34 +201,34 @@ class SearchTests: XCTestCase {
       Search.SearchResult(
         score: nil,
         object: items[0],
-        ranges: [range(from: 10, to: 10, in: items[0])]
+        ranges: [range(startOffset: 10, endOffset: 10, in: items[0])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 8, to: 8, in: items[1])]
+        ranges: [range(startOffset: 8, endOffset: 8, in: items[1])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[2],
-        ranges: [range(from: 8, to: 10, in: items[2])]
+        ranges: [range(startOffset: 8, endOffset: 10, in: items[2])]
       )
     ])
     XCTAssertEqual(search("z*"), [
       Search.SearchResult(
         score: nil,
         object: items[0],
-        ranges: [range(from: 0, to: -1, in: items[0])]
+        ranges: [range(startOffset: 0, endOffset: -1, in: items[0])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 0, to: -1, in: items[1])]
+        ranges: [range(startOffset: 0, endOffset: -1, in: items[1])]
       ),
       Search.SearchResult(
         score: nil,
         object: items[2],
-        ranges: [range(from: 0, to: -1, in: items[2])]
+        ranges: [range(startOffset: 0, endOffset: -1, in: items[2])]
       )
     ])
   }
@@ -241,25 +241,25 @@ class SearchTests: XCTestCase {
     XCTAssertEqual(search("^foo"), [
       Search.SearchResult(
         score: nil,
-        object: items[0], ranges: [range(from: 0, to: 2, in: items[0])]
+        object: items[0], ranges: [range(startOffset: 0, endOffset: 2, in: items[0])]
       ),
       Search.SearchResult(
         score: nil,
-        object: items[1], ranges: [range(from: 0, to: 2, in: items[1])]
+        object: items[1], ranges: [range(startOffset: 0, endOffset: 2, in: items[1])]
       )
     ])
     XCTAssertEqual(search(" za"), [
       Search.SearchResult(
         score: nil,
         object: items[1],
-        ranges: [range(from: 7, to: 9, in: items[1])]
+        ranges: [range(startOffset: 7, endOffset: 9, in: items[1])]
       )
     ])
     XCTAssertEqual(search("[y]+"), [
       Search.SearchResult(
         score: nil,
         object: items[2],
-        ranges: [range(from: 4, to: 6, in: items[2])]
+        ranges: [range(startOffset: 4, endOffset: 6, in: items[2])]
       )
     ])
     XCTAssertEqual(search("fbb"), [])
@@ -279,11 +279,14 @@ class SearchTests: XCTestCase {
     ]
   }
 
-  // swiftlint:disable:next identifier_name
-  private func range(from: Int, to: Int, in item: HistoryItemDecorator) -> Range<String.Index> {
+  private func range(
+    startOffset: Int,
+    endOffset: Int,
+    in item: HistoryItemDecorator
+  ) -> Range<String.Index> {
     let startIndex = item.title.startIndex
-    let lowerBound = item.title.index(startIndex, offsetBy: from)
-    let upperBound = item.title.index(startIndex, offsetBy: to + 1)
+    let lowerBound = item.title.index(startIndex, offsetBy: startOffset)
+    let upperBound = item.title.index(startIndex, offsetBy: endOffset + 1)
 
     return lowerBound..<upperBound
   }
