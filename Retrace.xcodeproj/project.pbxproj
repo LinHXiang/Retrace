@@ -624,7 +624,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1520;
-				ORGANIZATIONNAME = p0deje;
+				ORGANIZATIONNAME = freeorz;
 				TargetAttributes = {
 					DA0EE7B5204657830025FC60 = {
 						CreatedOnToolsVersion = 9.2;
