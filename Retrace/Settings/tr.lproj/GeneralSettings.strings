@@ -9,5 +9,5 @@
 "Fuzzy" = "Bulanık";
 "Regex" = "Düzenli ifadeler";
 "Mixed" = "Karışık";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";

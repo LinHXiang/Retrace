@@ -9,5 +9,5 @@
 "Fuzzy" = "தெளிவில்லாமல்";
 "Regex" = "வழக்கமான வெளிப்பாடுகள்";
 "Mixed" = "கலப்பு";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";

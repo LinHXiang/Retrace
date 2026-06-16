@@ -5,7 +5,7 @@
 "Exact" = "Exata";
 "Regex" = "Expressões regulares";
 "Mixed" = "Mista";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "Title" = "Geral";
 "Fuzzy" = "Difuso";

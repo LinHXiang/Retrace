@@ -9,5 +9,5 @@
 "Fuzzy" = "Неточный";
 "Regex" = "Регулярные выражения";
 "Mixed" = "Смешанный";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";

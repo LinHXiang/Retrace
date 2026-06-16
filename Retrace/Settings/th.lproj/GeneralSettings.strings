@@ -9,5 +9,5 @@
 "Fuzzy" = "เลือน";
 "Regex" = "นิพจน์ทั่วไป";
 "Mixed" = "ผสม";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";

@@ -9,5 +9,5 @@
 "Fuzzy" = "מעורפל";
 "Regex" = "ביטויים רגולריים";
 "Mixed" = "מעורבב";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";

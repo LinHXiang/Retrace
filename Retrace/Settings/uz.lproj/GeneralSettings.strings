@@ -1,7 +1,7 @@
 "Title" = "Asosiy";
 "Fuzzy" = "Noaniq";
 "Mixed" = "Aralash";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "LaunchAtLogin" = "Kirish paytida ishga tushirish";
 "Open" = "Ochish:";

@@ -6,7 +6,7 @@
 "Fuzzy" = "ঝাপসা";
 "Regex" = "স্বাভাবিক অভিব্যক্তি";
 "Mixed" = "মিশ্রিত";
-"CommandHistorySize" = "History size:";
+"CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "OpenTooltip" = "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।";
 "ShowPreview" = "পূর্বরূপ:";
