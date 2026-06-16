@@ -35,8 +35,6 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     self.shortcuts = shortcuts
     self.showsRecordedAt = showsRecordedAt
     self.title = item.title
-
-    synchronizeItemTitle()
   }
 
   func highlight(_ query: String, _ ranges: [Range<String.Index>]) {
@@ -64,16 +62,5 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     }
 
     attributedTitle = attributedString
-  }
-
-  private func synchronizeItemTitle() {
-    _ = withObservationTracking {
-      item.title
-    } onChange: {
-      DispatchQueue.main.async {
-        self.title = self.item.title
-        self.synchronizeItemTitle()
-      }
-    }
   }
 }
