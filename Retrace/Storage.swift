@@ -33,8 +33,20 @@ class Storage {
 
     do {
       container = try ModelContainer(for: HistoryItem.self, configurations: config)
-    } catch let error {
-      fatalError("Cannot load database: \(error.localizedDescription).")
+    } catch {
+      Self.removeStore(at: url)
+      do {
+        container = try ModelContainer(for: HistoryItem.self, configurations: config)
+      } catch let retryError {
+        fatalError("Cannot load database: \(retryError.localizedDescription).")
+      }
     }
+  }
+
+  private static func removeStore(at url: URL) {
+    let fileManager = FileManager.default
+    try? fileManager.removeItem(at: url)
+    try? fileManager.removeItem(at: URL(fileURLWithPath: "\(url.path)-shm"))
+    try? fileManager.removeItem(at: URL(fileURLWithPath: "\(url.path)-wal"))
   }
 }

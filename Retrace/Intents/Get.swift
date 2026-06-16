@@ -48,24 +48,6 @@ struct Get: AppIntent, CustomIntentMigratedAppIntent {
     let intentItem = HistoryItemAppEntity()
     intentItem.text = item.text
 
-    if let html = item.htmlData {
-      intentItem.html = String(data: html, encoding: .utf8)
-    }
-
-    if let fileURL = item.fileURLs.first {
-      intentItem.file = fileURL
-    }
-
-    if let imageData = item.imageData {
-      let file = URL.documentsDirectory.appending(path: "image.png")
-      try imageData.write(to: file, options: [.atomic, .completeFileProtection])
-      intentItem.image = file
-    }
-
-    if let rtf = item.rtfData {
-      intentItem.richText = String(data: rtf, encoding: .utf8)
-    }
-
     return .result(value: intentItem)
   }
 }
