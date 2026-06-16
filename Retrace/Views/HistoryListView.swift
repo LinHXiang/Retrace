@@ -12,7 +12,7 @@ struct HistoryListView: View {
   @Default(.showFooter) private var showFooter
 
   private var visibleItems: [HistoryItemDecorator] {
-    appState.history.visibleItems.filter(\.isVisible)
+    appState.history.visibleItems
   }
 
   private var topPadding: CGFloat {
