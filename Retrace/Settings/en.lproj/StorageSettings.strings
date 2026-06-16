@@ -4,9 +4,8 @@
 "Images" = "Images";
 "Text" = "Text";
 "SaveDescription" = "Retrace reads terminal commands from ~/.zsh_history.";
-"Size" = "Size:";
-"SizeTooltip" = "Number of commands to show.\nDefault: 200.";
-"CurrentSizeTooltip" = "Current size on disk.";
+"Size" = "Max commands:";
+"SizeTooltip" = "Maximum number of commands to show and search.\nDefault: 200.";
 "SortBy" = "Sort by:";
 "LastCopiedAt" = "Most recent";
 "FirstCopiedAt" = "Oldest first";

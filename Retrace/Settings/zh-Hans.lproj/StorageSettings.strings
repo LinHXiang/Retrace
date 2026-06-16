@@ -1,12 +1,11 @@
-"Title" = "存储";
+"Title" = "历史";
 "Save" = "保存：";
 "Files" = "文件";
 "Images" = "图像";
 "Text" = "文本";
-"SaveDescription" = "设置何种类型的内容会被保存。";
-"Size" = "数量：";
-"SizeTooltip" = "保留条历史记录。\n默认: 200。";
-"CurrentSizeTooltip" = "磁盘上的当前大小。";
+"SaveDescription" = "Retrace 从 ~/.zsh_history 读取终端命令。";
+"Size" = "最多显示命令数：";
+"SizeTooltip" = "列表和搜索最多使用的命令数量。\n默认: 200。";
 "SortBy" = "排序方式：";
 "LastCopiedAt" = "上次复制时间";
 "FirstCopiedAt" = "首次复制时间";

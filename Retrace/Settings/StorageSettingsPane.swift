@@ -5,8 +5,6 @@ import Settings
 struct StorageSettingsPane: View {
   @Default(.size) private var size
 
-  @State private var storageSize = Storage.shared.size
-
   private let sizeFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.minimum = 1
@@ -23,13 +21,6 @@ struct StorageSettingsPane: View {
             .help(Text("SizeTooltip", tableName: "StorageSettings"))
           Stepper("", value: $size, in: 1...999)
             .labelsHidden()
-          Text(storageSize)
-            .controlSize(.small)
-            .foregroundStyle(.gray)
-            .help(Text("CurrentSizeTooltip", tableName: "StorageSettings"))
-            .onAppear {
-              storageSize = Storage.shared.size
-            }
         }
       }
     }

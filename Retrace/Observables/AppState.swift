@@ -100,7 +100,7 @@ class AppState: Sendable {
           Settings.Pane(
             identifier: Settings.PaneIdentifier.storage,
             title: NSLocalizedString("Title", tableName: "StorageSettings", comment: ""),
-            toolbarIcon: NSImage.externaldrive!
+            toolbarIcon: NSImage.history!
           ) {
             StorageSettingsPane()
           },
