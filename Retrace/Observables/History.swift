@@ -128,6 +128,7 @@ class History: ItemsContainer {
         for item in items {
           await updateTitle(item: item, title: item.item.generateTitle())
         }
+        AppState.shared.appDelegate?.updateStatusItemTitle()
       }
     }
   }
@@ -162,6 +163,7 @@ class History: ItemsContainer {
     loadedHistoryFileModificationDate = modificationDate
 
     updateVisibleShortcuts()
+    AppState.shared.appDelegate?.updateStatusItemTitle()
     Task {
       AppState.shared.popup.needsResize = true
     }
@@ -190,6 +192,7 @@ class History: ItemsContainer {
     }
 
     updateVisibleShortcuts()
+    AppState.shared.appDelegate?.updateStatusItemTitle()
   }
 
   @MainActor

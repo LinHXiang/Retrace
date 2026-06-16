@@ -35,11 +35,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
     }
 
-    synchronizeStatusItemTitle()
+    updateStatusItemTitle()
     Task {
       for await value in Defaults.updates(.showRecentCommandInMenuBar) {
         if value {
-          statusItem.button?.title = AppState.shared.menuBarCommandText
+          updateStatusItemTitle()
         } else {
           statusItem.button?.title = ""
         }
@@ -92,17 +92,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
-  private func synchronizeStatusItemTitle() {
-    _ = withObservationTracking {
-      AppState.shared.menuBarCommandText
-    } onChange: {
-      DispatchQueue.main.async {
-        if Defaults[.showRecentCommandInMenuBar] {
-          self.statusItem.button?.title = AppState.shared.menuBarCommandText
-        }
-        self.synchronizeStatusItemTitle()
-      }
+  func updateStatusItemTitle() {
+    if Defaults[.showRecentCommandInMenuBar] {
+      statusItem.button?.title = AppState.shared.menuBarCommandText
     }
   }
-
 }
