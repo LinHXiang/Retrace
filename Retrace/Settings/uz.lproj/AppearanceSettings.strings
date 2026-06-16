@@ -28,7 +28,7 @@
 "ShowApplicationIcons" = "Ilova piktogrammalarini ko'rsatish";
 "ShowSpecialSymbols" = "Maxsus belgilarni ko'rsating";
 "ShowSpecialSymbolsTooltip" = "Yangi qatorlarni, yorliqlarni, bosh va keyingi bo'shliqlarni maxsus belgilar orqali ko'rsatish.";
-"ShowRecentCopyInMenuBar" = "Menyu belgisi yonida oxirgi nusxani ko'rsatish";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Qidiruv maydonini ko'rsatish";
 "ShowTitleBeforeSearchField" = "Qidiruv maydonidan oldin sarlavhani ko'rsatish";
 "ShowFooter" = "Pastgi qisimni ko'rsatish";

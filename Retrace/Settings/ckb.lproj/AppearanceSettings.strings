@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "پیشاندانی هێما تایبەتەکان";
 "ShowSpecialSymbolsTooltip" = "پیشاندانی دێڕی نوێ، تاب، و بۆشاییە سەرەتا و کۆتاییەکان لەرێگەی هێمای تایبەتەوە.";
 "ShowMenuIcon" = "پیشاندانی ئایکۆنی مێنو";
-"ShowRecentCopyInMenuBar" = "پیشاندانی دوایین کۆپی لەتەنیشت ئایکۆنی مێنووەوە";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "پیشاندانی خانەی گەڕان";
 "ShowTitleBeforeSearchField" = "پیشاندانی ناونیشان پێش خانەی گەڕان";
 "ShowApplicationIcons" = "پیشاندانی ئایکۆنی بەرنامەکان";

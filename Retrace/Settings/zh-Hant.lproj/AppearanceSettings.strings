@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "顯示特殊符號";
 "ShowSpecialSymbolsTooltip" = "透過特殊符號顯示換行符、製表符、前導和尾隨空格。";
 "ShowMenuIcon" = "顯示選單列圖示";
-"ShowRecentCopyInMenuBar" = "選單列圖示旁顯示目前內容";
+"ShowRecentCommandInMenuBar" = "在選單列圖示旁顯示最近命令";
 "ShowSearchField" = "顯示搜尋框";
 "ShowTitleBeforeSearchField" = "搜尋列旁顯示 Retrace";
 "ShowFooter" = "顯示底部操作選單";

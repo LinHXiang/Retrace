@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "特殊な記号を表示する";
 "ShowSpecialSymbolsTooltip" = "改行、タブ、先頭および末尾のスペースを特殊記号で表示します。";
 "ShowMenuIcon" = "メニューアイコン表示";
-"ShowRecentCopyInMenuBar" = "メニューアイコンの隣に最近のコピーを表示";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "検索フィールド表示";
 "ShowTitleBeforeSearchField" = "検索フィールドの前にタイトル表示";
 "ShowFooter" = "フッター表示";

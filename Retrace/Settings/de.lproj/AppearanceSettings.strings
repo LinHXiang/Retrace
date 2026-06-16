@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Sondersymbole anzeigen";
 "ShowSpecialSymbolsTooltip" = "Zeigen Sie Zeilenumbrüche, Tabulatoren sowie führende und nachgestellte Leerzeichen über spezielle Symbole an.";
 "ShowMenuIcon" = "In Menüleiste anzeigen";
-"ShowRecentCopyInMenuBar" = "Letzer Eintrag neben Menüleistensymbol anzeigen";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Suchfeld anzeigen";
 "ShowTitleBeforeSearchField" = "Titel neben dem Suchfeld anzeigen";
 "ShowFooter" = "Menü anzeigen";

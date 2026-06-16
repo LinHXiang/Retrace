@@ -25,7 +25,7 @@ class AppState: Sendable {
     }
   }
 
-  var menuIconText: String {
+  var menuBarCommandText: String {
     var title = history.unpinnedItems.first?.text.shortened(to: 100)
       .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     title.unicodeScalars.removeAll(where: CharacterSet.newlines.contains)

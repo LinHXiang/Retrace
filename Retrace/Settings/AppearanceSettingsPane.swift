@@ -97,8 +97,8 @@ struct AppearanceSettingsPane: View {
           .controlSize(.small)
         }
 
-        Defaults.Toggle(key: .showRecentCopyInMenuBar) {
-          Text("ShowRecentCopyInMenuBar", tableName: "AppearanceSettings")
+        Defaults.Toggle(key: .showRecentCommandInMenuBar) {
+          Text("ShowRecentCommandInMenuBar", tableName: "AppearanceSettings")
         }
         HStack {
           Defaults.Toggle(key: .showSearch) {

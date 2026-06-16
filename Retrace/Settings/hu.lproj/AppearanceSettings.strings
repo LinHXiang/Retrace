@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Speciális karakterek megjelenítése";
 "ShowSpecialSymbolsTooltip" = "Az újsorok, tabulátorok, kezdő és záró szóközök megjelenítése speciális szimbólumokkal.";
 "ShowMenuIcon" = "Menü ikon megjelenítése";
-"ShowRecentCopyInMenuBar" = "Legutóbbi másolás megjelenítése a menü ikon mellett";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Keresőmező megjelenítése";
 "ShowTitleBeforeSearchField" = "Cím megjelenítése a keresőmező előtt";
 "ShowFooter" = "Lábléc megjelenítése";

@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Rādīt īpašus simbolus";
 "ShowSpecialSymbolsTooltip" = "Rādīt jaunas līnijas, cilnes, sākuma un beigu atstarpes, izmantojot īpašus simbolus.";
 "ShowMenuIcon" = "Rādīt izvēlnes ikonu";
-"ShowRecentCopyInMenuBar" = "Rādīt neseno kopiju blakus izvēlnes ikonai";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Rādīt meklēšanas lauku";
 "ShowTitleBeforeSearchField" = "Rādīt virsrakstu pirms meklēšanas lauka";
 "ShowFooter" = "Rādīt kājeni";

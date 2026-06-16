@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Показывать специальные символы";
 "ShowSpecialSymbolsTooltip" = "Показывать символы новой строки, табуляции, начальные и конечные пробелы с помощью специальных символов.";
 "ShowMenuIcon" = "Показывать иконку в меню";
-"ShowRecentCopyInMenuBar" = "Показывать последнюю запись рядом с иконкой меню";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Показывать поле поиска";
 "ShowTitleBeforeSearchField" = "Показывать название перед поиском";
 "ShowFooter" = "Показывать нижний колонтитул";

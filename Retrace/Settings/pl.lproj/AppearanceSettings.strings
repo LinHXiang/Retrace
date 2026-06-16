@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Pokaż symbole specjalne";
 "ShowSpecialSymbolsTooltip" = "Pokaż znaki końca lini, tabulatory i końcowe spacje jako symbole specjalne.";
 "ShowMenuIcon" = "Pokaż ikonę menu";
-"ShowRecentCopyInMenuBar" = "Pokaż ostatni wpis obok ikony menu";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Pokaż pole wyszukiwania";
 "ShowTitleBeforeSearchField" = "Pokaż tytuł przed polem wyszukiwania";
 "ShowFooter" = "Pokaż stopkę";

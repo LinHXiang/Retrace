@@ -41,9 +41,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     synchronizeMenuIconText()
     Task {
-      for await value in Defaults.updates(.showRecentCopyInMenuBar) {
+      for await value in Defaults.updates(.showRecentCommandInMenuBar) {
         if value {
-          statusItem.button?.title = AppState.shared.menuIconText
+          statusItem.button?.title = AppState.shared.menuBarCommandText
         } else {
           statusItem.button?.title = ""
         }
@@ -108,11 +108,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   private func synchronizeMenuIconText() {
     _ = withObservationTracking {
-      AppState.shared.menuIconText
+      AppState.shared.menuBarCommandText
     } onChange: {
       DispatchQueue.main.async {
-        if Defaults[.showRecentCopyInMenuBar] {
-          self.statusItem.button?.title = AppState.shared.menuIconText
+        if Defaults[.showRecentCommandInMenuBar] {
+          self.statusItem.button?.title = AppState.shared.menuBarCommandText
         }
         self.synchronizeMenuIconText()
       }

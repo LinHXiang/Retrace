@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "הצגת סימנים מיוחדים";
 "ShowSpecialSymbolsTooltip" = "הצגת שורות חדשות, טאבים, רווחים פותחים וסוגרים דרך סימנים מיוחדים.";
 "ShowMenuIcon" = "הצגת סמל תפריט";
-"ShowRecentCopyInMenuBar" = "הצגת עותק עדכני ליד סמל התפריט";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "הצגת שדה חיפוש";
 "ShowTitleBeforeSearchField" = "הצגת כותרת לפני שדה החיפוש";
 "ShowFooter" = "הצגת כותרת תחתונה";

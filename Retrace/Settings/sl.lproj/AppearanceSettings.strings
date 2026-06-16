@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Prikaži posebne simbole";
 "ShowSpecialSymbolsTooltip" = "Prikaži nove vrstice, zavihke, presledke na začetku in na koncu s posebnimi simboli.";
 "ShowMenuIcon" = "Prikaži ikono menija";
-"ShowRecentCopyInMenuBar" = "Pokaži nedavno kopijo poleg ikone menija";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Pokaži polje za iskanje";
 "ShowTitleBeforeSearchField" = "Prikaži naslov pred poljem za iskanje";
 "ShowApplicationIcons" = "Prikaži ikone aplikacij";

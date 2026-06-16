@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "إظهار الرموز الخاصة";
 "ShowSpecialSymbolsTooltip" = "إظهار الأسطر الجديدة، علامات التبويب، المسافات الأمامية والخلفية عبر الرموز الخاصة.";
 "ShowMenuIcon" = "إظهار أيقونة القائمة";
-"ShowRecentCopyInMenuBar" = "إظهار النسخة الأخيرة بجوار أيقونة القائمة";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "إظهار حقل البحث";
 "ShowTitleBeforeSearchField" = "إظهار العنوان قبل حقل البحث";
 "ShowFooter" = "إظهار التذييل";

@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Zobrazovat speciální znaky";
 "ShowSpecialSymbolsTooltip" = "Zobrazovat nové řádky, tabulátory, úvodní a koncové mezery pomocí speciálních znaků.";
 "ShowMenuIcon" = "Zobrazovat menu ikonu";
-"ShowRecentCopyInMenuBar" = "Ukázat poslední kopii vedle menu ikony";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Zobrazovat vyhledávací pole";
 "ShowTitleBeforeSearchField" = "Zobrazovat název aplikace před vyhledávacím polem";
 "ShowFooter" = "Zobrazovat patičku";

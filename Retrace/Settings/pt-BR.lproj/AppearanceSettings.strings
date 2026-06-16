@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Mostrar símbolos especiais";
 "ShowSpecialSymbolsTooltip" = "Mostrar novas linhas, tabulações, e espaços iniciais e finais através de símbolos especiais.";
 "ShowMenuIcon" = "Mostrar ícone de menu";
-"ShowRecentCopyInMenuBar" = "Mostrar cópia recente ao lado do ícone do menu";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Mostrar campo de busca";
 "ShowTitleBeforeSearchField" = "Mostrar título antes do campo de pesquisa";
 "ShowFooter" = "Mostrar rodapé";

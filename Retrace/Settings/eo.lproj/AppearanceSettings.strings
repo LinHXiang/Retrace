@@ -27,7 +27,7 @@
 "HighlightMatchesTooltip" = "";
 "ShowSpecialSymbolsTooltip" = "";
 "ShowMenuIcon" = "Montri la menuan bildsimbolon";
-"ShowRecentCopyInMenuBar" = "Montri la lastan kopion apud la menua bildsimbolo";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Montri la serĉujon";
 "ShowTitleBeforeSearchField" = "Montri la titolon antaŭ la serĉujo";
 "ShowApplicationIcons" = "Montri bildsimbolojn de aplikaĵoj";

@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Vis spesielle symboler";
 "ShowSpecialSymbolsTooltip" = "Vis nylinjer, tabulatorer, innledende og etterfølgende mellomrom via spesielle symboler.";
 "ShowMenuIcon" = "Vis meny ikon";
-"ShowRecentCopyInMenuBar" = "Vis nylig kopi ved siden av menyikonet";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Vis søkefelt";
 "ShowTitleBeforeSearchField" = "Vis tittel før søkefelt";
 "ShowFooter" = "Vis bunntekst";

@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "특수 기호 표시";
 "ShowSpecialSymbolsTooltip" = "특수 기호를 통해 개행, 탭, 선행 및 후행 공백을 표시합니다.";
 "ShowMenuIcon" = "메뉴 아이콘 표시";
-"ShowRecentCopyInMenuBar" = "메뉴 아이콘 옆에 최근 복사 표시";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "검색 필드 표시";
 "ShowTitleBeforeSearchField" = "검색 필드 앞에 타이틀 표시";
 "ShowFooter" = "푸터 표시";

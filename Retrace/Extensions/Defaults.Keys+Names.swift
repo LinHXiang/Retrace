@@ -13,7 +13,7 @@ extension Defaults.Keys {
   static let searchMode = Key<Search.Mode>("searchMode", default: .exact)
   static let showFooter = Key<Bool>("showFooter", default: true)
   static let showInStatusBar = Key<Bool>("showInStatusBar", default: true)
-  static let showRecentCopyInMenuBar = Key<Bool>("showRecentCopyInMenuBar", default: false)
+  static let showRecentCommandInMenuBar = Key<Bool>("showRecentCopyInMenuBar", default: false)
   static let showSearch = Key<Bool>("showSearch", default: true)
   static let searchVisibility = Key<SearchVisibility>("searchVisibility", default: .always)
   static let showSpecialSymbols = Key<Bool>("showSpecialSymbols", default: true)

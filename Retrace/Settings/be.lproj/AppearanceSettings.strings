@@ -16,7 +16,7 @@
 "HighlightMatchUnderline" = "Падкрэслены";
 "ShowSpecialSymbols" = "Паказваць адмысловыя знакі";
 "ShowMenuIcon" = "Паказваць значок меню";
-"ShowRecentCopyInMenuBar" = "Паказваць апошні элемент поруч з значком меню";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowFooter" = "Паказваць ніжні калонтытул";
 "PopupAt" = "Усплываць каля:";
 "PopupAtCursor" = "Курсору";

@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Rodyti specialiuosius simbolius";
 "ShowSpecialSymbolsTooltip" = "Rodyti naujas eilutes, skirtukus, pradinius ir galinius tarpus naudojant specialius simbolius.";
 "ShowMenuIcon" = "Rodyti meniu piktogramą";
-"ShowRecentCopyInMenuBar" = "Rodyti naujausią kopiją šalia meniu piktogramos";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Rodyti paieškos laukelį";
 "ShowTitleBeforeSearchField" = "Rodyti pavadinimą prieš paieškos laukelį";
 "ShowFooter" = "Rodyti paraštę";

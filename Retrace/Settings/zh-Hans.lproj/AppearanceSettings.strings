@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "显示特殊符号";
 "ShowSpecialSymbolsTooltip" = "通过特殊符号显示换行符、制表符、前导和尾随空格。";
 "ShowMenuIcon" = "显示菜单栏图标";
-"ShowRecentCopyInMenuBar" = "在菜单栏图标旁显示剪贴板内容";
+"ShowRecentCommandInMenuBar" = "在菜单栏图标旁显示最近命令";
 "ShowSearchField" = "显示搜索框";
 "ShowTitleBeforeSearchField" = "在搜索框前显示应用名";
 "ShowFooter" = "显示底部菜单";

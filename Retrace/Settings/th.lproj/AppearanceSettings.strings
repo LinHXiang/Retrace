@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "แสดงสัญลักษณ์พิเศษ";
 "ShowSpecialSymbolsTooltip" = "แสดงการขึ้นบรรทัดใหม่ แท็บ ช่องว่างนำหน้าและต่อท้ายด้วยสัญลักษณ์พิเศษ";
 "ShowMenuIcon" = "แสดงเมนูไอคอน";
-"ShowRecentCopyInMenuBar" = "แสดงการคัดลอกล่าสุดไปยังเมนูไอคอน";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "แสดงช่องค้นหา";
 "ShowTitleBeforeSearchField" = "แสดงหัวข้อก่อนช่องค้นหา";
 "ShowFooter" = "แสดงส่วนท้าย";

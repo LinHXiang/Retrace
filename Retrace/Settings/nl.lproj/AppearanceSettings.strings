@@ -27,7 +27,7 @@
 "ShowSpecialSymbols" = "Toon speciale symbolen";
 "ShowSpecialSymbolsTooltip" = "Toon nieuwe regels, tabs, voorloop- en volgspaties via speciale symbolen.";
 "ShowMenuIcon" = "Toon menu-icoon";
-"ShowRecentCopyInMenuBar" = "Toon recente kopie naast menu-icoon";
+"ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Toon zoekveld";
 "ShowTitleBeforeSearchField" = "Toon titel voor zoekveld";
 "ShowFooter" = "Toon voettekst";
