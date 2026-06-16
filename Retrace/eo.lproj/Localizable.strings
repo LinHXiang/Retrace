@@ -15,6 +15,4 @@
 "key_used_error" = "La klavo estas jam uzata.";
 "system_settings_pane" = "Privatecaj kaj sekurecaj agordoj";
 "system_preferences_pane" = "Sekurecaj kaj privatecaj agordoj";
-"copy_modifiers_config" = "• Elekti premante %@ por kopii la eron.";
-"format_modifiers_config" = "• Elekti premante %@ por kopii, forigi tekstaranĝon, alglui la eron.";
 "accessibility_alert_comment" = "Donu aliron al la aplikaĵo en {pane}, trovebla en {settings}.\n\nAlklaku la butonon +, elektu Retrace, kaj ŝaltu la elektobutonon apud ĝi.";

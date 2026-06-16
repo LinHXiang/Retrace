@@ -5,8 +5,6 @@
 "quit" = "Beenden";
 "preferences" = "Einstellungen…";
 "preferences_advanced" = "Erweitert";
-"copy_modifiers_config" = "• Drücke %@, um den gewählten Eintrag zu kopieren.";
-"format_modifiers_config" = "• Drücke %@, um den gewählten Eintrag zu kopieren und unformatiert einzufügen.";
 "accessibility_alert_message" = "“Retrace” möchte diesen Computer mittels Bedienungshilfen steuern.";
 "accessibility_alert_comment" = "Erlaube den Zugriff für diese Anwendung in “{settings} > {pane} > Datenschutz > Bedienungshilfen”.\n\nKlicken Sie auf die Schaltfläche “+“, wählen Sie “Retrace“ aus und aktivieren Sie das Kontrollkästchen daneben.";
 "accessibility_alert_deny" = "Ablehnen";

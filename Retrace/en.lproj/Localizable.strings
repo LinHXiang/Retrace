@@ -5,8 +5,6 @@
 "quit" = "Quit";
 "preferences" = "Preferences…";
 "preferences_advanced" = "Advanced";
-"copy_modifiers_config" = "• Select with %@ pressed to copy command.";
-"format_modifiers_config" = "• Select with %@ pressed to copy command.";
 "accessibility_alert_message" = "“Retrace” would like to control this computer using accessibility features.";
 "accessibility_alert_comment" = "Grant access to this application in {pane}, located in {settings}.\n\nClick + button, select Retrace, and toggle on the checkbox next to it.";
 "accessibility_alert_deny" = "Deny";

@@ -5,8 +5,6 @@
 "quit" = "Thoát";
 "preferences" = "Thiết lập…";
 "preferences_advanced" = "Nâng cao";
-"copy_modifiers_config" = "• Chọn bằng cách nhấn %@ để sao chép mục.";
-"format_modifiers_config" = "• Chọn bằng cách nhấn %@ để sao chép, xóa định dạng và dán mục.";
 "accessibility_alert_message" = "\"Retrace\" muốn điều khiển máy tính này bằng các tính năng trợ năng.";
 "accessibility_alert_comment" = "Cấp quyền truy cập vào ứng dụng này trong {pane}, nằm trong {settings}.\n\nNhấn nút +, chọn Retrace, và bật tùy chọn hộp kiểm bên cạnh nó.";
 "accessibility_alert_deny" = "Từ chối";

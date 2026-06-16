@@ -4,13 +4,11 @@
 "quit_tooltip" = "Alkalmazás bezárása.";
 "about" = "Névjegy";
 "quit" = "Bezárás";
-"format_modifiers_config" = "• Válassz a(z) %@ lenyomásával az elem másolásához, formázásának törléséhez és beillesztéséhez.";
 "key_used_error" = "A billentyű már használatban van.";
 "accessibility_alert_deny" = "Elutasít";
 "active_screen" = "Aktív képernyő";
 "system_preferences_pane" = "Adatvédelem és biztonság";
 "preferences_advanced" = "Haladó";
-"copy_modifiers_config" = "• Válassz a(z) %@ lenyomásával az elem másolásához.";
 "accessibility_alert_message" = "A “Retrace” irányítani szeretné ezt a számítógépet akadálymentesítési funkciók használatával.";
 "accessibility_alert_open" = "Rendszerbeállítások megnyitása";
 "accessibility_alert_comment" = "Adj engedélyt az alkalmazásnak a {pane} részben, amely a {settings} beállításoknál található.\n\nKattints a + gombra, válaszd a Retrace-t, majd kapcsold be a mellette lévő jelölőnégyzetet.";

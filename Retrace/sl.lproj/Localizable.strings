@@ -5,7 +5,6 @@
 "quit_tooltip" = "Zapri aplikacijo.";
 "about" = "Informacije";
 "preferences" = "Nastavitve…";
-"copy_modifiers_config" = "• Izberite s pritisnjenim %@, da kopirate element.";
 "accessibility_alert_deny" = "Zavrni";
 "accessibility_alert_open" = "Odprite sistemske nastavitve";
 "key_used_error" = "Ključ je že v uporabi.";
@@ -16,5 +15,4 @@
 "about_tooltip" = "Preberite več o aplikaciji.";
 "quit" = "Zapri";
 "preferences_advanced" = "Napredno";
-"format_modifiers_config" = "• Izberite s pritisnjenim %@, da kopirate, počistite oblikovanje in prilepite element.";
 "accessibility_alert_comment" = "Odobrite dostop do te aplikacije v {pane}, ki se nahaja v {settings}.\n\nKliknite gumb +, izberite Retrace in vklopite potrditveno polje poleg njega.";

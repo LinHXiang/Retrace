@@ -5,8 +5,6 @@
 "quit" = "Quitter";
 "preferences" = "Préférences…";
 "preferences_advanced" = "Avancé";
-"copy_modifiers_config" = "• Selectionnez avec %@ pressé pour copier un élément.";
-"format_modifiers_config" = "• Selectionnez avec %@ pressé pour copier, reformater et coller l'élément.";
 "accessibility_alert_message" = "“Retrace” souhaite contrôler cet ordinateur en utilisant des fonctions d'accessibilité.";
 "accessibility_alert_comment" = "Accorder les droits à cette application dans le panneau {pane}, situé dans {settings}.\n\nCliquez sur le bouton +, sélectionnez “Retrace“ et cochez la case à côté.";
 "accessibility_alert_deny" = "Refuser";

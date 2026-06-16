@@ -4,8 +4,6 @@
 "quit" = "Зачыніць дадатак";
 "preferences" = "Налады…";
 "preferences_advanced" = "Прасунутыя";
-"copy_modifiers_config" = "• Выберыце, націснуўшы %@, каб скапіяваць элемент.";
-"format_modifiers_config" = "• Выберыце, націснуўшы %@, каб скапіяваць, ачысціць фарматаванне і ўставіць элемент.";
 "accessibility_alert_message" = "«Retrace» хацеў бы кіраваць гэтым кампутарам ужываючы функцыі магчымасці доступу.";
 "accessibility_alert_comment" = "Дазвольце доступ гэтаму дадатку ў наладах {pane} у {settings}.\n\nНацісніце кнопку «+», абярыце «Retrace» і ўсталюйце сцяжок побач з ім.";
 "accessibility_alert_deny" = "Адмовіць";

@@ -5,12 +5,10 @@
 "quit" = "Tanca";
 "preferences" = "Preferències…";
 "preferences_advanced" = "Avançat";
-"copy_modifiers_config" = "• Selecciona pressionant %@ per copiar element.";
 "accessibility_alert_message" = "“Retrace” demana accés per controlar aquest ordinador mitjançant les funcionalitats d'accessibilitat.";
 "accessibility_alert_deny" = "Denegar";
 "accessibility_alert_open" = "Obre les Preferències del Sistema";
 "accessibility_alert_comment" = "Dóna accés a aquesta aplicació al {panell}, dins els {ajustaments}.\n\nFes clic al botó +, selecciona Retrace, i confirma la casella de selecció al costat d'aquest.";
-"format_modifiers_config" = "• Selecciona pressionant %@ per copiar, netejar-ne el format i enganxar l'element.";
 "key_used_error" = "Clau ja utilitzada.";
 "active_screen" = "Pantalla activa";
 "screen" = "Pantalla";

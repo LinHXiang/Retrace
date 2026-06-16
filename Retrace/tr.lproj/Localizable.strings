@@ -5,8 +5,6 @@
 "quit" = "Çık";
 "preferences" = "Tercihler…";
 "preferences_advanced" = "Gelişmiş";
-"copy_modifiers_config" = "• %@ basılıyken seçerek öğeyi kopyalayın.";
-"format_modifiers_config" = "• %@ basılıyken seçerek öğeyi kopyalayın, biçimlendirmeyi temizleyin ve yapıştırın.";
 "accessibility_alert_message" = "“Retrace”, erişilebilirlik özelliklerini kullanarak bu bilgisayarı denetlemek istiyor.";
 "accessibility_alert_comment" = "Bu uygulamaya, {settings} {pane} bölümünden izin verin.\n\n“+“ düğmesine tıklayın, Retrace'yi seçin ve yanındaki onay kutusunu işaretleyin.";
 "accessibility_alert_deny" = "Reddet";

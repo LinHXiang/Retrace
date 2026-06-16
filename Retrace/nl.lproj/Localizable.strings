@@ -5,8 +5,6 @@
 "quit" = "Sluit";
 "preferences" = "Voorkeuren…";
 "preferences_advanced" = "Geavanceerd";
-"copy_modifiers_config" = "• Selecteer met %@ ingedrukt om item te kopiëren.";
-"format_modifiers_config" = "• Selecteer met %@ ingedrukt om te kopiëren, opmaak te wissen en item te plakken.";
 "accessibility_alert_message" = "“Retrace” wil deze computer bedienen met toegankelijkheidsfuncties.";
 "accessibility_alert_comment" = "Verleen toegang tot deze app in {pane}, te vinden in {settings}.\n\nKlik op de + knop, selecteer Retrace en schakel het selectievakje ernaast in.";
 "accessibility_alert_deny" = "Weiger";

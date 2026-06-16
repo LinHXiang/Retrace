@@ -16,5 +16,3 @@
 "quit_tooltip" = "Ukončit aplikaci.";
 "accessibility_alert_comment" = "Uděl aplikaci přístup v {pane}, umístěném v {settings}.\n\nKlikni na tlačítko +, vyber Retrace a zapni přepínač vedle názvu.";
 "about" = "O aplikaci";
-"copy_modifiers_config" = "• Vyber se stisknutím %@ pro zkopírování položky.";
-"format_modifiers_config" = "• Vyber se stisknutím %@ pro zkopírování, odstranění formátování a vložení položky.";
