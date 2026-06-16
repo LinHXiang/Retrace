@@ -60,7 +60,7 @@ class Popup {
   func initEventsMonitor() {
     guard eventsMonitor == nil else { return }
 
-    self.eventsMonitor = NSEvent.addLocalMonitorForEvents(
+    eventsMonitor = NSEvent.addLocalMonitorForEvents(
       matching: [.flagsChanged, .keyDown],
       handler: handleEvent
     )
@@ -70,6 +70,7 @@ class Popup {
     guard let eventsMonitor else { return }
 
     NSEvent.removeMonitor(eventsMonitor)
+    self.eventsMonitor = nil
   }
 
   func open(height: CGFloat, at popupPosition: PopupPosition = Defaults[.popupPosition]) {
