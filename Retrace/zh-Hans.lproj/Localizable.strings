@@ -1,11 +1,11 @@
 "search_placeholder" = "搜索…";
-"about_tooltip" = "查看更多应用信息。";
-"quit_tooltip" = "退出应用。";
+"about_tooltip" = "查看更多 Retrace 信息。";
+"quit_tooltip" = "退出 Retrace。";
 "about" = "关于";
 "quit" = "退出";
 "preferences" = "偏好设置…";
-"accessibility_alert_message" = "“Retrace“想要使用“辅助功能”控制此计算机。";
-"accessibility_alert_comment" = "在{settings}中的{pane}设置中授予此应用程序权限。\n\n单击 ”+” 按钮，选择 ”Retrace” 并打开旁边的复选框。";
+"accessibility_alert_message" = "“Retrace”想要使用“辅助功能”控制此计算机。";
+"accessibility_alert_comment" = "在{settings}中的{pane}设置中授予 Retrace 权限。\n\n单击“+”按钮，选择“Retrace”并打开旁边的复选框。";
 "accessibility_alert_deny" = "拒绝";
 "accessibility_alert_open" = "打开系统偏好设置";
 "key_used_error" = "键位已被使用。";
