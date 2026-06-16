@@ -28,9 +28,9 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     hasher.combine(attributedTitle)
   }
 
-  private(set) var item: HistoryItem
+  private(set) var item: CommandHistoryItem
 
-  init(_ item: HistoryItem, shortcuts: [KeyShortcut] = [], showsRecordedAt: Bool = true) {
+  init(_ item: CommandHistoryItem, shortcuts: [KeyShortcut] = [], showsRecordedAt: Bool = true) {
     self.item = item
     self.shortcuts = shortcuts
     self.showsRecordedAt = showsRecordedAt

@@ -154,7 +154,7 @@ class History: ItemsContainer {
   private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
     let entries = try history.load()
     all = entries.prefix(Defaults[.size]).map { entry in
-      let item = HistoryItem(command: entry.command)
+      let item = CommandHistoryItem(command: entry.command)
       if let timestamp = entry.timestamp {
         item.recordedAt = timestamp
       }

@@ -273,9 +273,9 @@ class SearchTests: XCTestCase {
   @MainActor
   private func prepareSearchItems() {
     items = [
-      HistoryItemDecorator(historyItemWithTitle("foo bar baz")),
-      HistoryItemDecorator(historyItemWithTitle("foo bar zaz")),
-      HistoryItemDecorator(historyItemWithTitle("xxx yyy zzz"))
+      HistoryItemDecorator(commandHistoryItemWithTitle("foo bar baz")),
+      HistoryItemDecorator(commandHistoryItemWithTitle("foo bar zaz")),
+      HistoryItemDecorator(commandHistoryItemWithTitle("xxx yyy zzz"))
     ]
   }
 
@@ -292,8 +292,8 @@ class SearchTests: XCTestCase {
   }
 
   @MainActor
-  private func historyItemWithTitle(_ value: String?) -> HistoryItem {
-    let item = HistoryItem(command: value)
+  private func commandHistoryItemWithTitle(_ value: String?) -> CommandHistoryItem {
+    let item = CommandHistoryItem(command: value)
     item.title = item.generateTitle()
 
     return item

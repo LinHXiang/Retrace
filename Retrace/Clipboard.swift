@@ -12,7 +12,7 @@ class Clipboard {
   }
 
   @MainActor
-  func copy(_ item: HistoryItem?) {
+  func copy(_ item: CommandHistoryItem?) {
     guard let item, let text = item.text else { return }
     copy(text)
   }

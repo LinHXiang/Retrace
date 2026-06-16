@@ -3,38 +3,38 @@ import Defaults
 @testable import Retrace
 
 @MainActor
-class HistoryItemTests: XCTestCase {
+class CommandHistoryItemTests: XCTestCase {
   func testTitleForString() {
     let title = "foo"
-    let item = historyItem(title)
+    let item = commandHistoryItem(title)
     XCTAssertEqual(item.title, title)
   }
 
   func testTitleWithWhitespaces() {
     let title = "   foo bar   "
-    let item = historyItem(title)
+    let item = commandHistoryItem(title)
     XCTAssertEqual(item.title, "···foo bar···")
   }
 
   func testTitleWithNewlines() {
     let title = "\nfoo\nbar\n"
-    let item = historyItem(title)
+    let item = commandHistoryItem(title)
     XCTAssertEqual(item.title, "⏎foo⏎bar⏎")
   }
 
   func testTitleWithTabs() {
     let title = "\tfoo\tbar\t"
-    let item = historyItem(title)
+    let item = commandHistoryItem(title)
     XCTAssertEqual(item.title, "⇥foo⇥bar⇥")
   }
 
   func testItemWithoutData() {
-    let item = historyItem(nil)
+    let item = commandHistoryItem(nil)
     XCTAssertEqual(item.title, "")
   }
 
-  private func historyItem(_ value: String?) -> HistoryItem {
-    let item = HistoryItem(command: value)
+  private func commandHistoryItem(_ value: String?) -> CommandHistoryItem {
+    let item = CommandHistoryItem(command: value)
     item.title = item.generateTitle()
 
     return item

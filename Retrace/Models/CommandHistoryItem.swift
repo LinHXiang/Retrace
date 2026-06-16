@@ -1,7 +1,7 @@
 import Foundation
 import Defaults
 
-class HistoryItem {
+class CommandHistoryItem {
   var recordedAt: Date = Date.now
   var title = ""
   var command: String?
