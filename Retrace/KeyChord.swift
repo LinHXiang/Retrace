@@ -14,10 +14,6 @@ enum KeyChord: CaseIterable {
   case moveToLast
   case moveToPrevious
   case moveToFirst
-  case extendToNext
-  case extendToLast
-  case extendToPrevious
-  case extendToFirst
   case openPreferences
   case selectCurrentItem
   case close
@@ -60,7 +56,7 @@ enum KeyChord: CaseIterable {
       self = .deleteLastWordFromSearch
     case (.downArrow, [.shift]),
          (.n, [.control, .shift]):
-      self = AppState.shared.multiSelectionEnabled ? .extendToNext : .moveToNext
+      self = .moveToNext
     case (.downArrow, []),
          (.n, [.control]),
          (.j, [.control]):
@@ -68,14 +64,14 @@ enum KeyChord: CaseIterable {
     case (.downArrow, [.command, .shift]),
          (.downArrow, [.option, .shift]),
          (.n, [.control, .option, .shift]):
-      self = AppState.shared.multiSelectionEnabled ? .extendToLast : .moveToLast
+      self = .moveToLast
     case (.downArrow, _) where modifierFlags.contains(.command) || modifierFlags.contains(.option),
          (.n, [.control, .option]),
          (.pageDown, []):
       self = .moveToLast
     case (.upArrow, [.shift]),
          (.p, [.control, .shift]):
-      self = AppState.shared.multiSelectionEnabled ? .extendToPrevious : .moveToPrevious
+      self = .moveToPrevious
     case (.upArrow, []),
          (.p, [.control]),
          (.k, [.control]):
@@ -83,7 +79,7 @@ enum KeyChord: CaseIterable {
     case (.upArrow, [.command, .shift]),
          (.upArrow, [.option, .shift]),
          (.p, [.control, .option, .shift]):
-      self = AppState.shared.multiSelectionEnabled ? .extendToFirst : .moveToFirst
+      self = .moveToFirst
     case (.upArrow, _) where modifierFlags.contains(.command) || modifierFlags.contains(.option),
          (.p, [.control, .option]),
          (.pageUp, []):

@@ -15,10 +15,7 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
 
   var isVisible: Bool = true
   var showsRecordedAt: Bool
-  var selectionIndex: Int = -1
-  var isSelected: Bool {
-    return selectionIndex != -1
-  }
+  var isSelected: Bool = false
   var shortcuts: [KeyShortcut] = []
 
   // 10k characters seems to be more than enough on large displays

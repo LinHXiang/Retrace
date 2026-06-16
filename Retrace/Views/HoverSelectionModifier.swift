@@ -7,7 +7,7 @@ private struct HoverSelectionModifier: ViewModifier {
   func body(content: Content) -> some View {
     content.onHover { hovering in
       if hovering {
-        if !appState.navigator.isKeyboardNavigating && !appState.navigator.isMultiSelectInProgress {
+        if !appState.navigator.isKeyboardNavigating {
           appState.navigator.selectWithoutScrolling(id: id)
         } else {
           appState.navigator.hoverSelectionWhileKeyboardNavigating = id

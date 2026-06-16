@@ -72,42 +72,6 @@ struct KeyHandlingView<Content: View>: View {
 
           appState.navigator.highlightFirst()
           return .handled
-        case .extendToNext:
-          guard NSApp.characterPickerWindow == nil else {
-            return .ignored
-          }
-          guard AppState.shared.multiSelectionEnabled else {
-            return .ignored
-          }
-          appState.navigator.extendHighlightToNext()
-          return .handled
-        case .extendToLast:
-          guard NSApp.characterPickerWindow == nil else {
-            return .ignored
-          }
-          guard AppState.shared.multiSelectionEnabled else {
-            return .ignored
-          }
-          appState.navigator.extendHighlightToLast()
-          return .handled
-        case .extendToPrevious:
-          guard NSApp.characterPickerWindow == nil else {
-            return .ignored
-          }
-          guard AppState.shared.multiSelectionEnabled else {
-            return .ignored
-          }
-          appState.navigator.extendHighlightToPrevious()
-          return .handled
-        case .extendToFirst:
-          guard NSApp.characterPickerWindow == nil else {
-            return .ignored
-          }
-          guard AppState.shared.multiSelectionEnabled else {
-            return .ignored
-          }
-          appState.navigator.extendHighlightToFirst()
-          return .handled
         case .openPreferences:
           appState.openPreferences()
           return .handled

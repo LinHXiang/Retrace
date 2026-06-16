@@ -3,31 +3,7 @@ import SwiftUI
 
 struct HistoryItemView: View {
   @Bindable var item: HistoryItemDecorator
-  var previous: HistoryItemDecorator?
-  var next: HistoryItemDecorator?
   var index: Int
-
-  private var visualIndex: Int? {
-    if appState.navigator.isMultiSelectInProgress && item.selectionIndex >= 0 {
-      return item.selectionIndex
-    }
-    return nil
-  }
-
-  private var selectionAppearance: SelectionAppearance {
-    let previousSelected = previous?.isSelected ?? false
-    let nextSelected = next?.isSelected ?? false
-    switch (previousSelected, nextSelected) {
-    case (true, false):
-      return .topConnection
-    case (false, true):
-      return .bottomConnection
-    case (true, true):
-      return .topBottomConnection
-    default:
-      return .none
-    }
-  }
 
   @Environment(AppState.self) private var appState
 
@@ -37,19 +13,13 @@ struct HistoryItemView: View {
       selectionId: item.id,
       attributedTitle: item.attributedTitle,
       shortcuts: item.shortcuts,
-      isSelected: item.isSelected,
-      selectionIndex: visualIndex,
-      selectionAppearance: selectionAppearance
+      isSelected: item.isSelected
     ) {
       Text(verbatim: item.title)
     }
     .onTapGesture {
-      if NSEvent.modifierFlags.contains(.command) && appState.multiSelectionEnabled {
-        appState.navigator.addToSelection(item: item)
-      } else {
-        Task {
-          appState.history.select(item)
-        }
+      Task {
+        appState.history.select(item)
       }
     }
   }

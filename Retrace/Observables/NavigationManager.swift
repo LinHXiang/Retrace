@@ -13,8 +13,8 @@ class NavigationManager { // swiftlint:disable:this type_body_length
 
   var selection: Selection<HistoryItemDecorator> = Selection() {
     willSet {
-      selection.forEach { _, item in item.selectionIndex = -1 }
-      newValue.forEach { index, item in item.selectionIndex = index }
+      selection.forEach { item in item.isSelected = false }
+      newValue.forEach { item in item.isSelected = true }
     }
   }
 
@@ -30,15 +30,10 @@ class NavigationManager { // swiftlint:disable:this type_body_length
   }
   private(set) var leadHistoryItem: HistoryItemDecorator?
 
-  var isManualMultiSelect: Bool = false
-  var isMultiSelectInProgress: Bool {
-    return isManualMultiSelect || selection.count > 1
-  }
-
   var hoverSelectionWhileKeyboardNavigating: UUID?
   var isKeyboardNavigating: Bool = true {
     didSet {
-      if !isKeyboardNavigating && !isMultiSelectInProgress,
+      if !isKeyboardNavigating,
          let hoverSelection = hoverSelectionWhileKeyboardNavigating {
         hoverSelectionWhileKeyboardNavigating = nil
         select(id: hoverSelection)
@@ -67,61 +62,9 @@ class NavigationManager { // swiftlint:disable:this type_body_length
     }
   }
 
-  func addToSelection(item: HistoryItemDecorator) {
-    var newSelectionState = selection
-
-    if item.isSelected {
-      if newSelectionState.count <= 1 {
-        isManualMultiSelect = !isManualMultiSelect
-      } else {
-        newSelectionState.remove(item)
-      }
-    } else {
-      newSelectionState.add(item)
-    }
-
-    withTransaction(Transaction()) {
-      selection = newSelectionState
-      leadHistoryItem = item
-      scrollTarget = leadSelection
-    }
-  }
-
-  func extendSelection(
-    from fromItem: HistoryItemDecorator,
-    to toItem: HistoryItemDecorator,
-    isRange: Bool
-  ) {
-    var newSelectionState = selection
-
-    if isRange {
-      if let itemRange = history.visibleItems.between(
-        from: fromItem,
-        to: toItem,
-        inOrder: false
-      ) {
-        newSelectionState = Selection(items: itemRange)
-      }
-    } else {
-      if toItem.isSelected {
-        newSelectionState.remove(fromItem)
-      } else {
-        newSelectionState.add(toItem)
-      }
-    }
-
-    withTransaction(Transaction()) {
-      selection = newSelectionState
-      leadHistoryItem = toItem
-      scrollTarget = leadSelection
-    }
-  }
-
   func selectWithoutScrolling(id: UUID) {
     if let item = history.items.first(where: { $0.id == id }) {
-      if !isMultiSelectInProgress {
-        selectWithoutScrolling(item: item, footerItem: nil)
-      }
+      selectWithoutScrolling(item: item, footerItem: nil)
     } else if let item = footer.items.first(where: { $0.id == id }) {
       selectWithoutScrolling(item: nil, footerItem: item)
     } else {
@@ -152,9 +95,7 @@ class NavigationManager { // swiftlint:disable:this type_body_length
 
   private func selectInFooter(_ item: FooterItem) {
     leadHistoryItem = nil
-    if !isMultiSelectInProgress {
-      selection = .init()
-    }
+    selection = .init()
     footer.selectedItem = item
   }
 
@@ -163,17 +104,7 @@ class NavigationManager { // swiftlint:disable:this type_body_length
     footerItem: FooterItem? = nil
   ) {
     isKeyboardNavigating = true
-    isManualMultiSelect = false
     select(item: item, footerItem: footerItem)
-  }
-
-  private func extendHistorySelectionFromKeyboardNavigation(
-    from fromItem: HistoryItemDecorator,
-    to toItem: HistoryItemDecorator,
-    isRange: Bool
-  ) {
-    isKeyboardNavigating = true
-    extendSelection(from: fromItem, to: toItem, isRange: isRange)
   }
 
   func highlightFirst() {
@@ -239,46 +170,6 @@ class NavigationManager { // swiftlint:disable:this type_body_length
       selectFromKeyboardNavigation(footerItem: footer.lastVisibleItem)
     } else {
       selectFromKeyboardNavigation(footerItem: footer.firstVisibleItem)
-    }
-  }
-
-  func extendHighlightToNext() {
-    if let leadSelection,
-       let leadItem = history.firstVisibleItem(where: {$0.id == leadSelection}) {
-      guard let nextItem = history.visibleItem(after: leadItem) else { return }
-      extendHistorySelectionFromKeyboardNavigation(from: leadItem, to: nextItem, isRange: false)
-    } else {
-      highlightNext()
-    }
-  }
-
-  func extendHighlightToPrevious() {
-    if let leadSelection,
-       let leadItem = history.firstVisibleItem(where: {$0.id == leadSelection}) {
-      guard let nextItem = history.visibleItem(before: leadItem) else { return }
-      extendHistorySelectionFromKeyboardNavigation(from: leadItem, to: nextItem, isRange: false)
-    } else {
-      highlightPrevious()
-    }
-  }
-
-  func extendHighlightToFirst() {
-    if let leadSelection,
-       let leadItem = history.firstVisibleItem(where: {$0.id == leadSelection}) {
-      guard let nextItem = history.firstVisibleItem else { return }
-      extendHistorySelectionFromKeyboardNavigation(from: leadItem, to: nextItem, isRange: true)
-    } else {
-      highlightFirst()
-    }
-  }
-
-  func extendHighlightToLast() {
-    if let leadSelection,
-       let leadItem = history.firstVisibleItem(where: {$0.id == leadSelection}) {
-      guard let nextItem = history.lastVisibleItem else { return }
-      extendHistorySelectionFromKeyboardNavigation(from: leadItem, to: nextItem, isRange: true)
-    } else {
-      highlightFirst()
     }
   }
 
