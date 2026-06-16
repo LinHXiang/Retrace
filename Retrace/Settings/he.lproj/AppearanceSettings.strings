@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "תָמִיד";
 "SearchVisibilityDuringSearch" = "במהלך החיפוש";
 "ActiveScreen" = "מסך פעיל";
-"ImageHeight" = "גובה תמונה::";
-"ImageHeightTooltip" = "גודל מרבי לתצוגה מקדימה של תמונות.\nברירת מחדל: 40.\nעצה: יש להגדיר ל־16 כדי שייראו כמו פריטי טקסט.";
-"PreviewDelay" = "השהיית תצוגה מקדימה:";
-"PreviewDelayTooltip" = "השהיה באלפיות השנייה עד להופעת חלונית תצוגה מקדימה.\nברירת מחדל: 1500.";
 "HighlightMatches" = "הדגשת תוצאות:";
 "HighlightMatchColor" = "צֶבַע";
 "HighlightMatchBold" = "מודגש";

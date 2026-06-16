@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Întotdeauna";
 "SearchVisibilityDuringSearch" = "În timpul căutării";
 "ActiveScreen" = "Ecranul activ";
-"ImageHeight" = "Înălțimea imaginii:";
-"ImageHeightTooltip" = "Înălțime maximă pentru previzualizarea imaginii.\nImplicit: 40.\nSugestie: Setează la 16 pentru a semăna cu elementele de tip text.";
-"PreviewDelay" = "Temporizare previzualizare:";
-"PreviewDelayTooltip" = "Întârzierea în milisecunde până la afișarea ferestrei popup de previzualizare.\nImplicit: 1500.";
 "HighlightMatches" = "Evidențiere potriviri:";
 "HighlightMatchColor" = "Culoare";
 "HighlightMatchBold" = "Aldin (bold)";

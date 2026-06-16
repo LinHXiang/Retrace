@@ -12,10 +12,6 @@
 "PopupAtScreenCenter" = "Centro de la ekrano";
 "PopupAtLastLocationReset" = "Restarigi la pozicion";
 "PopupAtTooltip" = "Ŝanĝi la aperlokon de la ŝprucfenestro.\nDefaŭlta: Musmontrilo.";
-"ImageHeight" = "Bilda alto:";
-"ImageHeightTooltip" = "";
-"PreviewDelay" = "Antaŭrigarda prokrasto:";
-"PreviewDelayTooltip" = "Prokrasto en milisekundoj ĝis la antaŭrigarda ŝprucfenestro montriĝas.\nDefaŭlto: 1500.";
 "HighlightMatches" = "";
 "HighlightMatchBold" = "Grasa";
 "HighlightMatchItalic" = "Kursiva";

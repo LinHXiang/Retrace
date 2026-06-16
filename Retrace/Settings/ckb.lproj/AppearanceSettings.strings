@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "هەمیشە";
 "SearchVisibilityDuringSearch" = "لەکاتی گەڕاندا";
 "ActiveScreen" = "شاشەی چالاک";
-"ImageHeight" = "بەرزیی وێنە:";
-"ImageHeightTooltip" = "بەرزترین بەرزیی پێشبینیی وێنە.\nبنەڕەت: ٤٠.\nئاماژە: بیکە بە ١٦ بۆ ئەوەی لە ئایتەمی دەقی بچێت.";
-"PreviewDelay" = "دواکەوتنی پێشبینی:";
-"PreviewDelayTooltip" = "دواکەوتن بە میلی چرکە تاوەکو پۆپئەپی پێشبینی پیشان دەدرێت.\nبنەڕەت: ١٥٠٠.";
 "HighlightMatches" = "دیاریکردنی هاوشێوەکان:";
 "HighlightMatchColor" = "ڕەنگ";
 "HighlightMatchBold" = "تۆخ";

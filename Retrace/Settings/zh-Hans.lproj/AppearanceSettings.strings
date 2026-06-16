@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "始终";
 "SearchVisibilityDuringSearch" = "在搜索过程中";
 "ActiveScreen" = "活动屏幕";
-"ImageHeight" = "图片高度：";
-"ImageHeightTooltip" = "图像预览最大高度。\n默认: 40\n提示：设置为 16 以匹配文本项目的大小。";
-"PreviewDelay" = "预览延迟：";
-"PreviewDelayTooltip" = "延迟以毫秒为单位，直到显示预览弹出窗口。\n默认：1500。";
 "HighlightMatches" = "高亮匹配：";
 "HighlightMatchColor" = "颜色";
 "HighlightMatchBold" = "粗体";

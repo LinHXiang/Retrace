@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Всегда";
 "SearchVisibilityDuringSearch" = "Во время поиска";
 "ActiveScreen" = "Активный экран";
-"ImageHeight" = "Высота изображений:";
-"ImageHeightTooltip" = "Максимальная высота предпросмотра изображений.\nПо умолчанию: 40.\nСовет: Поставьте 16 для схожести с текстовыми записями.";
-"PreviewDelay" = "Задержка предварительного просмотра:";
-"PreviewDelayTooltip" = "Задержка в миллисекундах до появления всплывающего окна предварительного просмотра.\nПо умолчанию: 1500.";
 "HighlightMatches" = "Выделить совпадения:";
 "HighlightMatchColor" = "Цвет";
 "HighlightMatchBold" = "Жирный";

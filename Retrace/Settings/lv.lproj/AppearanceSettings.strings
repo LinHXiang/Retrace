@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Vienmēr";
 "SearchVisibilityDuringSearch" = "Meklēšanas laikā";
 "ActiveScreen" = "Aktīvais ekrāns";
-"ImageHeight" = "Attēla augstums:";
-"ImageHeightTooltip" = "Maksimālais attēla priekšskatījuma augstums.\nNoklusējums: 40.\nIeteikums: iestatiet uz 16, lai izskatītos kā teksta vienumi.";
-"PreviewDelay" = "Priekšskatījuma aizkave:";
-"PreviewDelayTooltip" = "Aizkave milisekundēs, līdz tiek parādīts priekšskatījuma uznirstošais logs.\nNoklusējums: 1500.";
 "HighlightMatches" = "Iezīmēt atbilstības:";
 "HighlightMatchColor" = "Ar krāsu";
 "HighlightMatchBold" = "Treknrakstā";

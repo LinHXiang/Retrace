@@ -10,10 +10,6 @@
 "SearchVisibilityAlways" = "Uvijek";
 "SearchVisibilityDuringSearch" = "Tijekom pretrage";
 "ActiveScreen" = "Aktivni ekran";
-"ImageHeight" = "Visina slike:";
-"ImageHeightTooltip" = "Maksimalna visina slike pregleda.\nStandardno: 40.\nSavjet: Postavi na 16 da bi sličilo tekstu.";
-"PreviewDelay" = "Odgoda pregleda:";
-"PreviewDelayTooltip" = "Odgoda u milisekundama dok se ne prikaže skočni prozor za pregled.\nStandardno: 1500.";
 "HighlightMatches" = "Označite podudaranja:";
 "HighlightMatchColor" = "Boja";
 "HighlightMatchBold" = "Podebljano";
