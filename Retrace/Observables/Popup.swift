@@ -7,7 +7,7 @@ enum PopupState {
   // Default; shortcut will toggle the popup
   case toggle
   // In this mode, every additional press of the main key
-  // will cycle to the next item in the paste history list.
+  // will cycle to the next item in the terminal command history list.
   // Releasing the modifier keys will accept selection and close the popup
   case cycle
   // Transition state when the shortcut is first pressed and
