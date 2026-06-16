@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SlideoutContentView: View {
-  @Environment(AppState.self) var appState
+  @Environment(AppState.self) private var appState
 
   var body: some View {
     VStack {
@@ -17,5 +17,4 @@ struct SlideoutContentView: View {
     .padding(.bottom)
     .padding(.top, Popup.verticalPadding)
   }
-
 }
