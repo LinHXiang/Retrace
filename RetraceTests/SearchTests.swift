@@ -11,6 +11,27 @@ class SearchTests: XCTestCase {
     Defaults[.searchMode] = savedSearchMode
   }
 
+  func testTerminalCommandHistoryParsesExtendedZshHistory() {
+    let entries = TerminalCommandHistory.parse("""
+    : 1710000000:0;git status
+    : 1710000002:0;git status
+    : 1710000001:0;brew update
+    """)
+
+    XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
+    XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000002))
+  }
+
+  func testTerminalCommandHistoryParsesPlainZshHistory() {
+    let entries = TerminalCommandHistory.parse("""
+    git status
+    brew update
+    git status
+    """)
+
+    XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
+  }
+
   @MainActor
   func testSimpleSearch() { // swiftlint:disable:this function_body_length
     Defaults[.searchMode] = Search.Mode.exact

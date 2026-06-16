@@ -23,8 +23,8 @@ struct TerminalCommandHistory {
   static func parse(_ contents: String) -> [TerminalCommandHistoryEntry] {
     var latestByCommand: [String: TerminalCommandHistoryEntry] = [:]
 
-    for line in contents.split(separator: "\n", omittingEmptySubsequences: true) {
-      guard let entry = parseLine(String(line)) else {
+    for (index, line) in contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated() {
+      guard let entry = parseLine(String(line), fallbackOrder: index) else {
         continue
       }
 
@@ -38,8 +38,16 @@ struct TerminalCommandHistory {
     return latestByCommand.values.sorted { $0.timestamp > $1.timestamp }
   }
 
-  private static func parseLine(_ line: String) -> TerminalCommandHistoryEntry? {
-    guard line.hasPrefix(": ") else { return nil }
+  private static func parseLine(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
+    guard line.hasPrefix(": ") else {
+      let command = line.trimmingCharacters(in: .whitespacesAndNewlines)
+      guard !command.isEmpty else { return nil }
+
+      return TerminalCommandHistoryEntry(
+        command: command,
+        timestamp: Date(timeIntervalSince1970: TimeInterval(fallbackOrder))
+      )
+    }
 
     let body = line.dropFirst(2)
     guard let timestampEnd = body.firstIndex(of: ":"),
