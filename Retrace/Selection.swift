@@ -1,23 +1,26 @@
-struct Selection<Item: Equatable> {
-  var items: [Item]
+struct Selection<Item> {
+  var item: Item?
 
-  init(items: [Item] = []) {
-    self.items = items
+  init(_ item: Item? = nil) {
+    self.item = item
   }
 
   var isEmpty: Bool {
-    return items.isEmpty
+    return item == nil
   }
 
   var first: Item? {
-    return items.first
+    return item
   }
 
   func first(where condition: (Item) -> Bool) -> Item? {
-    return items.first(where: condition)
+    guard let item, condition(item) else { return nil }
+    return item
   }
 
   func forEach(_ body: (Item) throws -> Void) rethrows {
-    try items.forEach(body)
+    if let item {
+      try body(item)
+    }
   }
 }
