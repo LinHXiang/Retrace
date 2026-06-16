@@ -1,9 +1,7 @@
-import Defaults
 import SwiftUI
 
 struct HistoryItemView: View {
   @Bindable var item: HistoryItemDecorator
-  var index: Int
 
   @Environment(AppState.self) private var appState
 
