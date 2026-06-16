@@ -1,5 +1,3 @@
-import AppKit
-
 struct Selection<Item: Equatable> {
   var items: [Item]
 

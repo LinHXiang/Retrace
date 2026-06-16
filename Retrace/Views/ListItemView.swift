@@ -1,4 +1,3 @@
-import Defaults
 import SwiftUI
 
 struct ListItemView<Title: View, ID: Hashable>: View {
