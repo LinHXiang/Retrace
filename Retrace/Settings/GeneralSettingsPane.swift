@@ -59,12 +59,12 @@ struct GeneralSettingsPane: View {
 
       Settings.Section(
         bottomDivider: true,
-        label: { Text("HistorySize", tableName: "GeneralSettings") }
+        label: { Text("CommandHistorySize", tableName: "GeneralSettings") }
       ) {
         HStack {
           TextField("", value: $commandHistorySize, formatter: sizeFormatter)
             .frame(width: 80)
-            .help(Text("HistorySizeTooltip", tableName: "GeneralSettings"))
+            .help(Text("CommandHistorySizeTooltip", tableName: "GeneralSettings"))
           Stepper("", value: $commandHistorySize, in: 1...999)
             .labelsHidden()
         }

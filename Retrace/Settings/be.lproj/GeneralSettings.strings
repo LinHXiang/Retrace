@@ -6,8 +6,8 @@
 "Fuzzy" = "Недакладны";
 "Regex" = "Рэгулярныя выразы";
 "Mixed" = "Змяшаны";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "Title" = "Асноўныя";
 "OpenTooltip" = "Глабальная камбінацыя клавіш для адкрыцця праграмы.\nПаўторнае націсканне асноўнай клавішы з утрыманнем мадыфікатараў выбера наступны элемент у спісе. У гэтым рэжыме адпусканне клавіш-мадыфікатараў пацвердзіць выбар і закрые ўсплывальнае акно.\nПа змаўчанні: ⇧⌘T.";
 "Search" = "Пошук:";

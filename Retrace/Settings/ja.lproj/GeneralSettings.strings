@@ -9,5 +9,5 @@
 "Fuzzy" = "あいまい";
 "Regex" = "正規表現";
 "Mixed" = "混合";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";

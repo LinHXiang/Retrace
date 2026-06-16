@@ -1,8 +1,8 @@
 "Title" = "Asosiy";
 "Fuzzy" = "Noaniq";
 "Mixed" = "Aralash";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "LaunchAtLogin" = "Kirish paytida ishga tushirish";
 "Open" = "Ochish:";
 "OpenTooltip" = "Ilovani ochish uchun global yorliq.\nOʻzgartirgichlarni ushlab turganda asosiy tugmani qayta-qayta bosish roʻyxatdagi keyingi elementni tanlaydi. Bu rejimda modifikator tugmachalarini bo‘shatish tanlovni tasdiqlaydi va qalqib chiquvchi oynani yopadi.\nStandart: ⇧⌘T.";

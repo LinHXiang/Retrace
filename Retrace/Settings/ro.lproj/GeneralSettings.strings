@@ -3,8 +3,8 @@
 "Fuzzy" = "Aproximativă";
 "Regex" = "Expresii regulate";
 "Mixed" = "Mixt";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "Open" = "Deschide:";
 "Exact" = "Exactă";
 "Search" = "Căutare:";

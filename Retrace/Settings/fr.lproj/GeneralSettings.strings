@@ -9,5 +9,5 @@
 "Fuzzy" = "Approximative";
 "Regex" = "Expressions régulières";
 "Mixed" = "Mixte";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";

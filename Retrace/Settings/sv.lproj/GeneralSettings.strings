@@ -8,6 +8,6 @@
 "Exact" = "Exakt";
 "Fuzzy" = "Ungefärlig";
 "Mixed" = "Blandad";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "Regex" = "Reguljära uttryck";

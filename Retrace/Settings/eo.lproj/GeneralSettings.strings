@@ -9,5 +9,5 @@
 "Exact" = "Ekzakta";
 "Fuzzy" = "Proksimuma";
 "Mixed" = "Miksita";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";

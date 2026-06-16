@@ -9,5 +9,5 @@
 "Fuzzy" = "模糊";
 "Regex" = "正規表示式";
 "Mixed" = "混合";
-"HistorySize" = "歷史條數：";
-"HistorySizeTooltip" = "最多顯示的命令數量。";
+"CommandHistorySize" = "歷史條數：";
+"CommandHistorySizeTooltip" = "最多顯示的命令數量。";

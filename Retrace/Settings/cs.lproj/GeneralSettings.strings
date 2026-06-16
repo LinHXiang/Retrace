@@ -9,5 +9,5 @@
 "Fuzzy" = "Přibližné";
 "Regex" = "Regulární výrazy";
 "Mixed" = "Smíšené";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";

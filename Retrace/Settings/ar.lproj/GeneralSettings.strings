@@ -9,5 +9,5 @@
 "Fuzzy" = "غامض";
 "Regex" = "التعبيرات العادية";
 "Mixed" = "مختلط";
-"HistorySize" = "History size:";
-"HistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "History size:";
+"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
