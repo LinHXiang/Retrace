@@ -30,9 +30,6 @@ struct KeyHandlingView<Content: View>: View {
         case .clearSearch:
           searchQuery = ""
           return .handled
-        case .deleteCurrentItem:
-          appState.deleteSelection()
-          return .handled
         case .deleteOneCharFromSearch:
           searchFocused = true
           _ = searchQuery.popLast()

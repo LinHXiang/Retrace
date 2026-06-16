@@ -1,10 +1,6 @@
 "search_placeholder" = "qidirish uchun yozing…";
-"clear_tooltip" = "Ochilmagan elemetlarni tozalang.\nHammasini tozalash uchun ⇧ bosing.";
-"clear_all_tooltip" = "Barcha elementlarni tozlash.";
 "about_tooltip" = "Ilova haqida ko'proq o'qish.";
 "quit_tooltip" = "Ilovadan chiqish.";
-"clear" = "Tozalash";
-"clear_all" = "Hammasini tozalash";
 "about" = "Ilova haqida";
 "quit" = "Chiqish";
 "preferences" = "Moslashtirish…";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "{settings} boʻlimida joylashgan {pane} ilovasiga kirishga ruxsat bering.\n\nRetrace-ni tanlang va yonidagi katakchani yoqing.";
 "accessibility_alert_deny" = "Rad etish";
 "accessibility_alert_open" = "Tizim sozlamalarini ochish";
-"clear_alert_message" = "Haqiqatan ham tarixni tozalamoqchimisiz?";
-"clear_alert_comment" = "Bu amalni bekor qila olmaysiz.";
-"clear_alert_cancel" = "Bekor qilish";
-"clear_alert_confirm" = "Tozalash";
 "key_used_error" = "Kalit allaqachon ishlatilgan.";
 "active_screen" = "Aktiv ekran";
 "screen" = "Ekran";

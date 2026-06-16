@@ -4,5 +4,4 @@
 "NumberOfCopies" = "Kopiju skaits:";
 "PinKey" = "Nospiediet {pinKey}, lai piespraust.";
 "UnpinKey" = "Nospiediet {pinKey}, lai atspraust.";
-"DeleteKey" = "Nospiediet {deleteKey}, lai dzēstu.";
 "PreviewKey" = "Nospiediet {previewKey}, lai pārslēgtu priekšskatījumu.";

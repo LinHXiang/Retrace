@@ -185,35 +185,6 @@ class History: ItemsContainer {
   }
 
   @MainActor
-  func clear() {
-    all.removeAll()
-    items.removeAll()
-
-    AppState.shared.popup.close()
-    Task {
-      AppState.shared.popup.needsResize = true
-    }
-  }
-
-  @MainActor
-  func clearAll() {
-    clear()
-  }
-
-  @MainActor
-  func delete(_ item: HistoryItemDecorator?) {
-    guard let item else { return }
-
-    all.removeAll { $0 == item }
-    items.removeAll { $0 == item }
-
-    updateUnpinnedShortcuts()
-    Task {
-      AppState.shared.popup.needsResize = true
-    }
-  }
-
-  @MainActor
   func select(_ item: HistoryItemDecorator?) {
     guard let item else {
       return

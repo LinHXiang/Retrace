@@ -56,28 +56,10 @@ class AppState: Sendable {
     if !navigator.selection.isEmpty {
       history.select(navigator.selection.first)
     } else if let item = footer.selectedItem {
-      // TODO: Use item.suppressConfirmation, but it's not updated!
-      if item.confirmation != nil, Defaults[.suppressClearAlert] == false {
-        item.showConfirmation = true
-      } else {
-        item.action()
-      }
+      item.action()
     } else {
       Clipboard.shared.copy(history.searchQuery)
       history.searchQuery = ""
-    }
-  }
-
-  @MainActor
-  func deleteSelection() {
-    guard let leadItem = navigator.leadHistoryItem else { return }
-    let nextUnselectedItem = history.visibleItems.nearest(to: leadItem) { !$0.isSelected }
-
-    withTransaction(Transaction()) {
-      navigator.selection.forEach { _, item in
-        history.delete(item)
-      }
-      navigator.select(item: nextUnselectedItem)
     }
   }
 

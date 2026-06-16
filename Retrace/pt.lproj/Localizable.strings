@@ -1,10 +1,6 @@
 "search_placeholder" = "digite para procurar…";
-"clear_tooltip" = "Limpar elementos não fixados.\nSelecione com ⇧ para limpar tudo.";
-"clear_all_tooltip" = "Limpar todos os elementos.";
 "about_tooltip" = "Ler mais sobre a aplicação.";
 "quit_tooltip" = "Sair da aplicação.";
-"clear" = "Limpar";
-"clear_all" = "Limpar tudo";
 "about" = "Sobre";
 "quit" = "Sair";
 "preferences" = "Preferências…";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "Conceda acesso a esta aplicação em {pane}, localizado em {settings}.\n\nClique o botão +, selecione Retrace e ative a caixa de seleção próxima dele.";
 "accessibility_alert_deny" = "Negar";
 "accessibility_alert_open" = "Abrir Ajustes do Sistema";
-"clear_alert_message" = "Tem certeza de que deseja limpar o histórico?";
-"clear_alert_comment" = "Não pode desfazer esta ação.";
-"clear_alert_cancel" = "Cancelar";
-"clear_alert_confirm" = "Limpar";
 "key_used_error" = "A tecla já está em uso.";
 "active_screen" = "Ecrã ativo";
 "screen" = "Ecrã";

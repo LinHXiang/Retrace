@@ -6,8 +6,6 @@
 "OpenTooltip" = "Globales Tastenkürzel zum Öffnen der Anwendung.\nEin wiederholtes Drücken der Haupttaste bei gleichzeitigem Halten der Modifikatortasten wählt das nächste Element in der Liste aus. In diesem Modus wird durch Loslassen der Modifikatortasten die Auswahl bestätigt und das Popup geschlossen.\nStandard: ⇧⌘T.";
 "Pin" = "Anheften:";
 "PinTooltip" = "Tastenkombination zum Anheften eines Verlaufselements.\nStandard: %@P.";
-"Delete" = "Löschen:";
-"DeleteTooltip" = "Tastenkombination zum Löschen eines Verlaufselements.\nStandard: %@⌫.";
 "ShowPreview" = "Vorschau:";
 "ShowPreviewTooltip" = "Vorschau mit zusätzlichen Informationen anzeigen.\nStandard: ⌃Space.";
 "Behavior" = "Verhalten:";

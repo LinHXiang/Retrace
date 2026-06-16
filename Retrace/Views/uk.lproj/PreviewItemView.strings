@@ -4,5 +4,4 @@
 "NumberOfCopies" = "Кількість копій:";
 "PinKey" = "Натисніть {pinKey}, щоб кріпити.";
 "UnpinKey" = "Натисніть {pinKey}, щоб відкріпити.";
-"DeleteKey" = "Натисніть {deleteKey}, щоб видалити.";
 "PreviewKey" = "Натисніть {previewKey} для перемикання попереднього перегляду.";

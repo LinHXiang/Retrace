@@ -11,14 +11,10 @@ enum KeyChord: CaseIterable {
       .first { $0.action == #selector(NSText.paste) }
   }
 
-  static var deleteKey: Key? { Sauce.shared.key(shortcut: .delete) }
-  static var deleteModifiers: NSEvent.ModifierFlags? { KeyboardShortcuts.Shortcut(name: .delete)?.modifiers }
-
   static var previewKey: Key? { Sauce.shared.key(shortcut: .togglePreview) }
   static var previewModifiers: NSEvent.ModifierFlags? { KeyboardShortcuts.Shortcut(name: .togglePreview)?.modifiers }
 
   case clearSearch
-  case deleteCurrentItem
   case deleteOneCharFromSearch
   case deleteLastWordFromSearch
   case ignored
@@ -66,8 +62,6 @@ enum KeyChord: CaseIterable {
     switch (key, modifierFlags) {
     case (.u, [.control]):
       self = .clearSearch
-    case (KeyChord.deleteKey, KeyChord.deleteModifiers):
-      self = .deleteCurrentItem
     case (.h, [.control]):
       self = .deleteOneCharFromSearch
     case (.w, [.control]):

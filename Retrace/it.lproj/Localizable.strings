@@ -1,10 +1,6 @@
 "search_placeholder" = "scrivi per cercare…";
-"clear_tooltip" = "Elimina gli elementi sbloccati.\nSeleziona con ⇧ per eliminarli tutti.";
-"clear_all_tooltip" = "Pulisci tutto.";
 "about_tooltip" = "Leggi più informazioni sull'applicazione.";
 "quit_tooltip" = "Chiudi l' applicazione.";
-"clear" = "Pulisci";
-"clear_all" = "Pulisci tutto";
 "about" = "Informazioni";
 "quit" = "Chiudi";
 "preferences" = "Preferenze…";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "Concedi l'accesso a questa applicazione nella sezione {pane}, situata in {settings}.\n\nFai clic sul pulsante “+“, seleziona “Retrace“ e attiva la casella di controllo accanto ad esso.";
 "accessibility_alert_deny" = "Nega";
 "accessibility_alert_open" = "Apri Preferenze di Sistema";
-"clear_alert_message" = "Sei sicuro di voler cancellare la cronologia?";
-"clear_alert_comment" = "Questa azione non può essere annullata.";
-"clear_alert_cancel" = "Annulla";
-"clear_alert_confirm" = "Pulisci";
 "key_used_error" = "La chiave è già in uso.";
 "active_screen" = "Schermo attivo";
 "screen" = "Schermo";

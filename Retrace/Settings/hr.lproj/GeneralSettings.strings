@@ -6,8 +6,6 @@
 "OpenTooltip" = "Globalna tipkovnica prečaca za otvaranje aplikacije.\nPonovljenim pritiskom na glavnu tipku dok držite modifikatore odabrat ćete sljedeću stavku na popisu. U ovom načinu rada, otpuštanjem modifikatorskih tipki potvrdit ćete odabir i zatvoriti skočni prozor.\nZadano: ⇧⌘T.";
 "Pin" = "Prikačiti:";
 "PinTooltip" = "Tipka prečaca za prikvačivanje stavke povijesti.\nStandardno: %@P.";
-"Delete" = "Izbrisati:";
-"DeleteTooltip" = "Tipka prečaca za brisanje stavke povijesti.\nStandardno: %@⌫.";
 "ShowPreview" = "Pregled:";
 "ShowPreviewTooltip" = "Prikaži pregled s dodatnim informacijama.\nStandardno: ⌃Space.";
 "Behavior" = "Ponašanje:";

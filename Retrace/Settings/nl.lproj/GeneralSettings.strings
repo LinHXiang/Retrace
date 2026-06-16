@@ -6,8 +6,6 @@
 "OpenTooltip" = "Een herhaalde druk op de hoofdtoets terwijl de modificatietoetsen ingedrukt worden gehouden, selecteert het volgende item in de lijst. In deze modus zal het loslaten van de modificatietoetsen de selectie bevestigen en het popupvenster sluiten.\nStandaard: ⇧⌘T.";
 "Pin" = "Pin:";
 "PinTooltip" = "Sneltoets om geschiedenisitem vast te zetten.\nStandaard: %@P.";
-"Delete" = "Verwijder:";
-"DeleteTooltip" = "Sneltoets om geschiedenisitem te verwijderen.\nStandaard: %@⌫.";
 "ShowPreview" = "Voorbeeld:";
 "ShowPreviewTooltip" = "Voorbeeld weergeven met aanvullende informatie.\nStandaard: ⌃Space.";
 "Behavior" = "Gedrag:";

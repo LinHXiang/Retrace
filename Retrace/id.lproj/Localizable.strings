@@ -1,9 +1,5 @@
-"clear_all_tooltip" = "Bersihkan semuanya.";
-"clear_tooltip" = "Bersihkan item yang tak disematkan.\nKlik item bersamaan ⇧ untuk bersihkan.";
 "about_tooltip" = "Baca selengkapnya mengenai aplikasi.";
 "quit_tooltip" = "Keluar aplikasi.";
-"clear" = "Bersihkan";
-"clear_all" = "Bersihkan semua";
 "about" = "Mengenai";
 "quit" = "Keluar";
 "preferences" = "Preferensi…";
@@ -17,10 +13,6 @@
 "accessibility_alert_open" = "Buka Preferensi Sistem";
 "accessibility_alert_message" = "";
 "accessibility_alert_comment" = "";
-"clear_alert_message" = "";
-"clear_alert_comment" = "";
-"clear_alert_cancel" = "Batal";
-"clear_alert_confirm" = "";
 "key_used_error" = "";
 "active_screen" = "";
 "screen" = "";

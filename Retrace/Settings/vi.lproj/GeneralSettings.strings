@@ -6,8 +6,6 @@
 "OpenTooltip" = "Phím tắt mở ứng dụng.\nNhấn giữ phím chính cùng với các phím sửa đổi sẽ chọn mục tiếp theo trong danh sách. Trong chế độ này, thả các phím sửa đổi sẽ xác nhận lựa chọn và đóng cửa sổ popup.\nMặc định: ⇧⌘T.";
 "Pin" = "Ghim:";
 "PinTooltip" = "Phím tắt để ghim một mục.\nMặc định: ⌥P.";
-"Delete" = "Xóa:";
-"DeleteTooltip" = "Phím tắt để xóa một mục.\nMặc định: ⌥⌫.";
 "ShowPreview" = "Xem trước:";
 "ShowPreviewTooltip" = "Hiển thị xem trước với thông tin bổ sung.\nMặc định: ⌃Space.";
 "Behavior" = "Hành vi:";

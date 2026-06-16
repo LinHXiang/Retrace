@@ -1,10 +1,6 @@
 "search_placeholder" = "skriv for å søke…";
-"clear_tooltip" = "Slett avmerkede elementer.\nVelg med ⇧ for å slette alle.";
-"clear_all_tooltip" = "Slett alle elementer.";
 "about_tooltip" = "Les mer om programmet.";
 "quit_tooltip" = "Avslutt programmet.";
-"clear" = "Slett";
-"clear_all" = "Slett alt";
 "about" = "Om";
 "quit" = "Avslutt";
 "preferences" = "Valg…";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "Gi tillatelse til dette programmet i {pane} innstillingene, lokalisert i {settings}.\n\nKlikk på +-knappen, velg “Retrace“ og velg avmerkingsboksen ved siden av.";
 "accessibility_alert_deny" = "Avslå";
 "accessibility_alert_open" = "Åpne System Valg";
-"clear_alert_message" = "Er du sikker på at du vil tømme historikken?";
-"clear_alert_comment" = "Du kan ikke angre denne handlingen.";
-"clear_alert_cancel" = "Avbryt";
-"clear_alert_confirm" = "Slett";
 "key_used_error" = "Nøkkel er allerede brukt.";
 "active_screen" = "Aktiv skjerm";
 "screen" = "Skjerm";

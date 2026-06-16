@@ -1,5 +1,4 @@
 import Defaults
-import KeyboardShortcuts
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -55,7 +54,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     migrateUserDefaults()
-    disableUnusedGlobalHotkeys()
 
     panel = FloatingPanel(
       contentRect: NSRect(origin: .zero, size: Defaults[.windowSize]),
@@ -73,12 +71,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       panel.toggle(height: AppState.shared.popup.height)
     }
     return true
-  }
-
-  func applicationWillTerminate(_ notification: Notification) {
-    if Defaults[.clearOnQuit] {
-      AppState.shared.history.clear()
-    }
   }
 
   private func migrateUserDefaults() {
@@ -127,18 +119,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
-  private func disableUnusedGlobalHotkeys() {
-    let names: [KeyboardShortcuts.Name] = [.delete]
-    KeyboardShortcuts.disable(names)
-
-    NotificationCenter.default.addObserver(
-      forName: Notification.Name("KeyboardShortcuts_shortcutByNameDidChange"),
-      object: nil,
-      queue: nil
-    ) { notification in
-      if let name = notification.userInfo?["name"] as? KeyboardShortcuts.Name, names.contains(name) {
-        KeyboardShortcuts.disable(name)
-      }
-    }
-  }
 }

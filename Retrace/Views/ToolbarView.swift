@@ -1,4 +1,3 @@
-import Defaults
 import KeyboardShortcuts
 import SwiftUI
 
@@ -61,29 +60,10 @@ struct ToolbarButton<Label: View>: View {
       )
     )
   }
-
 }
 
 struct ToolbarView: View {
-  @State private var appState = AppState.shared
-
   var body: some View {
-    HStack {
-      if !appState.navigator.selection.isEmpty {
-        Spacer()
-
-        ToolbarButton {
-          appState.deleteSelection()
-        } label: {
-          Image(systemName: "trash")
-        }
-        .shortcutKeyHelp(
-          name: .delete,
-          key: "DeleteKey",
-          tableName: "PreviewItemView",
-          replacementKey: "deleteKey"
-        )
-      }
-    }
+    EmptyView()
   }
 }

@@ -17,11 +17,6 @@ class HistoryItem {
       "m", "n", "o", "p", "r", "s", "t", "u", "x", "y"
     ])
 
-    if let deleteKey = KeyChord.deleteKey,
-       let character = Sauce.shared.character(for: Int(deleteKey.QWERTYKeyCode), cocoaModifiers: []) {
-      keys.remove(character)
-    }
-
     if let previewKey = KeyChord.previewKey,
        let character = Sauce.shared.character(for: Int(previewKey.QWERTYKeyCode), cocoaModifiers: []) {
       keys.remove(character)

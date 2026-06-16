@@ -1,10 +1,6 @@
 "search_placeholder" = "Suchen …";
-"clear_tooltip" = "Lösche nur die nicht angehefteten Einträge.\nHalte zusätzlich ⇧ gedrückt, um alle Einträge zu löschen.";
-"clear_all_tooltip" = "Lösche alle Einträge.";
 "about_tooltip" = "Informationen über die Anwendung.";
 "quit_tooltip" = "Beende die Anwendung.";
-"clear" = "Löschen";
-"clear_all" = "Alle löschen";
 "about" = "Über";
 "quit" = "Beenden";
 "preferences" = "Einstellungen…";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "Erlaube den Zugriff für diese Anwendung in “{settings} > {pane} > Datenschutz > Bedienungshilfen”.\n\nKlicken Sie auf die Schaltfläche “+“, wählen Sie “Retrace“ aus und aktivieren Sie das Kontrollkästchen daneben.";
 "accessibility_alert_deny" = "Ablehnen";
 "accessibility_alert_open" = "Öffne Systemeinstellungen";
-"clear_alert_message" = "Möchtest du den Verlauf wirklich leeren?";
-"clear_alert_comment" = "Diese Aktion kann nicht widerrufen werden.";
-"clear_alert_cancel" = "Abbrechen";
-"clear_alert_confirm" = "Bestätigen";
 "key_used_error" = "Hotkey ist bereits belegt.";
 "active_screen" = "Aktiver Bildschirm";
 "screen" = "Bildschirm";

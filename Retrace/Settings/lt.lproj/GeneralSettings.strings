@@ -6,8 +6,6 @@
 "OpenTooltip" = "Pasaulinis spartusis klavišas programai atidaryti.\nPakartotinai paspaudus pagrindinį klavišą ir laikant modifikatorių, bus pasirinktas kitas sąrašo elementas. Šiuo režimu atleidus modifikavimo klavišus bus patvirtintas pasirinkimas ir uždarytas iškylantysis langas.\nNumatytasis: ⇧⌘T.";
 "Pin" = "Prisegti:";
 "PinTooltip" = "Spartusis klavišas istorijos elementui prisegti.\nNumatytasis spartusis klavišas: ⌥P.";
-"Delete" = "Ištrinti:";
-"DeleteTooltip" = "Spartusis klavišas istorijos elementui ištrinti.\nNumatytasis spartusis klavišas: ⌥⌫.";
 "ShowPreview" = "Peržiūra:";
 "ShowPreviewTooltip" = "Rodyti peržiūrą su papildoma informacija.\nNumatytasis spartusis klavišas: ⌃Space.";
 "Behavior" = "Elgsena:";

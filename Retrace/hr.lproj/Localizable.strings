@@ -1,10 +1,6 @@
 "search_placeholder" = "tipkaj za pretraživanje …";
-"clear_tooltip" = "Izbriši neprikvačene.\nIzbriši sve pomoću tipke ⇧.";
-"clear_all_tooltip" = "Izbriši sve.";
 "about_tooltip" = "Saznaj više o programu.";
 "quit_tooltip" = "Zatvori program.";
-"clear" = "Izbriši";
-"clear_all" = "Izbriši sve";
 "about" = "Informacije";
 "quit" = "Zatvori program";
 "preferences" = "Postavke …";
@@ -17,10 +13,6 @@
 "accessibility_alert_comment" = "Dozvoli pristup ovoj aplikaciji u postavkama {pane} unutar {settings}.\n\nKliknite gumb „+”, odaberite „Retrace” i uključite potvrdni okvir pokraj njega.";
 "accessibility_alert_deny" = "Zabrani";
 "accessibility_alert_open" = "Otvori postavke sustava";
-"clear_alert_message" = "Stvarno želiš izbrisati povijest?";
-"clear_alert_comment" = "To je nepovratna radnja.";
-"clear_alert_cancel" = "Odustani";
-"clear_alert_confirm" = "Izbriši";
 "key_used_error" = "Tipka se već koristi.";
 "active_screen" = "Aktivni ekran";
 "screen" = "Ekran";

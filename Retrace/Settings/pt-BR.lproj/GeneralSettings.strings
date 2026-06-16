@@ -6,8 +6,6 @@
 "OpenTooltip" = "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o item seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T.";
 "Pin" = "Fixar:";
 "PinTooltip" = "Tecla de atalho para fixar item do histórico.\nPadrão: ⌥P.";
-"Delete" = "Excluir:";
-"DeleteTooltip" = "Aproximada";
 "ShowPreview" = "Pré-visualizar:";
 "ShowPreviewTooltip" = "Mostrar pré-visualização com informações adicionais.\nPadrão: ⌃Space.";
 "Behavior" = "Comportamento:";

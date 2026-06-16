@@ -6,8 +6,6 @@
 "OpenTooltip" = "Global shortcut key to open application.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the popup.\nDefault: ⇧⌘T.";
 "Pin" = "Pin:";
 "PinTooltip" = "Shortcut key to pin command.\nDefault: ⌥P.";
-"Delete" = "Delete:";
-"DeleteTooltip" = "Shortcut key to delete command.\nDefault: ⌥⌫.";
 "ShowPreview" = "Preview:";
 "ShowPreviewTooltip" = "Show preview with additional information.\nDefault: ⌃Space.";
 "Behavior" = "Behavior:";
