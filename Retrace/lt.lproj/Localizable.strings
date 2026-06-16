@@ -18,5 +18,4 @@
 "system_preferences_name" = "Sistemos Parinktys";
 "system_preferences_pane" = "Saugumo ir Privatumo nuostatos";
 "quit_tooltip" = "Uždaryti programą.";
-"paste_modifiers_config" = "• Pasirinkite paspaudę %@, kad nukopijuotumėte ir įklijuotumėte elementą.";
 "accessibility_alert_comment" = "Suteikite prieigą šiai programai {pane}, esančiai {settings}.\n\nSpustelėjimas + mygtukas, pasirinkite Retrace ir pažymėkite šalia esantį žymimąjį langelį.";

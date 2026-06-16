@@ -9,8 +9,6 @@
 "ShowPreview" = "Pregled:";
 "ShowPreviewTooltip" = "Prikaži pregled s dodatnim informacijama.\nStandardno: ⌃Space.";
 "Behavior" = "Ponašanje:";
-"PasteAutomatically" = "Umetni automatski";
-"PasteWithoutFormatting" = "Umetni neformatirano";
 "Modifiers" = "Prilagodi ponašanje pri biranju elemenata:\n• Za kopiranje elementa odaberi zajedno s pritisnutom tipkom %@.\n• Za kopiranje i umetanje elementa odaberi zajedno s pritisnutom tipkom %@.\n• Za kopiranje, uklanjanje formata i umetanje elementa odaberi zajedno s pritisnutom tipkom %@.";
 "Search" = "Traži:";
 "Exact" = "Točno";

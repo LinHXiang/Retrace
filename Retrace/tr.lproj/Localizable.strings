@@ -7,7 +7,6 @@
 "preferences_advanced" = "Gelişmiş";
 "preferences_pins" = "Sabitlemeler";
 "copy_modifiers_config" = "• %@ basılıyken seçerek öğeyi kopyalayın.";
-"paste_modifiers_config" = "• %@ basılıyken seçerek öğeyi kopyalayın ve yapıştırın.";
 "format_modifiers_config" = "• %@ basılıyken seçerek öğeyi kopyalayın, biçimlendirmeyi temizleyin ve yapıştırın.";
 "accessibility_alert_message" = "“Retrace”, erişilebilirlik özelliklerini kullanarak bu bilgisayarı denetlemek istiyor.";
 "accessibility_alert_comment" = "Bu uygulamaya, {settings} {pane} bölümünden izin verin.\n\n“+“ düğmesine tıklayın, Retrace'yi seçin ve yanındaki onay kutusunu işaretleyin.";

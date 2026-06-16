@@ -5,7 +5,6 @@
 "about" = "Névjegy";
 "quit" = "Bezárás";
 "preferences_pins" = "Rögzítések";
-"paste_modifiers_config" = "• Válassz a(z) %@ lenyomásával az elem másolásához és beillesztéséhez.";
 "format_modifiers_config" = "• Válassz a(z) %@ lenyomásával az elem másolásához, formázásának törléséhez és beillesztéséhez.";
 "key_used_error" = "A billentyű már használatban van.";
 "accessibility_alert_deny" = "Elutasít";

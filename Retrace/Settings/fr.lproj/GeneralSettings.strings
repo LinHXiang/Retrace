@@ -9,8 +9,6 @@
 "ShowPreview" = "Aperçu :";
 "ShowPreviewTooltip" = "Afficher l'aperçu avec des informations supplémentaires.\nPar défaut : ⌃Space.";
 "Behavior" = "Comportement :";
-"PasteAutomatically" = "Coller automatiquement";
-"PasteWithoutFormatting" = "Coller sans formatage";
 "Modifiers" = "Personnaliser le comportement lors de la sélection de l’élément :\n— sélectionnez avec %@ pressé pour copier un élément ;\n— sélectionnez avec %@ pressé pour copier et coller l’élément ;\n— sélectionnez avec %@ pressé pour copier, reformater et coller l’élément.";
 "Search" = "Recherche :";
 "Exact" = "Exacte";

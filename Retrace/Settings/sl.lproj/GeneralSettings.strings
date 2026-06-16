@@ -9,8 +9,6 @@
 "ShowPreview" = "Predogled:";
 "ShowPreviewTooltip" = "Prikaži predogled z dodatnimi informacijami.\nPrivzeto: ⌃Space.";
 "Behavior" = "Vedenje:";
-"PasteAutomatically" = "Samodejno prilepite";
-"PasteWithoutFormatting" = "Prilepite brez oblikovanja";
 "Modifiers" = "Prilagodite vedenje pri izbiri predmeta:\n• Izberite s pritisnjenim %@, da kopirate element.\n• Izberite s pritisnjenim %@, da kopirate in prilepite element.\n• Izberite s pritisnjenim %@, da kopirate, počistite oblikovanje in prilepite element.";
 "Search" = "Iskanje:";
 "Exact" = "Točno";

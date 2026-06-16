@@ -9,8 +9,6 @@
 "ShowPreview" = "Podgląd:";
 "ShowPreviewTooltip" = "Pokaż podgląd z dodatkowymi informacjami.\nDomyślnie: ⌃Space.";
 "Behavior" = "Zachowanie:";
-"PasteAutomatically" = "Wklej automatycznie";
-"PasteWithoutFormatting" = "Wklej bez formatowania";
 "Modifiers" = "Dostosuj zachowanie przy wybieraniu wpisu:\n• Wybierz z wciśniętym %@ aby skopiować.\n• Wybierz z wciśniętym %@ aby skopiować i wkleić.\n• Wybierz z wciśniętym %@ aby skopiować i wkleić z wyczyszczonym formatowaniem.";
 "Search" = "Wyszukiwanie:";
 "Exact" = "Dokładne";

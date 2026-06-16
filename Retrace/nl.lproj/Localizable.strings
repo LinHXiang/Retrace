@@ -7,7 +7,6 @@
 "preferences_advanced" = "Geavanceerd";
 "preferences_pins" = "Spelden";
 "copy_modifiers_config" = "• Selecteer met %@ ingedrukt om item te kopiëren.";
-"paste_modifiers_config" = "• Selecteer met %@ ingedrukt om het item te kopiëren en te plakken.";
 "format_modifiers_config" = "• Selecteer met %@ ingedrukt om te kopiëren, opmaak te wissen en item te plakken.";
 "accessibility_alert_message" = "“Retrace” wil deze computer bedienen met toegankelijkheidsfuncties.";
 "accessibility_alert_comment" = "Verleen toegang tot deze app in {pane}, te vinden in {settings}.\n\nKlik op de + knop, selecteer Retrace en schakel het selectievakje ernaast in.";

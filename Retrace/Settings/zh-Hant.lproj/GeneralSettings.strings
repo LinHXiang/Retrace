@@ -9,8 +9,6 @@
 "ShowPreview" = "預覽：";
 "ShowPreviewTooltip" = "顯示帶有附加資訊的預覽。\n預設：⌃Space。";
 "Behavior" = "行為：";
-"PasteAutomatically" = "自動貼上";
-"PasteWithoutFormatting" = "純文字貼上";
 "Modifiers" = "自訂選擇項目時的行為：\n• 按住 %@ 並選取以複製項目。\n• 按住 %@ 並選取以複製和貼上項目。\n• 按住 %@ 並選取以複製，清除格式並貼上項目。";
 "Search" = "搜尋：";
 "Exact" = "精確";

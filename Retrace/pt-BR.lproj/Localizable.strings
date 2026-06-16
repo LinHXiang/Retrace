@@ -6,7 +6,6 @@
 "accessibility_alert_open" = "Abrir Ajustes do Sistema";
 "quit" = "Sair";
 "copy_modifiers_config" = "• Selecione com %@ pressionado para copiar o item.";
-"paste_modifiers_config" = "• Selecione com %@ pressionado para copiar e colar o item.";
 "accessibility_alert_message" = "“Retrace” gostaria de controlar este computador usando as funções de acessibilidade.";
 "accessibility_alert_deny" = "Negar";
 "key_used_error" = "A tecla já está em uso.";

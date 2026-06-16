@@ -6,7 +6,6 @@
 "preferences" = "Preferències…";
 "preferences_advanced" = "Avançat";
 "preferences_pins" = "Fixats";
-"paste_modifiers_config" = "• Selecciona pressionant %@ per copiar i enganxar l'element.";
 "copy_modifiers_config" = "• Selecciona pressionant %@ per copiar element.";
 "accessibility_alert_message" = "“Retrace” demana accés per controlar aquest ordinador mitjançant les funcionalitats d'accessibilitat.";
 "accessibility_alert_deny" = "Denegar";

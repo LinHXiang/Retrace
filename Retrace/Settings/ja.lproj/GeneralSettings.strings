@@ -9,8 +9,6 @@
 "ShowPreview" = "プレビュー:";
 "ShowPreviewTooltip" = "追加情報付きのプレビューを表示します。\nデフォルト：⌃Space。";
 "Behavior" = "動作:";
-"PasteAutomatically" = "自動的に貼り付け";
-"PasteWithoutFormatting" = "書式なしで貼り付け";
 "Modifiers" = "項目選択時の動作カスタマイズ：\n• %@を押しながら選択すると項目をコピーします。\n• %@を押しながら選択すると項目をコピーして貼り付けます。\n• %@を押しながら選択すると項目をコピーし、 書式なしで貼り付けます。";
 "Search" = "検索：";
 "Exact" = "精密";

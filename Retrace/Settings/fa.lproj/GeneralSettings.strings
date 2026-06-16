@@ -9,8 +9,6 @@
 "ShowPreview" = "پیش‌نمایش:";
 "ShowPreviewTooltip" = "نمایش پیش‌نمایش با اطلاعات اضافی.\nمقدار پیش‌فرض: ⌃Space.";
 "Behavior" = "رفتار:";
-"PasteAutomatically" = "چسباندن خودکار";
-"PasteWithoutFormatting" = "چسباندن بدون قالب‌بندی";
 "Modifiers" = "";
 "Search" = "جستجو:";
 "Exact" = "دقیق";

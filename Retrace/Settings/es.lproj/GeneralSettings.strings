@@ -9,8 +9,6 @@
 "ShowPreview" = "Vista previa:";
 "ShowPreviewTooltip" = "Mostrar vista previa con información adicional.\nPor defecto: ⌃Space.";
 "Behavior" = "Comportamiento:";
-"PasteAutomatically" = "Pegar automáticamente";
-"PasteWithoutFormatting" = "Pegar sin formato";
 "Modifiers" = "Personalizar el comportamiento al seleccionar un elemento:\n• Seleccionar presionando %@ para copiar el elemento.\n• Seleccionar presionando %@ para copiar y pegar un elemento.\n• Seleccionar presionando %@ para copiar, quitar formato y pegar un elemento.";
 "Search" = "Buscar:";
 "Exact" = "Exacta";

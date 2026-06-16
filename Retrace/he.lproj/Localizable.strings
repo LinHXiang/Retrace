@@ -7,7 +7,6 @@
 "preferences_advanced" = "מתקדם";
 "preferences_pins" = "נעוצים";
 "copy_modifiers_config" = "• יש לבחור תוך לחיצה על %@ כדי להעתיק פריט.";
-"paste_modifiers_config" = "• יש לבחור תוך לחיצה על %@ כדי להעתיק ולהדביק פריט.";
 "format_modifiers_config" = "• יש לבחור תוך לחיצה על %@ כדי להעתיק, להסיר עיצוב ולהדביק פריט.";
 "accessibility_alert_message" = "„Retrace” רוצה להשתלט על המחשב הזה דרך יכולות הנגישות.";
 "accessibility_alert_comment" = "הענקת גישה ליישום הזה דרך {pane}, שנמצא תחת {settings}.\n\nלחיצה + כפתור, לבחור ב־Retrace ולהחליף את מצב תיבת הסימון שלידו.";

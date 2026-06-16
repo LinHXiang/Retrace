@@ -110,7 +110,7 @@ class History: ItemsContainer {
       .intersection(.deviceIndependentFlagsMask)
       .subtracting(.capsLock)
 
-    guard HistoryItemAction(modifierFlags) != .unknown else {
+    guard modifierFlags == .command else {
       return nil
     }
 
@@ -128,12 +128,6 @@ class History: ItemsContainer {
   private var loadedHistoryFileModificationDate: Date?
 
   init() {
-    Task {
-      for await _ in Defaults.updates(.pasteByDefault, initial: false) {
-        updateShortcuts()
-      }
-    }
-
     Task {
       for await _ in Defaults.updates(.showSpecialSymbols, initial: false) {
         for item in items {

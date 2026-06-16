@@ -1,15 +1,10 @@
 import AppKit.NSEvent
-import Defaults
 import Sauce
 
 struct KeyShortcut: Identifiable {
   static func create(character: String) -> [KeyShortcut] {
     let key = Key(character: character, virtualKeyCode: nil)
-    return [
-      KeyShortcut(key: key),
-      KeyShortcut(key: key, modifierFlags: [.option]),
-      KeyShortcut(key: key, modifierFlags: [Defaults[.pasteByDefault] ? .command : .option, .shift])
-    ]
+    return [KeyShortcut(key: key)]
   }
 
   let id = UUID()

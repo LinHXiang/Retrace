@@ -1,5 +1,4 @@
 "LaunchAtLogin" = "Starta vid inloggning";
-"PasteWithoutFormatting" = "Klistra in utan formatering";
 "CheckForUpdates" = "Kontrollera efter uppdateringar automatiskt";
 "CheckNow" = "Kontrollera nu";
 "Title" = "Allmänt";
@@ -13,7 +12,6 @@
 "Fuzzy" = "Ungefärlig";
 "Mixed" = "Blandad";
 "NotificationsAndSounds" = "Notiser och ljud 􀱁";
-"PasteAutomatically" = "Klistra in automatiskt";
 "Pin" = "Fästa:";
 "Behavior" = "Beteende:";
 "PinTooltip" = "Kortkommando för att fästa historikpost .\nFörval: ⌥P.";

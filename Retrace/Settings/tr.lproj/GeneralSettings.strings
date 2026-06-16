@@ -9,8 +9,6 @@
 "ShowPreview" = "Önizleme:";
 "ShowPreviewTooltip" = "Ek bilgilerle önizleme göster.\nVarsayılan: ⌃Space.";
 "Behavior" = "Davranış:";
-"PasteAutomatically" = "Otomatik olarak yapıştır";
-"PasteWithoutFormatting" = "Biçimlendirme olmadan yapıştır";
 "Modifiers" = "Ögeyi seçme davranışını özelleştirin:\n• Ögeyi kopyalamak için %@'a basılıyken seçin.\n• Ögeyi kopyalayıp yopıştırmak için %@'a basılıyken seçin.\n• Ögeyi kopyalamak, biçimlendirmesini temizlemek ve yapıştırmak için %@'e basılıyken seçin.";
 "Search" = "Arama:";
 "Exact" = "Kesin";

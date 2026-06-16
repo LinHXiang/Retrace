@@ -9,8 +9,6 @@
 "ShowPreview" = "Forhåndsvisning:";
 "ShowPreviewTooltip" = "Vis forhåndsvisning med tilleggsinformasjon.\nStandard: ⌃Space.";
 "Behavior" = "Oppførsel:";
-"PasteAutomatically" = "Lim in automatisk";
-"PasteWithoutFormatting" = "Lim inn uten formattering";
 "Modifiers" = "Tilpass oppførsel ved valg av element:\n• Velg med %@ nedtrykket for å kopiere element.\n• Velg med %@ nedtrykket for å kopiere og lime inn element.\n• Velg med %@ nedtrykket for å kopiere, slette formattering og lime inn element.";
 "Search" = "Søk:";
 "Exact" = "Nøyaktig";

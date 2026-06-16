@@ -9,8 +9,6 @@
 "ShowPreview" = "Vorschau:";
 "ShowPreviewTooltip" = "Vorschau mit zusätzlichen Informationen anzeigen.\nStandard: ⌃Space.";
 "Behavior" = "Verhalten:";
-"PasteAutomatically" = "Automatisch einfügen";
-"PasteWithoutFormatting" = "Einfügen ohne Formatierung";
 "Modifiers" = "Verhalten bei Auswahl eines Eintrags anpassen:\n• Drücke %@, um den gewählten Eintrag zu kopieren.\n• Drücke %@, um den gewählten Eintrag zu kopieren und einzufügen.\n• Drücke %@, um den gewählten Eintrag zu kopieren und unformatiert einzufügen.";
 "Search" = "Suche:";
 "Exact" = "Exakt";

@@ -9,8 +9,6 @@
 "ShowPreview" = "Preview:";
 "ShowPreviewTooltip" = "Show preview with additional information.\nDefault: ⌃Space.";
 "Behavior" = "Behavior:";
-"PasteAutomatically" = "Paste automatically";
-"PasteWithoutFormatting" = "Paste without formatting";
 "Modifiers" = "Selecting a command copies it to the system clipboard.";
 "Search" = "Search:";
 "Exact" = "Exact";

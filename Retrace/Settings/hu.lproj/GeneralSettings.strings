@@ -9,8 +9,6 @@
 "ShowPreview" = "Előnézet:";
 "ShowPreviewTooltip" = "Előnézet megjelenítése további információkkal.\nAlapértelmezett: ⌃Space.";
 "Behavior" = "Viselkedés:";
-"PasteAutomatically" = "Automatikus beillesztés";
-"PasteWithoutFormatting" = "Beillesztés formázások nélkül";
 "Modifiers" = "Viselkedés testreszabása az elem kiválasztásakor:\n• Tartsd nyomva a %@ gombot és válaszd ki az elemet a másoláshoz.\n• Tartsd nyomva a %@ gombot és válaszd ki az elemet a másoláshoz es a beillesztéshez.\n• Tartsd nyomva a %@ gombot és válaszd ki az elemet a másoláshoz, a formázások törléséhez és a beillesztéshez.";
 "Search" = "Keresés:";
 "Exact" = "Egyező";
