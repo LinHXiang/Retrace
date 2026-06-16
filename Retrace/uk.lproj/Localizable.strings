@@ -4,7 +4,6 @@
 "about" = "Про додаток";
 "quit" = "Вийти";
 "preferences" = "Налаштування…";
-"preferences_advanced" = "Розширені опції";
 "accessibility_alert_message" = "“Retrace” хоче керувати цим комп’ютером за допомогою функцій доступності.";
 "accessibility_alert_comment" = "Надайте доступ до цієї програми в налаштуваннях {pane}, розташованих у {settings}.\n\nНатисніть кнопку “+“, виберіть “Retrace“ і встановіть прапорець поруч із ним.";
 "accessibility_alert_deny" = "Відказати";

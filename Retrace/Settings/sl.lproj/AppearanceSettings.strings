@@ -26,6 +26,5 @@
 "ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Pokaži polje za iskanje";
 "ShowTitleBeforeSearchField" = "Prikaži naslov pred poljem za iskanje";
-"ShowApplicationIcons" = "Prikaži ikone aplikacij";
 "ShowFooter" = "Prikaži nogo";
 "OpenPreferencesWarning" = "⚠️ Pritisnite ⌘, (command+comma) da odprete nastavitve, ko je noga skrita.";

@@ -4,7 +4,6 @@
 "about" = "Informacije";
 "quit" = "Zatvori program";
 "preferences" = "Postavke …";
-"preferences_advanced" = "Napredno";
 "accessibility_alert_message" = "„Retrace” želi upravljati ovim računalom koristeći funkcije pristupačnosti.";
 "accessibility_alert_comment" = "Dozvoli pristup ovoj aplikaciji u postavkama {pane} unutar {settings}.\n\nKliknite gumb „+”, odaberite „Retrace” i uključite potvrdni okvir pokraj njega.";
 "accessibility_alert_deny" = "Zabrani";

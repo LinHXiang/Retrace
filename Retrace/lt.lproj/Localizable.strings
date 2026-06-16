@@ -3,7 +3,6 @@
 "about" = "Apie";
 "quit" = "Uždaryti";
 "preferences" = "Parinktys…";
-"preferences_advanced" = "Išplėstiniai nustatymai";
 "accessibility_alert_message" = "„Retrace“ norėtų valdyti šį kompiuterį naudodamasis prieinamumo funkcijomis.";
 "accessibility_alert_deny" = "Atsisakyti";
 "accessibility_alert_open" = "Atidaryti Sistemos Nuostatas";

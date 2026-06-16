@@ -3,14 +3,6 @@ import KeyboardShortcuts
 import Sauce
 
 enum KeyChord: CaseIterable {
-  static var pasteKey: Key { pasteMenuItem?.key ?? Key.v }
-  static var pasteKeyModifiers: NSEvent.ModifierFlags { pasteMenuItem?.keyEquivalentModifierMask ?? .command }
-  private static var pasteMenuItem: NSMenuItem? {
-    NSApp.mainMenu?.items
-      .flatMap { $0.submenu?.items ?? [] }
-      .first { $0.action == #selector(NSText.paste) }
-  }
-
   static var previewKey: Key? { Sauce.shared.key(shortcut: .togglePreview) }
   static var previewModifiers: NSEvent.ModifierFlags? { KeyboardShortcuts.Shortcut(name: .togglePreview)?.modifiers }
 

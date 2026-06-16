@@ -4,7 +4,6 @@
 "about" = "Hakkında";
 "quit" = "Çık";
 "preferences" = "Tercihler…";
-"preferences_advanced" = "Gelişmiş";
 "accessibility_alert_message" = "“Retrace”, erişilebilirlik özelliklerini kullanarak bu bilgisayarı denetlemek istiyor.";
 "accessibility_alert_comment" = "Bu uygulamaya, {settings} {pane} bölümünden izin verin.\n\n“+“ düğmesine tıklayın, Retrace'yi seçin ve yanındaki onay kutusunu işaretleyin.";
 "accessibility_alert_deny" = "Reddet";

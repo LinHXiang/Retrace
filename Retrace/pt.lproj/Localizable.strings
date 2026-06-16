@@ -4,7 +4,6 @@
 "about" = "Sobre";
 "quit" = "Sair";
 "preferences" = "Preferências…";
-"preferences_advanced" = "Avançado";
 "accessibility_alert_message" = "“Retrace” gostaria de controlar este computador usando as funções de acessibilidade.";
 "accessibility_alert_comment" = "Conceda acesso a esta aplicação em {pane}, localizado em {settings}.\n\nClique o botão +, selecione Retrace e ative a caixa de seleção próxima dele.";
 "accessibility_alert_deny" = "Negar";

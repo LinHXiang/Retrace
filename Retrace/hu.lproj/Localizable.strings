@@ -8,7 +8,6 @@
 "accessibility_alert_deny" = "Elutasít";
 "active_screen" = "Aktív képernyő";
 "system_preferences_pane" = "Adatvédelem és biztonság";
-"preferences_advanced" = "Haladó";
 "accessibility_alert_message" = "A “Retrace” irányítani szeretné ezt a számítógépet akadálymentesítési funkciók használatával.";
 "accessibility_alert_open" = "Rendszerbeállítások megnyitása";
 "accessibility_alert_comment" = "Adj engedélyt az alkalmazásnak a {pane} részben, amely a {settings} beállításoknál található.\n\nKattints a + gombra, válaszd a Retrace-t, majd kapcsold be a mellette lévő jelölőnégyzetet.";

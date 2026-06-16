@@ -4,7 +4,6 @@
 "about" = "Thông tin";
 "quit" = "Thoát";
 "preferences" = "Thiết lập…";
-"preferences_advanced" = "Nâng cao";
 "accessibility_alert_message" = "\"Retrace\" muốn điều khiển máy tính này bằng các tính năng trợ năng.";
 "accessibility_alert_comment" = "Cấp quyền truy cập vào ứng dụng này trong {pane}, nằm trong {settings}.\n\nNhấn nút +, chọn Retrace, và bật tùy chọn hộp kiểm bên cạnh nó.";
 "accessibility_alert_deny" = "Từ chối";

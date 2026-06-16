@@ -4,7 +4,6 @@
 "about" = "Om";
 "quit" = "Avslutt";
 "preferences" = "Valg…";
-"preferences_advanced" = "Avansert";
 "accessibility_alert_message" = "“Retrace” vil ha adgang til denne datamaskinen for tjenester tilknyttet tilgjengelighet.";
 "accessibility_alert_comment" = "Gi tillatelse til dette programmet i {pane} innstillingene, lokalisert i {settings}.\n\nKlikk på +-knappen, velg “Retrace“ og velg avmerkingsboksen ved siden av.";
 "accessibility_alert_deny" = "Avslå";

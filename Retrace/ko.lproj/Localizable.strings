@@ -4,7 +4,6 @@
 "about" = "관하여";
 "quit" = "종료";
 "preferences" = "설정…";
-"preferences_advanced" = "고급";
 "accessibility_alert_message" = "“Retrace”가 손쉬운 사용 기능을 사용하여 이 컴퓨터를 제어하려고 합니다.";
 "accessibility_alert_comment" = "{settings} 있는 {pane} 정보 보호 환경설정에서 이 응용 프로그램에 접근 권한을 부여하십시오.\n\n“+“ 버튼을 클릭하고 “Retrace“를 선택한 다음 옆에 있는 확인란을 토글합니다.";
 "accessibility_alert_deny" = "거부";

@@ -4,7 +4,6 @@
 "about" = "عن";
 "quit" = "إغلاق";
 "preferences" = "التفضيلات…";
-"preferences_advanced" = "متقدم";
 "accessibility_alert_message" = "“\"Retrace\" يرغب في التحكم في هذا الكمبيوتر باستخدام ميزات إمكانية الوصول.";
 "accessibility_alert_comment" = "امنح حق الوصول إلى هذا التطبيق في {الجزء}، الموجود في {الإعدادات}.\n\nانقر على الزر +، وحدد Retrace ثم قم بالتبديل على مربع الاختيار المجاور له.";
 "accessibility_alert_deny" = "رفض";

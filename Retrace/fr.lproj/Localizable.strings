@@ -4,7 +4,6 @@
 "about" = "À propos";
 "quit" = "Quitter";
 "preferences" = "Préférences…";
-"preferences_advanced" = "Avancé";
 "accessibility_alert_message" = "“Retrace” souhaite contrôler cet ordinateur en utilisant des fonctions d'accessibilité.";
 "accessibility_alert_comment" = "Accorder les droits à cette application dans le panneau {pane}, situé dans {settings}.\n\nCliquez sur le bouton +, sélectionnez “Retrace“ et cochez la case à côté.";
 "accessibility_alert_deny" = "Refuser";

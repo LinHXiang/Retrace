@@ -14,5 +14,4 @@
 "system_preferences_pane" = "Nastavitve varnosti in zasebnosti";
 "about_tooltip" = "Preberite več o aplikaciji.";
 "quit" = "Zapri";
-"preferences_advanced" = "Napredno";
 "accessibility_alert_comment" = "Odobrite dostop do te aplikacije v {pane}, ki se nahaja v {settings}.\n\nKliknite gumb +, izberite Retrace in vklopite potrditveno polje poleg njega.";

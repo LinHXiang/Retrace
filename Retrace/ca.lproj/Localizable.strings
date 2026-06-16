@@ -4,7 +4,6 @@
 "about" = "Sobre";
 "quit" = "Tanca";
 "preferences" = "Preferències…";
-"preferences_advanced" = "Avançat";
 "accessibility_alert_message" = "“Retrace” demana accés per controlar aquest ordinador mitjançant les funcionalitats d'accessibilitat.";
 "accessibility_alert_deny" = "Denegar";
 "accessibility_alert_open" = "Obre les Preferències del Sistema";

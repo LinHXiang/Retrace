@@ -4,7 +4,6 @@
 "about" = "Ilova haqida";
 "quit" = "Chiqish";
 "preferences" = "Moslashtirish…";
-"preferences_advanced" = "Qo'shimchalar";
 "accessibility_alert_message" = "“Retrace” ushbu kompyuterni maxsus imkoniyatlardan foydalangan holda boshqarishni xohlaydi.";
 "accessibility_alert_comment" = "{settings} boʻlimida joylashgan {pane} ilovasiga kirishga ruxsat bering.\n\nRetrace-ni tanlang va yonidagi katakchani yoqing.";
 "accessibility_alert_deny" = "Rad etish";

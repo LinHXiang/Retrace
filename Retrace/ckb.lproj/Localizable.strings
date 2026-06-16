@@ -4,7 +4,6 @@
 "about" = "دەربارە";
 "quit" = "چوونە دەرەوە";
 "preferences" = "رێکخستنەکان…";
-"preferences_advanced" = "رێکخستنە پێشکەوتووەکان";
 "accessibility_alert_message" = "“Retrace” دەیەوێت کۆنترۆڵی ئەم کۆمپیوتەرە بکات بە بەکارهێنانی تایبەتمەندییە دەستڕاگەیشتنەکان.";
 "accessibility_alert_comment" = "دەستڕاگەیشتن بدە بەم ئەپلیکەیشنە لە {pane}، کە لە {settings} دایە.\n\nکلیک لەسەر دوگمەی +، Retrace هەڵبژێرە، و سندوقچەکەی تەنیشتی چالاک بکە.";
 "accessibility_alert_deny" = "ڕەتکردنەوە";

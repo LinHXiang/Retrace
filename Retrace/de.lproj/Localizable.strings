@@ -4,7 +4,6 @@
 "about" = "Über";
 "quit" = "Beenden";
 "preferences" = "Einstellungen…";
-"preferences_advanced" = "Erweitert";
 "accessibility_alert_message" = "“Retrace” möchte diesen Computer mittels Bedienungshilfen steuern.";
 "accessibility_alert_comment" = "Erlaube den Zugriff für diese Anwendung in “{settings} > {pane} > Datenschutz > Bedienungshilfen”.\n\nKlicken Sie auf die Schaltfläche “+“, wählen Sie “Retrace“ aus und aktivieren Sie das Kontrollkästchen daneben.";
 "accessibility_alert_deny" = "Ablehnen";

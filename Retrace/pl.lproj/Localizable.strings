@@ -2,7 +2,6 @@
 "about" = "O aplikacji";
 "quit" = "Wyjdź";
 "preferences" = "Ustawienia…";
-"preferences_advanced" = "Zaawansowane";
 "accessibility_alert_message" = "“Retrace” chce kontrolować Twój komputer używając funkcji dostępności.";
 "accessibility_alert_deny" = "Zabroń";
 "accessibility_alert_open" = "Otwórz ustawienia systemowe";

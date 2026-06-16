@@ -4,7 +4,6 @@
 "about" = "Over";
 "quit" = "Sluit";
 "preferences" = "Voorkeuren…";
-"preferences_advanced" = "Geavanceerd";
 "accessibility_alert_message" = "“Retrace” wil deze computer bedienen met toegankelijkheidsfuncties.";
 "accessibility_alert_comment" = "Verleen toegang tot deze app in {pane}, te vinden in {settings}.\n\nKlik op de + knop, selecteer Retrace en schakel het selectievakje ernaast in.";
 "accessibility_alert_deny" = "Weiger";

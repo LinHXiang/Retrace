@@ -26,6 +26,5 @@
 "ShowRecentCommandInMenuBar" = "Show recent command next to menu icon";
 "ShowSearchField" = "Tampilkan kolom pencarian";
 "ShowTitleBeforeSearchField" = "Tampilkan judul sebelum kolom pencarian";
-"ShowApplicationIcons" = "Tampilkan ikon aplikasi";
 "ShowFooter" = "Tampilkan footer";
 "OpenPreferencesWarning" = "⚠️ Tekan ⌘ untuk buka preferensi ketika footer tersembunyi.";

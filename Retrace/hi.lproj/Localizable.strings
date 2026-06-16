@@ -1,6 +1,5 @@
 "about_tooltip" = "एप्लिकेशन के बारे में अधिक पढ़ें।";
 "quit_tooltip" = "एप्लिकेशन बंद करें।";
-"preferences_advanced" = "विस्तृत विकल्प";
 "accessibility_alert_message" = "“मैकी” इस कंप्यूटर को एक्सेसिबिलिटी फ़ीचर्स का उपयोग करके नियंत्रित करना चाहता है।";
 "accessibility_alert_deny" = "अस्वीकृत करें";
 "accessibility_alert_open" = "सिस्टम विकल्प खोलें";

@@ -4,7 +4,6 @@
 "about" = "О приложении";
 "quit" = "Завершить";
 "preferences" = "Настройки…";
-"preferences_advanced" = "Дополнения";
 "accessibility_alert_message" = "Приложение «Retrace» запрашивает разрешение на управление компьютером с помощью функций универсального доступа.";
 "accessibility_alert_comment" = "Предоставьте права доступа этой программе в настройках {pane} в {settings}.\n\nНажмите кнопку «+», выберите «Retrace» и установите флажок рядом с ним.";
 "accessibility_alert_deny" = "Запретить";

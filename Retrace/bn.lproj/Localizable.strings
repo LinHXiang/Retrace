@@ -2,7 +2,6 @@
 "about" = "সম্পর্ক";
 "quit" = "বন্ধ";
 "preferences" = "পছন্দসমূহ…";
-"preferences_advanced" = "অত্যাধুনিক উন্নত";
 "accessibility_alert_comment" = "{settings}-এ অবস্থিত {pane}-এ এই অ্যাপ্লিকেশনটিতে অ্যাক্সেস মঞ্জুর করুন৷\n\n+ বোতামে ক্লিক করুন, Retrace নির্বাচন করুন এবং এর পাশের চেকবক্সে টগল করুন।";
 "key_used_error" = "কি ইতিমধ্যে ব্যবহার করা হয়েছে।";
 "active_screen" = "সক্রিয় স্ক্রিন";

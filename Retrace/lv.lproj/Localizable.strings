@@ -2,7 +2,6 @@
 "about" = "Par";
 "quit" = "Iziet";
 "preferences" = "Iestatījumi…";
-"preferences_advanced" = "Papildu iestatījumi";
 "accessibility_alert_deny" = "Liegt";
 "key_used_error" = "Poga jau tiek izmantota.";
 "active_screen" = "Aktīvais ekrāns";
