@@ -7,7 +7,7 @@ struct SlideoutContentView: View {
     VStack {
       ToolbarView()
 
-      if let item = appState.navigator.leadHistoryItem {
+      if let item = appState.navigator.leadCommandItem {
         PreviewItemView(item: item)
       } else {
         EmptyView()

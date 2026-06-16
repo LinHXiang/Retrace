@@ -11,16 +11,16 @@ class NavigationManager {
     self.footer = footer
   }
 
-  var selectedHistoryItem: CommandHistoryItemDecorator? {
+  var selectedCommandItem: CommandHistoryItemDecorator? {
     willSet {
-      selectedHistoryItem?.isSelected = false
+      selectedCommandItem?.isSelected = false
       newValue?.isSelected = true
     }
   }
 
   var scrollTarget: UUID?
   var leadSelection: UUID? {
-    if let item = leadHistoryItem {
+    if let item = leadCommandItem {
       return item.id
     }
     if let footerItem = footer.selectedItem {
@@ -28,7 +28,7 @@ class NavigationManager {
     }
     return nil
   }
-  private(set) var leadHistoryItem: CommandHistoryItemDecorator?
+  private(set) var leadCommandItem: CommandHistoryItemDecorator?
 
   var hoverSelectionWhileKeyboardNavigating: UUID?
   var isKeyboardNavigating: Bool = true {
@@ -77,25 +77,25 @@ class NavigationManager {
     footerItem: FooterItem? = nil
   ) {
     if let item = item {
-      selectInHistory(item)
+      selectInCommandHistory(item)
     } else if let footerItem = footerItem {
       selectInFooter(footerItem)
     } else {
-      leadHistoryItem = nil
-      selectedHistoryItem = nil
+      leadCommandItem = nil
+      selectedCommandItem = nil
       footer.selectedItem = nil
     }
   }
 
-  private func selectInHistory(_ item: CommandHistoryItemDecorator) {
-    leadHistoryItem = item
-    selectedHistoryItem = item
+  private func selectInCommandHistory(_ item: CommandHistoryItemDecorator) {
+    leadCommandItem = item
+    selectedCommandItem = item
     footer.selectedItem = nil
   }
 
   private func selectInFooter(_ item: FooterItem) {
-    leadHistoryItem = nil
-    selectedHistoryItem = nil
+    leadCommandItem = nil
+    selectedCommandItem = nil
     footer.selectedItem = item
   }
 

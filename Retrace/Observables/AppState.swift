@@ -51,7 +51,7 @@ class AppState {
 
   @MainActor
   func select() {
-    if let item = navigator.selectedHistoryItem {
+    if let item = navigator.selectedCommandItem {
       history.select(item)
     } else if let item = footer.selectedItem {
       item.action()

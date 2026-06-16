@@ -205,13 +205,13 @@ class CommandHistory: ItemsContainer {
   }
 
   private func updateVisibleShortcuts() {
-    let visibleHistoryItems = visibleItems
-    for item in visibleHistoryItems {
+    let visibleCommandItems = visibleItems
+    for item in visibleCommandItems {
       item.shortcuts = []
     }
 
     var index = 1
-    for item in visibleHistoryItems.prefix(9) {
+    for item in visibleCommandItems.prefix(9) {
       item.shortcuts = KeyShortcut.create(character: String(index))
       index += 1
     }

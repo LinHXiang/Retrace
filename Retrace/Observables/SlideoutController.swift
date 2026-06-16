@@ -147,7 +147,7 @@ class SlideoutController {
   func togglePreview(trigger: SlideoutToggleTrigger = .manual) {
     if !state.isOpen {
       let navigator = AppState.shared.navigator
-      guard navigator.leadHistoryItem != nil else { return }
+      guard navigator.leadCommandItem != nil else { return }
     }
 
     if trigger == .manual {

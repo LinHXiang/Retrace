@@ -33,7 +33,7 @@ struct Get: AppIntent, CustomIntentMigratedAppIntent {
   func perform() async throws -> some IntentResult & ReturnsValue<CommandHistoryItemAppEntity> {
     var item: CommandHistoryItem?
     if selected {
-      item = AppState.shared.navigator.selectedHistoryItem?.item
+      item = AppState.shared.navigator.selectedCommandItem?.item
     } else {
       let index = number - positionOffset
       let items = AppState.shared.history.items
