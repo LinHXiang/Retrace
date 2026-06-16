@@ -17,26 +17,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
-  func applicationWillFinishLaunching(_ notification: Notification) { // swiftlint:disable:this function_body_length
+  func applicationWillFinishLaunching(_ notification: Notification) {
     migrateUserDefaults()
 
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
 
+    observeStatusItemVisibility()
+    observeStatusItemTitle()
+  }
+
+  private func observeStatusItemVisibility() {
     statusItemVisibilityObserver = observe(\.statusItem.isVisible, options: .new) { _, change in
       if let newValue = change.newValue, Defaults[.showInStatusBar] != newValue {
         Defaults[.showInStatusBar] = newValue
       }
     }
 
-    Task {
+    Task { @MainActor in
       for await value in Defaults.updates(.showInStatusBar) {
         statusItem.isVisible = value
       }
     }
+  }
 
+  @MainActor
+  private func observeStatusItemTitle() {
     updateStatusItemTitle()
-    Task {
+    Task { @MainActor in
       for await value in Defaults.updates(.showRecentCommandInMenuBar) {
         if value {
           updateStatusItemTitle()
@@ -45,7 +53,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
       }
     }
-
   }
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -92,6 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
+  @MainActor
   func updateStatusItemTitle() {
     if Defaults[.showRecentCommandInMenuBar] {
       statusItem.button?.title = AppState.shared.menuBarCommandText

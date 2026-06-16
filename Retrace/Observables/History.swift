@@ -83,15 +83,17 @@ class History: ItemsContainer {
   var searchQuery: String = "" {
     didSet {
       throttler.throttle { [self] in
-        updateItems(search.search(string: searchQuery, within: all))
+        Task { @MainActor in
+          updateItems(search.search(string: searchQuery, within: all))
 
-        if searchQuery.isEmpty {
-          AppState.shared.navigator.select(item: visibleItems.first)
-        } else {
-          AppState.shared.navigator.highlightFirst()
+          if searchQuery.isEmpty {
+            AppState.shared.navigator.select(item: visibleItems.first)
+          } else {
+            AppState.shared.navigator.highlightFirst()
+          }
+
+          AppState.shared.popup.needsResize = true
         }
-
-        AppState.shared.popup.needsResize = true
       }
     }
   }
@@ -128,7 +130,7 @@ class History: ItemsContainer {
         for item in items {
           await updateTitle(item: item, title: item.item.generateTitle())
         }
-        AppState.shared.appDelegate?.updateStatusItemTitle()
+        await AppState.shared.appDelegate?.updateStatusItemTitle()
       }
     }
   }
@@ -183,6 +185,7 @@ class History: ItemsContainer {
     }
   }
 
+  @MainActor
   private func updateItems(_ newItems: [Search.SearchResult]) {
     items = newItems.map { result in
       let item = result.object
