@@ -66,29 +66,33 @@ class AppState {
   }
 
   @MainActor
-  func openPreferences() { // swiftlint:disable:this function_body_length
+  func openPreferences() {
     if settingsWindowController == nil {
-      settingsWindowController = SettingsWindowController(
-        panes: [
-          Settings.Pane(
-            identifier: Settings.PaneIdentifier.general,
-            title: NSLocalizedString("Title", tableName: "GeneralSettings", comment: ""),
-            toolbarIcon: NSImage.gearshape!
-          ) {
-            GeneralSettingsPane()
-          },
-          Settings.Pane(
-            identifier: Settings.PaneIdentifier.appearance,
-            title: NSLocalizedString("Title", tableName: "AppearanceSettings", comment: ""),
-            toolbarIcon: NSImage.paintpalette!
-          ) {
-            AppearanceSettingsPane()
-          }
-        ]
-      )
+      settingsWindowController = makeSettingsWindowController()
     }
     settingsWindowController?.show()
     settingsWindowController?.window?.orderFrontRegardless()
+  }
+
+  private func makeSettingsWindowController() -> SettingsWindowController {
+    SettingsWindowController(
+      panes: [
+        Settings.Pane(
+          identifier: Settings.PaneIdentifier.general,
+          title: NSLocalizedString("Title", tableName: "GeneralSettings", comment: ""),
+          toolbarIcon: NSImage.gearshape!
+        ) {
+          GeneralSettingsPane()
+        },
+        Settings.Pane(
+          identifier: Settings.PaneIdentifier.appearance,
+          title: NSLocalizedString("Title", tableName: "AppearanceSettings", comment: ""),
+          toolbarIcon: NSImage.paintpalette!
+        ) {
+          AppearanceSettingsPane()
+        }
+      ]
+    )
   }
 
   func quit() {
