@@ -13,11 +13,6 @@ struct Selection<Item> {
     return item
   }
 
-  func first(where condition: (Item) -> Bool) -> Item? {
-    guard let item, condition(item) else { return nil }
-    return item
-  }
-
   func forEach(_ body: (Item) throws -> Void) rethrows {
     if let item {
       try body(item)
