@@ -16,10 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return statusItem
   }()
 
-  private var isStatusItemDisabled: Bool {
-    false
-  }
-
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
   func applicationWillFinishLaunching(_ notification: Notification) { // swiftlint:disable:this function_body_length
@@ -52,12 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
           statusItem.button?.title = ""
         }
-      }
-    }
-
-    Task {
-      for await _ in Defaults.updates(.ignoreEvents) {
-        statusItem.button?.appearsDisabled = isStatusItemDisabled
       }
     }
 
@@ -118,20 +108,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   @objc
   private func performStatusItemClick() {
-    if let event = NSApp.currentEvent {
-      let modifierFlags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
-
-      if modifierFlags.contains(.option) {
-        Defaults[.ignoreEvents].toggle()
-
-        if modifierFlags.contains(.shift) {
-          Defaults[.ignoreOnlyNextEvent] = Defaults[.ignoreEvents]
-        }
-
-        return
-      }
-    }
-
     Task { @MainActor in
       try? await AppState.shared.history.load()
       panel.toggle(height: AppState.shared.popup.height, at: .statusItem)
@@ -152,7 +128,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   private func disableUnusedGlobalHotkeys() {
-    let names: [KeyboardShortcuts.Name] = [.delete, .pin]
+    let names: [KeyboardShortcuts.Name] = [.delete]
     KeyboardShortcuts.disable(names)
 
     NotificationCenter.default.addObserver(

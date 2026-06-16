@@ -31,9 +31,6 @@ enum SelectionAppearance {
 struct ListItemView<Title: View, ID: Hashable>: View {
   var id: ID
   var selectionId: UUID
-  var appIcon: ApplicationImage?
-  var image: NSImage?
-  var accessoryImage: NSImage?
   var attributedTitle: AttributedString?
   var shortcuts: [KeyShortcut]
   var isSelected: Bool
@@ -42,41 +39,16 @@ struct ListItemView<Title: View, ID: Hashable>: View {
   var selectionAppearance: SelectionAppearance = .none
   @ViewBuilder var title: () -> Title
 
-  @Default(.showApplicationIcons) private var showIcons
   @Environment(AppState.self) private var appState
   @Environment(ModifierFlags.self) private var modifierFlags
 
   var body: some View {
     HStack(spacing: 0) {
-      if showIcons, let appIcon {
-        VStack {
-          Spacer(minLength: 0)
-          AppImageView(appImage: appIcon, size: NSSize(width: 15, height: 15))
-          Spacer(minLength: 0)
-        }
-        .padding(.leading, 4)
-        .padding(.vertical, 5)
-      }
-
       Spacer()
-        .frame(width: showIcons ? 5 : 10)
+        .frame(width: 10)
 
-      if let accessoryImage {
-        Image(nsImage: accessoryImage)
-          .accessibilityIdentifier("copy-history-item")
-          .padding(.trailing, 5)
-          .padding(.vertical, 5)
-      }
-
-      if let image {
-        Image(nsImage: image)
-          .accessibilityIdentifier("copy-history-item")
-          .padding(.trailing, 5)
-          .padding(.vertical, 5)
-      } else {
-        ListItemTitleView(attributedTitle: attributedTitle, title: title)
-          .padding(.trailing, 5)
-      }
+      ListItemTitleView(attributedTitle: attributedTitle, title: title)
+        .padding(.trailing, 5)
 
       Spacer()
 

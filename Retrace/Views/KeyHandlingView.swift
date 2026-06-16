@@ -57,11 +57,7 @@ struct KeyHandlingView<Content: View>: View {
           searchQuery = ""
           return .handled
         case .deleteCurrentItem:
-          if appState.navigator.pasteStackSelected {
-            appState.removePasteStack()
-          } else {
-            appState.deleteSelection()
-          }
+          appState.deleteSelection()
           return .handled
         case .deleteOneCharFromSearch:
           searchFocused = true
@@ -143,9 +139,6 @@ struct KeyHandlingView<Content: View>: View {
           return .handled
         case .openPreferences:
           appState.openPreferences()
-          return .handled
-        case .pinOrUnpin:
-          appState.togglePin()
           return .handled
         case .selectCurrentItem:
           appState.select()

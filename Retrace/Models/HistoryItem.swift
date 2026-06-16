@@ -22,10 +22,6 @@ class HistoryItem {
       keys.remove(character)
     }
 
-    if let pinKey = KeyChord.pinKey,
-       let character = Sauce.shared.character(for: Int(pinKey.QWERTYKeyCode), cocoaModifiers: []) {
-      keys.remove(character)
-    }
     if let previewKey = KeyChord.previewKey,
        let character = Sauce.shared.character(for: Int(previewKey.QWERTYKeyCode), cocoaModifiers: []) {
       keys.remove(character)

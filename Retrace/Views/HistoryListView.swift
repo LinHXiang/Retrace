@@ -9,30 +9,10 @@ struct HistoryListView: View {
   @Environment(ModifierFlags.self) private var modifierFlags
   @Environment(\.scenePhase) private var scenePhase
 
-  @Default(.pinTo) private var pinTo
-  @Default(.previewDelay) private var previewDelay
   @Default(.showFooter) private var showFooter
 
-  private var pinnedItems: [HistoryItemDecorator] {
-    appState.history.pinnedItems.filter(\.isVisible)
-  }
   private var unpinnedItems: [HistoryItemDecorator] {
     appState.history.unpinnedItems.filter(\.isVisible)
-  }
-  private var showPinsSeparator: Bool {
-    pinsVisible && !unpinnedItems.isEmpty
-  }
-
-  private var pinsVisible: Bool {
-    return !pinnedItems.isEmpty
-  }
-
-  private var pasteStackVisible: Bool {
-    if let stack = appState.history.pasteStack,
-       !stack.items.isEmpty {
-      return true
-    }
-    return false
   }
 
   private var topPadding: CGFloat {
@@ -66,32 +46,10 @@ struct HistoryListView: View {
   }
 
   var body: some View {
-    let topPinsVisible = pinTo == .top && pinsVisible
-    let bottomPinsVisible = pinTo == .bottom && pinsVisible
-    let topSeparatorVisible = topPinsVisible || pasteStackVisible
-    let bottomSeparatorVisible = bottomPinsVisible
-    let scrollTopPadding = topSeparatorVisible ? Popup.verticalSeparatorPadding : topPadding
-    let scrollBottomPadding = bottomSeparatorVisible ? Popup.verticalSeparatorPadding : bottomPadding
-
     VStack(spacing: 0) {
-      if let stack = appState.history.pasteStack,
-         !stack.items.isEmpty {
-        PasteStackView(stack: stack)
-
-        if topPinsVisible {
-          separator()
-        }
-      }
-
-      if topPinsVisible {
-        PinsView(items: pinnedItems)
-      }
-
-      if topSeparatorVisible {
-        topSeparator()
-      }
+      topSeparator()
     }
-    .padding(.top, topSeparatorVisible ? topPadding : 0)
+    .padding(.top, topPadding)
     .readHeight(appState, into: \.popup.extraTopHeight)
 
     ScrollView {
@@ -99,8 +57,8 @@ struct HistoryListView: View {
         MultipleSelectionListView(items: unpinnedItems) { previous, item, next, index in
           HistoryItemView(item: item, previous: previous, next: next, index: index)
         }
-        .padding(.top, scrollTopPadding)
-        .padding(.bottom, scrollBottomPadding)
+        .padding(.top, Popup.verticalSeparatorPadding)
+        .padding(.bottom, bottomPadding)
         .task(id: appState.navigator.scrollTarget) {
           guard appState.navigator.scrollTarget != nil else { return }
 
@@ -142,20 +100,11 @@ struct HistoryListView: View {
         }
       }
       .contentMargins(.leading, 10, for: .scrollIndicators)
-      .contentMargins(.top, scrollTopPadding, for: .scrollIndicators)
-      .contentMargins(.bottom, scrollBottomPadding, for: .scrollIndicators)
+      .contentMargins(.top, Popup.verticalSeparatorPadding, for: .scrollIndicators)
+      .contentMargins(.bottom, bottomPadding, for: .scrollIndicators)
     }
 
-    VStack(spacing: 0) {
-      if bottomSeparatorVisible {
-        bottomSeparator()
-      }
-
-      if bottomPinsVisible {
-        PinsView(items: pinnedItems)
-      }
-    }
-    .padding(.bottom, bottomSeparatorVisible ? bottomPadding : 0)
-    .readHeight(appState, into: \.popup.extraBottomHeight)
+    EmptyView()
+      .readHeight(appState, into: \.popup.extraBottomHeight)
   }
 }

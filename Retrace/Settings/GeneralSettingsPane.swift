@@ -32,10 +32,6 @@ struct GeneralSettingsPane: View {
           .help(Text("OpenTooltip", tableName: "GeneralSettings"))
       }
 
-      Settings.Section(label: { Text("Pin", tableName: "GeneralSettings") }) {
-        KeyboardShortcuts.Recorder(for: .pin)
-          .help(Text("PinTooltip", tableName: "GeneralSettings"))
-      }
       Settings.Section(label: { Text("Delete", tableName: "GeneralSettings") }
       ) {
         KeyboardShortcuts.Recorder(for: .delete)

@@ -1,17 +1,12 @@
-import AppKit.NSWorkspace
 import Defaults
 import Foundation
 import Observation
-import Sauce
 
 @Observable
 class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   static func == (lhs: HistoryItemDecorator, rhs: HistoryItemDecorator) -> Bool {
     return lhs.id == rhs.id
   }
-
-  static var previewImageSize: NSSize { NSScreen.forPopup?.visibleFrame.size ?? NSSize(width: 2048, height: 1536) }
-  static var thumbnailImageSize: NSSize { NSSize(width: 340, height: Defaults[.imageMaxHeight]) }
 
   let id = UUID()
 
@@ -25,33 +20,11 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   }
   var shortcuts: [KeyShortcut] = []
 
-  var application: String? {
-    if item.universalClipboard {
-      return "iCloud"
-    }
-
-    guard let bundle = item.application,
-      let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundle)
-    else {
-      return nil
-    }
-
-    return url.deletingPathExtension().lastPathComponent
-  }
-
-  var hasImage: Bool { item.image != nil }
-
-  var previewImageGenerationTask: Task<(), Error>?
-  var thumbnailImageGenerationTask: Task<(), Error>?
-  var previewImage: NSImage?
-  var thumbnailImage: NSImage?
-  var applicationImage: ApplicationImage
-
   // 10k characters seems to be more than enough on large displays
   var text: String { item.previewableText.shortened(to: 10_000) }
 
-  var isPinned: Bool { item.pin != nil }
-  var isUnpinned: Bool { item.pin == nil }
+  var isPinned: Bool { false }
+  var isUnpinned: Bool { true }
 
   func hash(into hasher: inout Hasher) {
     // We need to hash title and attributedTitle, so SwiftUI knows it needs to update the view if they chage
@@ -66,84 +39,8 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     self.item = item
     self.shortcuts = shortcuts
     self.title = item.title
-    self.applicationImage = ApplicationImageCache.shared.getImage(item: item)
 
-    synchronizeItemPin()
     synchronizeItemTitle()
-  }
-
-  @MainActor
-  func ensureThumbnailImage() {
-    guard item.image != nil else {
-      return
-    }
-    guard thumbnailImage == nil else {
-      return
-    }
-    guard thumbnailImageGenerationTask == nil else {
-      return
-    }
-    thumbnailImageGenerationTask = Task { [weak self] in
-      self?.generateThumbnailImage()
-    }
-  }
-
-  @MainActor
-  func ensurePreviewImage() {
-    guard item.image != nil else {
-      return
-    }
-    guard previewImage == nil else {
-      return
-    }
-    guard previewImageGenerationTask == nil else {
-      return
-    }
-    previewImageGenerationTask = Task { [weak self] in
-      self?.generatePreviewImage()
-    }
-  }
-
-  @MainActor
-  func asyncGetPreviewImage() async -> NSImage? {
-    if let image = previewImage {
-      return image
-    }
-    ensurePreviewImage()
-    _ = await previewImageGenerationTask?.result
-    return previewImage
-  }
-
-  @MainActor
-  func cleanupImages() {
-    thumbnailImageGenerationTask?.cancel()
-    previewImageGenerationTask?.cancel()
-    thumbnailImage?.recache()
-    previewImage?.recache()
-    thumbnailImage = nil
-    previewImage = nil
-  }
-
-  @MainActor
-  private func generateThumbnailImage() {
-    guard let image = item.image else {
-      return
-    }
-    thumbnailImage = image.resized(to: HistoryItemDecorator.thumbnailImageSize)
-  }
-
-  @MainActor
-  private func generatePreviewImage() {
-    guard let image = item.image else {
-      return
-    }
-    previewImage = image.resized(to: HistoryItemDecorator.previewImageSize)
-  }
-
-  @MainActor
-  func sizeImages() {
-    generatePreviewImage()
-    generateThumbnailImage()
   }
 
   func highlight(_ query: String, _ ranges: [Range<String.Index>]) {
@@ -171,29 +68,6 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     }
 
     attributedTitle = attributedString
-  }
-
-  @MainActor
-  func togglePin() {
-    if item.pin != nil {
-      item.pin = nil
-    } else {
-      let pin = HistoryItem.randomAvailablePin
-      item.pin = pin
-    }
-  }
-
-  private func synchronizeItemPin() {
-    _ = withObservationTracking {
-      item.pin
-    } onChange: {
-      DispatchQueue.main.async {
-        if let pin = self.item.pin {
-          self.shortcuts = KeyShortcut.create(character: pin)
-        }
-        self.synchronizeItemPin()
-      }
-    }
   }
 
   private func synchronizeItemTitle() {

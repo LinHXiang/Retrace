@@ -54,12 +54,7 @@ class AppState: Sendable {
   @MainActor
   func select() {
     if !navigator.selection.isEmpty {
-      if navigator.isMultiSelectInProgress {
-        navigator.isManualMultiSelect = false
-        history.startPasteStack(selection: &navigator.selection)
-      } else {
-        history.select(navigator.selection.first)
-      }
+      history.select(navigator.selection.first)
     } else if let item = footer.selectedItem {
       // TODO: Use item.suppressConfirmation, but it's not updated!
       if item.confirmation != nil, Defaults[.suppressClearAlert] == false {
@@ -71,21 +66,6 @@ class AppState: Sendable {
       Clipboard.shared.copy(history.searchQuery)
       history.searchQuery = ""
     }
-  }
-
-  @MainActor
-  func togglePin() {
-    withTransaction(Transaction()) {
-      navigator.selection.forEach { _, item in
-        history.togglePin(item)
-      }
-    }
-  }
-
-  @MainActor
-  func removePasteStack() {
-    history.interruptPasteStack()
-    navigator.highlightFirst()
   }
 
   @MainActor
@@ -130,15 +110,6 @@ class AppState: Sendable {
             toolbarIcon: NSImage.paintpalette!
           ) {
             AppearanceSettingsPane()
-          },
-          Settings.Pane(
-            identifier: Settings.PaneIdentifier.pins,
-            title: NSLocalizedString("Title", tableName: "PinsSettings", comment: ""),
-            toolbarIcon: NSImage.pincircle!
-          ) {
-            PinsSettingsPane()
-              .environment(self)
-              .modelContainer(Storage.shared.container)
           }
         ]
       )

@@ -6,8 +6,6 @@ import Settings
 struct AppearanceSettingsPane: View {
   @Default(.popupPosition) private var popupAt
   @Default(.popupScreen) private var popupScreen
-  @Default(.pinTo) private var pinTo
-  @Default(.imageMaxHeight) private var imageHeight
   @Default(.previewDelay) private var previewDelay
   @Default(.highlightMatch) private var highlightMatch
   @Default(.menuIcon) private var menuIcon
@@ -16,16 +14,8 @@ struct AppearanceSettingsPane: View {
   @Default(.searchVisibility) private var searchVisibility
   @Default(.showFooter) private var showFooter
   @Default(.windowPosition) private var windowPosition
-  @Default(.showApplicationIcons) private var showApplicationIcons
 
   @State private var screens = NSScreen.screens
-
-  private let imageHeightFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.minimum = 1
-    formatter.maximum = 200
-    return formatter
-  }()
 
   private let numberOfItemsFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
@@ -76,27 +66,6 @@ struct AppearanceSettingsPane: View {
             .help(Text("PopupAtLastLocationReset", tableName: "AppearanceSettings"))
             .disabled(windowPosition == _windowPosition.defaultValue)
           }
-        }
-      }
-
-      Settings.Section(label: { Text("PinTo", tableName: "AppearanceSettings") }) {
-        Picker("", selection: $pinTo) {
-          ForEach(PinsPosition.allCases) { position in
-            Text(position.description)
-          }
-        }
-        .labelsHidden()
-        .frame(width: 141, alignment: .leading)
-        .help(Text("PinToTooltip", tableName: "AppearanceSettings"))
-      }
-
-      Settings.Section(label: { Text("ImageHeight", tableName: "AppearanceSettings") }) {
-        HStack {
-          TextField("", value: $imageHeight, formatter: imageHeightFormatter)
-            .frame(width: 120)
-            .help(Text("ImageHeightTooltip", tableName: "AppearanceSettings"))
-          Stepper("", value: $imageHeight, in: 1...200)
-            .labelsHidden()
         }
       }
 
@@ -166,9 +135,6 @@ struct AppearanceSettingsPane: View {
         }
         Defaults.Toggle(key: .showTitle) {
           Text("ShowTitleBeforeSearchField", tableName: "AppearanceSettings")
-        }
-        Defaults.Toggle(key: .showApplicationIcons) {
-          Text("ShowApplicationIcons", tableName: "AppearanceSettings")
         }
 
         Defaults.Toggle(key: .showFooter) {
