@@ -1,7 +1,6 @@
 import AppKit
 import Defaults
 import Foundation
-import Logging
 import Observation
 import Sauce
 
@@ -79,7 +78,6 @@ struct TerminalCommandHistory {
 @Observable
 class History: ItemsContainer {
   static let shared = History()
-  let logger = Logger(label: "com.freeorz.retrace")
 
   var items: [HistoryItemDecorator] = []
   var searchQuery: String = "" {
@@ -156,12 +154,7 @@ class History: ItemsContainer {
   private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
     let entries = try history.load()
     all = entries.prefix(Defaults[.size]).map { entry in
-      let item = HistoryItem(contents: [
-        HistoryItemContent(
-          type: NSPasteboard.PasteboardType.string.rawValue,
-          value: entry.command.data(using: .utf8)
-        )
-      ])
+      let item = HistoryItem(command: entry.command)
       if let timestamp = entry.timestamp {
         item.firstCopiedAt = timestamp
         item.lastCopiedAt = timestamp

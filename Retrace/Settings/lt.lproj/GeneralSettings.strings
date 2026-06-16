@@ -4,15 +4,13 @@
 "CheckNow" = "Patikrinti dabar";
 "Open" = "Atidaryti:";
 "OpenTooltip" = "Pasaulinis spartusis klavišas programai atidaryti.\nPakartotinai paspaudus pagrindinį klavišą ir laikant modifikatorių, bus pasirinktas kitas sąrašo elementas. Šiuo režimu atleidus modifikavimo klavišus bus patvirtintas pasirinkimas ir uždarytas iškylantysis langas.\nNumatytasis: ⇧⌘T.";
-"Pin" = "Prisegti:";
-"PinTooltip" = "Spartusis klavišas istorijos elementui prisegti.\nNumatytasis spartusis klavišas: ⌥P.";
 "ShowPreview" = "Peržiūra:";
 "ShowPreviewTooltip" = "Rodyti peržiūrą su papildoma informacija.\nNumatytasis spartusis klavišas: ⌃Space.";
-"Behavior" = "Elgsena:";
-"Modifiers" = "Pritaikykite elgseną, kai pasirenkamas elementas:\n• Pasirinkite paspaudę %@, kad nukopijuotumėte elementą.\n• Pasirinkite paspaudę %@, jei norite kopijuoti ir įklijuoti elementą.\n• Pasirinkite paspaudę %@, kad nukopijuotumėte, panaikintumėte formatavimą ir įklijuotumėte elementą.";
 "Search" = "Paieška:";
 "Exact" = "Tikslus";
 "Fuzzy" = "Apytikslis";
 "Regex" = "Reguliarios išraiškos";
 "Mixed" = "Mišrus";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Pranešimai ir garsai 􀱁";

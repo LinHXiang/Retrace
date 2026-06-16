@@ -1,4 +1,3 @@
-import SwiftData
 import SwiftUI
 
 struct ContentView: View {
@@ -77,5 +76,4 @@ struct ContentView: View {
 #Preview {
   ContentView()
     .environment(\.locale, .init(identifier: "en"))
-    .modelContainer(Storage.shared.container)
 }

@@ -6,14 +6,11 @@
 "OpenTooltip" = "Globalt kortkommando för att öppna applikationen.\nFörval: ⇧⌘T.";
 "ShowPreview" = "Förhandsvisning:";
 "ShowPreviewTooltip" = "Visa förhandsgranskning med ytterligare information.\nFörval: ⌃Space.";
-"Behavior" = "Beteende:";
 "Search" = "Sök:";
 "Exact" = "Exakt";
 "Fuzzy" = "Ungefärlig";
 "Mixed" = "Blandad";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Notiser och ljud 􀱁";
-"Pin" = "Fästa:";
-"Behavior" = "Beteende:";
-"PinTooltip" = "Kortkommando för att fästa historikpost .\nFörval: ⌥P.";
-"Modifiers" = "Anpassa beteendet vid val av post:\n• Välj med %@ nedtryckt för att kopiera posten.\n• Välj med %@ nedtryckt för att kopiera och klistra in posten.\n• Välj med %@ nedtryckt för att kopiera, rensa formatering och klistra in posten.";
 "Regex" = "Reguljära uttryck";

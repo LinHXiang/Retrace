@@ -4,15 +4,13 @@
 "CheckNow" = "Controlla ora";
 "Open" = "Aprire:";
 "OpenTooltip" = "Una pressione ripetuta del tasto principale mentre si tengono premuti i modificatori seleziona la voce successiva dell'elenco.\nIn questa modalità, rilasciando i tasti modificatori si conferma la selezione e si chiude il popup.\nDefault: ⇧⌘T.";
-"Pin" = "Bloccare:";
-"PinTooltip" = "Combinazione di tasti per bloccare l'elemento della cronologia.\nDefault: %@P.";
 "ShowPreview" = "Anteprima:";
 "ShowPreviewTooltip" = "Mostra anteprima con informazioni aggiuntive.\nDefault: ⌃Space.";
-"Behavior" = "Comportamento:";
-"Modifiers" = "Personalizza il comportamento quando si seleziona un elemento:\n• Seleziona con %@ premuto per copiare l'elemento.\n• Seleziona con %@ premuto per copiare e incollare l'elemento.\n• Seleziona con %@ premuto per copiare, eliminare la formattazione e incollare l'elemento.";
 "Search" = "Ricerca:";
 "Exact" = "Esatta";
 "Fuzzy" = "Approssimata";
 "Regex" = "Espressioni regolari";
 "Mixed" = "Mista";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Notifiche e suoni 􀱁";

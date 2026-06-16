@@ -4,15 +4,13 @@
 "CheckNow" = "Jetzt prüfen";
 "Open" = "Öffnen:";
 "OpenTooltip" = "Globales Tastenkürzel zum Öffnen der Anwendung.\nEin wiederholtes Drücken der Haupttaste bei gleichzeitigem Halten der Modifikatortasten wählt das nächste Element in der Liste aus. In diesem Modus wird durch Loslassen der Modifikatortasten die Auswahl bestätigt und das Popup geschlossen.\nStandard: ⇧⌘T.";
-"Pin" = "Anheften:";
-"PinTooltip" = "Tastenkombination zum Anheften eines Verlaufselements.\nStandard: %@P.";
 "ShowPreview" = "Vorschau:";
 "ShowPreviewTooltip" = "Vorschau mit zusätzlichen Informationen anzeigen.\nStandard: ⌃Space.";
-"Behavior" = "Verhalten:";
-"Modifiers" = "Verhalten bei Auswahl eines Eintrags anpassen:\n• Drücke %@, um den gewählten Eintrag zu kopieren.\n• Drücke %@, um den gewählten Eintrag zu kopieren und einzufügen.\n• Drücke %@, um den gewählten Eintrag zu kopieren und unformatiert einzufügen.";
 "Search" = "Suche:";
 "Exact" = "Exakt";
 "Fuzzy" = "Fuzzy";
 "Regex" = "Reguläre Ausdrücke";
 "Mixed" = "Gemischt";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Benachrichtigungen und Töne 􀱁";

@@ -1,20 +1,14 @@
-import AppKit
+import Foundation
 import Defaults
-import SwiftData
 
-@Model
 class HistoryItem {
   var firstCopiedAt: Date = Date.now
   var lastCopiedAt: Date = Date.now
   var title = ""
+  var command: String?
 
-  @Relationship(deleteRule: .cascade, inverse: \HistoryItemContent.item)
-  var contents: [HistoryItemContent] = []
-
-  init(contents: [HistoryItemContent] = []) {
-    self.firstCopiedAt = firstCopiedAt
-    self.lastCopiedAt = lastCopiedAt
-    self.contents = contents
+  init(command: String? = nil) {
+    self.command = command
   }
 
   func generateTitle() -> String {
@@ -39,26 +33,8 @@ class HistoryItem {
   }
 
   var previewableText: String {
-    if let text = text, !text.isEmpty {
-      text
-    } else {
-      title
-    }
+    text?.isEmpty == false ? text ?? "" : title
   }
 
-  var text: String? {
-    guard let data = contentData([.string]) else {
-      return nil
-    }
-
-    return String(data: data, encoding: .utf8)
-  }
-
-  private func contentData(_ types: [NSPasteboard.PasteboardType]) -> Data? {
-    let content = contents.first(where: { content in
-      return types.contains(NSPasteboard.PasteboardType(content.type))
-    })
-
-    return content?.value
-  }
+  var text: String? { command }
 }

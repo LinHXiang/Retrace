@@ -4,15 +4,13 @@
 "CheckNow" = "Verificar agora";
 "Open" = "Abrir:";
 "OpenTooltip" = "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o item seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T.";
-"Pin" = "Fixar:";
-"PinTooltip" = "Tecla de atalho para fixar item do histórico.\nPadrão: ⌥P.";
 "ShowPreview" = "Pré-visualizar:";
 "ShowPreviewTooltip" = "Mostrar pré-visualização com informações adicionais.\nPadrão: ⌃Space.";
-"Behavior" = "Comportamento:";
-"Modifiers" = "Personalize o comportamento ao selecionar o item:\n• Selecione com ⌘ pressionado para copiar o item.\n• Selecione com ⌥ pressionado para copiar e colar o item.\n• Selecionar com ⌥⇧ pressionado para copiar, limpar a formatação e colar o item.";
 "Search" = "Busca:";
 "Exact" = "Exata";
 "Fuzzy" = "Aproximada";
 "Regex" = "Expressões regulares";
 "Mixed" = "Mista";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Notificações e sons 􀱁";

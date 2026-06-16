@@ -4,15 +4,13 @@
 "CheckNow" = "";
 "Open" = "";
 "OpenTooltip" = "";
-"Pin" = "";
-"PinTooltip" = "";
 "ShowPreview" = "";
 "ShowPreviewTooltip" = "";
-"Behavior" = "";
-"Modifiers" = "";
 "Search" = "";
 "Exact" = "";
 "Fuzzy" = "";
 "Regex" = "";
 "Mixed" = "";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "";

@@ -4,15 +4,13 @@
 "CheckNow" = "Check now";
 "Open" = "Open:";
 "OpenTooltip" = "Global shortcut key to open application.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the popup.\nDefault: ⇧⌘T.";
-"Pin" = "Pin:";
-"PinTooltip" = "Shortcut key to pin command.\nDefault: ⌥P.";
 "ShowPreview" = "Preview:";
 "ShowPreviewTooltip" = "Show preview with additional information.\nDefault: ⌃Space.";
-"Behavior" = "Behavior:";
-"Modifiers" = "Selecting a command copies it to the system clipboard.";
 "Search" = "Search:";
 "Exact" = "Exact";
 "Fuzzy" = "Fuzzy";
 "Regex" = "Regular expressions";
 "Mixed" = "Mixed";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Notifications and sounds 􀱁";

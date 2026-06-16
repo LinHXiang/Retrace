@@ -4,15 +4,13 @@
 "CheckNow" = "Provjeri sada";
 "Open" = "Otvoriti:";
 "OpenTooltip" = "Globalna tipkovnica prečaca za otvaranje aplikacije.\nPonovljenim pritiskom na glavnu tipku dok držite modifikatore odabrat ćete sljedeću stavku na popisu. U ovom načinu rada, otpuštanjem modifikatorskih tipki potvrdit ćete odabir i zatvoriti skočni prozor.\nZadano: ⇧⌘T.";
-"Pin" = "Prikačiti:";
-"PinTooltip" = "Tipka prečaca za prikvačivanje stavke povijesti.\nStandardno: %@P.";
 "ShowPreview" = "Pregled:";
 "ShowPreviewTooltip" = "Prikaži pregled s dodatnim informacijama.\nStandardno: ⌃Space.";
-"Behavior" = "Ponašanje:";
-"Modifiers" = "Prilagodi ponašanje pri biranju elemenata:\n• Za kopiranje elementa odaberi zajedno s pritisnutom tipkom %@.\n• Za kopiranje i umetanje elementa odaberi zajedno s pritisnutom tipkom %@.\n• Za kopiranje, uklanjanje formata i umetanje elementa odaberi zajedno s pritisnutom tipkom %@.";
 "Search" = "Traži:";
 "Exact" = "Točno";
 "Fuzzy" = "Netočno";
 "Regex" = "Regularni izrazi";
 "Mixed" = "Mješoviti";
+"HistorySize" = "History size:";
+"HistorySizeTooltip" = "Maximum number of commands to show.";
 "NotificationsAndSounds" = "Obavijesti i zvukovi 􀱁";

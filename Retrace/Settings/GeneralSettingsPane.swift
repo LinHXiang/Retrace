@@ -10,6 +10,14 @@ struct GeneralSettingsPane: View {
   )
 
   @Default(.searchMode) private var searchMode
+  @Default(.size) private var size
+
+  private let sizeFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.minimum = 1
+    formatter.maximum = 999
+    return formatter
+  }()
 
   var body: some View {
     Settings.Container(contentWidth: 450) {
@@ -51,6 +59,19 @@ struct GeneralSettingsPane: View {
         }
         .labelsHidden()
         .frame(width: 180, alignment: .leading)
+      }
+
+      Settings.Section(
+        bottomDivider: true,
+        label: { Text("HistorySize", tableName: "GeneralSettings") }
+      ) {
+        HStack {
+          TextField("", value: $size, formatter: sizeFormatter)
+            .frame(width: 80)
+            .help(Text("HistorySizeTooltip", tableName: "GeneralSettings"))
+          Stepper("", value: $size, in: 1...999)
+            .labelsHidden()
+        }
       }
 
       Settings.Section(title: "") {

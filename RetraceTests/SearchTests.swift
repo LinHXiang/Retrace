@@ -272,15 +272,7 @@ class SearchTests: XCTestCase {
 
   @MainActor
   private func historyItemWithTitle(_ value: String?) -> HistoryItem {
-    let contents = [
-      HistoryItemContent(
-        type: NSPasteboard.PasteboardType.string.rawValue,
-        value: value?.data(using: .utf8)
-      )
-    ]
-    let item = HistoryItem()
-    Storage.shared.context.insert(item)
-    item.contents = contents
+    let item = HistoryItem(command: value)
     item.title = item.generateTitle()
 
     return item
