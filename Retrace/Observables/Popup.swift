@@ -1,4 +1,4 @@
-import AppKit.NSRunningApplication
+import AppKit.NSEvent
 import Defaults
 import KeyboardShortcuts
 import Observation
