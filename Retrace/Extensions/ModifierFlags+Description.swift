@@ -1,5 +1,4 @@
 import AppKit.NSEvent
-import Carbon.HIToolbox
 
 // https://github.com/sindresorhus/KeyboardShortcuts/blob/e6b60117ec266e1e5d059f7f34815144f9762b36/Sources/KeyboardShortcuts/Utilities.swift#L308-L342
 extension NSEvent.ModifierFlags {
