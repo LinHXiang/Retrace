@@ -52,7 +52,7 @@ where Content: View, Slideout: View {
       .padding(.vertical)
       .padding(.horizontal, Popup.horizontalPadding)
       // macOS 26 broke gestures if no background is present.
-      // The slight opcaity white background is a workaround
+      // The slight opacity white background is a workaround
       .background(Color.white.opacity(0.001))
       .onHover(perform: { inside in
         if let window = appState.appDelegate?.panel {
