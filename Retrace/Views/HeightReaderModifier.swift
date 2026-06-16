@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SizeReaderModifier<Value: Equatable>: ViewModifier {
+private struct SizeReaderModifier<Value: Equatable>: ViewModifier {
   @Binding var value: Value
   let mapper: (CGSize) -> Value
 
