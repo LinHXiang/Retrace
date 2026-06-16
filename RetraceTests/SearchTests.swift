@@ -100,13 +100,9 @@ class SearchTests: XCTestCase {
   }
 
   @MainActor
-  func testFuzzySearch() { // swiftlint:disable:this function_body_length
+  func testFuzzySearchMatchesCommonQueries() {
     Defaults[.searchMode] = Search.Mode.fuzzy
-    items = [
-      HistoryItemDecorator(historyItemWithTitle("foo bar baz")),
-      HistoryItemDecorator(historyItemWithTitle("foo bar zaz")),
-      HistoryItemDecorator(historyItemWithTitle("xxx yyy zzz"))
-    ]
+    prepareSearchItems()
 
     XCTAssertEqual(search(""), [
       Search.SearchResult(score: nil, object: items[0], ranges: []),
@@ -142,6 +138,13 @@ class SearchTests: XCTestCase {
         ranges: [range(from: 0, to: 2, in: items[1])]
       )
     ])
+  }
+
+  @MainActor
+  func testFuzzySearchMatchesLooseQueries() {
+    Defaults[.searchMode] = Search.Mode.fuzzy
+    prepareSearchItems()
+
     XCTAssertEqual(search("za"), [
       Search.SearchResult(
         score: 0.08,
