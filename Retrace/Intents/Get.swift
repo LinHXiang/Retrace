@@ -30,7 +30,7 @@ struct Get: AppIntent, CustomIntentMigratedAppIntent {
     }
   }
 
-  func perform() async throws -> some IntentResult & ReturnsValue<HistoryItemAppEntity> {
+  func perform() async throws -> some IntentResult & ReturnsValue<CommandHistoryItemAppEntity> {
     var item: CommandHistoryItem?
     if selected {
       item = AppState.shared.navigator.selectedHistoryItem?.item
@@ -45,7 +45,7 @@ struct Get: AppIntent, CustomIntentMigratedAppIntent {
       throw AppIntentError.notFound
     }
 
-    let intentItem = HistoryItemAppEntity()
+    let intentItem = CommandHistoryItemAppEntity()
     intentItem.text = item.text
 
     return .result(value: intentItem)

@@ -33,7 +33,7 @@
 		DA13D7D22C19F91B00FA9E23 /* Defaults.Keys+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7D12C19F91B00FA9E23 /* Defaults.Keys+Names.swift */; };
 		DA13D7D82C1A223E00FA9E23 /* Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7D32C1A223E00FA9E23 /* Select.swift */; };
 		DA13D7D92C1A223E00FA9E23 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7D42C1A223E00FA9E23 /* Get.swift */; };
-		DA13D7DC2C1A223E00FA9E23 /* HistoryItemAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7D72C1A223E00FA9E23 /* HistoryItemAppEntity.swift */; };
+		DA13D7DC2C1A223E00FA9E23 /* CommandHistoryItemAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7D72C1A223E00FA9E23 /* CommandHistoryItemAppEntity.swift */; };
 		DA13D7DE2C1A436E00FA9E23 /* AppIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13D7DD2C1A436E00FA9E23 /* AppIntentError.swift */; };
 		DA181177247D14DA00066D55 /* Settings.PaneIdentifier+Panes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA181176247D14DA00066D55 /* Settings.PaneIdentifier+Panes.swift */; };
 		DA19690E2C3EEFA900258481 /* KeyboardShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19690D2C3EEFA900258481 /* KeyboardShortcutView.swift */; };
@@ -159,7 +159,7 @@
 		DA13D7D12C19F91B00FA9E23 /* Defaults.Keys+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults.Keys+Names.swift"; sourceTree = "<group>"; };
 		DA13D7D32C1A223E00FA9E23 /* Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
 		DA13D7D42C1A223E00FA9E23 /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
-		DA13D7D72C1A223E00FA9E23 /* HistoryItemAppEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemAppEntity.swift; sourceTree = "<group>"; };
+		DA13D7D72C1A223E00FA9E23 /* CommandHistoryItemAppEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHistoryItemAppEntity.swift; sourceTree = "<group>"; };
 		DA13D7DD2C1A436E00FA9E23 /* AppIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentError.swift; sourceTree = "<group>"; };
 		DA181176247D14DA00066D55 /* Settings.PaneIdentifier+Panes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings.PaneIdentifier+Panes.swift"; sourceTree = "<group>"; };
 		DA19690D2C3EEFA900258481 /* KeyboardShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutView.swift; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 			children = (
 				DA13D7DD2C1A436E00FA9E23 /* AppIntentError.swift */,
 				DA13D7D42C1A223E00FA9E23 /* Get.swift */,
-				DA13D7D72C1A223E00FA9E23 /* HistoryItemAppEntity.swift */,
+				DA13D7D72C1A223E00FA9E23 /* CommandHistoryItemAppEntity.swift */,
 				DA13D7D32C1A223E00FA9E23 /* Select.swift */,
 			);
 			path = Intents;
@@ -708,7 +708,7 @@
 				DA1969182C3F327500258481 /* SearchFieldView.swift in Sources */,
 				DAE8F5D42C43262B00851CA9 /* Popup.swift in Sources */,
 				DA19691F2C3F5F0600258481 /* KeyHandlingView.swift in Sources */,
-				DA13D7DC2C1A223E00FA9E23 /* HistoryItemAppEntity.swift in Sources */,
+				DA13D7DC2C1A223E00FA9E23 /* CommandHistoryItemAppEntity.swift in Sources */,
 				DAA072D12C4089D3006DDFD2 /* VisualEffectView.swift in Sources */,
 				2F9B42F12F1A499D006548E5 /* ToolbarView.swift in Sources */,
 				DAA5ACB22C1B3F8800B58513 /* GeneralSettingsPane.swift in Sources */,

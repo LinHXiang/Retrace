@@ -1,6 +1,6 @@
 import AppIntents
 
-struct HistoryItemAppEntity: TransientAppEntity {
+struct CommandHistoryItemAppEntity: TransientAppEntity {
   static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Terminal command")
 
   @Property(title: "Text")
