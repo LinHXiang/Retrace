@@ -161,7 +161,7 @@ class History: ItemsContainer {
     items = all
     loadedHistoryFileModificationDate = modificationDate
 
-    updateShortcuts()
+    updateVisibleShortcuts()
     Task {
       AppState.shared.popup.needsResize = true
     }
@@ -189,10 +189,6 @@ class History: ItemsContainer {
       return item
     }
 
-    updateVisibleShortcuts()
-  }
-
-  private func updateShortcuts() {
     updateVisibleShortcuts()
   }
 
