@@ -18,8 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
   func applicationWillFinishLaunching(_ notification: Notification) {
-    migrateUserDefaults()
-
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
 
@@ -72,23 +70,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       panel.toggle(height: AppState.shared.popup.height)
     }
     return true
-  }
-
-  private func migrateUserDefaults() {
-    if Defaults[.migrations]["2024-07-01-version-2"] != true {
-      // Keep the old one-time migration flag so existing installs do not rerun it.
-      Defaults.reset(.migrations)
-
-      // Migrate old inverse hide* configuration keys.
-      Defaults[.showFooter] = !UserDefaults.standard.bool(forKey: "hideFooter")
-      Defaults[.showSearch] = !UserDefaults.standard.bool(forKey: "hideSearch")
-      Defaults[.showTitle] = !UserDefaults.standard.bool(forKey: "hideTitle")
-      UserDefaults.standard.removeObject(forKey: "hideFooter")
-      UserDefaults.standard.removeObject(forKey: "hideSearch")
-      UserDefaults.standard.removeObject(forKey: "hideTitle")
-
-      Defaults[.migrations]["2024-07-01-version-2"] = true
-    }
   }
 
   @objc

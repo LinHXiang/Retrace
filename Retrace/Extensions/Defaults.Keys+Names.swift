@@ -4,7 +4,6 @@ import Defaults
 extension Defaults.Keys {
   static let highlightMatch = Key<HighlightMatch>("highlightMatch", default: .bold)
   static let lastReviewRequestedAt = Key<Date>("lastReviewRequestedAt", default: Date.now)
-  static let migrations = Key<[String: Bool]>("migrations", default: [:])
   static let numberOfUsages = Key<Int>("numberOfUsages", default: 0)
   static let popupPosition = Key<PopupPosition>("popupPosition", default: .cursor)
   static let popupScreen = Key<Int>("popupScreen", default: 0)
