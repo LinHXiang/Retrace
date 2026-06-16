@@ -41,7 +41,7 @@ class NavigationManager {
     }
   }
 
-  private func scroll(to id: UUID?, item: HistoryItemDecorator? = nil) {
+  private func scroll(to id: UUID?) {
     scrollTarget = id
   }
 
@@ -58,7 +58,7 @@ class NavigationManager {
   func select(item: HistoryItemDecorator? = nil, footerItem: FooterItem? = nil) {
     withTransaction(Transaction()) {
       selectWithoutScrolling(item: item, footerItem: footerItem)
-      scroll(to: item?.id, item: item)
+      scroll(to: item?.id)
     }
   }
 
