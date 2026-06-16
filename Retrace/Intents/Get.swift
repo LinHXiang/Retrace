@@ -4,7 +4,7 @@ import AppIntents
 struct Get: AppIntent, CustomIntentMigratedAppIntent {
   static let intentClassName = "GetIntent"
 
-  static var title: LocalizedStringResource = "Get Command from Terminal History"
+  static var title: LocalizedStringResource = "Get Terminal Command"
   static var description = IntentDescription("""
   Gets a command from Retrace terminal command history.
   """)
