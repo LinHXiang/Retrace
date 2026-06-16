@@ -45,58 +45,93 @@ enum KeyChord: CaseIterable {
     self.init(key, modifierFlags)
   }
 
-  // swiftlint:disable:next cyclomatic_complexity function_body_length
   init(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) {
+    if let chord = Self.editingChord(key, modifierFlags)
+      ?? Self.downwardChord(key, modifierFlags)
+      ?? Self.upwardChord(key, modifierFlags)
+      ?? Self.actionChord(key, modifierFlags) {
+      self = chord
+      return
+    }
+
+    if !modifierFlags.isDisjoint(with: [.command, .control, .option]) {
+      self = .ignored
+      return
+    }
+
+    self = .unknown
+  }
+
+  private static func editingChord(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) -> KeyChord? {
     switch (key, modifierFlags) {
     case (.u, [.control]):
-      self = .clearSearch
+      return .clearSearch
     case (.h, [.control]):
-      self = .deleteOneCharFromSearch
+      return .deleteOneCharFromSearch
     case (.w, [.control]):
-      self = .deleteLastWordFromSearch
+      return .deleteLastWordFromSearch
+    default:
+      return nil
+    }
+  }
+
+  private static func downwardChord(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) -> KeyChord? {
+    switch (key, modifierFlags) {
     case (.downArrow, [.shift]),
          (.n, [.control, .shift]):
-      self = .moveToNext
+      return .moveToNext
     case (.downArrow, []),
          (.n, [.control]),
          (.j, [.control]):
-      self = .moveToNext
+      return .moveToNext
     case (.downArrow, [.command, .shift]),
          (.downArrow, [.option, .shift]),
          (.n, [.control, .option, .shift]):
-      self = .moveToLast
+      return .moveToLast
     case (.downArrow, _) where modifierFlags.contains(.command) || modifierFlags.contains(.option),
          (.n, [.control, .option]),
          (.pageDown, []):
-      self = .moveToLast
+      return .moveToLast
+    default:
+      return nil
+    }
+  }
+
+  private static func upwardChord(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) -> KeyChord? {
+    switch (key, modifierFlags) {
     case (.upArrow, [.shift]),
          (.p, [.control, .shift]):
-      self = .moveToPrevious
+      return .moveToPrevious
     case (.upArrow, []),
          (.p, [.control]),
          (.k, [.control]):
-      self = .moveToPrevious
+      return .moveToPrevious
     case (.upArrow, [.command, .shift]),
          (.upArrow, [.option, .shift]),
          (.p, [.control, .option, .shift]):
-      self = .moveToFirst
+      return .moveToFirst
     case (.upArrow, _) where modifierFlags.contains(.command) || modifierFlags.contains(.option),
          (.p, [.control, .option]),
          (.pageUp, []):
-      self = .moveToFirst
+      return .moveToFirst
+    default:
+      return nil
+    }
+  }
+
+  private static func actionChord(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) -> KeyChord? {
+    switch (key, modifierFlags) {
     case (.comma, [.command]):
-      self = .openPreferences
+      return .openPreferences
     case (.return, _),
          (.keypadEnter, _):
-      self = .selectCurrentItem
+      return .selectCurrentItem
     case (.escape, _):
-      self = .close
+      return .close
     case (KeyChord.previewKey, KeyChord.previewModifiers):
-      self = .togglePreview
-    case (_, _) where !modifierFlags.isDisjoint(with: [.command, .control, .option]):
-      self = .ignored
+      return .togglePreview
     default:
-      self = .unknown
+      return nil
     }
   }
 }
