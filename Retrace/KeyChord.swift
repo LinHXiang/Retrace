@@ -17,8 +17,6 @@ enum KeyChord: CaseIterable {
   static var previewKey: Key? { Sauce.shared.key(shortcut: .togglePreview) }
   static var previewModifiers: NSEvent.ModifierFlags? { KeyboardShortcuts.Shortcut(name: .togglePreview)?.modifiers }
 
-  case clearHistory
-  case clearHistoryAll
   case clearSearch
   case deleteCurrentItem
   case deleteOneCharFromSearch
@@ -66,10 +64,6 @@ enum KeyChord: CaseIterable {
   // swiftlint:disable:next cyclomatic_complexity function_body_length
   init(_ key: Key, _ modifierFlags: NSEvent.ModifierFlags) {
     switch (key, modifierFlags) {
-    case (.delete, [.command, .option]):
-      self = .clearHistory
-    case (.delete, [.command, .option, .shift]):
-      self = .clearHistoryAll
     case (.u, [.control]):
       self = .clearSearch
     case (KeyChord.deleteKey, KeyChord.deleteModifiers):
