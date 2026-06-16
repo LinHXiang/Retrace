@@ -14,6 +14,7 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   var attributedTitle: AttributedString?
 
   var isVisible: Bool = true
+  var showsRecordedAt: Bool
   var selectionIndex: Int = -1
   var isSelected: Bool {
     return selectionIndex != -1
@@ -35,9 +36,10 @@ class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
 
   private(set) var item: HistoryItem
 
-  init(_ item: HistoryItem, shortcuts: [KeyShortcut] = []) {
+  init(_ item: HistoryItem, shortcuts: [KeyShortcut] = [], showsRecordedAt: Bool = true) {
     self.item = item
     self.shortcuts = shortcuts
+    self.showsRecordedAt = showsRecordedAt
     self.title = item.title
 
     synchronizeItemTitle()

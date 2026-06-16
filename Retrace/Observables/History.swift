@@ -7,7 +7,8 @@ import Sauce
 
 struct TerminalCommandHistoryEntry: Equatable {
   let command: String
-  let timestamp: Date
+  let timestamp: Date?
+  let order: TimeInterval
 }
 
 struct TerminalCommandHistory {
@@ -20,6 +21,11 @@ struct TerminalCommandHistory {
     return Self.parse(contents)
   }
 
+  func modificationDate() throws -> Date {
+    let attributes = try FileManager.default.attributesOfItem(atPath: historyFileURL.path)
+    return attributes[.modificationDate] as? Date ?? .distantPast
+  }
+
   static func parse(_ contents: String) -> [TerminalCommandHistoryEntry] {
     var latestByCommand: [String: TerminalCommandHistoryEntry] = [:]
 
@@ -28,14 +34,14 @@ struct TerminalCommandHistory {
         continue
       }
 
-      if let existing = latestByCommand[entry.command], existing.timestamp >= entry.timestamp {
+      if let existing = latestByCommand[entry.command], existing.order >= entry.order {
         continue
       }
 
       latestByCommand[entry.command] = entry
     }
 
-    return latestByCommand.values.sorted { $0.timestamp > $1.timestamp }
+    return latestByCommand.values.sorted { $0.order > $1.order }
   }
 
   private static func parseLine(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
@@ -45,7 +51,8 @@ struct TerminalCommandHistory {
 
       return TerminalCommandHistoryEntry(
         command: command,
-        timestamp: Date(timeIntervalSince1970: TimeInterval(fallbackOrder))
+        timestamp: nil,
+        order: TimeInterval(fallbackOrder)
       )
     }
 
@@ -60,9 +67,11 @@ struct TerminalCommandHistory {
       .trimmingCharacters(in: .whitespacesAndNewlines)
     guard !command.isEmpty else { return nil }
 
+    let timestamp = Date(timeIntervalSince1970: epoch)
     return TerminalCommandHistoryEntry(
       command: command,
-      timestamp: Date(timeIntervalSince1970: epoch)
+      timestamp: timestamp,
+      order: epoch
     )
   }
 }
@@ -115,6 +124,9 @@ class History: ItemsContainer {
   @ObservationIgnored
   var all: [HistoryItemDecorator] = []
 
+  @ObservationIgnored
+  private var loadedHistoryFileModificationDate: Date?
+
   init() {
     Task {
       for await _ in Defaults.updates(.pasteByDefault, initial: false) {
@@ -132,8 +144,23 @@ class History: ItemsContainer {
   }
 
   @MainActor
+  func loadIfChanged() async throws {
+    let history = TerminalCommandHistory()
+    let modificationDate = try history.modificationDate()
+    guard modificationDate != loadedHistoryFileModificationDate else { return }
+
+    try await load(history: history, modificationDate: modificationDate)
+  }
+
+  @MainActor
   func load() async throws {
-    let entries = try TerminalCommandHistory().load()
+    let history = TerminalCommandHistory()
+    try await load(history: history, modificationDate: try history.modificationDate())
+  }
+
+  @MainActor
+  private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
+    let entries = try history.load()
     all = entries.prefix(Defaults[.size]).map { entry in
       let item = HistoryItem(contents: [
         HistoryItemContent(
@@ -141,12 +168,15 @@ class History: ItemsContainer {
           value: entry.command.data(using: .utf8)
         )
       ])
-      item.firstCopiedAt = entry.timestamp
-      item.lastCopiedAt = entry.timestamp
+      if let timestamp = entry.timestamp {
+        item.firstCopiedAt = timestamp
+        item.lastCopiedAt = timestamp
+      }
       item.title = item.generateTitle()
-      return HistoryItemDecorator(item)
+      return HistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
     }
     items = all
+    loadedHistoryFileModificationDate = modificationDate
 
     updateShortcuts()
     Task {

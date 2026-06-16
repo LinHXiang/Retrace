@@ -74,7 +74,7 @@ class Popup {
 
   func open(height: CGFloat, at popupPosition: PopupPosition = Defaults[.popupPosition]) {
     Task { @MainActor in
-      try? await AppState.shared.history.load()
+      try? await AppState.shared.history.loadIfChanged()
       AppState.shared.appDelegate?.panel.open(height: height, at: popupPosition)
     }
   }

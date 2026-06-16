@@ -49,7 +49,7 @@ struct ContentView: View {
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       .task {
-        try? await appState.history.load()
+        try? await appState.history.loadIfChanged()
       }
     }
     .animation(.easeInOut(duration: 0.2), value: appState.searchVisible)

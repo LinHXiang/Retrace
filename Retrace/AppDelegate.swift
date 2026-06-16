@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
     Task { @MainActor in
-      try? await AppState.shared.history.load()
+      try? await AppState.shared.history.loadIfChanged()
       panel.toggle(height: AppState.shared.popup.height)
     }
     return true
@@ -109,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc
   private func performStatusItemClick() {
     Task { @MainActor in
-      try? await AppState.shared.history.load()
+      try? await AppState.shared.history.loadIfChanged()
       panel.toggle(height: AppState.shared.popup.height, at: .statusItem)
     }
   }

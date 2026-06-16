@@ -20,6 +20,7 @@ class SearchTests: XCTestCase {
 
     XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
     XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000002))
+    XCTAssertEqual(entries[0].order, 1710000002)
   }
 
   func testTerminalCommandHistoryParsesPlainZshHistory() {
@@ -30,6 +31,8 @@ class SearchTests: XCTestCase {
     """)
 
     XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
+    XCTAssertNil(entries[0].timestamp)
+    XCTAssertEqual(entries[0].order, 2)
   }
 
   @MainActor

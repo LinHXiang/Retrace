@@ -14,13 +14,15 @@ struct PreviewItemView: View {
 
       Spacer(minLength: 0)
 
-      Divider()
-        .padding(.vertical)
+      if item.showsRecordedAt {
+        Divider()
+          .padding(.vertical)
 
-      HStack(spacing: 3) {
-        Text("Recorded")
-        Text(item.item.lastCopiedAt, style: .date)
-        Text(item.item.lastCopiedAt, style: .time)
+        HStack(spacing: 3) {
+          Text("Recorded")
+          Text(item.item.lastCopiedAt, style: .date)
+          Text(item.item.lastCopiedAt, style: .time)
+        }
       }
     }
     .controlSize(.small)
