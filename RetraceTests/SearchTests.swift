@@ -273,16 +273,16 @@ class SearchTests: XCTestCase {
   @MainActor
   private func prepareSearchItems() {
     items = [
-      HistoryItemDecorator(commandHistoryItemWithTitle("foo bar baz")),
-      HistoryItemDecorator(commandHistoryItemWithTitle("foo bar zaz")),
-      HistoryItemDecorator(commandHistoryItemWithTitle("xxx yyy zzz"))
+      CommandHistoryItemDecorator(commandHistoryItemWithTitle("foo bar baz")),
+      CommandHistoryItemDecorator(commandHistoryItemWithTitle("foo bar zaz")),
+      CommandHistoryItemDecorator(commandHistoryItemWithTitle("xxx yyy zzz"))
     ]
   }
 
   private func range(
     startOffset: Int,
     endOffset: Int,
-    in item: HistoryItemDecorator
+    in item: CommandHistoryItemDecorator
   ) -> Range<String.Index> {
     let startIndex = item.title.startIndex
     let lowerBound = item.title.index(startIndex, offsetBy: startOffset)

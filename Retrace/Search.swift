@@ -31,7 +31,7 @@ class Search {
     var ranges: [Range<String.Index>] = []
   }
 
-  typealias Searchable = HistoryItemDecorator
+  typealias Searchable = CommandHistoryItemDecorator
 
   private let fuse = Fuse(threshold: 0.7) // threshold found by trial-and-error
   private let fuzzySearchLimit = 5_000

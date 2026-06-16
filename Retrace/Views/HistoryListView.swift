@@ -10,7 +10,7 @@ struct HistoryListView: View {
 
   @Default(.showFooter) private var showFooter
 
-  private var visibleItems: [HistoryItemDecorator] {
+  private var visibleItems: [CommandHistoryItemDecorator] {
     appState.history.visibleItems
   }
 

@@ -3,8 +3,8 @@ import Foundation
 import Observation
 
 @Observable
-class HistoryItemDecorator: Identifiable, Hashable, HasVisibility {
-  static func == (lhs: HistoryItemDecorator, rhs: HistoryItemDecorator) -> Bool {
+class CommandHistoryItemDecorator: Identifiable, Hashable, HasVisibility {
+  static func == (lhs: CommandHistoryItemDecorator, rhs: CommandHistoryItemDecorator) -> Bool {
     return lhs.id == rhs.id
   }
 

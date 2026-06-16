@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HistoryItemView: View {
-  @Bindable var item: HistoryItemDecorator
+  @Bindable var item: CommandHistoryItemDecorator
 
   @Environment(AppState.self) private var appState
 

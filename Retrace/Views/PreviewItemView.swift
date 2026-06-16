@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PreviewItemView: View {
-  var item: HistoryItemDecorator
+  var item: CommandHistoryItemDecorator
 
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {

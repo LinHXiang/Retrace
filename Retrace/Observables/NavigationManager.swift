@@ -11,7 +11,7 @@ class NavigationManager {
     self.footer = footer
   }
 
-  var selectedHistoryItem: HistoryItemDecorator? {
+  var selectedHistoryItem: CommandHistoryItemDecorator? {
     willSet {
       selectedHistoryItem?.isSelected = false
       newValue?.isSelected = true
@@ -28,7 +28,7 @@ class NavigationManager {
     }
     return nil
   }
-  private(set) var leadHistoryItem: HistoryItemDecorator?
+  private(set) var leadHistoryItem: CommandHistoryItemDecorator?
 
   var hoverSelectionWhileKeyboardNavigating: UUID?
   var isKeyboardNavigating: Bool = true {
@@ -55,7 +55,7 @@ class NavigationManager {
     }
   }
 
-  func select(item: HistoryItemDecorator? = nil, footerItem: FooterItem? = nil) {
+  func select(item: CommandHistoryItemDecorator? = nil, footerItem: FooterItem? = nil) {
     withTransaction(Transaction()) {
       selectWithoutScrolling(item: item, footerItem: footerItem)
       scroll(to: item?.id)
@@ -73,7 +73,7 @@ class NavigationManager {
   }
 
   func selectWithoutScrolling(
-    item: HistoryItemDecorator? = nil,
+    item: CommandHistoryItemDecorator? = nil,
     footerItem: FooterItem? = nil
   ) {
     if let item = item {
@@ -87,7 +87,7 @@ class NavigationManager {
     }
   }
 
-  private func selectInHistory(_ item: HistoryItemDecorator) {
+  private func selectInHistory(_ item: CommandHistoryItemDecorator) {
     leadHistoryItem = item
     selectedHistoryItem = item
     footer.selectedItem = nil
@@ -100,7 +100,7 @@ class NavigationManager {
   }
 
   private func selectFromKeyboardNavigation(
-    item: HistoryItemDecorator? = nil,
+    item: CommandHistoryItemDecorator? = nil,
     footerItem: FooterItem? = nil
   ) {
     isKeyboardNavigating = true

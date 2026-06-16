@@ -79,7 +79,7 @@ struct TerminalCommandHistory {
 class History: ItemsContainer {
   static let shared = History()
 
-  var items: [HistoryItemDecorator] = []
+  var items: [CommandHistoryItemDecorator] = []
   var searchQuery: String = "" {
     didSet {
       throttler.throttle { [self] in
@@ -98,7 +98,7 @@ class History: ItemsContainer {
     }
   }
 
-  var pressedShortcutItem: HistoryItemDecorator? {
+  var pressedShortcutItem: CommandHistoryItemDecorator? {
     guard let event = NSApp.currentEvent else {
       return nil
     }
@@ -119,7 +119,7 @@ class History: ItemsContainer {
   private let throttler = Throttler(minimumDelay: 0.2)
 
   @ObservationIgnored
-  var all: [HistoryItemDecorator] = []
+  var all: [CommandHistoryItemDecorator] = []
 
   @ObservationIgnored
   private var loadedHistoryFileModificationDate: Date?
@@ -159,7 +159,7 @@ class History: ItemsContainer {
         item.recordedAt = timestamp
       }
       item.title = item.generateTitle()
-      return HistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
+      return CommandHistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
     }
     items = all
     loadedHistoryFileModificationDate = modificationDate
@@ -172,7 +172,7 @@ class History: ItemsContainer {
   }
 
   @MainActor
-  func select(_ item: HistoryItemDecorator?) {
+  func select(_ item: CommandHistoryItemDecorator?) {
     guard let item else {
       return
     }
@@ -199,7 +199,7 @@ class History: ItemsContainer {
   }
 
   @MainActor
-  private func updateTitle(item: HistoryItemDecorator, title: String) {
+  private func updateTitle(item: CommandHistoryItemDecorator, title: String) {
     item.title = title
     item.item.title = title
   }
