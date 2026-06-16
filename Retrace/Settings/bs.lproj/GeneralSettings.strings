@@ -1,7 +1,5 @@
 "Title" = "Opšte";
 "LaunchAtLogin" = "Započni aplikacjiu pri prijavi";
-"CheckForUpdates" = "Provjeri dostupna ažuriranja";
-"CheckNow" = "Provjeri sada";
 "Open" = "Obrisati:";
 "OpenTooltip" = "Globalna prečica za otvaranje aplikacije.\nPonovljeni pritisak na glavnu tipku dok držite modifikatore odabrat će sljedeću stavku na listi. U ovom načinu rada, otpuštanje modifikatorskih tipki potvrdit će odabir i zatvoriti skočni prozor.\nZadano: ⇧⌘T.";
 "ShowPreview" = "Pregled:";

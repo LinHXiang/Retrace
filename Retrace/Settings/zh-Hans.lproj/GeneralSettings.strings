@@ -1,7 +1,5 @@
 "Title" = "通用";
 "LaunchAtLogin" = "登录时启动";
-"CheckForUpdates" = "自动检查更新";
-"CheckNow" = "检查更新";
 "Open" = "打开：";
 "OpenTooltip" = "打开应用程序的全局快捷键。\n在按住修改器的同时重复按下主键将选择列表中的下一个项目。在这种模式下，松开修改器键将确认选择并关闭弹出窗口。\n默认： %@C。";
 "ShowPreview" = "预览：";

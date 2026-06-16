@@ -1,6 +1,4 @@
 "LaunchAtLogin" = "Iniciar no login";
-"CheckForUpdates" = "Verificar atualizações automaticamente";
-"CheckNow" = "Verificar agora";
 "Open" = "Abrir:";
 "OpenTooltip" = "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o elemento seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T.";
 "Search" = "Procura:";

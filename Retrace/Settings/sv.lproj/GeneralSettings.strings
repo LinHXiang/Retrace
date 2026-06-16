@@ -1,6 +1,4 @@
 "LaunchAtLogin" = "Starta vid inloggning";
-"CheckForUpdates" = "Kontrollera efter uppdateringar automatiskt";
-"CheckNow" = "Kontrollera nu";
 "Title" = "Allmänt";
 "Open" = "Öppna:";
 "OpenTooltip" = "Globalt kortkommando för att öppna applikationen.\nFörval: ⇧⌘T.";

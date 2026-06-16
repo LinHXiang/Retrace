@@ -1,12 +1,10 @@
 "LaunchAtLogin" = "Deschide la login";
-"CheckNow" = "Verifică acum";
 "OpenTooltip" = "Tastă globală de comandă rapidă pentru a deschide aplicația.\nO apăsare repetată a tastei principale, în timp ce taste \"modifier\" sunt menținute apăsate, va selecta următorul element din listă. Eliberare unei taste \"modifier\" va confirma selecția și va închide fereastra popup.\nImplicit: ⇧⌘T.";
 "Fuzzy" = "Aproximativă";
 "Regex" = "Expresii regulate";
 "Mixed" = "Mixt";
 "HistorySize" = "History size:";
 "HistorySizeTooltip" = "Maximum number of commands to show.";
-"CheckForUpdates" = "Verifică actualizările automat";
 "Open" = "Deschide:";
 "Exact" = "Exactă";
 "Search" = "Căutare:";

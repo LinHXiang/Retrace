@@ -1,7 +1,5 @@
 "Title" = "General";
 "LaunchAtLogin" = "Abrir al iniciar sesión";
-"CheckForUpdates" = "Buscar actualizaciones automáticamente";
-"CheckNow" = "Comprobar ahora";
 "Open" = "Abrir:";
 "OpenTooltip" = "Tecla de acceso directo global para abrir la aplicación.\nUna pulsación repetida de la tecla principal mientras se mantienen pulsados los modificadores seleccionará el siguiente elemento de la lista. En este modo, al soltar las teclas modificadoras se confirmará la selección y se cerrará la ventana emergente.\nPor defecto: ⇧⌘T.";
 "ShowPreview" = "Vista previa:";
