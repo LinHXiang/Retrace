@@ -17,7 +17,7 @@ struct ListItemView<Title: View, ID: Hashable>: View {
       Spacer()
         .frame(width: 10)
 
-      ListItemTitleView(attributedTitle: attributedTitle, title: title)
+      ListItemTitleView(attributedTitle: attributedTitle, isSelected: isSelected, title: title)
         .padding(.trailing, 5)
 
       Spacer()
@@ -35,11 +35,11 @@ struct ListItemView<Title: View, ID: Hashable>: View {
         }
       }
       .padding(.trailing, 10)
+      .foregroundStyle(isSelected ? Color.white : .primary)
     }
     .frame(minHeight: Popup.itemHeight)
     .id(id)
     .frame(maxWidth: .infinity, alignment: .leading)
-    .foregroundStyle(isSelected ? Color.white : .primary)
     // macOS 26 broke hovering if no background is present.
     // The slight opacity white background is a workaround
     .background(isSelected ? Color.accentColor.opacity(0.8) : .white.opacity(0.001))
