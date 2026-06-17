@@ -23,6 +23,26 @@ class SearchTests: XCTestCase {
     XCTAssertEqual(entries[0].order, 1710000002)
   }
 
+  func testTerminalCommandHistoryParsesMultilineExtendedZshHistory() {
+    let entries = TerminalCommandHistory.parse("""
+    : 1710000000:0;curl 'https://example.com' \\
+    --header 'X-MOJI-OS: Harmony' \\
+    --header 'X-MOJI-APP-VERSION: v5.10.9'
+    : 1710000001:0;git status
+    """)
+
+    XCTAssertEqual(entries.map(\.command), [
+      "git status",
+      """
+      curl 'https://example.com' \\
+      --header 'X-MOJI-OS: Harmony' \\
+      --header 'X-MOJI-APP-VERSION: v5.10.9'
+      """
+    ])
+    XCTAssertEqual(entries[1].timestamp, Date(timeIntervalSince1970: 1710000000))
+    XCTAssertEqual(entries[1].order, 1710000000)
+  }
+
   func testTerminalCommandHistoryParsesPlainZshHistory() {
     let entries = TerminalCommandHistory.parse("""
     git status
@@ -33,6 +53,26 @@ class SearchTests: XCTestCase {
     XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
     XCTAssertNil(entries[0].timestamp)
     XCTAssertEqual(entries[0].order, 2)
+  }
+
+  func testTerminalCommandHistoryParsesPlainZshMultilineCommand() {
+    let entries = TerminalCommandHistory.parse("""
+    curl 'https://example.com' \\
+    --header 'X-MOJI-OS: Harmony' \\
+    --header 'X-MOJI-APP-VERSION: v5.10.9'
+    git status
+    """)
+
+    XCTAssertEqual(entries.map(\.command), [
+      "git status",
+      """
+      curl 'https://example.com' \\
+      --header 'X-MOJI-OS: Harmony' \\
+      --header 'X-MOJI-APP-VERSION: v5.10.9'
+      """
+    ])
+    XCTAssertNil(entries[1].timestamp)
+    XCTAssertEqual(entries[1].order, 0)
   }
 
   func testTerminalCommandHistoryParsesBashHistory() {

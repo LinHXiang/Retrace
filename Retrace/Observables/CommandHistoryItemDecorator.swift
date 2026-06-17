@@ -17,6 +17,9 @@ class CommandHistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   var showsRecordedAt: Bool
   var isSelected: Bool = false
   var shortcuts: [KeyShortcut] = []
+  var previewText: String {
+    item.displayText.shortened(to: 20_000)
+  }
 
   func hash(into hasher: inout Hasher) {
     // We need to hash title and attributedTitle, so SwiftUI knows it needs to update the view if they change.

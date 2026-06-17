@@ -116,11 +116,77 @@ struct TerminalCommandHistory {
   }
 
   private static func parseZsh(_ contents: String) -> [TerminalCommandHistoryEntry] {
-    deduplicate(
-      contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated().compactMap {
-        parseZshLine(String($0.element), fallbackOrder: $0.offset)
+    var entries: [TerminalCommandHistoryEntry] = []
+    var pendingExtendedEntry: TerminalCommandHistoryEntry?
+    var pendingPlainCommand: String?
+    var pendingPlainOrder = 0
+
+    func flushPendingExtendedEntry() {
+      guard let entry = pendingExtendedEntry else { return }
+
+      entries.append(entry)
+      pendingExtendedEntry = nil
+    }
+
+    func flushPendingPlainCommand() {
+      guard let command = normalizedCommand(pendingPlainCommand ?? "") else {
+        pendingPlainCommand = nil
+        return
       }
-    )
+
+      entries.append(TerminalCommandHistoryEntry(
+        command: command,
+        timestamp: nil,
+        order: TimeInterval(pendingPlainOrder)
+      ))
+      pendingPlainCommand = nil
+    }
+
+    var lines = contents.split(separator: "\n", omittingEmptySubsequences: false)
+    if lines.last?.isEmpty == true {
+      lines.removeLast()
+    }
+
+    for (index, line) in lines.enumerated() {
+      let line = String(line)
+
+      if let entry = parseZshExtendedLine(line, fallbackOrder: index) {
+        flushPendingExtendedEntry()
+        flushPendingPlainCommand()
+        pendingExtendedEntry = entry
+        continue
+      }
+
+      if let entry = pendingExtendedEntry {
+        pendingExtendedEntry = TerminalCommandHistoryEntry(
+          command: "\(entry.command)\n\(line)",
+          timestamp: entry.timestamp,
+          order: entry.order
+        )
+        continue
+      }
+
+      if pendingPlainCommand != nil {
+        pendingPlainCommand = "\(pendingPlainCommand ?? "")\n\(line)"
+        if !hasLineContinuation(line) {
+          flushPendingPlainCommand()
+        }
+        continue
+      }
+
+      guard normalizedCommand(line) != nil else { continue }
+
+      if hasLineContinuation(line) {
+        pendingPlainCommand = line
+        pendingPlainOrder = index
+      } else if let entry = plainEntry(line, fallbackOrder: index) {
+        entries.append(entry)
+      }
+    }
+
+    flushPendingExtendedEntry()
+    flushPendingPlainCommand()
+    return deduplicate(entries)
   }
 
   private static func parseBash(_ contents: String) -> [TerminalCommandHistoryEntry] {
@@ -213,6 +279,14 @@ struct TerminalCommandHistory {
       return plainEntry(line, fallbackOrder: fallbackOrder)
     }
 
+    return parseZshExtendedLine(line, fallbackOrder: fallbackOrder)
+  }
+
+  private static func parseZshExtendedLine(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
+    guard line.hasPrefix(": ") else {
+      return nil
+    }
+
     let body = line.dropFirst(2)
     guard let timestampEnd = body.firstIndex(of: ":"),
           let commandStart = body[timestampEnd...].firstIndex(of: ";"),
@@ -245,6 +319,10 @@ struct TerminalCommandHistory {
   private static func normalizedCommand(_ line: String) -> String? {
     let command = line.trimmingCharacters(in: .whitespacesAndNewlines)
     return command.isEmpty ? nil : command
+  }
+
+  private static func hasLineContinuation(_ line: String) -> Bool {
+    line.trimmingCharacters(in: .whitespaces).hasSuffix("\\")
   }
 
   private static func bashTimestamp(_ line: String) -> Date? {

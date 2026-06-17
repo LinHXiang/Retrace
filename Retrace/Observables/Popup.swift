@@ -21,6 +21,10 @@ class Popup {
   static let horizontalSeparatorPadding = 6.0
   static let verticalPadding: CGFloat = 5
   static let horizontalPadding: CGFloat = 5
+  static let minimumListWidth: CGFloat = 420
+  static let previewWidth: CGFloat = 360
+  static let previewPadding: CGFloat = 10
+  static let minimumWidthWithPreview: CGFloat = minimumListWidth + previewWidth + horizontalPadding * 2
 
   // Radius used for items inset by the padding. Ensures they visually have the same curvature
   // as the menu.

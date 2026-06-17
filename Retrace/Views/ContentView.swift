@@ -21,23 +21,34 @@ struct ContentView: View {
             searchFocused: $searchFocused
           )
 
-          VStack(alignment: .leading, spacing: 0) {
-            CommandHistoryListView(
-              searchFocused: $searchFocused
-            )
+          HStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
+              CommandHistoryListView(
+                searchFocused: $searchFocused
+              )
 
-            FooterView(footer: appState.footer)
+              FooterView(footer: appState.footer)
+            }
+            .animation(.default.speed(3), value: appState.history.items)
+            .padding(.horizontal, Popup.horizontalPadding)
+            .frame(minWidth: Popup.minimumListWidth, minHeight: 0)
+            .layoutPriority(1)
+
+            if let selectedCommandItem = appState.navigator.selectedCommandItem {
+              CommandPreviewView(item: selectedCommandItem)
+                .transition(.opacity)
+            }
           }
-          .animation(.default.speed(3), value: appState.history.items)
-          .padding(.horizontal, Popup.horizontalPadding)
           .onAppear {
             searchFocused = true
+            ensurePreviewWidth()
+          }
+          .onChange(of: appState.navigator.selectedCommandItem?.id) {
+            ensurePreviewWidth()
           }
           .onMouseMove {
             appState.navigator.isKeyboardNavigating = false
           }
-          .frame(minHeight: 0)
-          .layoutPriority(1)
         }
       }
       .frame(maxWidth: .infinity, alignment: .leading)
@@ -65,6 +76,11 @@ struct ContentView: View {
         scenePhase = .background
       }
     }
+  }
+
+  private func ensurePreviewWidth() {
+    guard appState.navigator.selectedCommandItem != nil else { return }
+    appState.appDelegate?.panel.ensureMinimumWidth(Popup.minimumWidthWithPreview)
   }
 }
 
