@@ -38,25 +38,30 @@ class CommandHistoryItemDecorator: Identifiable, Hashable, HasVisibility {
   }
 
   func highlight(_ query: String, _ ranges: [Range<String.Index>]) {
-    guard !query.isEmpty, !title.isEmpty else {
+    guard !title.isEmpty else {
       attributedTitle = nil
       return
     }
 
-    var attributedString = AttributedString(title.shortened(to: 500))
-    for range in ranges {
-      if let lowerBound = AttributedString.Index(range.lowerBound, within: attributedString),
-         let upperBound = AttributedString.Index(range.upperBound, within: attributedString) {
-        switch Defaults[.highlightMatch] {
-        case .bold:
-          attributedString[lowerBound..<upperBound].font = .bold(.body)()
-        case .italic:
-          attributedString[lowerBound..<upperBound].font = .italic(.body)()
-        case .underline:
-          attributedString[lowerBound..<upperBound].underlineStyle = .single
-        default:
-          attributedString[lowerBound..<upperBound].backgroundColor = .findHighlightColor
-          attributedString[lowerBound..<upperBound].foregroundColor = .black
+    let displayText = title.shortened(to: 500)
+    var attributedString = AttributedString(displayText)
+    ShellSyntaxHighlighter.apply(&attributedString, for: displayText)
+
+    if !query.isEmpty {
+      for range in ranges {
+        if let lowerBound = AttributedString.Index(range.lowerBound, within: attributedString),
+           let upperBound = AttributedString.Index(range.upperBound, within: attributedString) {
+          switch Defaults[.highlightMatch] {
+          case .bold:
+            attributedString[lowerBound..<upperBound].font = .bold(.body)()
+          case .italic:
+            attributedString[lowerBound..<upperBound].font = .italic(.body)()
+          case .underline:
+            attributedString[lowerBound..<upperBound].underlineStyle = .single
+          default:
+            attributedString[lowerBound..<upperBound].backgroundColor = .findHighlightColor
+            attributedString[lowerBound..<upperBound].foregroundColor = .black
+          }
         }
       }
     }
