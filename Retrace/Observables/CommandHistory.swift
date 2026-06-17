@@ -199,6 +199,10 @@ class CommandHistory: ItemsContainer {
     items = all
     loadedHistoryFileModificationDate = modificationDate
 
+    for item in items {
+      item.highlight("", [])
+    }
+
     updateVisibleShortcuts()
     AppState.shared.appDelegate?.updateStatusItemTitle()
     Task {
