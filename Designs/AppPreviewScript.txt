@@ -1,6 +1,0 @@
-Hello! 👋
-This is Retrace.
-Command history for Mac. 💻
-Search as you type. 🔍
-Open source. ⚙️
-No fluff! 😛
