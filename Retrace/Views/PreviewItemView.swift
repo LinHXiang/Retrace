@@ -7,7 +7,7 @@ struct PreviewItemView: View {
     VStack(alignment: .leading, spacing: 0) {
       ScrollView {
         Text(item.text)
-          .font(.body.monospaced())
+          .font(AppFont.regular())
           .textSelection(.enabled)
           .frame(maxWidth: .infinity, alignment: .leading)
       }

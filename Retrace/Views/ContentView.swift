@@ -46,6 +46,7 @@ struct ContentView: View {
         }
       }
       .frame(maxWidth: .infinity, alignment: .leading)
+      .font(AppFont.regular())
       .task {
         try? await appState.history.loadIfChanged()
       }

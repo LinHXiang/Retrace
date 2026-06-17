@@ -15,6 +15,7 @@ struct CommandHistoryItemView: View {
     ) {
       Text(verbatim: item.title)
     }
+    .font(AppFont.bold())
     .onTapGesture {
       Task {
         appState.history.select(item)

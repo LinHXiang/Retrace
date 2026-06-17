@@ -83,6 +83,7 @@ class AppState {
           toolbarIcon: NSImage.gearshape!
         ) {
           GeneralSettingsPane()
+            .font(AppFont.regular())
         },
         Settings.Pane(
           identifier: Settings.PaneIdentifier.appearance,
@@ -90,6 +91,7 @@ class AppState {
           toolbarIcon: NSImage.paintpalette!
         ) {
           AppearanceSettingsPane()
+            .font(AppFont.regular())
         }
       ]
     )

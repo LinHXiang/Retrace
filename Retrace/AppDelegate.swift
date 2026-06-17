@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
   func applicationWillFinishLaunching(_ notification: Notification) {
+    AppFont.registerBundledFonts()
+
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
 
