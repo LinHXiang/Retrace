@@ -16,6 +16,7 @@ extension Defaults.Keys {
   static let showSpecialSymbols = Key<Bool>("showSpecialSymbols", default: true)
   static let showTitle = Key<Bool>("showTitle", default: true)
   static let commandHistorySize = Key<Int>("commandHistorySize", default: 50)
+  static let historySources = Key<[HistorySource]>("historySources", default: HistorySource.defaultSources)
   static let windowSize = Key<NSSize>("windowSize", default: NSSize(width: 450, height: 800))
   static let windowPosition = Key<NSPoint>("windowPosition", default: NSPoint(x: 0.5, y: 0.8))
 }

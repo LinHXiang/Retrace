@@ -9,3 +9,9 @@
 "Mixed" = "Mixed";
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"HistorySources" = "Command history:";
+"AddHistorySource" = "Add File";
+"RestoreHistorySources" = "Restore Defaults";
+"ChooseHistorySource" = "Choose history file";
+"RemoveHistorySource" = "Remove history file";
+"NoHistorySources" = "No history files configured.";

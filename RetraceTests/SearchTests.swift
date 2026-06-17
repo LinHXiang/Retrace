@@ -35,6 +35,75 @@ class SearchTests: XCTestCase {
     XCTAssertEqual(entries[0].order, 2)
   }
 
+  func testTerminalCommandHistoryParsesBashHistory() {
+    let entries = TerminalCommandHistory.parse("""
+    #1710000000
+    git status
+    brew update
+    """, kind: .bash)
+
+    XCTAssertEqual(entries.map(\.command), ["git status", "brew update"])
+    XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000000))
+    XCTAssertEqual(entries[0].order, 1710000000)
+    XCTAssertNil(entries[1].timestamp)
+    XCTAssertEqual(entries[1].order, 2)
+  }
+
+  func testTerminalCommandHistoryParsesConsecutiveBashTimestamps() {
+    let entries = TerminalCommandHistory.parse("""
+    #1710000000
+    #1710000001
+    git status
+    """, kind: .bash)
+
+    XCTAssertEqual(entries.map(\.command), ["git status"])
+    XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000001))
+    XCTAssertEqual(entries[0].order, 1710000001)
+  }
+
+  func testTerminalCommandHistoryParsesFishHistory() {
+    let entries = TerminalCommandHistory.parse("""
+    - cmd: git status
+      when: 1710000000
+    - cmd: brew update
+      when: 1710000002
+    """, kind: .fish)
+
+    XCTAssertEqual(entries.map(\.command), ["brew update", "git status"])
+    XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000002))
+    XCTAssertEqual(entries[0].order, 1710000002)
+  }
+
+  func testTerminalCommandHistoryParsesFishMultilineCommand() {
+    let entries = TerminalCommandHistory.parse("""
+    - cmd: printf hello\\nworld
+      when: 1710000000
+    """, kind: .fish)
+
+    XCTAssertEqual(entries.map(\.command), ["printf hello\nworld"])
+    XCTAssertEqual(entries[0].timestamp, Date(timeIntervalSince1970: 1710000000))
+  }
+
+  func testTerminalCommandHistoryLoadsEnabledSources() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+
+    let zshHistory = directory.appendingPathComponent(".zsh_history")
+    let bashHistory = directory.appendingPathComponent(".bash_history")
+    try ": 1710000000:0;git status\n".write(to: zshHistory, atomically: true, encoding: .utf8)
+    try "#1710000002\nbrew update\n".write(to: bashHistory, atomically: true, encoding: .utf8)
+
+    let history = TerminalCommandHistory(sources: [
+      HistorySource(kind: .zsh, url: zshHistory),
+      HistorySource(kind: .bash, url: bashHistory),
+      HistorySource(kind: .fish, url: directory.appendingPathComponent("missing"), isEnabled: false)
+    ])
+
+    XCTAssertEqual(try history.load().map(\.command), ["brew update", "git status"])
+  }
+
   @MainActor
   func testSimpleSearchMatchesCommonQueries() {
     Defaults[.searchMode] = Search.Mode.exact

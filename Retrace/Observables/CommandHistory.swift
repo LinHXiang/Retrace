@@ -10,29 +10,194 @@ struct TerminalCommandHistoryEntry: Equatable {
   let order: TimeInterval
 }
 
+enum ShellHistoryKind: String, CaseIterable, Identifiable, Codable, Defaults.Serializable {
+  case zsh
+  case bash
+  case fish
+  case plain
+
+  var id: Self { self }
+
+  var description: String {
+    switch self {
+    case .zsh:
+      return "zsh"
+    case .bash:
+      return "bash"
+    case .fish:
+      return "fish"
+    case .plain:
+      return "Plain"
+    }
+  }
+
+  static func infer(from url: URL) -> Self {
+    switch url.lastPathComponent {
+    case ".zsh_history":
+      return .zsh
+    case ".bash_history":
+      return .bash
+    case "fish_history":
+      return .fish
+    default:
+      return .plain
+    }
+  }
+}
+
+struct HistorySource: Identifiable, Hashable, Codable, Defaults.Serializable {
+  var id: UUID
+  var kind: ShellHistoryKind
+  var url: URL
+  var isEnabled: Bool
+
+  init(id: UUID = UUID(), kind: ShellHistoryKind, url: URL, isEnabled: Bool = true) {
+    self.id = id
+    self.kind = kind
+    self.url = url
+    self.isEnabled = isEnabled
+  }
+
+  static var defaultSources: [HistorySource] {
+    let home = FileManager.default.homeDirectoryForCurrentUser
+    return [
+      HistorySource(kind: .zsh, url: home.appendingPathComponent(".zsh_history")),
+      HistorySource(kind: .bash, url: home.appendingPathComponent(".bash_history")),
+      HistorySource(kind: .fish, url: home.appendingPathComponent(".local/share/fish/fish_history"))
+    ]
+  }
+}
+
 struct TerminalCommandHistory {
-  var historyFileURL: URL = FileManager.default.homeDirectoryForCurrentUser
-    .appendingPathComponent(".zsh_history")
+  var sources: [HistorySource] = Defaults[.historySources]
 
   func load() throws -> [TerminalCommandHistoryEntry] {
-    let data = try Data(contentsOf: historyFileURL)
-    let contents = String(decoding: data, as: UTF8.self)
-    return Self.parse(contents)
+    var entries: [TerminalCommandHistoryEntry] = []
+
+    for source in readableSources {
+      guard let data = try? Data(contentsOf: source.url) else { continue }
+
+      let contents = String(decoding: data, as: UTF8.self)
+      entries.append(contentsOf: Self.parse(contents, kind: source.kind))
+    }
+
+    return Self.deduplicate(entries)
   }
 
   func modificationDate() throws -> Date {
-    let attributes = try FileManager.default.attributesOfItem(atPath: historyFileURL.path)
-    return attributes[.modificationDate] as? Date ?? .distantPast
+    readableSources
+      .compactMap { source -> Date? in
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: source.url.path) else {
+          return nil
+        }
+
+        return attributes[.modificationDate] as? Date
+      }
+      .max() ?? .distantPast
   }
 
-  static func parse(_ contents: String) -> [TerminalCommandHistoryEntry] {
-    var latestByCommand: [String: TerminalCommandHistoryEntry] = [:]
+  var readableSources: [HistorySource] {
+    sources.filter {
+      $0.isEnabled && FileManager.default.isReadableFile(atPath: $0.url.path)
+    }
+  }
+
+  static func parse(_ contents: String, kind: ShellHistoryKind = .zsh) -> [TerminalCommandHistoryEntry] {
+    switch kind {
+    case .zsh:
+      return parseZsh(contents)
+    case .bash:
+      return parseBash(contents)
+    case .fish:
+      return parseFish(contents)
+    case .plain:
+      return parsePlain(contents)
+    }
+  }
+
+  private static func parseZsh(_ contents: String) -> [TerminalCommandHistoryEntry] {
+    deduplicate(
+      contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated().compactMap {
+        parseZshLine(String($0.element), fallbackOrder: $0.offset)
+      }
+    )
+  }
+
+  private static func parseBash(_ contents: String) -> [TerminalCommandHistoryEntry] {
+    var entries: [TerminalCommandHistoryEntry] = []
+    var pendingTimestamp: Date?
 
     for (index, line) in contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated() {
-      guard let entry = parseLine(String(line), fallbackOrder: index) else {
+      let line = String(line)
+      if let timestamp = bashTimestamp(line) {
+        pendingTimestamp = timestamp
         continue
       }
 
+      guard let command = normalizedCommand(line) else { continue }
+      entries.append(TerminalCommandHistoryEntry(
+        command: command,
+        timestamp: pendingTimestamp,
+        order: pendingTimestamp?.timeIntervalSince1970 ?? TimeInterval(index)
+      ))
+      pendingTimestamp = nil
+    }
+
+    return deduplicate(entries)
+  }
+
+  private static func parseFish(_ contents: String) -> [TerminalCommandHistoryEntry] {
+    var entries: [TerminalCommandHistoryEntry] = []
+    var pendingCommand: String?
+    var pendingTimestamp: Date?
+    var pendingOrder = 0
+
+    func flush() {
+      guard let command = pendingCommand else { return }
+
+      entries.append(TerminalCommandHistoryEntry(
+        command: command,
+        timestamp: pendingTimestamp,
+        order: pendingTimestamp?.timeIntervalSince1970 ?? TimeInterval(pendingOrder)
+      ))
+      pendingCommand = nil
+      pendingTimestamp = nil
+    }
+
+    for (index, line) in contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated() {
+      let line = String(line)
+
+      if line.hasPrefix("- cmd: ") {
+        flush()
+        pendingCommand = normalizedCommand(String(line.dropFirst("- cmd: ".count)))?
+          .replacingOccurrences(of: "\\n", with: "\n")
+        pendingOrder = index
+        continue
+      }
+
+      let trimmedLine = line.trimmingCharacters(in: .whitespaces)
+      if trimmedLine.hasPrefix("when: "),
+         let epoch = TimeInterval(String(trimmedLine.dropFirst("when: ".count))) {
+        pendingTimestamp = Date(timeIntervalSince1970: epoch)
+      }
+    }
+
+    flush()
+    return deduplicate(entries)
+  }
+
+  private static func parsePlain(_ contents: String) -> [TerminalCommandHistoryEntry] {
+    deduplicate(
+      contents.split(separator: "\n", omittingEmptySubsequences: true).enumerated().compactMap {
+        plainEntry(String($0.element), fallbackOrder: $0.offset)
+      }
+    )
+  }
+
+  private static func deduplicate(_ entries: [TerminalCommandHistoryEntry]) -> [TerminalCommandHistoryEntry] {
+    var latestByCommand: [String: TerminalCommandHistoryEntry] = [:]
+
+    for entry in entries {
       if let existing = latestByCommand[entry.command], existing.order >= entry.order {
         continue
       }
@@ -43,16 +208,9 @@ struct TerminalCommandHistory {
     return latestByCommand.values.sorted { $0.order > $1.order }
   }
 
-  private static func parseLine(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
+  private static func parseZshLine(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
     guard line.hasPrefix(": ") else {
-      let command = line.trimmingCharacters(in: .whitespacesAndNewlines)
-      guard !command.isEmpty else { return nil }
-
-      return TerminalCommandHistoryEntry(
-        command: command,
-        timestamp: nil,
-        order: TimeInterval(fallbackOrder)
-      )
+      return plainEntry(line, fallbackOrder: fallbackOrder)
     }
 
     let body = line.dropFirst(2)
@@ -72,6 +230,32 @@ struct TerminalCommandHistory {
       timestamp: timestamp,
       order: epoch
     )
+  }
+
+  private static func plainEntry(_ line: String, fallbackOrder: Int) -> TerminalCommandHistoryEntry? {
+    guard let command = normalizedCommand(line) else { return nil }
+
+    return TerminalCommandHistoryEntry(
+      command: command,
+      timestamp: nil,
+      order: TimeInterval(fallbackOrder)
+    )
+  }
+
+  private static func normalizedCommand(_ line: String) -> String? {
+    let command = line.trimmingCharacters(in: .whitespacesAndNewlines)
+    return command.isEmpty ? nil : command
+  }
+
+  private static func bashTimestamp(_ line: String) -> Date? {
+    guard line.hasPrefix("#") else { return nil }
+
+    let rawTimestamp = String(line.dropFirst())
+    guard !rawTimestamp.isEmpty,
+          rawTimestamp.allSatisfy(\.isNumber),
+          let epoch = TimeInterval(rawTimestamp) else { return nil }
+
+    return Date(timeIntervalSince1970: epoch)
   }
 }
 
@@ -122,10 +306,10 @@ class CommandHistory: ItemsContainer {
   var all: [CommandHistoryItemDecorator] = []
 
   @ObservationIgnored
-  private var loadedHistoryFileModificationDate: Date?
+  private var loadedHistoryModificationDate: Date?
 
   @ObservationIgnored
-  private var fileMonitorSource: DispatchSourceFileSystemObject?
+  private var fileMonitorSources: [DispatchSourceFileSystemObject] = []
 
   @ObservationIgnored
   private var isLoading = false
@@ -143,27 +327,31 @@ class CommandHistory: ItemsContainer {
   }
 
   private func startFileMonitoring() {
-    let fd = open(TerminalCommandHistory().historyFileURL.path, O_EVTONLY)
-    guard fd >= 0 else { return }
+    fileMonitorSources.forEach { $0.cancel() }
+    fileMonitorSources = []
 
-    let source = DispatchSource.makeFileSystemObjectSource(
-      fileDescriptor: fd,
-      eventMask: [.write, .extend],
-      queue: .main
-    )
+    for sourceURL in TerminalCommandHistory().readableSources.map(\.url) {
+      let fd = open(sourceURL.path, O_EVTONLY)
+      guard fd >= 0 else { continue }
 
-    source.setEventHandler { [weak self] in
-      guard let self else { return }
-      Task { @MainActor in
-        try? await self.loadIfChanged()
+      let source = DispatchSource.makeFileSystemObjectSource(
+        fileDescriptor: fd,
+        eventMask: [.write, .extend],
+        queue: .main
+      )
+
+      source.setEventHandler { [weak self] in
+        guard let self else { return }
+        Task { @MainActor in
+          try? await self.loadIfChanged()
+        }
       }
+
+      source.setCancelHandler { close(fd) }
+
+      fileMonitorSources.append(source)
+      source.resume()
     }
-
-    source.setCancelHandler { close(fd) }
-
-    fileMonitorSource?.cancel()
-    fileMonitorSource = source
-    source.resume()
   }
 
   @MainActor
@@ -173,8 +361,8 @@ class CommandHistory: ItemsContainer {
     defer { isLoading = false }
 
     let history = TerminalCommandHistory()
-    let modificationDate = try history.modificationDate()
-    guard modificationDate != loadedHistoryFileModificationDate else { return }
+    let modificationDate = try await modificationDate(for: history)
+    guard modificationDate != loadedHistoryModificationDate else { return }
 
     try await load(history: history, modificationDate: modificationDate)
   }
@@ -182,12 +370,12 @@ class CommandHistory: ItemsContainer {
   @MainActor
   func load() async throws {
     let history = TerminalCommandHistory()
-    try await load(history: history, modificationDate: try history.modificationDate())
+    try await load(history: history, modificationDate: try await modificationDate(for: history))
   }
 
   @MainActor
   private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
-    let entries = try history.load()
+    let entries = try await entries(for: history)
     all = entries.prefix(Defaults[.commandHistorySize]).map { entry in
       let item = CommandHistoryItem(command: entry.command)
       if let timestamp = entry.timestamp {
@@ -197,7 +385,7 @@ class CommandHistory: ItemsContainer {
       return CommandHistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
     }
     items = all
-    loadedHistoryFileModificationDate = modificationDate
+    loadedHistoryModificationDate = modificationDate
 
     for item in items {
       item.highlight("", [])
@@ -208,6 +396,25 @@ class CommandHistory: ItemsContainer {
     Task {
       AppState.shared.popup.needsResize = true
     }
+  }
+
+  @MainActor
+  func reloadSources() async {
+    loadedHistoryModificationDate = nil
+    startFileMonitoring()
+    try? await load()
+  }
+
+  private func modificationDate(for history: TerminalCommandHistory) async throws -> Date {
+    try await Task.detached(priority: .userInitiated) {
+      try history.modificationDate()
+    }.value
+  }
+
+  private func entries(for history: TerminalCommandHistory) async throws -> [TerminalCommandHistoryEntry] {
+    try await Task.detached(priority: .userInitiated) {
+      try history.load()
+    }.value
   }
 
   @MainActor
