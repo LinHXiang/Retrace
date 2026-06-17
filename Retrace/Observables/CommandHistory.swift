@@ -124,6 +124,12 @@ class CommandHistory: ItemsContainer {
   @ObservationIgnored
   private var loadedHistoryFileModificationDate: Date?
 
+  @ObservationIgnored
+  private var fileMonitorSource: DispatchSourceFileSystemObject?
+
+  @ObservationIgnored
+  private var isLoading = false
+
   init() {
     Task {
       for await _ in Defaults.updates(.showSpecialSymbols, initial: false) {
@@ -133,10 +139,40 @@ class CommandHistory: ItemsContainer {
         await AppState.shared.appDelegate?.updateStatusItemTitle()
       }
     }
+    startFileMonitoring()
+  }
+
+  @MainActor
+  private func startFileMonitoring() {
+    let fd = open(TerminalCommandHistory().historyFileURL.path, O_EVTONLY)
+    guard fd >= 0 else { return }
+
+    let source = DispatchSource.makeFileSystemObjectSource(
+      fileDescriptor: fd,
+      eventMask: [.write, .extend],
+      queue: .main
+    )
+
+    source.setEventHandler { [weak self] in
+      guard let self else { return }
+      Task { @MainActor in
+        try? await self.loadIfChanged()
+      }
+    }
+
+    source.setCancelHandler { close(fd) }
+
+    fileMonitorSource?.cancel()
+    fileMonitorSource = source
+    source.resume()
   }
 
   @MainActor
   func loadIfChanged() async throws {
+    guard !isLoading else { return }
+    isLoading = true
+    defer { isLoading = false }
+
     let history = TerminalCommandHistory()
     let modificationDate = try history.modificationDate()
     guard modificationDate != loadedHistoryFileModificationDate else { return }
