@@ -1,39 +1,30 @@
 import SwiftUI
 
-struct VisualEffectView: NSViewRepresentable {
-  let visualEffectView = NSVisualEffectView()
+struct PanelBackgroundView: View {
+  @Environment(\.colorScheme) private var colorScheme
 
-  var material: NSVisualEffectView.Material = .popover
-  var blendingMode: NSVisualEffectView.BlendingMode = .behindWindow
-
-  func makeNSView(context: Context) -> NSVisualEffectView {
-    return visualEffectView
+  var body: some View {
+    backgroundColor
+      .overlay {
+        RoundedRectangle(cornerRadius: Popup.cornerRadius + Popup.horizontalPadding)
+          .stroke(borderColor, lineWidth: 1)
+      }
+    .clipShape(.rect(cornerRadius: Popup.cornerRadius + Popup.horizontalPadding))
   }
 
-  func updateNSView(_ view: NSVisualEffectView, context: Context) {
-    visualEffectView.material = material
-    visualEffectView.blendingMode = blendingMode
-  }
-}
-
-@available(macOS 26.0, *)
-struct GlassEffectView: NSViewRepresentable {
-  let glassEffectView = NSGlassEffectView()
-
-  var style: NSGlassEffectView.Style = .regular
-
-  func makeNSView(context: Context) -> NSGlassEffectView {
-    return glassEffectView
+  private var backgroundColor: Color {
+    colorScheme == .dark
+      ? Color(red: 0.06, green: 0.06, blue: 0.055).opacity(0.98)
+      : Color(red: 0.965, green: 0.96, blue: 0.94).opacity(0.98)
   }
 
-  func updateNSView(_ view: NSGlassEffectView, context: Context) {
-    glassEffectView.style = style
+  private var borderColor: Color {
+    colorScheme == .dark
+      ? Color.white.opacity(0.12)
+      : Color.black.opacity(0.12)
   }
 }
 
 #Preview {
-  VisualEffectView(
-    material: .popover,
-    blendingMode: .behindWindow
-  )
+  PanelBackgroundView()
 }
