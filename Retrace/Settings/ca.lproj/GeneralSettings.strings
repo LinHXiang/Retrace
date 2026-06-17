@@ -7,12 +7,12 @@
 "Fuzzy" = "";
 "Regex" = "";
 "Mixed" = "";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Mida de l'historial d'ordres:";
+"CommandHistorySizeTooltip" = "Nombre màxim d'ordres que es mostraran.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Historial d'ordres:";
+"AddHistorySource" = "Afegeix un fitxer";
+"RestoreHistorySources" = "Restaura els valors per defecte";
+"ChooseHistorySource" = "Tria un fitxer d'historial";
+"RemoveHistorySource" = "Elimina el fitxer d'historial";
+"NoHistorySources" = "No hi ha cap fitxer d'historial configurat.";

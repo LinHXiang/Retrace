@@ -10,9 +10,9 @@
 "CommandHistorySize" = "歷史條數：";
 "CommandHistorySizeTooltip" = "最多顯示的命令數量。";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "命令歷史：";
+"AddHistorySource" = "加入檔案";
+"RestoreHistorySources" = "恢復預設";
+"ChooseHistorySource" = "選擇歷史檔案";
+"RemoveHistorySource" = "移除歷史檔案";
+"NoHistorySources" = "尚未設定歷史檔案。";

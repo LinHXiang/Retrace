@@ -7,12 +7,12 @@
 "Fuzzy" = "Fuzzy";
 "Regex" = "Vanlig uttrykk";
 "Mixed" = "Blandet";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Størrelse på kommandohistorikk:";
+"CommandHistorySizeTooltip" = "Maksimalt antall kommandoer som vises.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Kommandohistorikk:";
+"AddHistorySource" = "Legg til fil";
+"RestoreHistorySources" = "Gjenopprett standarder";
+"ChooseHistorySource" = "Velg historikkfil";
+"RemoveHistorySource" = "Fjern historikkfil";
+"NoHistorySources" = "Ingen historikkfiler er konfigurert.";

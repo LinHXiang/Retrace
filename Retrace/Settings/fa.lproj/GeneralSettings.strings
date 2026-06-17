@@ -7,12 +7,12 @@
 "Fuzzy" = "تقریبی";
 "Regex" = "عبارات منظم";
 "Mixed" = "ترکیبی";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "اندازهٔ تاریخچهٔ فرمان‌ها:";
+"CommandHistorySizeTooltip" = "حداکثر تعداد فرمان‌هایی که نمایش داده می‌شوند.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "تاریخچهٔ فرمان‌ها:";
+"AddHistorySource" = "افزودن فایل";
+"RestoreHistorySources" = "بازگردانی پیش‌فرض‌ها";
+"ChooseHistorySource" = "انتخاب فایل تاریخچه";
+"RemoveHistorySource" = "حذف فایل تاریخچه";
+"NoHistorySources" = "هیچ فایل تاریخچه‌ای پیکربندی نشده است.";

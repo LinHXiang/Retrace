@@ -7,12 +7,12 @@
 "Fuzzy" = "Нечіткий";
 "Regex" = "Регулярні вирази";
 "Mixed" = "Змішаний";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Розмір історії команд:";
+"CommandHistorySizeTooltip" = "Максимальна кількість команд для показу.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Історія команд:";
+"AddHistorySource" = "Додати файл";
+"RestoreHistorySources" = "Відновити типові";
+"ChooseHistorySource" = "Вибрати файл історії";
+"RemoveHistorySource" = "Вилучити файл історії";
+"NoHistorySources" = "Файли історії не налаштовано.";

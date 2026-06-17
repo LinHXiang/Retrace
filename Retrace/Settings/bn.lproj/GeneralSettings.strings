@@ -6,13 +6,13 @@
 "Fuzzy" = "ঝাপসা";
 "Regex" = "স্বাভাবিক অভিব্যক্তি";
 "Mixed" = "মিশ্রিত";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "কমান্ড ইতিহাসের আকার:";
+"CommandHistorySizeTooltip" = "দেখানোর জন্য কমান্ডের সর্বোচ্চ সংখ্যা।";
 "OpenTooltip" = "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "কমান্ড ইতিহাস:";
+"AddHistorySource" = "ফাইল যোগ করুন";
+"RestoreHistorySources" = "ডিফল্ট পুনরুদ্ধার করুন";
+"ChooseHistorySource" = "ইতিহাস ফাইল নির্বাচন করুন";
+"RemoveHistorySource" = "ইতিহাস ফাইল সরান";
+"NoHistorySources" = "কোনো ইতিহাস ফাইল কনফিগার করা নেই।";

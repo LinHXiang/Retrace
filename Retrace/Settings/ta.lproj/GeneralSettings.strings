@@ -7,12 +7,12 @@
 "Fuzzy" = "தெளிவில்லாமல்";
 "Regex" = "வழக்கமான வெளிப்பாடுகள்";
 "Mixed" = "கலப்பு";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "கட்டளை வரலாறு அளவு:";
+"CommandHistorySizeTooltip" = "காட்ட வேண்டிய கட்டளைகளின் அதிகபட்ச எண்ணிக்கை.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "கட்டளை வரலாறு:";
+"AddHistorySource" = "கோப்பைச் சேர்";
+"RestoreHistorySources" = "இயல்புநிலைகளை மீட்டமை";
+"ChooseHistorySource" = "வரலாறு கோப்பைத் தேர்வு செய்";
+"RemoveHistorySource" = "வரலாறு கோப்பை அகற்று";
+"NoHistorySources" = "வரலாறு கோப்புகள் எதுவும் அமைக்கப்படவில்லை.";

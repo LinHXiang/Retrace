@@ -1,8 +1,8 @@
 "Title" = "Asosiy";
 "Fuzzy" = "Noaniq";
 "Mixed" = "Aralash";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Buyruqlar tarixi hajmi:";
+"CommandHistorySizeTooltip" = "Koʻrsatiladigan buyruqlarning maksimal soni.";
 "LaunchAtLogin" = "Kirish paytida ishga tushirish";
 "Open" = "Ochish:";
 "OpenTooltip" = "Ilovani ochish uchun global yorliq.\nOʻzgartirgichlarni ushlab turganda asosiy tugmani qayta-qayta bosish roʻyxatdagi keyingi elementni tanlaydi. Bu rejimda modifikator tugmachalarini bo‘shatish tanlovni tasdiqlaydi va qalqib chiquvchi oynani yopadi.\nStandart: ⇧⌘T.";
@@ -10,9 +10,9 @@
 "Exact" = "Aniq";
 "Regex" = "Muntazam ifodalar";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Buyruqlar tarixi:";
+"AddHistorySource" = "Fayl qoʻshish";
+"RestoreHistorySources" = "Standartlarni tiklash";
+"ChooseHistorySource" = "Tarix faylini tanlash";
+"RemoveHistorySource" = "Tarix faylini olib tashlash";
+"NoHistorySources" = "Tarix fayllari sozlanmagan.";

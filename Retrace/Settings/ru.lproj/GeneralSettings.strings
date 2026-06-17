@@ -7,12 +7,12 @@
 "Fuzzy" = "Неточный";
 "Regex" = "Регулярные выражения";
 "Mixed" = "Смешанный";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Размер истории команд:";
+"CommandHistorySizeTooltip" = "Максимальное число отображаемых команд.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "История команд:";
+"AddHistorySource" = "Добавить файл";
+"RestoreHistorySources" = "Восстановить по умолчанию";
+"ChooseHistorySource" = "Выбрать файл истории";
+"RemoveHistorySource" = "Удалить файл истории";
+"NoHistorySources" = "Файлы истории не настроены.";

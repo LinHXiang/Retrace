@@ -7,12 +7,12 @@
 "Fuzzy" = "Aproximada";
 "Regex" = "Expressões regulares";
 "Mixed" = "Mista";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Tamanho do histórico de comandos:";
+"CommandHistorySizeTooltip" = "Número máximo de comandos a mostrar.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Histórico de comandos:";
+"AddHistorySource" = "Adicionar arquivo";
+"RestoreHistorySources" = "Restaurar padrões";
+"ChooseHistorySource" = "Escolher arquivo de histórico";
+"RemoveHistorySource" = "Remover arquivo de histórico";
+"NoHistorySources" = "Nenhum arquivo de histórico configurado.";

@@ -7,12 +7,12 @@
 "Fuzzy" = "";
 "Regex" = "";
 "Mixed" = "";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Ukuran riwayat perintah:";
+"CommandHistorySizeTooltip" = "Jumlah maksimum perintah yang ditampilkan.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Riwayat perintah:";
+"AddHistorySource" = "Tambah File";
+"RestoreHistorySources" = "Pulihkan Default";
+"ChooseHistorySource" = "Pilih file riwayat";
+"RemoveHistorySource" = "Hapus file riwayat";
+"NoHistorySources" = "Belum ada file riwayat yang dikonfigurasi.";

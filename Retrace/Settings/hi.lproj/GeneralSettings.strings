@@ -7,12 +7,12 @@
 "Fuzzy" = "";
 "Regex" = "";
 "Mixed" = "";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "कमांड इतिहास का आकार:";
+"CommandHistorySizeTooltip" = "दिखाए जाने वाले कमांड की अधिकतम संख्या।";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "कमांड इतिहास:";
+"AddHistorySource" = "फ़ाइल जोड़ें";
+"RestoreHistorySources" = "डिफ़ॉल्ट बहाल करें";
+"ChooseHistorySource" = "इतिहास फ़ाइल चुनें";
+"RemoveHistorySource" = "इतिहास फ़ाइल हटाएँ";
+"NoHistorySources" = "कोई इतिहास फ़ाइल कॉन्फ़िगर नहीं है।";

@@ -7,12 +7,12 @@
 "Fuzzy" = "لێکچوو";
 "Regex" = "ڕێجێکسەکان";
 "Mixed" = "تێکەڵ";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "قەبارەی مێژووی فرمانەکان:";
+"CommandHistorySizeTooltip" = "زۆرترین ژمارەی فرمانەکان بۆ پیشاندان.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "مێژووی فرمانەکان:";
+"AddHistorySource" = "زیادکردنی پەڕگە";
+"RestoreHistorySources" = "گەڕاندنەوەی بنەڕەتەکان";
+"ChooseHistorySource" = "هەڵبژاردنی پەڕگەی مێژوو";
+"RemoveHistorySource" = "لابردنی پەڕگەی مێژوو";
+"NoHistorySources" = "هیچ پەڕگەیەکی مێژوو ڕێکنەخراوە.";

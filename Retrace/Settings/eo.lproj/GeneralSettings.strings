@@ -7,12 +7,12 @@
 "Exact" = "Ekzakta";
 "Fuzzy" = "Proksimuma";
 "Mixed" = "Miksita";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Grando de komanda historio:";
+"CommandHistorySizeTooltip" = "Maksimuma nombro de montrendaj komandoj.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Komanda historio:";
+"AddHistorySource" = "Aldoni dosieron";
+"RestoreHistorySources" = "Restarigi defaŭltojn";
+"ChooseHistorySource" = "Elekti historian dosieron";
+"RemoveHistorySource" = "Forigi historian dosieron";
+"NoHistorySources" = "Neniuj historiaj dosieroj estas agorditaj.";

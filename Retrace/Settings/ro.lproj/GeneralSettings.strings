@@ -3,16 +3,16 @@
 "Fuzzy" = "Aproximativă";
 "Regex" = "Expresii regulate";
 "Mixed" = "Mixt";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Dimensiunea istoricului comenzilor:";
+"CommandHistorySizeTooltip" = "Numărul maxim de comenzi afișate.";
 "Open" = "Deschide:";
 "Exact" = "Exactă";
 "Search" = "Căutare:";
 "Title" = "General";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Istoricul comenzilor:";
+"AddHistorySource" = "Adaugă fișier";
+"RestoreHistorySources" = "Restaurează valorile implicite";
+"ChooseHistorySource" = "Alege fișierul de istoric";
+"RemoveHistorySource" = "Elimină fișierul de istoric";
+"NoHistorySources" = "Nu există fișiere de istoric configurate.";

@@ -7,12 +7,12 @@
 "Fuzzy" = "מעורפל";
 "Regex" = "ביטויים רגולריים";
 "Mixed" = "מעורבב";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "גודל היסטוריית הפקודות:";
+"CommandHistorySizeTooltip" = "מספר הפקודות המרבי להצגה.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "היסטוריית פקודות:";
+"AddHistorySource" = "הוסף קובץ";
+"RestoreHistorySources" = "שחזר ברירות מחדל";
+"ChooseHistorySource" = "בחר קובץ היסטוריה";
+"RemoveHistorySource" = "הסר קובץ היסטוריה";
+"NoHistorySources" = "לא הוגדרו קובצי היסטוריה.";

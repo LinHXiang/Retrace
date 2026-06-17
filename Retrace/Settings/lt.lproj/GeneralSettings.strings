@@ -7,12 +7,12 @@
 "Fuzzy" = "Apytikslis";
 "Regex" = "Reguliarios išraiškos";
 "Mixed" = "Mišrus";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Komandų istorijos dydis:";
+"CommandHistorySizeTooltip" = "Didžiausias rodomų komandų skaičius.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Komandų istorija:";
+"AddHistorySource" = "Pridėti failą";
+"RestoreHistorySources" = "Atkurti numatytuosius";
+"ChooseHistorySource" = "Pasirinkti istorijos failą";
+"RemoveHistorySource" = "Pašalinti istorijos failą";
+"NoHistorySources" = "Nesukonfigūruota jokių istorijos failų.";

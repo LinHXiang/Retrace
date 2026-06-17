@@ -7,12 +7,12 @@
 "Fuzzy" = "Mehko";
 "Regex" = "Regularni izrazi - Regex";
 "Mixed" = "Mešano";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Velikost zgodovine ukazov:";
+"CommandHistorySizeTooltip" = "Največje število prikazanih ukazov.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Zgodovina ukazov:";
+"AddHistorySource" = "Dodaj datoteko";
+"RestoreHistorySources" = "Obnovi privzeto";
+"ChooseHistorySource" = "Izberi datoteko zgodovine";
+"RemoveHistorySource" = "Odstrani datoteko zgodovine";
+"NoHistorySources" = "Ni nastavljenih datotek zgodovine.";

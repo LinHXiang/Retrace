@@ -7,12 +7,12 @@
 "Fuzzy" = "Hasonló";
 "Regex" = "Reguláris kifejezés";
 "Mixed" = "Kevert";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Parancselőzmények mérete:";
+"CommandHistorySizeTooltip" = "A megjelenítendő parancsok maximális száma.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Parancselőzmények:";
+"AddHistorySource" = "Fájl hozzáadása";
+"RestoreHistorySources" = "Alapértelmezések visszaállítása";
+"ChooseHistorySource" = "Előzményfájl kiválasztása";
+"RemoveHistorySource" = "Előzményfájl eltávolítása";
+"NoHistorySources" = "Nincs beállítva előzményfájl.";

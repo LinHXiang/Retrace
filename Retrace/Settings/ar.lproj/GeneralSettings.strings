@@ -7,12 +7,12 @@
 "Fuzzy" = "غامض";
 "Regex" = "التعبيرات العادية";
 "Mixed" = "مختلط";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "حجم سجل الأوامر:";
+"CommandHistorySizeTooltip" = "الحد الأقصى لعدد الأوامر المعروضة.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "سجل الأوامر:";
+"AddHistorySource" = "إضافة ملف";
+"RestoreHistorySources" = "استعادة الافتراضيات";
+"ChooseHistorySource" = "اختيار ملف السجل";
+"RemoveHistorySource" = "إزالة ملف السجل";
+"NoHistorySources" = "لم يتم تكوين ملفات سجل.";

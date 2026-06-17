@@ -7,12 +7,12 @@
 "Fuzzy" = "Gần đúng";
 "Regex" = "Biểu thức chính quy";
 "Mixed" = "Hỗn hợp";
-"CommandHistorySize" = "Command history size:";
-"CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"CommandHistorySize" = "Kích thước lịch sử lệnh:";
+"CommandHistorySizeTooltip" = "Số lệnh tối đa được hiển thị.";
 
-"HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";
+"HistorySources" = "Lịch sử lệnh:";
+"AddHistorySource" = "Thêm tệp";
+"RestoreHistorySources" = "Khôi phục mặc định";
+"ChooseHistorySource" = "Chọn tệp lịch sử";
+"RemoveHistorySource" = "Xóa tệp lịch sử";
+"NoHistorySources" = "Chưa cấu hình tệp lịch sử nào.";
