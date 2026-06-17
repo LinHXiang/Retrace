@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Iniciar no login";
 "Open" = "Abrir:";
 "OpenTooltip" = "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o item seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T.";
-"ShowPreview" = "Pré-visualizar:";
-"ShowPreviewTooltip" = "Mostrar pré-visualização com informações adicionais.\nPadrão: ⌃Space.";
 "Search" = "Busca:";
 "Exact" = "Exata";
 "Fuzzy" = "Aproximada";

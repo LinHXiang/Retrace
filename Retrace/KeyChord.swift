@@ -1,11 +1,7 @@
 import AppKit.NSEvent
-import KeyboardShortcuts
 import Sauce
 
 enum KeyChord: CaseIterable {
-  static var previewKey: Key? { Sauce.shared.key(shortcut: .togglePreview) }
-  static var previewModifiers: NSEvent.ModifierFlags? { KeyboardShortcuts.Shortcut(name: .togglePreview)?.modifiers }
-
   case clearSearch
   case deleteOneCharFromSearch
   case deleteLastWordFromSearch
@@ -17,7 +13,6 @@ enum KeyChord: CaseIterable {
   case openPreferences
   case selectCurrentItem
   case close
-  case togglePreview
   case unknown
 
   init(_ event: NSEvent?) {
@@ -128,8 +123,6 @@ enum KeyChord: CaseIterable {
       return .selectCurrentItem
     case (.escape, _):
       return .close
-    case (KeyChord.previewKey, KeyChord.previewModifiers):
-      return .togglePreview
     default:
       return nil
     }

@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Khởi động khi đăng nhập";
 "Open" = "Mở:";
 "OpenTooltip" = "Phím tắt mở ứng dụng.\nNhấn giữ phím chính cùng với các phím sửa đổi sẽ chọn mục tiếp theo trong danh sách. Trong chế độ này, thả các phím sửa đổi sẽ xác nhận lựa chọn và đóng cửa sổ popup.\nMặc định: ⇧⌘T.";
-"ShowPreview" = "Xem trước:";
-"ShowPreviewTooltip" = "Hiển thị xem trước với thông tin bổ sung.\nMặc định: ⌃Space.";
 "Search" = "Tìm kiếm:";
 "Exact" = "Chính xác";
 "Fuzzy" = "Gần đúng";

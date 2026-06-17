@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Launch at login";
 "Open" = "Open:";
 "OpenTooltip" = "Global shortcut key to open Retrace.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the command window.\nDefault: ⇧⌘T.";
-"ShowPreview" = "Preview:";
-"ShowPreviewTooltip" = "Show preview with additional information.\nDefault: ⌃Space.";
 "Search" = "Search:";
 "Exact" = "Exact";
 "Fuzzy" = "Fuzzy";

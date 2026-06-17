@@ -63,7 +63,6 @@ struct CommandHistoryListView: View {
           } else {
             modifierFlags.flags = []
             appState.navigator.isKeyboardNavigating = true
-            appState.preview.cancelAutoOpen()
           }
         }
         // Calculate the total height inside a scroll view.

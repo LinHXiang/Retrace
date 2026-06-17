@@ -12,7 +12,7 @@ class CommandHistoryItem {
 
   func generateTitle() -> String {
     // 1k characters is trade-off for performance
-    var title = previewableText.shortened(to: 1_000)
+    var title = displayText.shortened(to: 1_000)
 
     if Defaults[.showSpecialSymbols] {
       if let range = title.range(of: "^ +", options: .regularExpression) {
@@ -31,7 +31,7 @@ class CommandHistoryItem {
     return title
   }
 
-  var previewableText: String {
+  var displayText: String {
     text?.isEmpty == false ? text ?? "" : title
   }
 

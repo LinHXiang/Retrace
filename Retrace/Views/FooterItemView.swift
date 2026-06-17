@@ -12,10 +12,5 @@ struct FooterItemView: View {
       appState.navigator.selectWithoutScrolling(id: item.id)
       item.action()
     }
-    .onHover { hovering in
-      if hovering && appState.preview.state.isOpen {
-        appState.preview.togglePreview()
-      }
-    }
   }
 }

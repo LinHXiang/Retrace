@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Apri al login";
 "Open" = "Aprire:";
 "OpenTooltip" = "Una pressione ripetuta del tasto principale mentre si tengono premuti i modificatori seleziona la voce successiva dell'elenco.\nIn questa modalità, rilasciando i tasti modificatori si conferma la selezione e si chiude il popup.\nDefault: ⇧⌘T.";
-"ShowPreview" = "Anteprima:";
-"ShowPreviewTooltip" = "Mostra anteprima con informazioni aggiuntive.\nDefault: ⌃Space.";
 "Search" = "Ricerca:";
 "Exact" = "Esatta";
 "Fuzzy" = "Approssimata";

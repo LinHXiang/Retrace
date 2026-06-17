@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Start bij inloggen";
 "Open" = "Open:";
 "OpenTooltip" = "Een herhaalde druk op de hoofdtoets terwijl de modificatietoetsen ingedrukt worden gehouden, selecteert het volgende item in de lijst. In deze modus zal het loslaten van de modificatietoetsen de selectie bevestigen en het popupvenster sluiten.\nStandaard: ⇧⌘T.";
-"ShowPreview" = "Voorbeeld:";
-"ShowPreviewTooltip" = "Voorbeeld weergeven met aanvullende informatie.\nStandaard: ⌃Space.";
 "Search" = "Zoek:";
 "Exact" = "Exact";
 "Fuzzy" = "Fuzzy";

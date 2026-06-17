@@ -9,5 +9,3 @@
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "Title" = "Geral";
 "Fuzzy" = "Difuso";
-"ShowPreview" = "Pré-visualizar:";
-"ShowPreviewTooltip" = "Mostrar pré-visualização com informação adicional.\nPadrão: ⌃Space.";

@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Uruchom przy logowaniu";
 "Open" = "Otwórz:";
 "OpenTooltip" = "Globalny skrót klawiszowy do otwierania aplikacji.\nKrotne naciśnięcie klawisza głównego przy jednoczesnym przytrzymaniu klawiszy modyfikujących spowoduje wybranie następnego elementu na liście. W tym trybie zwolnienie klawiszy modyfikatorów potwierdzi wybór i zamknie wyskakujące okienko.\nDomyślnie: ⇧⌘T.";
-"ShowPreview" = "Podgląd:";
-"ShowPreviewTooltip" = "Pokaż podgląd z dodatkowymi informacjami.\nDomyślnie: ⌃Space.";
 "Search" = "Wyszukiwanie:";
 "Exact" = "Dokładne";
 "Fuzzy" = "Rozmyte";

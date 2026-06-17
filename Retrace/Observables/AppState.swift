@@ -13,7 +13,6 @@ class AppState {
   var history: CommandHistory
   var footer: Footer
   var navigator: NavigationManager
-  var preview: SlideoutController
 
   var searchVisible: Bool {
     if !Defaults[.showSearch] { return false }
@@ -24,7 +23,7 @@ class AppState {
   }
 
   var menuBarCommandText: String {
-    var title = history.visibleItems.first?.text.shortened(to: 100)
+    var title = history.visibleItems.first?.title.shortened(to: 100)
       .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     title.unicodeScalars.removeAll(where: CharacterSet.newlines.contains)
     return title.shortened(to: 20)
@@ -38,15 +37,6 @@ class AppState {
     self.footer = footer
     popup = Popup()
     navigator = NavigationManager(history: history, footer: footer)
-    preview = SlideoutController(
-      onContentResize: { contentWidth in
-        Defaults[.windowSize].width = contentWidth
-      },
-      onSlideoutResize: { previewWidth in
-        Defaults[.previewWidth] = previewWidth
-      })
-    preview.contentWidth = Defaults[.windowSize].width
-    preview.slideoutWidth = Defaults[.previewWidth]
   }
 
   @MainActor

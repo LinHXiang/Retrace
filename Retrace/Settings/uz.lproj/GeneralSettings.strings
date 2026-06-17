@@ -6,8 +6,6 @@
 "LaunchAtLogin" = "Kirish paytida ishga tushirish";
 "Open" = "Ochish:";
 "OpenTooltip" = "Ilovani ochish uchun global yorliq.\nOʻzgartirgichlarni ushlab turganda asosiy tugmani qayta-qayta bosish roʻyxatdagi keyingi elementni tanlaydi. Bu rejimda modifikator tugmachalarini bo‘shatish tanlovni tasdiqlaydi va qalqib chiquvchi oynani yopadi.\nStandart: ⇧⌘T.";
-"ShowPreview" = "Ko'rib chiqish:";
-"ShowPreviewTooltip" = "Qo'shimcha ma'lumot bilan ko'rib chiqishni ko'rsatish.\nStandart: ⌃Space.";
 "Search" = "Qidirish:";
 "Exact" = "Aniq";
 "Regex" = "Muntazam ifodalar";

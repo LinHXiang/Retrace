@@ -9,5 +9,3 @@
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "OpenTooltip" = "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।";
-"ShowPreview" = "পূর্বরূপ:";
-"ShowPreviewTooltip" = "অতিরিক্ত তথ্য সহ পূর্বরূপ দেখান।\nডিফল্ট: ⌃Space।";

@@ -2,8 +2,6 @@
 "Title" = "Allmänt";
 "Open" = "Öppna:";
 "OpenTooltip" = "Globalt kortkommando för att öppna applikationen.\nFörval: ⇧⌘T.";
-"ShowPreview" = "Förhandsvisning:";
-"ShowPreviewTooltip" = "Visa förhandsgranskning med ytterligare information.\nFörval: ⌃Space.";
 "Search" = "Sök:";
 "Exact" = "Exakt";
 "Fuzzy" = "Ungefärlig";

@@ -38,14 +38,6 @@ struct GeneralSettingsPane: View {
 
       Settings.Section(
         bottomDivider: true,
-        label: { Text("ShowPreview", tableName: "GeneralSettings") }
-      ) {
-        KeyboardShortcuts.Recorder(for: .togglePreview)
-          .help(Text("ShowPreviewTooltip", tableName: "GeneralSettings"))
-      }
-
-      Settings.Section(
-        bottomDivider: true,
         label: { Text("Search", tableName: "GeneralSettings") }
       ) {
         Picker("", selection: $searchMode) {

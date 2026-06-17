@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Beim Anmelden starten";
 "Open" = "Öffnen:";
 "OpenTooltip" = "Globales Tastenkürzel zum Öffnen der Anwendung.\nEin wiederholtes Drücken der Haupttaste bei gleichzeitigem Halten der Modifikatortasten wählt das nächste Element in der Liste aus. In diesem Modus wird durch Loslassen der Modifikatortasten die Auswahl bestätigt und das Popup geschlossen.\nStandard: ⇧⌘T.";
-"ShowPreview" = "Vorschau:";
-"ShowPreviewTooltip" = "Vorschau mit zusätzlichen Informationen anzeigen.\nStandard: ⌃Space.";
 "Search" = "Suche:";
 "Exact" = "Exakt";
 "Fuzzy" = "Fuzzy";

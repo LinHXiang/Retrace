@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "Oppstart ved innlogging";
 "Open" = "Åpen:";
 "OpenTooltip" = "Global hurtigtast for å åpne programmet.\nEt gjentatt trykk på hovedtasten mens modifikatortasten holdes inne, velger neste element i listen. I denne modusen vil du bekrefte valget og lukke popup-vinduet ved å slippe modifikatortastene.\nStandard: ⇧⌘T.";
-"ShowPreview" = "Forhåndsvisning:";
-"ShowPreviewTooltip" = "Vis forhåndsvisning med tilleggsinformasjon.\nStandard: ⌃Space.";
 "Search" = "Søk:";
 "Exact" = "Nøyaktig";
 "Fuzzy" = "Fuzzy";

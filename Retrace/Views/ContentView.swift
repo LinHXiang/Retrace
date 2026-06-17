@@ -17,28 +17,24 @@ struct ContentView: View {
 
       KeyHandlingView(searchQuery: $appState.history.searchQuery, searchFocused: $searchFocused) {
         VStack(spacing: 0) {
-          SlideoutView(controller: appState.preview) {
-            HeaderView(
+          HeaderView(
+            searchFocused: $searchFocused
+          )
+
+          VStack(alignment: .leading, spacing: 0) {
+            CommandHistoryListView(
               searchFocused: $searchFocused
             )
 
-            VStack(alignment: .leading, spacing: 0) {
-              CommandHistoryListView(
-                searchFocused: $searchFocused
-              )
-
-              FooterView(footer: appState.footer)
-            }
-            .animation(.default.speed(3), value: appState.history.items)
-            .padding(.horizontal, Popup.horizontalPadding)
-            .onAppear {
-              searchFocused = true
-            }
-            .onMouseMove {
-              appState.navigator.isKeyboardNavigating = false
-            }
-          } slideout: {
-            SlideoutContentView()
+            FooterView(footer: appState.footer)
+          }
+          .animation(.default.speed(3), value: appState.history.items)
+          .padding(.horizontal, Popup.horizontalPadding)
+          .onAppear {
+            searchFocused = true
+          }
+          .onMouseMove {
+            appState.navigator.isKeyboardNavigating = false
           }
           .frame(minHeight: 0)
           .layoutPriority(1)

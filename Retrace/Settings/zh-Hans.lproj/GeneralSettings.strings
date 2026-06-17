@@ -2,8 +2,6 @@
 "LaunchAtLogin" = "登录时启动";
 "Open" = "打开：";
 "OpenTooltip" = "打开 Retrace 的全局快捷键。\n在按住修饰键的同时重复按下主键会选择列表中的下一条命令。在这种模式下，松开修饰键将确认选择并关闭命令窗口。\n默认：⇧⌘T。";
-"ShowPreview" = "预览：";
-"ShowPreviewTooltip" = "显示带有附加信息的预览。\n默认值：⌃Space。";
 "Search" = "搜索：";
 "Exact" = "精确";
 "Fuzzy" = "模糊";
