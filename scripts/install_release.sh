@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-DERIVED_DATA_DIR="$HOME/Library/Developer/Xcode/DerivedData/Retrace-dthewhumusyhrjcjumxxzmmumnxe"
+DERIVED_DATA_DIR="${DERIVED_DATA_DIR:-$ROOT_DIR/build/DerivedData/Install}"
 PRODUCT_APP="$DERIVED_DATA_DIR/Build/Products/Release/Retrace.app"
 DESTINATION_APP="/Applications/Retrace.app"
 
@@ -13,6 +13,7 @@ xcodebuild build \
   -scheme Retrace \
   -configuration Release \
   -destination 'platform=macOS' \
+  -derivedDataPath "$DERIVED_DATA_DIR" \
   -skipPackagePluginValidation \
   -skipPackageUpdates \
   -onlyUsePackageVersionsFromResolvedFile
