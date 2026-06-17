@@ -1,5 +1,7 @@
 # Retrace
 
+[中文](README.zh-Hans.md)
+
 I liked Warp's command history list. When I had to use
 a regular terminal it was painful to lose that — then I
 realized Maccy's interaction model was exactly what I
@@ -31,7 +33,3 @@ than zsh.
 
 Open `Retrace.xcodeproj` in Xcode and run the `Retrace` scheme.
 The app product is named `Retrace`.
-
----
-
-[中文](README.zh-Hans.md)
