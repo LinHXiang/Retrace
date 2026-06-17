@@ -1,29 +1,33 @@
 # Retrace
 
-Retrace is a minimal macOS menu bar app for searching recent terminal commands.
+I liked Warp's command history list. When I had to use
+a regular terminal it was painful to lose that — then I
+realized Maccy's interaction model was exactly what I
+wanted. So here it is: a minimal macOS menu bar app that
+searches your recent terminal commands.
 
-It is based on Maccy, but the data source is terminal command history rather
-than clipboard history. The MVP supports macOS and zsh only.
+The MVP supports macOS and zsh only.
 
-## MVP
+## Usage
 
-- Opens from the menu bar or the global shortcut `Shift + Command + T`.
+- Open from the menu bar or press `Shift + Command + T`.
 - Reads commands from `~/.zsh_history`.
-- Parses zsh extended history lines:
+- Parses zsh extended history format:
 
   ```text
   : 1712345678:0;git push origin main
   ```
 
-- Deduplicates commands and keeps the most recent timestamp for each command.
-- Sorts commands by most recent use.
-- Supports search, keyboard navigation, `Enter` to copy, and `Esc` to close.
-- Copies the selected command to the system clipboard.
+- Deduplicates commands and keeps the most recent timestamp.
+- Sorts by most recent use.
+- Search, keyboard navigation, `Enter` to copy, `Esc` to close.
+- Selected command goes to the system clipboard — nothing more.
 
-Retrace does not execute commands, paste into Terminal, connect to AI services, or
-read history from Atuin, bash, fish, Warp, or iTerm.
+Retrace does not execute commands, paste into Terminal,
+connect to AI services, or read history from anything other
+than zsh.
 
 ## Development
 
-Open `Retrace.xcodeproj` in Xcode and run the `Retrace` scheme. The app product is
-named `Retrace`.
+Open `Retrace.xcodeproj` in Xcode and run the `Retrace` scheme.
+The app product is named `Retrace`.
