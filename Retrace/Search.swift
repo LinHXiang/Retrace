@@ -118,7 +118,7 @@ class Search {
       return results
     }
 
-    results = simpleSearch(string: string, within: within, options: .regularExpression)
+    results = simpleSearch(string: string, within: within, options: [.regularExpression, .caseInsensitive])
     guard results.isEmpty else {
       return results
     }
