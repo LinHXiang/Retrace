@@ -142,7 +142,6 @@ class CommandHistory: ItemsContainer {
     startFileMonitoring()
   }
 
-  @MainActor
   private func startFileMonitoring() {
     let fd = open(TerminalCommandHistory().historyFileURL.path, O_EVTONLY)
     guard fd >= 0 else { return }
