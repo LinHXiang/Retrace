@@ -42,45 +42,75 @@ enum PopupPosition: String, CaseIterable, Identifiable, CustomStringConvertible,
   }
 
   private func screenCenterOrigin(size: NSSize) -> NSPoint? {
-    guard let frame = NSScreen.forPopup?.visibleFrame else { return nil }
+    guard let screen = NSScreen.forPopup else { return nil }
 
-    return NSRect.centered(ofSize: size, in: frame).origin
+    return constrainedOrigin(
+      NSRect.centered(ofSize: size, in: screen.visibleFrame).origin,
+      size: size,
+      screen: screen
+    )
   }
 
   private func windowCenterOrigin(size: NSSize) -> NSPoint? {
     guard let frame = NSWorkspace.shared.frontmostApplication?.windowFrame else { return nil }
 
-    return NSRect.centered(ofSize: size, in: frame).origin
+    let origin = NSRect.centered(ofSize: size, in: frame).origin
+    return constrainedOrigin(origin, size: size, screen: screen(containing: frame))
   }
 
   private func statusItemOrigin(size: NSSize, statusBarButton: NSStatusBarButton?) -> NSPoint? {
-    guard let statusBarButton, let screen = NSScreen.main else { return nil }
+    guard let statusBarButton else { return nil }
 
     let rectInWindow = statusBarButton.convert(statusBarButton.bounds, to: nil)
     guard let screenRect = statusBarButton.window?.convertToScreen(rectInWindow) else { return nil }
 
-    var topLeftPoint = NSPoint(x: screenRect.minX, y: screenRect.minY - size.height)
-    // Ensure that window doesn't spill over to the right screen.
-    if (topLeftPoint.x + size.width) > screen.frame.maxX {
-      topLeftPoint.x = screen.frame.maxX - size.width
-    }
-
-    return topLeftPoint
+    let origin = NSPoint(x: screenRect.minX, y: screenRect.minY - size.height)
+    return constrainedOrigin(origin, size: size, screen: statusBarButton.window?.screen)
   }
 
   private func lastPositionOrigin(size: NSSize) -> NSPoint? {
-    guard let frame = NSScreen.forPopup?.visibleFrame else { return nil }
+    guard let screen = NSScreen.forPopup else { return nil }
 
     let relativePos = Defaults[.windowPosition]
+    let frame = screen.visibleFrame
     let anchorX = frame.minX + frame.width * relativePos.x
     let anchorY = frame.minY + frame.height * relativePos.y
     // Anchor is top middle of frame.
-    return NSPoint(x: anchorX - size.width / 2, y: anchorY - size.height)
+    return constrainedOrigin(
+      NSPoint(x: anchorX - size.width / 2, y: anchorY - size.height),
+      size: size,
+      screen: screen
+    )
   }
 
   private func cursorOrigin(size: NSSize) -> NSPoint {
     var point = NSEvent.mouseLocation
+    let cursorScreen = screen(containing: point)
     point.y -= size.height
+    return constrainedOrigin(point, size: size, screen: cursorScreen)
+  }
+
+  private func constrainedOrigin(_ origin: NSPoint, size: NSSize, screen: NSScreen?) -> NSPoint {
+    guard let frame = (screen ?? NSScreen.forPopup ?? NSScreen.main)?.visibleFrame else {
+      return origin
+    }
+
+    var point = origin
+    point.x = clamped(point.x, min: frame.minX, max: frame.maxX - size.width)
+    point.y = clamped(point.y, min: frame.minY, max: frame.maxY - size.height)
     return point
+  }
+
+  private func clamped(_ value: CGFloat, min minValue: CGFloat, max maxValue: CGFloat) -> CGFloat {
+    if maxValue < minValue { return minValue }
+    return min(max(value, minValue), maxValue)
+  }
+
+  private func screen(containing point: NSPoint) -> NSScreen? {
+    NSScreen.screens.first { $0.frame.contains(point) }
+  }
+
+  private func screen(containing rect: NSRect) -> NSScreen? {
+    screen(containing: NSPoint(x: rect.midX, y: rect.midY))
   }
 }
