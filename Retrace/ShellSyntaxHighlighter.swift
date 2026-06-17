@@ -1,6 +1,23 @@
 import SwiftUI
 
 struct ShellSyntaxHighlighter {
+  private enum Palette {
+    static let command = color(0x40d080)
+    static let string = color(0xe09040)
+    static let variable = color(0x801070)
+    static let flag = color(0x20b0c0)
+    static let operatorToken = color(0xdbded8)
+    static let comment = color(0x685656)
+
+    private static func color(_ hex: Int) -> Color {
+      Color(
+        red: Double((hex >> 16) & 0xff) / 255,
+        green: Double((hex >> 8) & 0xff) / 255,
+        blue: Double(hex & 0xff) / 255
+      )
+    }
+  }
+
   static func apply(_ attr: inout AttributedString, for command: String) {
     let chars = Array(command)
     var i = 0
@@ -25,7 +42,7 @@ struct ShellSyntaxHighlighter {
 
       // comment  # ...
       if ch == "#" {
-        color(sPos..<command.endIndex, .secondary, italic: true)
+        color(sPos..<command.endIndex, Palette.comment, italic: true)
         break
       }
 
@@ -37,7 +54,7 @@ struct ShellSyntaxHighlighter {
           if chars[i] == "\\" { i += 1 }
           i += 1
         }
-        color(sPos..<endPos(i), .orange)
+        color(sPos..<endPos(i), Palette.string)
         continue
       }
 
@@ -46,7 +63,7 @@ struct ShellSyntaxHighlighter {
         i += 1
         while i < chars.count && chars[i] != "'" { i += 1 }
         if i < chars.count { i += 1 }
-        color(sPos..<endPos(i), .orange)
+        color(sPos..<endPos(i), Palette.string)
         continue
       }
 
@@ -60,7 +77,7 @@ struct ShellSyntaxHighlighter {
         } else {
           while i < chars.count && (chars[i].isLetter || chars[i].isNumber || chars[i] == "_") { i += 1 }
         }
-        color(sPos..<endPos(i), .purple)
+        color(sPos..<endPos(i), Palette.variable)
         continue
       }
 
@@ -70,7 +87,7 @@ struct ShellSyntaxHighlighter {
         if (ch == "|" || ch == "&" || ch == ">") && i + 1 < chars.count && chars[i + 1] == ch {
           end = i + 2
         }
-        color(sPos..<endPos(end), .secondary)
+        color(sPos..<endPos(end), Palette.operatorToken)
         i = end
         isFirstWord = true
         continue
@@ -80,13 +97,13 @@ struct ShellSyntaxHighlighter {
       if ch == "-" && i + 1 < chars.count && !chars[i + 1].isWhitespace && chars[i + 1] != "-" {
         i += 1
         while i < chars.count && !chars[i].isWhitespace && !"|><&;#".contains(chars[i]) { i += 1 }
-        color(sPos..<endPos(i), .teal)
+        color(sPos..<endPos(i), Palette.flag)
         continue
       }
       if ch == "-" && i + 1 < chars.count && chars[i + 1] == "-" {
         i += 2
         while i < chars.count && !chars[i].isWhitespace && !"|><&;#".contains(chars[i]) { i += 1 }
-        color(sPos..<endPos(i), .teal)
+        color(sPos..<endPos(i), Palette.flag)
         continue
       }
 
@@ -94,7 +111,7 @@ struct ShellSyntaxHighlighter {
       i += 1
       while i < chars.count && !chars[i].isWhitespace && !"|><&;#".contains(chars[i]) { i += 1 }
       if isFirstWord {
-        color(sPos..<endPos(i), .green)
+        color(sPos..<endPos(i), Palette.command)
         isFirstWord = false
       }
     }
