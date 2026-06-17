@@ -32,6 +32,12 @@ private struct MouseMovedViewModifier: ViewModifier {
     }
   }
 
+  private class TrackingView: NSView {
+    override func hitTest(_ point: NSPoint) -> NSView? {
+      nil
+    }
+  }
+
   private struct Representable: NSViewRepresentable {
     let mouseMoved: () -> Void
     let frame: NSRect
@@ -43,7 +49,7 @@ private struct MouseMovedViewModifier: ViewModifier {
     }
 
     func makeNSView(context: Context) -> NSView {
-      let view = NSView(frame: frame)
+      let view = TrackingView(frame: frame)
 
       let options: NSTrackingArea.Options = [
         .activeInKeyWindow,

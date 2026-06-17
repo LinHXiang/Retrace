@@ -55,10 +55,6 @@ class FloatingPanel<Content: View>: NSPanel, NSWindowDelegate {
       rootView: view()
         // The safe area is ignored because the title bar still interferes with the geometry
         .ignoresSafeArea()
-        .gesture(DragGesture()
-          .onEnded { _ in
-            self.saveWindowPosition()
-        })
     )
     contentView?.layer?.cornerRadius = Popup.cornerRadius + Popup.horizontalPadding
   }
@@ -166,6 +162,7 @@ class FloatingPanel<Content: View>: NSPanel, NSWindowDelegate {
 
   func windowDidMove(_ notification: Notification) {
     determinePreviewPlacement()
+    saveWindowPosition()
   }
 
   func windowWillStartLiveResize(_ notification: Notification) {

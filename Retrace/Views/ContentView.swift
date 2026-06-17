@@ -19,7 +19,6 @@ struct ContentView: View {
         VStack(spacing: 0) {
           SlideoutView(controller: appState.preview) {
             HeaderView(
-              controller: appState.preview,
               searchFocused: $searchFocused
             )
 

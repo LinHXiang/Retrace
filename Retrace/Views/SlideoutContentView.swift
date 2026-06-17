@@ -5,8 +5,6 @@ struct SlideoutContentView: View {
 
   var body: some View {
     VStack {
-      ToolbarView()
-
       if let item = appState.navigator.leadCommandItem {
         PreviewItemView(item: item)
       } else {
