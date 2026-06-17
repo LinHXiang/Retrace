@@ -31,3 +31,7 @@ than zsh.
 
 Open `Retrace.xcodeproj` in Xcode and run the `Retrace` scheme.
 The app product is named `Retrace`.
+
+---
+
+[中文](README.zh-Hans.md)
