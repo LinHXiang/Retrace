@@ -25,9 +25,11 @@ Retrace 支持 macOS，以及 zsh、bash、fish 的 shell history 文件。
   : 1712345678:0;git push origin main
   ```
 
+- 保留 zsh history 里的多行命令，包括 plain zsh 中使用行尾 `\`
+  续行的命令。
 - 命令去重，保留最近一次使用的时间戳。
 - 按最近使用时间排序。
-- 支持搜索、键盘导航、`Enter` 复制、`Esc` 关闭。
+- 支持搜索、键盘导航、选中命令预览、`Enter` 复制、`Esc` 关闭。
 - 选中的命令复制到剪贴板——仅此而已。
 
 Retrace 不会执行命令、不会粘贴到终端、不会接入 AI 服务，
@@ -37,6 +39,12 @@ Retrace 不会执行命令、不会粘贴到终端、不会接入 AI 服务，
 
 在 Xcode 中打开 `Retrace.xcodeproj`，运行 `Retrace` scheme。
 产品名即 `Retrace`。
+
+如需构建 Release 版本并安装到 `/Applications`：
+
+```sh
+scripts/install_release.sh
+```
 
 ---
 

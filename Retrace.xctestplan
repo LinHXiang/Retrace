@@ -18,8 +18,7 @@
       "containerPath" : "container:Retrace.xcodeproj",
       "identifier" : "DAEE38421E3DBEB100DD2966",
       "name" : "Retrace"
-    },
-    "testRepetitionMode" : "retryOnFailure"
+    }
   },
   "testTargets" : [
     {

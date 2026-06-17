@@ -9,8 +9,6 @@ body:
       options:
         - label: Check that there isn't already a similar feature request to avoid creating a duplicate.
           required: false
-        - label: I have seen the [FAQ](https://github.com/LinHXiang/Retrace?tab=readme-ov-file#faq).
-          required: false
   - type: textarea
     attributes:
       label: Problem

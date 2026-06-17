@@ -14,8 +14,6 @@ body:
       options:
         - label: I have verified that there isn't already an issue reporting the same bug to prevent duplication.
           required: false
-        - label: I have seen the [FAQ](https://github.com/LinHXiang/Retrace?tab=readme-ov-file#faq).
-          required: false
   - type: input
     attributes:
       label: Retrace Version (see 'About' window)

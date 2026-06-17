@@ -31,9 +31,12 @@ bash, and fish.
   : 1712345678:0;git push origin main
   ```
 
+- Preserves multiline commands from zsh history, including plain
+  zsh entries that use trailing `\` line continuations.
 - Deduplicates commands and keeps the most recent timestamp.
 - Sorts by most recent use.
-- Search, keyboard navigation, `Enter` to copy, `Esc` to close.
+- Search, keyboard navigation, selected-command preview, `Enter`
+  to copy, `Esc` to close.
 - Selected command goes to the system clipboard — nothing more.
 
 Retrace does not execute commands, paste into Terminal,
@@ -44,3 +47,9 @@ configured shell history files.
 
 Open `Retrace.xcodeproj` in Xcode and run the `Retrace` scheme.
 The app product is named `Retrace`.
+
+To build and install a Release copy to `/Applications`, run:
+
+```sh
+scripts/install_release.sh
+```
