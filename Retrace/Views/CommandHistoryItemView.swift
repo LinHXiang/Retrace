@@ -11,7 +11,8 @@ struct CommandHistoryItemView: View {
       selectionId: item.id,
       attributedTitle: item.attributedTitle,
       shortcuts: item.shortcuts,
-      isSelected: item.isSelected
+      isSelected: item.isSelected,
+      isPinned: item.isPinned
     ) {
       Text(verbatim: item.title)
     }

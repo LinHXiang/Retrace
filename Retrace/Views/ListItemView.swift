@@ -6,6 +6,7 @@ struct ListItemView<Title: View, ID: Hashable>: View {
   var attributedTitle: AttributedString?
   var shortcuts: [KeyShortcut]
   var isSelected: Bool
+  var isPinned: Bool = false
   var help: LocalizedStringKey?
   @ViewBuilder var title: () -> Title
 
@@ -16,6 +17,14 @@ struct ListItemView<Title: View, ID: Hashable>: View {
     HStack(spacing: 0) {
       Spacer()
         .frame(width: 10)
+
+      if isPinned {
+        Image(systemName: "pin.fill")
+          .font(.system(size: 11, weight: .semibold))
+          .foregroundStyle(isSelected ? Color.white : Color.secondary)
+          .frame(width: 15)
+          .padding(.trailing, 3)
+      }
 
       ListItemTitleView(attributedTitle: attributedTitle, isSelected: isSelected, title: title)
         .padding(.trailing, 5)

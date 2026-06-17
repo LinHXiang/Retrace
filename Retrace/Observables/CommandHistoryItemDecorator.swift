@@ -15,6 +15,7 @@ class CommandHistoryItemDecorator: Identifiable, Hashable, HasVisibility {
 
   var isVisible: Bool = true
   var showsRecordedAt: Bool
+  var isPinned: Bool = false
   var isSelected: Bool = false
   var shortcuts: [KeyShortcut] = []
   var previewText: String {
@@ -26,6 +27,7 @@ class CommandHistoryItemDecorator: Identifiable, Hashable, HasVisibility {
     hasher.combine(id)
     hasher.combine(title)
     hasher.combine(attributedTitle)
+    hasher.combine(isPinned)
   }
 
   private(set) var item: CommandHistoryItem

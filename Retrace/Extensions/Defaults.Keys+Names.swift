@@ -5,6 +5,7 @@ extension Defaults.Keys {
   static let highlightMatch = Key<HighlightMatch>("highlightMatch", default: .bold)
   static let lastReviewRequestedAt = Key<Date>("lastReviewRequestedAt", default: Date.now)
   static let numberOfUsages = Key<Int>("numberOfUsages", default: 0)
+  static let pinnedCommands = Key<[String]>("pinnedCommands", default: [])
   static let popupPosition = Key<PopupPosition>("popupPosition", default: .cursor)
   static let popupScreen = Key<Int>("popupScreen", default: 0)
   static let searchMode = Key<Search.Mode>("searchMode", default: .exact)

@@ -454,14 +454,22 @@ class CommandHistory: ItemsContainer {
   @MainActor
   private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
     let entries = try await entries(for: history)
-    all = entries.prefix(Defaults[.commandHistorySize]).map { entry in
+    let pinnedCommands = Set(Defaults[.pinnedCommands])
+    let visibleEntries = entries.enumerated().compactMap { index, entry in
+      index < Defaults[.commandHistorySize] || pinnedCommands.contains(entry.command) ? entry : nil
+    }
+
+    all = visibleEntries.map { entry in
       let item = CommandHistoryItem(command: entry.command)
       if let timestamp = entry.timestamp {
         item.recordedAt = timestamp
       }
       item.title = item.generateTitle()
-      return CommandHistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
+      let decorator = CommandHistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
+      decorator.isPinned = isPinned(item)
+      return decorator
     }
+    all = sortPinnedFirst(all)
     items = all
     loadedHistoryModificationDate = modificationDate
 
@@ -511,15 +519,36 @@ class CommandHistory: ItemsContainer {
 
   @MainActor
   private func updateItems(_ newItems: [Search.SearchResult]) {
-    items = newItems.map { result in
+    items = sortPinnedFirst(newItems.map { result in
       let item = result.object
       item.highlight(searchQuery, result.ranges)
 
       return item
-    }
+    })
 
     updateVisibleShortcuts()
     AppState.shared.appDelegate?.updateStatusItemTitle()
+  }
+
+  @MainActor
+  func togglePinSelectedItem() {
+    guard let selectedItem = AppState.shared.navigator.selectedCommandItem,
+          let command = selectedItem.item.command else { return }
+
+    var pinnedCommands = Defaults[.pinnedCommands]
+    if let index = pinnedCommands.firstIndex(of: command) {
+      pinnedCommands.remove(at: index)
+    } else {
+      pinnedCommands.insert(command, at: 0)
+    }
+
+    Defaults[.pinnedCommands] = pinnedCommands
+    updatePinnedState()
+    all = sortPinnedFirst(all)
+    items = sortPinnedFirst(items)
+    updateVisibleShortcuts()
+    AppState.shared.navigator.select(item: selectedItem)
+    AppState.shared.popup.needsResize = true
   }
 
   @MainActor
@@ -539,5 +568,38 @@ class CommandHistory: ItemsContainer {
       item.shortcuts = KeyShortcut.create(character: String(index))
       index += 1
     }
+  }
+
+  private func updatePinnedState() {
+    for item in all {
+      item.isPinned = isPinned(item.item)
+    }
+  }
+
+  private func sortPinnedFirst(_ items: [CommandHistoryItemDecorator]) -> [CommandHistoryItemDecorator] {
+    let pinnedCommands = Defaults[.pinnedCommands]
+    guard !pinnedCommands.isEmpty else { return items }
+
+    let pinnedOrder = Dictionary(uniqueKeysWithValues: pinnedCommands.enumerated().map { ($1, $0) })
+    return items.enumerated().sorted { lhs, rhs in
+      let lhsOrder = lhs.element.item.command.flatMap { pinnedOrder[$0] }
+      let rhsOrder = rhs.element.item.command.flatMap { pinnedOrder[$0] }
+
+      switch (lhsOrder, rhsOrder) {
+      case let (lhsOrder?, rhsOrder?):
+        return lhsOrder < rhsOrder
+      case (_?, nil):
+        return true
+      case (nil, _?):
+        return false
+      case (nil, nil):
+        return lhs.offset < rhs.offset
+      }
+    }.map(\.element)
+  }
+
+  private func isPinned(_ item: CommandHistoryItem) -> Bool {
+    guard let command = item.command else { return false }
+    return Defaults[.pinnedCommands].contains(command)
   }
 }
