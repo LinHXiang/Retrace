@@ -20,7 +20,7 @@ brew tap LinHXiang/tap
 brew install --cask retrace
 ```
 
-The current `1.0.0-rc1` build is intended for testing the
+The current `1.0.0-rc2` build is intended for testing the
 distribution flow and is not notarized yet. A notarized stable
 release will replace it once Apple's notarization completes.
 
@@ -50,6 +50,8 @@ release will replace it once Apple's notarization completes.
 - Sorts by most recent use.
 - Search, keyboard navigation, selected-command preview, `Enter`
   to copy, `Esc` to close.
+- Press `Command + P` to pin or unpin the selected command.
+  Pinned commands stay at the top of the list.
 - Selected command goes to the system clipboard — nothing more.
 
 Retrace does not execute commands, paste into Terminal,
