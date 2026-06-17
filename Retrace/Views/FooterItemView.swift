@@ -8,6 +8,10 @@ struct FooterItemView: View {
     ListItemView(id: item.id, selectionId: item.id, shortcuts: item.shortcuts, isSelected: item.isSelected) {
       Text(LocalizedStringKey(item.title))
     }
+    .onTapGesture {
+      appState.navigator.selectWithoutScrolling(id: item.id)
+      item.action()
+    }
     .onHover { hovering in
       if hovering && appState.preview.state.isOpen {
         appState.preview.togglePreview()
