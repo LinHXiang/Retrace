@@ -9,3 +9,10 @@
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "OpenTooltip" = "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।";
+
+"HistorySources" = "Command history:";
+"AddHistorySource" = "Add File";
+"RestoreHistorySources" = "Restore Defaults";
+"ChooseHistorySource" = "Choose history file";
+"RemoveHistorySource" = "Remove history file";
+"NoHistorySources" = "No history files configured.";

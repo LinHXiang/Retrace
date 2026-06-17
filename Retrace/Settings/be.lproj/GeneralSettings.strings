@@ -9,3 +9,10 @@
 "Title" = "Асноўныя";
 "OpenTooltip" = "Глабальная камбінацыя клавіш для адкрыцця праграмы.\nПаўторнае націсканне асноўнай клавішы з утрыманнем мадыфікатараў выбера наступны элемент у спісе. У гэтым рэжыме адпусканне клавіш-мадыфікатараў пацвердзіць выбар і закрые ўсплывальнае акно.\nПа змаўчанні: ⇧⌘T.";
 "Search" = "Пошук:";
+
+"HistorySources" = "Command history:";
+"AddHistorySource" = "Add File";
+"RestoreHistorySources" = "Restore Defaults";
+"ChooseHistorySource" = "Choose history file";
+"RemoveHistorySource" = "Remove history file";
+"NoHistorySources" = "No history files configured.";
