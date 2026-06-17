@@ -13,16 +13,12 @@ bash, and fish.
 
 ## Installation
 
-Retrace is currently available as a prerelease Homebrew cask:
+Retrace is available as a signed and notarized Homebrew cask:
 
 ```sh
 brew tap LinHXiang/tap
 brew install --cask linhxiang/tap/retrace
 ```
-
-The current `1.0.0-rc2` build is intended for testing the
-distribution flow and is not notarized yet. A notarized stable
-release will replace it once Apple's notarization completes.
 
 ## Usage
 

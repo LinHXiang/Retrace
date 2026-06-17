@@ -8,15 +8,12 @@ Retrace 支持 macOS，以及 zsh、bash、fish 的 shell history 文件。
 
 ## 安装
 
-Retrace 目前可以通过预发布版 Homebrew cask 安装：
+Retrace 目前可以通过已签名并完成 Apple 公证的 Homebrew cask 安装：
 
 ```sh
 brew tap LinHXiang/tap
 brew install --cask linhxiang/tap/retrace
 ```
-
-当前 `1.0.0-rc2` 版本主要用于测试发布链路，尚未完成 Apple 公证。
-公证完成后会替换为正式稳定版本。
 
 ## 用法
 
