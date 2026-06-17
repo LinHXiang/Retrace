@@ -17,7 +17,7 @@ Retrace is currently available as a prerelease Homebrew cask:
 
 ```sh
 brew tap LinHXiang/tap
-brew install --cask retrace
+brew install --cask linhxiang/tap/retrace
 ```
 
 The current `1.0.0-rc2` build is intended for testing the

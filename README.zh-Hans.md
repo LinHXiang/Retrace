@@ -12,7 +12,7 @@ Retrace 目前可以通过预发布版 Homebrew cask 安装：
 
 ```sh
 brew tap LinHXiang/tap
-brew install --cask retrace
+brew install --cask linhxiang/tap/retrace
 ```
 
 当前 `1.0.0-rc2` 版本主要用于测试发布链路，尚未完成 Apple 公证。
