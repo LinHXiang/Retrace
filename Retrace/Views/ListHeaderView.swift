@@ -16,7 +16,6 @@ struct ListHeaderView: View {
       if showTitle {
         Text("Retrace")
           .foregroundStyle(.secondary)
-          .padding(.leading, 5)
       }
 
       SearchFieldView(placeholder: "search_placeholder", query: $searchQuery)
