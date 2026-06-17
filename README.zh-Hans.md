@@ -6,6 +6,18 @@
 
 Retrace 支持 macOS，以及 zsh、bash、fish 的 shell history 文件。
 
+## 安装
+
+Retrace 目前可以通过预发布版 Homebrew cask 安装：
+
+```sh
+brew tap LinHXiang/tap
+brew install --cask retrace
+```
+
+当前 `1.0.0-rc1` 版本主要用于测试发布链路，尚未完成 Apple 公证。
+公证完成后会替换为正式稳定版本。
+
 ## 用法
 
 - 从菜单栏打开，或按 `Shift + Command + T`。
@@ -44,6 +56,12 @@ Retrace 不会执行命令、不会粘贴到终端、不会接入 AI 服务，
 
 ```sh
 scripts/install_release.sh
+```
+
+如需生成用于分发的签名、公证发布包：
+
+```sh
+scripts/package_release.sh <version>
 ```
 
 ---

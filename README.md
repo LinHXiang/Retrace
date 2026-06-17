@@ -11,6 +11,19 @@ searches your recent terminal commands.
 Retrace supports macOS and shell history files from zsh,
 bash, and fish.
 
+## Installation
+
+Retrace is currently available as a prerelease Homebrew cask:
+
+```sh
+brew tap LinHXiang/tap
+brew install --cask retrace
+```
+
+The current `1.0.0-rc1` build is intended for testing the
+distribution flow and is not notarized yet. A notarized stable
+release will replace it once Apple's notarization completes.
+
 ## Usage
 
 - Open from the menu bar or press `Shift + Command + T`.
@@ -52,4 +65,10 @@ To build and install a Release copy to `/Applications`, run:
 
 ```sh
 scripts/install_release.sh
+```
+
+To create a signed, notarized release archive for distribution, run:
+
+```sh
+scripts/package_release.sh <version>
 ```
