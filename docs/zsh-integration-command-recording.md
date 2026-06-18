@@ -1,204 +1,240 @@
-# zsh Integration Command Recording
+# zsh 集成命令记录
 
-## Background
+## 背景
 
-Retrace currently reads configured shell history files such as
-`~/.zsh_history`. That works for normal shells, but it has a real latency
-problem: zsh may keep history in memory and write it only when the shell exits,
-unless the user enables options such as `INC_APPEND_HISTORY`.
+Retrace 的命令历史记录只支持 zsh。
 
-For terminals with long-lived sessions, this means Retrace can miss recent
-commands even though the user has already executed them.
+读取 `~/.zsh_history` 对普通 zsh shell 有效，但有一个实际延迟问题：
+zsh 可能把历史记录保存在内存里，只在 shell 退出时写入文件，除非用户开启
+`INC_APPEND_HISTORY` 这类选项。
 
-## Goal
+对长时间运行的终端会话来说，用户已经执行过的命令，Retrace 仍然可能暂时读
+不到。
 
-Record zsh commands without depending on `~/.zsh_history`.
+## 目标
 
-Retrace should install an explicit zsh integration block into `~/.zshrc`.
-That block should use zsh hooks to append executed commands into a Retrace-owned
-history file under Application Support. Retrace then reads that file as one of
-its history sources.
+在不依赖 `~/.zsh_history` 刷新时机的前提下记录 zsh 命令。
 
-## Non-Goals
+Retrace 应该在用户明确确认后，把一段 zsh 集成 block 写入 `~/.zshrc`。这段
+block 使用 zsh hook，把用户执行过的命令追加写入 Retrace 自己管理的历史文件。
+Retrace 再把这个文件作为主要命令历史来源读取。
 
-- Do not silently modify user shell configuration.
-- Do not intercept terminal UI text through Accessibility.
-- Do not wrap or replace the user's terminal.
-- Do not require Retrace.app to be running for command recording to work.
-- Do not write sqlite directly from the shell hook.
-- Do not remove support for existing shell history files.
+## 非目标
 
-## Proposed Design
+- 不静默修改用户 shell 配置。
+- 不通过 Accessibility 截取终端 UI 文本。
+- 不包装或替换用户的终端。
+- 不要求 Retrace.app 正在运行时才能记录命令。
+- 不在 shell hook 里直接写 sqlite。
+- 不在这个设计里支持 bash、fish 或其他 shell 的实时命令记录。
 
-Install a marked zsh integration block into `~/.zshrc` only after explicit user
-confirmation.
+## 方案
 
-The block should be idempotent:
+只有在用户明确确认后，才向 `~/.zshrc` 安装一个带标记的 zsh 集成 block。
+
+这个 block 必须可以重复安装：不存在时追加，已存在时只替换标记范围内的内容。
 
 ```zsh
 # >>> Retrace zsh integration >>>
 autoload -Uz add-zsh-hook
+zmodload zsh/datetime 2>/dev/null
 
 _retrace_preexec() {
   local dir="$HOME/Library/Application Support/Retrace"
-  mkdir -p "$dir"
-  print -r -- ": $EPOCHSECONDS:0;$1" >> "$dir/zsh_history"
+  mkdir -p "$dir" || return
+  print -r -- ": ${EPOCHSECONDS}:0;$1" >> "$dir/zsh_history"
 }
 
 add-zsh-hook preexec _retrace_preexec
 # <<< Retrace zsh integration <<<
 ```
 
-The private history file is:
+Retrace 自有历史文件路径：
 
 ```text
 ~/Library/Application Support/Retrace/zsh_history
 ```
 
-The file uses zsh extended history format:
+文件使用 zsh extended history 格式：
 
 ```text
 : 1712345678:0;git status
 ```
 
-This deliberately reuses the existing zsh parser in Retrace. The shell hook
-stays small, append-only, and independent of app process state.
+这样可以复用 Retrace 现有的 zsh parser。shell hook 保持很小，只做追加写入，
+并且不依赖 app 进程状态。
 
-## Why Not sqlite in the Hook
+## 为什么不在 hook 里写 sqlite
 
-Maccy can write clipboard history into sqlite directly because the app process
-receives clipboard events. Retrace's command events originate inside shell
-processes.
+Maccy 可以直接把剪贴板历史写入 sqlite，是因为剪贴板事件发生在 app 进程里。
+Retrace 的命令事件发生在用户的 shell 进程里。
 
-Putting sqlite writes in the zsh hook would put database locking, migrations,
-binary availability, and failure handling into the user's command execution
-path. That is the wrong place for complexity.
+如果把 sqlite 写入放进 zsh hook，就等于把数据库锁、schema 迁移、二进制可用
+性、失败处理和并发问题放进用户每次执行命令的路径里。这不是复杂性应该待的
+地方。
 
-The better split is:
+更好的分层是：
 
-1. zsh hook writes an append-only Retrace-owned history file.
-2. Retrace reads that file directly using the existing parser.
-3. If search scale or metadata needs grow, Retrace can later import that file
-   into sqlite from the app process.
+1. zsh hook 写 append-only 的 Retrace 自有历史文件。
+2. Retrace 用现有 parser 读取这个文件。
+3. 如果之后需要更快搜索或更多元数据，由 app 进程把这个文件导入 sqlite。
 
-## Data Flow
+append-only 文件是事实源。sqlite 如果加入，只是 app 自己的缓存或索引。
+
+## 数据流
 
 ```text
 zsh preexec hook
   -> ~/Library/Application Support/Retrace/zsh_history
-  -> Retrace history loader
+  -> Retrace history loader / file watcher
   -> existing parseZsh path
   -> search index / displayed command list
+  -> optional app-owned sqlite index
 ```
 
-## Default History Sources
+## 默认历史来源
 
-Add the Retrace-owned zsh file before the user's normal zsh history:
+内置默认命令历史来源只保留 zsh：
 
 ```text
 ~/Library/Application Support/Retrace/zsh_history
 ~/.zsh_history
-~/.bash_history
-~/.local/share/fish/fish_history
 ```
 
-Keeping `~/.zsh_history` preserves backwards compatibility and existing user
-expectations.
+Retrace 应该从内置默认命令历史来源里移除 bash 和 fish。已有用户配置可以在
+zsh-only 清理中迁移或丢弃，但新的默认值只应该包含 zsh 来源。
 
-## Installation UX
+保留 `~/.zsh_history` 是为了继续读取安装 Retrace 集成之前的 zsh 历史。
 
-In Preferences > Command history, provide:
+## 启动检测
+
+Retrace 启动时应该检查 zsh 集成是否已安装。
+
+只有同时满足以下条件时，才展示安装提示：
+
+1. 用户登录 shell 是 zsh，或者 Retrace 能以其他方式判断用户使用 zsh。
+2. `~/.zshrc` 不包含 Retrace 标记 block。
+3. 用户没有选择过 `Don't Ask Again`。
+
+提示必须明确说明：Retrace 会修改 `~/.zshrc`，并把命令追加写入：
+
+```text
+~/Library/Application Support/Retrace/zsh_history
+```
+
+提示提供这些操作：
+
+- Install
+- Not Now
+- Don't Ask Again
+- Copy Block
+
+`Not Now` 只跳过本次启动或一个短冷却周期。`Don't Ask Again` 关闭自动安装
+提示。用户仍然可以在 Preferences 里手动安装或复制 block。
+
+## 安装体验
+
+在 `Preferences > Command history` 提供：
 
 - Install zsh integration
 - Copy zsh integration
 
-`Install zsh integration` should:
+`Install zsh integration` 应该：
 
-1. Show a confirmation dialog.
-2. Create `~/.zshrc` if it does not exist.
-3. Append the marked block if it is missing.
-4. Replace only the marked block if it already exists.
-5. Preserve all other `~/.zshrc` content byte-for-byte where possible.
-6. Show success or failure.
+1. 展示确认对话框。
+2. 如果 `~/.zshrc` 不存在，创建它。
+3. 如果没有 Retrace block，追加一个带标记的 block。
+4. 如果已经有 Retrace block，只替换标记范围内的 block。
+5. 尽量逐字节保留 `~/.zshrc` 里其他用户内容。
+6. 展示成功或失败结果。
 
-`Copy zsh integration` should copy the same marked block for users who prefer
-manual installation.
+`Copy zsh integration` 复制同一段 block，给想手动安装的用户使用。
 
-## Recording Semantics
+## 记录语义
 
-Use `preexec`.
+使用 `preexec`。
 
-`preexec` records a command after the user presses Return and before the command
-is executed. That means commands that fail, commands that are not found, and
-commands that exit non-zero are still recorded.
+`preexec` 在用户按下 Return 之后、命令实际执行之前触发。因此失败的命令、
+不存在的命令、退出码非零的命令都会被记录。
 
-For command history search, this is acceptable and usually desirable: the user
-typed and attempted the command.
+对命令历史搜索来说，这是可接受且通常更符合预期的：用户确实输入并尝试执行
+过这条命令。
 
-Do not attempt to record only successful commands in the first version. That
-requires pairing `preexec` with `precmd` and tracking exit status, which adds
-state and edge cases.
+第一版不要尝试只记录成功命令。那需要把 `preexec` 和 `precmd` 配对，并跟踪
+退出状态，会引入状态和边界情况。
 
-## Edge Cases
+## 边界情况
 
-- Multiline commands: zsh passes the complete command to `preexec`; writing it
-  with `print -r --` preserves content. The existing zsh parser already handles
-  extended entries followed by continuation lines.
-- Missing Application Support directory: hook creates it with `mkdir -p`.
-- Retrace not running: recording still works because the hook writes to a file.
-- Multiple terminals: each shell appends to the same file. Appends of short
-  lines are expected to be sufficient for this product. If corruption is later
-  observed, add a lightweight lock.
-- Existing hook with same function name: use a Retrace-prefixed function name
-  and marked block replacement to avoid duplicate installs.
-- User removes the block: Retrace should not reinstall it without another
-  explicit action.
+- 多行命令：zsh 会把完整命令传给 `preexec`；`print -r --` 会保留内容。现有
+  zsh parser 已经支持 extended entry 后面跟 continuation lines。
+- Application Support 目录不存在：hook 使用 `mkdir -p` 创建。
+- Retrace 未运行：仍然可以记录，因为 hook 写入的是文件。
+- 多个终端：多个 shell 追加写同一个文件。对这个产品来说，短行追加预计足够。
+  如果之后观察到损坏，再加轻量锁。
+- 已存在同名 hook：使用 Retrace 前缀函数名，并通过标记 block 替换避免重复
+  安装。
+- 用户删除 block：Retrace 不应该在没有再次明确操作的情况下重新安装。
 
-## Acceptance Criteria
+## 验收标准
 
-1. Preferences exposes an explicit `Install zsh integration` action.
-2. Clicking install asks for confirmation before modifying `~/.zshrc`.
-3. If `~/.zshrc` does not exist, installing creates it.
-4. If `~/.zshrc` exists without the Retrace block, installing appends exactly
-   one marked block.
-5. If `~/.zshrc` already contains the Retrace block, installing replaces that
-   block instead of appending a duplicate.
-6. User content outside the marked block is preserved.
-7. The installed hook writes commands to
-   `~/Library/Application Support/Retrace/zsh_history`.
-8. A newly executed zsh command appears in the Retrace-owned history file before
-   the shell exits.
-9. Retrace reads the Retrace-owned history file as a zsh source.
-10. Existing configured history sources still work.
-11. Existing `~/.zsh_history` support is not removed.
-12. Build succeeds with `xcodebuild -project Retrace.xcodeproj -scheme Retrace
-    -destination 'platform=macOS' build`.
+1. Retrace 命令历史记录被文档化并实现为 zsh-only。
+2. 内置默认历史来源只包含
+   `~/Library/Application Support/Retrace/zsh_history` 和 `~/.zsh_history`。
+3. app 启动时检查是否应该建议安装 zsh 集成。
+4. 启动提示只对疑似 zsh 用户展示，且要求用户没有已安装 Retrace block，也没有
+   选择过 `Don't Ask Again`。
+5. 启动提示在用户确认前不能修改 `~/.zshrc`。
+6. Preferences 暴露明确的 `Install zsh integration` 操作。
+7. 点击安装后，修改 `~/.zshrc` 前必须请求确认。
+8. 如果 `~/.zshrc` 不存在，安装流程会创建它。
+9. 如果 `~/.zshrc` 存在但没有 Retrace block，安装流程只追加一个标记 block。
+10. 如果 `~/.zshrc` 已有 Retrace block，安装流程替换该 block，而不是追加重复
+    block。
+11. 标记 block 外的用户内容被保留。
+12. 安装后的 hook 会把命令写入
+    `~/Library/Application Support/Retrace/zsh_history`。
+13. 新执行的 zsh 命令会在 shell 退出前出现在 Retrace 自有历史文件里。
+14. Retrace 会把自有历史文件作为 zsh source 读取。
+15. 现有 `~/.zsh_history` 支持不被移除。
+16. zsh hook 不调用 sqlite、IPC、URL scheme 或 app 专用通知机制。
+17. 构建通过：
 
-## Suggested Tests
+    ```sh
+    xcodebuild -project Retrace.xcodeproj -scheme Retrace \
+      -destination 'platform=macOS' build
+    ```
 
-- Unit test the block replacement logic with:
-  - empty `.zshrc`
-  - `.zshrc` without a Retrace block
-  - `.zshrc` with an old Retrace block
-  - `.zshrc` without trailing newline
-- Unit test that `HistorySource.defaultSources` includes the Retrace-owned
-  zsh file.
-- Manual test with a temporary zsh config:
+## 建议测试
+
+- 单元测试 block 替换逻辑：
+  - 空 `.zshrc`
+  - 没有 Retrace block 的 `.zshrc`
+  - 有旧 Retrace block 的 `.zshrc`
+  - 没有末尾换行的 `.zshrc`
+- 单元测试 `HistorySource.defaultSources` 包含 Retrace 自有 zsh 文件和
+  `~/.zsh_history`，且不包含 bash 或 fish 默认项。
+- 单元测试启动提示条件：
+  - 疑似 zsh 用户且没有 block
+  - 已存在 Retrace block
+  - 用户选择过 `Don't Ask Again`
+- 单元测试旧 bash/fish 默认来源的迁移或重置行为。
+- 单元测试以 zsh extended history 格式写入的多行命令能被解析成单条命令。
+- 用临时 zsh 配置做手工测试：
 
   ```sh
   ZDOTDIR=/tmp/retrace-zdotdir zsh
   ```
 
-  Then run a command and verify that the Retrace-owned history file receives an
-  extended-history entry immediately.
+  然后执行一条命令，确认 Retrace 自有历史文件会立刻收到 extended-history
+  entry。
 
-## Future Work
+## 后续工作
 
-If Retrace later needs richer metadata or faster search over large datasets,
-add an app-owned sqlite index. The zsh hook should still write the append-only
-history file, and the app should import from that file into sqlite.
+如果 Retrace 之后需要更丰富的元数据，或者需要对大量命令做更快搜索，可以加入
+app 自有 sqlite 索引。zsh hook 仍然只写 append-only 历史文件，由 app 进程把
+文件导入 sqlite。
 
-Potential sqlite table:
+潜在 sqlite 表：
 
 ```sql
 CREATE TABLE commands (
@@ -210,4 +246,4 @@ CREATE TABLE commands (
 );
 ```
 
-Do not make sqlite part of the shell hook.
+不要让 sqlite 成为 shell hook 的一部分。
