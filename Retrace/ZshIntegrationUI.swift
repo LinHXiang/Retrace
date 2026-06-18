@@ -22,11 +22,17 @@ enum ZshIntegrationUI {
 
   static func copyBlock() {
     NSPasteboard.general.clearContents()
-    NSPasteboard.general.setString(ZshIntegration.block, forType: .string)
-    showResult(
-      message: "zsh integration copied",
-      informativeText: "The zsh integration block is now on the clipboard."
-    )
+    if NSPasteboard.general.setString(ZshIntegration.block, forType: .string) {
+      showResult(
+        message: "zsh integration copied",
+        informativeText: "The zsh integration block is now on the clipboard."
+      )
+    } else {
+      showResult(
+        message: "Could not copy zsh integration",
+        informativeText: "The clipboard did not accept the zsh integration block."
+      )
+    }
   }
 
   private static func confirmInstall() -> Bool {

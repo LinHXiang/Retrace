@@ -20,13 +20,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationWillFinishLaunching(_ notification: Notification) {
     AppFont.registerBundledFonts()
-    Defaults[.historySources] = HistorySource.zshOnlySources(from: Defaults[.historySources])
+    migrateHistorySourcesToZshOnly()
 
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
 
     observeStatusItemVisibility()
     observeStatusItemTitle()
+  }
+
+  private func migrateHistorySourcesToZshOnly() {
+    let existingSources = Defaults[.historySources]
+    let zshOnlySources = HistorySource.zshOnlySources(from: existingSources)
+
+    let removedNonZshSources = existingSources.filter { $0.kind != .zsh }
+    if !removedNonZshSources.isEmpty {
+      let removedPaths = removedNonZshSources.map(\.url.path).joined(separator: ", ")
+      NSLog("Retrace migrated command history sources to zsh-only and removed: %@", removedPaths)
+    }
+
+    Defaults[.historySources] = zshOnlySources
   }
 
   private func observeStatusItemVisibility() {

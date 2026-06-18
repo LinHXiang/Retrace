@@ -12,6 +12,8 @@ struct TerminalCommandHistoryEntry: Equatable {
 
 enum ShellHistoryKind: String, CaseIterable, Identifiable, Codable, Defaults.Serializable {
   case zsh
+  // Legacy cases are kept so old Defaults values can still decode before the
+  // zsh-only source migration drops them.
   case bash
   case fish
   case plain
@@ -78,9 +80,6 @@ struct HistorySource: Identifiable, Hashable, Codable, Defaults.Serializable {
   static func zshOnlySources(from sources: [HistorySource]) -> [HistorySource] {
     let zshSources = sources.compactMap { source -> HistorySource? in
       guard source.kind == .zsh else { return nil }
-
-      var source = source
-      source.kind = .zsh
       return source
     }
 
