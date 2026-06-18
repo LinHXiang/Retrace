@@ -104,6 +104,11 @@ Retrace 不再把 `~/.zsh_history`、bash history、fish history 或用户手动
 其他文件作为命令来源。`~/.zsh_history` 只可以用于启动时判断用户是否可能在用
 zsh，从而决定是否展示安装提示；它不是数据源。
 
+为了让首次使用不显得完全空白，Retrace 可以在首次启动时尝试一次性导入：如果
+`~/Library/Application Support/Retrace/zsh_history` 不存在或为空，并且用户的
+`~/.zsh_history` 可读，就把 `~/.zsh_history` 的当前内容复制到 Retrace 自有文件。
+尝试完成后写入本地标记，后续启动不再重复导入，也不继续读取 `~/.zsh_history`。
+
 因此，只有安装 zsh 集成后，Retrace 才能正常记录并展示新命令。没有安装 zsh
 集成时，用户看不到命令记录，这是预期行为。
 
@@ -204,7 +209,8 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
     `~/Library/Application Support/Retrace/zsh_history`。
 13. 新执行的 zsh 命令会在 shell 退出前出现在 Retrace 自有历史文件里。
 14. Retrace 会把自有历史文件作为 zsh source 读取。
-15. 不读取 `~/.zsh_history`；没有安装 zsh 集成时，Retrace 不展示命令记录。
+15. 首次启动可以把现有 `~/.zsh_history` 复制到 Retrace 自有历史文件，但后续
+    不再读取 `~/.zsh_history`。
 16. zsh hook 不调用 sqlite、IPC、URL scheme 或 app 专用通知机制。
 17. 构建通过：
 
@@ -227,6 +233,8 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
   - 已存在 Retrace block
   - 用户选择过 `Don't Ask Again`
 - 单元测试旧 bash/fish 默认来源的迁移或重置行为。
+- 单元测试首次导入 `~/.zsh_history`：目标不存在、目标为空、目标已有内容、源不
+  存在。
 - 单元测试以 zsh extended history 格式写入的多行命令能被解析成单条命令。
 - 用临时 zsh 配置做手工测试：
 

@@ -21,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationWillFinishLaunching(_ notification: Notification) {
     AppFont.registerBundledFonts()
     migrateHistorySourcesToAppOwnedZshOnly()
+    importUserZshHistoryIfNeeded()
 
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self
@@ -39,6 +40,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     Defaults[.historySources] = HistorySource.appOwnedZshSources
+  }
+
+  private func importUserZshHistoryIfNeeded() {
+    guard !Defaults[.userZshHistoryImportAttempted] else { return }
+
+    do {
+      if try ZshIntegration.importUserHistoryIfPossible() {
+        NSLog("Retrace imported existing ~/.zsh_history into app-owned zsh history")
+        Task { @MainActor in
+          await AppState.shared.history.reloadSources()
+        }
+      }
+    } catch {
+      NSLog("Retrace could not import existing ~/.zsh_history: %@", error.localizedDescription)
+    }
+
+    Defaults[.userZshHistoryImportAttempted] = true
   }
 
   private func observeStatusItemVisibility() {

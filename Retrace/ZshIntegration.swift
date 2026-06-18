@@ -109,6 +109,27 @@ enum ZshIntegration {
     try updatedContents.write(to: url, atomically: true, encoding: .utf8)
   }
 
+  static func importUserHistoryIfPossible(
+    from userHistoryURL: URL = userZshHistoryURL,
+    to retraceHistoryURL: URL = retraceZshHistoryURL
+  ) throws -> Bool {
+    guard FileManager.default.isReadableFile(atPath: userHistoryURL.path) else { return false }
+
+    if let attributes = try? FileManager.default.attributesOfItem(atPath: retraceHistoryURL.path),
+       let size = attributes[.size] as? NSNumber,
+       size.uint64Value > 0 {
+      return false
+    }
+
+    try FileManager.default.createDirectory(
+      at: retraceHistoryURL.deletingLastPathComponent(),
+      withIntermediateDirectories: true
+    )
+    let data = try Data(contentsOf: userHistoryURL)
+    try data.write(to: retraceHistoryURL, options: .atomic)
+    return true
+  }
+
   static func clearRecordedHistory(at url: URL = retraceZshHistoryURL) throws {
     try FileManager.default.createDirectory(
       at: url.deletingLastPathComponent(),

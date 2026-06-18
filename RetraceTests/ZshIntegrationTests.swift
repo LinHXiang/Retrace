@@ -124,6 +124,78 @@ final class ZshIntegrationTests: XCTestCase {
     XCTAssertNoThrow(try ZshIntegration.deleteRecordedHistory(at: history))
   }
 
+  func testImportUserHistoryCopiesExistingHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("Application Support/Retrace/zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try ": 1710000000:0;git status\n".write(to: userHistory, atomically: true, encoding: .utf8)
+
+    let imported = try ZshIntegration.importUserHistoryIfPossible(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertTrue(imported)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000000:0;git status\n")
+  }
+
+  func testImportUserHistoryFillsEmptyRetraceHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try "git status\n".write(to: userHistory, atomically: true, encoding: .utf8)
+    try Data().write(to: retraceHistory)
+
+    let imported = try ZshIntegration.importUserHistoryIfPossible(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertTrue(imported)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), "git status\n")
+  }
+
+  func testImportUserHistoryDoesNotOverwriteExistingRetraceHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try "old command\n".write(to: userHistory, atomically: true, encoding: .utf8)
+    try ": 1710000000:0;new command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
+
+    let imported = try ZshIntegration.importUserHistoryIfPossible(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertFalse(imported)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000000:0;new command\n")
+  }
+
+  func testImportUserHistoryIgnoresMissingUserHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    defer { try? FileManager.default.removeItem(at: directory) }
+
+    let imported = try ZshIntegration.importUserHistoryIfPossible(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertFalse(imported)
+    XCTAssertFalse(FileManager.default.fileExists(atPath: retraceHistory.path))
+  }
+
   func testShouldPromptForLikelyZshUserWithoutBlock() {
     XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
       loginShell: "/bin/zsh",
