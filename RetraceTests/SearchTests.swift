@@ -165,32 +165,23 @@ class SearchTests: XCTestCase {
     XCTAssertEqual(try history.load().map(\.command), ["git status"])
   }
 
-  func testHistorySourceDefaultSourcesAreZshOnly() {
+  func testHistorySourceDefaultSourcesOnlyIncludeRetraceZshHistory() {
     let paths = HistorySource.defaultSources.map(\.url.path)
 
-    XCTAssertEqual(HistorySource.defaultSources.map(\.kind), [.zsh, .zsh])
+    XCTAssertEqual(HistorySource.defaultSources.map(\.kind), [.zsh])
     XCTAssertEqual(paths.map { URL(fileURLWithPath: $0).lastPathComponent }, [
-      "zsh_history",
-      ".zsh_history"
+      "zsh_history"
     ])
     XCTAssertFalse(paths.contains { $0.contains(".bash_history") })
     XCTAssertFalse(paths.contains { $0.contains("fish_history") })
   }
 
-  func testHistorySourceMigrationDropsBashAndFishDefaults() {
-    let home = FileManager.default.homeDirectoryForCurrentUser
-    let customZsh = home.appendingPathComponent(".zsh_sessions/custom-history")
-    let migrated = HistorySource.zshOnlySources(from: [
-      HistorySource(kind: .bash, url: home.appendingPathComponent(".bash_history")),
-      HistorySource(kind: .fish, url: home.appendingPathComponent(".local/share/fish/fish_history")),
-      HistorySource(kind: .zsh, url: customZsh)
-    ])
+  func testHistorySourceMigrationKeepsOnlyRetraceZshSource() {
+    let migrated = HistorySource.appOwnedZshSources
 
-    XCTAssertEqual(migrated.map(\.kind), [.zsh, .zsh, .zsh])
+    XCTAssertEqual(migrated.map(\.kind), [.zsh])
     XCTAssertEqual(migrated.map(\.url), [
-      customZsh,
-      HistorySource.retraceZshHistoryURL,
-      HistorySource.userZshHistoryURL
+      HistorySource.retraceZshHistoryURL
     ])
   }
 

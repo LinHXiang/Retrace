@@ -10,12 +10,9 @@
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
 "HistorySources" = "Command history:";
-"AddHistorySource" = "Add File";
-"RestoreHistorySources" = "Restore Defaults";
+"ZshIntegrationRequired" = "Retrace records commands only after zsh integration is installed.";
+"RetraceHistorySource" = "Retrace zsh history file";
 "InstallZshIntegration" = "Install zsh integration";
 "CopyZshIntegration" = "Copy zsh integration";
 "ClearRetraceHistory" = "Clear Retrace history";
 "DeleteRetraceHistoryFile" = "Delete Retrace history file";
-"ChooseHistorySource" = "Choose history file";
-"RemoveHistorySource" = "Remove history file";
-"NoHistorySources" = "No history files configured.";

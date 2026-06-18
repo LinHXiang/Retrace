@@ -36,15 +36,6 @@ enum ShellHistoryKind: String, CaseIterable, Identifiable, Codable, Defaults.Ser
       return "Plain"
     }
   }
-
-  static func infer(from url: URL) -> Self {
-    switch url.lastPathComponent {
-    case ".zsh_history":
-      return .zsh
-    default:
-      return .zsh
-    }
-  }
 }
 
 struct HistorySource: Identifiable, Hashable, Codable, Defaults.Serializable {
@@ -65,28 +56,14 @@ struct HistorySource: Identifiable, Hashable, Codable, Defaults.Serializable {
       .appendingPathComponent("Library/Application Support/Retrace/zsh_history")
   }
 
-  static var userZshHistoryURL: URL {
-    FileManager.default.homeDirectoryForCurrentUser
-      .appendingPathComponent(".zsh_history")
-  }
-
   static var defaultSources: [HistorySource] {
     return [
-      HistorySource(kind: .zsh, url: retraceZshHistoryURL),
-      HistorySource(kind: .zsh, url: userZshHistoryURL)
+      HistorySource(kind: .zsh, url: retraceZshHistoryURL)
     ]
   }
 
-  static func zshOnlySources(from sources: [HistorySource]) -> [HistorySource] {
-    let zshSources = sources.compactMap { source -> HistorySource? in
-      guard source.kind == .zsh else { return nil }
-      return source
-    }
-
-    return defaultSources.reduce(into: zshSources) { result, defaultSource in
-      guard !result.contains(where: { $0.url == defaultSource.url }) else { return }
-      result.append(defaultSource)
-    }
+  static var appOwnedZshSources: [HistorySource] {
+    defaultSources
   }
 }
 

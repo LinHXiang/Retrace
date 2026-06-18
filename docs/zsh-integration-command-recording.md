@@ -94,17 +94,18 @@ zsh preexec hook
 
 ## 默认历史来源
 
-内置默认命令历史来源只保留 zsh：
+内置默认命令历史来源只保留 Retrace 自己的 zsh 记录文件：
 
 ```text
 ~/Library/Application Support/Retrace/zsh_history
-~/.zsh_history
 ```
 
-Retrace 应该从内置默认命令历史来源里移除 bash 和 fish。已有用户配置可以在
-zsh-only 清理中迁移或丢弃，但新的默认值只应该包含 zsh 来源。
+Retrace 不再把 `~/.zsh_history`、bash history、fish history 或用户手动添加的
+其他文件作为命令来源。`~/.zsh_history` 只可以用于启动时判断用户是否可能在用
+zsh，从而决定是否展示安装提示；它不是数据源。
 
-保留 `~/.zsh_history` 是为了继续读取安装 Retrace 集成之前的 zsh 历史。
+因此，只有安装 zsh 集成后，Retrace 才能正常记录并展示新命令。没有安装 zsh
+集成时，用户看不到命令记录，这是预期行为。
 
 ## 启动检测
 
@@ -138,6 +139,14 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
 
 - Install zsh integration
 - Copy zsh integration
+- Clear Retrace history
+- Delete Retrace history file
+
+这里不再提供添加、移除、选择或禁用 history source 的 UI。命令来源固定为：
+
+```text
+~/Library/Application Support/Retrace/zsh_history
+```
 
 `Install zsh integration` 应该：
 
@@ -179,7 +188,7 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
 
 1. Retrace 命令历史记录被文档化并实现为 zsh-only。
 2. 内置默认历史来源只包含
-   `~/Library/Application Support/Retrace/zsh_history` 和 `~/.zsh_history`。
+   `~/Library/Application Support/Retrace/zsh_history`。
 3. app 启动时检查是否应该建议安装 zsh 集成。
 4. 启动提示只对疑似 zsh 用户展示，且要求用户没有已安装 Retrace block，也没有
    选择过 `Don't Ask Again`。
@@ -195,7 +204,7 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
     `~/Library/Application Support/Retrace/zsh_history`。
 13. 新执行的 zsh 命令会在 shell 退出前出现在 Retrace 自有历史文件里。
 14. Retrace 会把自有历史文件作为 zsh source 读取。
-15. 现有 `~/.zsh_history` 支持不被移除。
+15. 不读取 `~/.zsh_history`；没有安装 zsh 集成时，Retrace 不展示命令记录。
 16. zsh hook 不调用 sqlite、IPC、URL scheme 或 app 专用通知机制。
 17. 构建通过：
 
@@ -211,8 +220,8 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
   - 没有 Retrace block 的 `.zshrc`
   - 有旧 Retrace block 的 `.zshrc`
   - 没有末尾换行的 `.zshrc`
-- 单元测试 `HistorySource.defaultSources` 包含 Retrace 自有 zsh 文件和
-  `~/.zsh_history`，且不包含 bash 或 fish 默认项。
+- 单元测试 `HistorySource.defaultSources` 只包含 Retrace 自有 zsh 文件，且不包含
+  `~/.zsh_history`、bash 或 fish 默认项。
 - 单元测试启动提示条件：
   - 疑似 zsh 用户且没有 block
   - 已存在 Retrace block

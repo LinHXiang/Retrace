@@ -1,4 +1,3 @@
-import AppKit
 import SwiftUI
 import Defaults
 import KeyboardShortcuts
@@ -8,7 +7,6 @@ import Settings
 struct GeneralSettingsPane: View {
   @Default(.searchMode) private var searchMode
   @Default(.commandHistorySize) private var commandHistorySize
-  @Default(.historySources) private var historySources
 
   private let sizeFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
@@ -68,39 +66,21 @@ struct GeneralSettingsPane: View {
         label: { Text("HistorySources", tableName: "GeneralSettings") }
       ) {
         VStack(alignment: .leading, spacing: 8) {
-          if historySources.isEmpty {
-            Text("NoHistorySources", tableName: "GeneralSettings")
+          VStack(alignment: .leading, spacing: 4) {
+            Text("ZshIntegrationRequired", tableName: "GeneralSettings")
+
+            Text("RetraceHistorySource", tableName: "GeneralSettings")
+              .font(.caption)
               .foregroundStyle(.secondary)
-          } else {
-            ForEach($historySources) { $source in
-              HistorySourceRow(source: $source) {
-                removeHistorySource(id: source.id)
-              }
-            }
+
+            Text(HistorySource.retraceZshHistoryURL.path)
+              .lineLimit(1)
+              .truncationMode(.middle)
+              .frame(maxWidth: .infinity, alignment: .leading)
           }
 
           VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
-              Button {
-                addHistorySource()
-              } label: {
-                Label {
-                  Text("AddHistorySource", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "plus")
-                }
-              }
-
-              Button {
-                historySources = HistorySource.defaultSources
-              } label: {
-                Label {
-                  Text("RestoreHistorySources", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "arrow.uturn.backward")
-                }
-              }
-
               Button {
                 ZshIntegrationUI.install(confirmFirst: true)
               } label: {
@@ -148,95 +128,6 @@ struct GeneralSettingsPane: View {
         }
       }
     }
-    .onChange(of: historySources) {
-      reloadHistory()
-    }
-  }
-
-  private func addHistorySource() {
-    let panel = NSOpenPanel()
-    panel.allowsMultipleSelection = false
-    panel.canChooseDirectories = false
-    panel.canChooseFiles = true
-    panel.showsHiddenFiles = true
-
-    guard panel.runModal() == .OK,
-          let url = panel.url else { return }
-
-    if let index = historySources.firstIndex(where: { $0.url == url }) {
-      historySources[index].kind = ShellHistoryKind.infer(from: url)
-      historySources[index].isEnabled = true
-      return
-    }
-
-    historySources.append(HistorySource(kind: ShellHistoryKind.infer(from: url), url: url))
-  }
-
-  private func removeHistorySource(id: UUID) {
-    historySources.removeAll { $0.id == id }
-  }
-
-  private func reloadHistory() {
-    Task { @MainActor in
-      await AppState.shared.history.reloadSources()
-    }
-  }
-}
-
-private struct HistorySourceRow: View {
-  @Binding var source: HistorySource
-  var remove: () -> Void
-
-  var body: some View {
-    HStack(spacing: 8) {
-      Toggle("", isOn: $source.isEnabled)
-        .labelsHidden()
-
-      Picker("", selection: $source.kind) {
-        ForEach(ShellHistoryKind.supportedCases) { kind in
-          Text(kind.description)
-        }
-      }
-      .labelsHidden()
-      .frame(width: 80)
-
-      Text(source.url.path)
-        .lineLimit(1)
-        .truncationMode(.middle)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .foregroundStyle(.secondary)
-
-      Button {
-        chooseFile()
-      } label: {
-        Image(systemName: "folder")
-      }
-      .buttonStyle(.borderless)
-      .help(Text("ChooseHistorySource", tableName: "GeneralSettings"))
-
-      Button(role: .destructive) {
-        remove()
-      } label: {
-        Image(systemName: "minus.circle")
-      }
-      .buttonStyle(.borderless)
-      .help(Text("RemoveHistorySource", tableName: "GeneralSettings"))
-    }
-    .controlSize(.small)
-  }
-
-  private func chooseFile() {
-    let panel = NSOpenPanel()
-    panel.allowsMultipleSelection = false
-    panel.canChooseDirectories = false
-    panel.canChooseFiles = true
-    panel.showsHiddenFiles = true
-
-    guard panel.runModal() == .OK,
-          let url = panel.url else { return }
-
-    source.url = url
-    source.kind = ShellHistoryKind.infer(from: url)
   }
 }
 

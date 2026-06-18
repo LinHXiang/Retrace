@@ -11,12 +11,9 @@
 "CommandHistorySizeTooltip" = "最多显示的命令数量。";
 
 "HistorySources" = "命令历史：";
-"AddHistorySource" = "添加文件";
-"RestoreHistorySources" = "恢复默认";
+"ZshIntegrationRequired" = "只有安装 zsh 集成后，Retrace 才会记录命令。";
+"RetraceHistorySource" = "Retrace zsh 历史文件";
 "InstallZshIntegration" = "安装 zsh 集成";
 "CopyZshIntegration" = "复制 zsh 集成";
 "ClearRetraceHistory" = "清空 Retrace 历史";
 "DeleteRetraceHistoryFile" = "删除 Retrace 历史文件";
-"ChooseHistorySource" = "选择历史文件";
-"RemoveHistorySource" = "移除历史文件";
-"NoHistorySources" = "未配置历史文件。";
