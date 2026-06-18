@@ -67,55 +67,51 @@ struct GeneralSettingsPane: View {
       Settings.Section(
         label: { Text("HistorySources", tableName: "GeneralSettings") }
       ) {
-        VStack(alignment: .leading, spacing: 10) {
-          HStack(spacing: 12) {
+        VStack(alignment: .leading, spacing: 8) {
+          Label {
+            Text("RetraceHistorySource", tableName: "GeneralSettings")
+          } icon: {
+            Image(systemName: "doc.text")
+          }
+          .font(.caption)
+          .foregroundStyle(.secondary)
+
+          Button {
+            ZshIntegrationUI.replaceRecordedHistoryWithUserHistory()
+            canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
+          } label: {
             Label {
-              Text("RetraceHistorySource", tableName: "GeneralSettings")
+              Text("ReplaceWithLocalShellHistory", tableName: "GeneralSettings")
             } icon: {
-              Image(systemName: "doc.text")
+              Image(systemName: "arrow.triangle.2.circlepath")
             }
-            .font(.caption)
-            .foregroundStyle(.secondary)
+          }
+          .disabled(!canReplaceWithUserHistory)
+          .help(Text("ReplaceWithLocalShellHistoryTooltip", tableName: "GeneralSettings"))
 
-            Spacer()
-
-            HStack(spacing: 8) {
-              Button {
-                ZshIntegrationUI.replaceRecordedHistoryWithUserHistory()
-                canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
-              } label: {
-                Label {
-                  Text("ReplaceWithLocalShellHistory", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "arrow.triangle.2.circlepath")
-                }
-              }
-              .disabled(!canReplaceWithUserHistory)
-              .help(Text("ReplaceWithLocalShellHistoryTooltip", tableName: "GeneralSettings"))
-
-              Button(role: .destructive) {
-                ZshIntegrationUI.clearRecordedHistory()
-              } label: {
-                Label {
-                  Text("ClearRetraceHistory", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "eraser")
-                }
-              }
-
-              Button {
-                openRetraceHistoryInFinder()
-              } label: {
-                Label {
-                  Text("OpenRetraceHistoryInFinder", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "folder")
-                }
+          HStack(spacing: 8) {
+            Button {
+              openRetraceHistoryInFinder()
+            } label: {
+              Label {
+                Text("OpenRetraceHistoryInFinder", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "folder")
               }
             }
-            .controlSize(.small)
+
+            Button(role: .destructive) {
+              ZshIntegrationUI.clearRecordedHistory()
+            } label: {
+              Label {
+                Text("ClearRetraceHistory", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "eraser")
+              }
+            }
           }
         }
+        .controlSize(.small)
         .onAppear {
           canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
         }

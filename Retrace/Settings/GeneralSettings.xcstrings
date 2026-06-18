@@ -296,55 +296,55 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Befehlsverlauf:"
+            "value": "Verlaufsdatei:"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Command history:"
+            "value": "History file:"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Historial de comandos:"
+            "value": "Archivo de historial:"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Historique des commandes:"
+            "value": "Fichier d’historique:"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "コマンド履歴:"
+            "value": "履歴ファイル:"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "명령어 기록:"
+            "value": "기록 파일:"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Histórico de comandos:"
+            "value": "Arquivo de histórico:"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "命令历史："
+            "value": "历史文件："
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "命令歷史："
+            "value": "歷史檔案："
           }
         }
       }
