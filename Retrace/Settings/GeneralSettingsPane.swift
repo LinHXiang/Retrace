@@ -64,61 +64,65 @@ struct GeneralSettingsPane: View {
       }
 
       Settings.Section(
-        label: { Text("HistorySources", tableName: "GeneralSettings") }
+        bottomDivider: true,
+        label: { Text("ZshIntegration", tableName: "GeneralSettings") }
       ) {
         VStack(alignment: .leading, spacing: 8) {
-          VStack(alignment: .leading, spacing: 4) {
-            Text("ZshIntegrationRequired", tableName: "GeneralSettings")
-              .font(.caption)
-              .foregroundStyle(.secondary)
+          Text("ZshIntegrationRequired", tableName: "GeneralSettings")
+            .font(.caption)
+            .foregroundStyle(.secondary)
 
-            Text("RetraceHistorySource", tableName: "GeneralSettings")
-              .font(.caption)
-              .foregroundStyle(.secondary)
-          }
-
-          VStack(alignment: .leading, spacing: 8) {
-            HStack(spacing: 8) {
-              Button {
-                ZshIntegrationUI.install(confirmFirst: true)
-              } label: {
-                Label {
-                  Text("InstallZshIntegration", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "terminal")
-                }
-              }
-
-              Button {
-                ZshIntegrationUI.copyBlock()
-              } label: {
-                Label {
-                  Text("CopyZshIntegration", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "doc.on.doc")
-                }
+          HStack(spacing: 8) {
+            Button {
+              ZshIntegrationUI.install(confirmFirst: true)
+            } label: {
+              Label {
+                Text("InstallZshIntegration", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "terminal")
               }
             }
 
-            HStack(spacing: 8) {
-              Button(role: .destructive) {
-                ZshIntegrationUI.clearRecordedHistory()
-              } label: {
-                Label {
-                  Text("ClearRetraceHistory", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "eraser")
-                }
+            Button {
+              ZshIntegrationUI.copyBlock()
+            } label: {
+              Label {
+                Text("CopyZshIntegration", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "doc.on.doc")
               }
+            }
+          }
+          .controlSize(.small)
+        }
+      }
 
-              Button {
-                openRetraceHistoryInFinder()
-              } label: {
-                Label {
-                  Text("OpenRetraceHistoryInFinder", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "folder")
-                }
+      Settings.Section(
+        label: { Text("HistorySources", tableName: "GeneralSettings") }
+      ) {
+        VStack(alignment: .leading, spacing: 8) {
+          Text("RetraceHistorySource", tableName: "GeneralSettings")
+            .font(.caption)
+            .foregroundStyle(.secondary)
+
+          HStack(spacing: 8) {
+            Button(role: .destructive) {
+              ZshIntegrationUI.clearRecordedHistory()
+            } label: {
+              Label {
+                Text("ClearRetraceHistory", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "eraser")
+              }
+            }
+
+            Button {
+              openRetraceHistoryInFinder()
+            } label: {
+              Label {
+                Text("OpenRetraceHistoryInFinder", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "folder")
               }
             }
           }

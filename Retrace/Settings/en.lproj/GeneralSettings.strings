@@ -9,6 +9,7 @@
 "Mixed" = "Mixed";
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
+"ZshIntegration" = "zsh integration:";
 "HistorySources" = "Command history:";
 "ZshIntegrationRequired" = "Retrace records commands only after zsh integration is installed.";
 "RetraceHistorySource" = "Retrace zsh history file";

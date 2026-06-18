@@ -10,6 +10,7 @@
 "CommandHistorySize" = "历史条数：";
 "CommandHistorySizeTooltip" = "最多显示的命令数量。";
 
+"ZshIntegration" = "zsh 集成：";
 "HistorySources" = "命令历史：";
 "ZshIntegrationRequired" = "只有安装 zsh 集成后，Retrace 才会记录命令。";
 "RetraceHistorySource" = "Retrace zsh 历史文件";
