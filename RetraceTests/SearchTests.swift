@@ -131,17 +131,67 @@ class SearchTests: XCTestCase {
     defer { try? FileManager.default.removeItem(at: directory) }
 
     let zshHistory = directory.appendingPathComponent(".zsh_history")
+    let disabledZshHistory = directory.appendingPathComponent("disabled_zsh_history")
+    try ": 1710000000:0;git status\n".write(to: zshHistory, atomically: true, encoding: .utf8)
+    try ": 1710000002:0;brew update\n".write(to: disabledZshHistory, atomically: true, encoding: .utf8)
+
+    let history = TerminalCommandHistory(sources: [
+      HistorySource(kind: .zsh, url: zshHistory),
+      HistorySource(kind: .zsh, url: disabledZshHistory, isEnabled: false)
+    ])
+
+    XCTAssertEqual(try history.load().map(\.command), ["git status"])
+  }
+
+  func testTerminalCommandHistoryLoadsOnlyZshSources() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+
+    let zshHistory = directory.appendingPathComponent(".zsh_history")
     let bashHistory = directory.appendingPathComponent(".bash_history")
+    let fishHistory = directory.appendingPathComponent("fish_history")
     try ": 1710000000:0;git status\n".write(to: zshHistory, atomically: true, encoding: .utf8)
     try "#1710000002\nbrew update\n".write(to: bashHistory, atomically: true, encoding: .utf8)
+    try "- cmd: make test\n  when: 1710000003\n".write(to: fishHistory, atomically: true, encoding: .utf8)
 
     let history = TerminalCommandHistory(sources: [
       HistorySource(kind: .zsh, url: zshHistory),
       HistorySource(kind: .bash, url: bashHistory),
-      HistorySource(kind: .fish, url: directory.appendingPathComponent("missing"), isEnabled: false)
+      HistorySource(kind: .fish, url: fishHistory)
     ])
 
-    XCTAssertEqual(try history.load().map(\.command), ["brew update", "git status"])
+    XCTAssertEqual(try history.load().map(\.command), ["git status"])
+  }
+
+  func testHistorySourceDefaultSourcesAreZshOnly() {
+    let paths = HistorySource.defaultSources.map(\.url.path)
+
+    XCTAssertEqual(HistorySource.defaultSources.map(\.kind), [.zsh, .zsh])
+    XCTAssertEqual(paths.map { URL(fileURLWithPath: $0).lastPathComponent }, [
+      "zsh_history",
+      ".zsh_history"
+    ])
+    XCTAssertFalse(paths.contains { $0.contains(".bash_history") })
+    XCTAssertFalse(paths.contains { $0.contains("fish_history") })
+  }
+
+  func testHistorySourceMigrationDropsBashAndFishDefaults() {
+    let home = FileManager.default.homeDirectoryForCurrentUser
+    let customZsh = home.appendingPathComponent(".zsh_sessions/custom-history")
+    let migrated = HistorySource.zshOnlySources(from: [
+      HistorySource(kind: .bash, url: home.appendingPathComponent(".bash_history")),
+      HistorySource(kind: .fish, url: home.appendingPathComponent(".local/share/fish/fish_history")),
+      HistorySource(kind: .zsh, url: customZsh)
+    ])
+
+    XCTAssertEqual(migrated.map(\.kind), [.zsh, .zsh, .zsh])
+    XCTAssertEqual(migrated.map(\.url), [
+      customZsh,
+      HistorySource.retraceZshHistoryURL,
+      HistorySource.userZshHistoryURL
+    ])
   }
 
   @MainActor

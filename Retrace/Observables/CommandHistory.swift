@@ -18,6 +18,10 @@ enum ShellHistoryKind: String, CaseIterable, Identifiable, Codable, Defaults.Ser
 
   var id: Self { self }
 
+  static var supportedCases: [Self] {
+    [.zsh]
+  }
+
   var description: String {
     switch self {
     case .zsh:
@@ -35,12 +39,8 @@ enum ShellHistoryKind: String, CaseIterable, Identifiable, Codable, Defaults.Ser
     switch url.lastPathComponent {
     case ".zsh_history":
       return .zsh
-    case ".bash_history":
-      return .bash
-    case "fish_history":
-      return .fish
     default:
-      return .plain
+      return .zsh
     }
   }
 }
@@ -58,13 +58,36 @@ struct HistorySource: Identifiable, Hashable, Codable, Defaults.Serializable {
     self.isEnabled = isEnabled
   }
 
+  static var retraceZshHistoryURL: URL {
+    FileManager.default.homeDirectoryForCurrentUser
+      .appendingPathComponent("Library/Application Support/Retrace/zsh_history")
+  }
+
+  static var userZshHistoryURL: URL {
+    FileManager.default.homeDirectoryForCurrentUser
+      .appendingPathComponent(".zsh_history")
+  }
+
   static var defaultSources: [HistorySource] {
-    let home = FileManager.default.homeDirectoryForCurrentUser
     return [
-      HistorySource(kind: .zsh, url: home.appendingPathComponent(".zsh_history")),
-      HistorySource(kind: .bash, url: home.appendingPathComponent(".bash_history")),
-      HistorySource(kind: .fish, url: home.appendingPathComponent(".local/share/fish/fish_history"))
+      HistorySource(kind: .zsh, url: retraceZshHistoryURL),
+      HistorySource(kind: .zsh, url: userZshHistoryURL)
     ]
+  }
+
+  static func zshOnlySources(from sources: [HistorySource]) -> [HistorySource] {
+    let zshSources = sources.compactMap { source -> HistorySource? in
+      guard source.kind == .zsh else { return nil }
+
+      var source = source
+      source.kind = .zsh
+      return source
+    }
+
+    return defaultSources.reduce(into: zshSources) { result, defaultSource in
+      guard !result.contains(where: { $0.url == defaultSource.url }) else { return }
+      result.append(defaultSource)
+    }
   }
 }
 
@@ -98,7 +121,7 @@ struct TerminalCommandHistory {
 
   var readableSources: [HistorySource] {
     sources.filter {
-      $0.isEnabled && FileManager.default.isReadableFile(atPath: $0.url.path)
+      $0.kind == .zsh && $0.isEnabled && FileManager.default.isReadableFile(atPath: $0.url.path)
     }
   }
 

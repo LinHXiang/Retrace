@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationWillFinishLaunching(_ notification: Notification) {
     AppFont.registerBundledFonts()
+    Defaults[.historySources] = HistorySource.zshOnlySources(from: Defaults[.historySources])
 
     // Bridge FloatingPanel via AppDelegate.
     AppState.shared.appDelegate = self

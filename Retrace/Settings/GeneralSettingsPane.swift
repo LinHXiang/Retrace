@@ -149,7 +149,7 @@ private struct HistorySourceRow: View {
         .labelsHidden()
 
       Picker("", selection: $source.kind) {
-        ForEach(ShellHistoryKind.allCases) { kind in
+        ForEach(ShellHistoryKind.supportedCases) { kind in
           Text(kind.description)
         }
       }
