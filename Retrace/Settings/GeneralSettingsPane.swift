@@ -8,7 +8,6 @@ import Settings
 struct GeneralSettingsPane: View {
   @Default(.searchMode) private var searchMode
   @Default(.commandHistorySize) private var commandHistorySize
-  @State private var isZshIntegrationInstalled = ZshIntegration.isInstalled()
   @State private var canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
 
   private let sizeFormatter: NumberFormatter = {
@@ -69,51 +68,6 @@ struct GeneralSettingsPane: View {
         label: { Text("HistorySources", tableName: "GeneralSettings") }
       ) {
         VStack(alignment: .leading, spacing: 10) {
-          Text("ZshIntegrationRequired", tableName: "GeneralSettings")
-            .font(.caption)
-            .foregroundStyle(.secondary)
-
-          HStack(spacing: 12) {
-            Label {
-              Text(
-                isZshIntegrationInstalled
-                  ? "ZshIntegrationInstalled"
-                  : "ZshIntegrationNotInstalled",
-                tableName: "GeneralSettings"
-              )
-            } icon: {
-              Image(systemName: isZshIntegrationInstalled ? "checkmark.circle" : "circle")
-                .foregroundStyle(isZshIntegrationInstalled ? .green : .secondary)
-            }
-            .font(.caption)
-            .foregroundStyle(.secondary)
-
-            Spacer()
-
-            HStack(spacing: 8) {
-              Button {
-                installZshIntegration()
-              } label: {
-                Label {
-                  Text("InstallZshIntegration", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "terminal")
-                }
-              }
-
-              Button {
-                ZshIntegrationUI.copyBlock()
-              } label: {
-                Label {
-                  Text("CopyZshIntegration", tableName: "GeneralSettings")
-                } icon: {
-                  Image(systemName: "doc.on.doc")
-                }
-              }
-            }
-            .controlSize(.small)
-          }
-
           HStack(spacing: 12) {
             Label {
               Text("RetraceHistorySource", tableName: "GeneralSettings")
@@ -163,16 +117,10 @@ struct GeneralSettingsPane: View {
           }
         }
         .onAppear {
-          isZshIntegrationInstalled = ZshIntegration.isInstalled()
           canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
         }
       }
     }
-  }
-
-  private func installZshIntegration() {
-    ZshIntegrationUI.install(confirmFirst: true)
-    isZshIntegrationInstalled = ZshIntegration.isInstalled()
   }
 
   private func openRetraceHistoryInFinder() {

@@ -76,6 +76,14 @@ class AppState {
             .font(AppFont.regular())
         },
         Settings.Pane(
+          identifier: Settings.PaneIdentifier.integration,
+          title: NSLocalizedString("Title", tableName: "IntegrationSettings", comment: ""),
+          toolbarIcon: NSImage.terminal!
+        ) {
+          IntegrationSettingsPane()
+            .font(AppFont.regular())
+        },
+        Settings.Pane(
           identifier: Settings.PaneIdentifier.appearance,
           title: NSLocalizedString("Title", tableName: "AppearanceSettings", comment: ""),
           toolbarIcon: NSImage.paintpalette!
