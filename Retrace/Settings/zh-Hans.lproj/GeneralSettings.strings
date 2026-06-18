@@ -16,4 +16,4 @@
 "InstallZshIntegration" = "安装 zsh 集成";
 "CopyZshIntegration" = "复制 zsh 集成";
 "ClearRetraceHistory" = "清空 Retrace 历史";
-"DeleteRetraceHistoryFile" = "删除 Retrace 历史文件";
+"OpenRetraceHistoryInFinder" = "在 Finder 中显示";

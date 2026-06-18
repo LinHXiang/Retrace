@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 import Defaults
 import KeyboardShortcuts
@@ -68,15 +69,12 @@ struct GeneralSettingsPane: View {
         VStack(alignment: .leading, spacing: 8) {
           VStack(alignment: .leading, spacing: 4) {
             Text("ZshIntegrationRequired", tableName: "GeneralSettings")
+              .font(.caption)
+              .foregroundStyle(.secondary)
 
             Text("RetraceHistorySource", tableName: "GeneralSettings")
               .font(.caption)
               .foregroundStyle(.secondary)
-
-            Text(HistorySource.retraceZshHistoryURL.path)
-              .lineLimit(1)
-              .truncationMode(.middle)
-              .frame(maxWidth: .infinity, alignment: .leading)
           }
 
           VStack(alignment: .leading, spacing: 8) {
@@ -113,13 +111,13 @@ struct GeneralSettingsPane: View {
                 }
               }
 
-              Button(role: .destructive) {
-                ZshIntegrationUI.deleteRecordedHistory()
+              Button {
+                openRetraceHistoryInFinder()
               } label: {
                 Label {
-                  Text("DeleteRetraceHistoryFile", tableName: "GeneralSettings")
+                  Text("OpenRetraceHistoryInFinder", tableName: "GeneralSettings")
                 } icon: {
-                  Image(systemName: "trash")
+                  Image(systemName: "folder")
                 }
               }
             }
@@ -127,6 +125,22 @@ struct GeneralSettingsPane: View {
           .controlSize(.small)
         }
       }
+    }
+  }
+
+  private func openRetraceHistoryInFinder() {
+    let historyURL = HistorySource.retraceZshHistoryURL
+    let directoryURL = historyURL.deletingLastPathComponent()
+
+    try? FileManager.default.createDirectory(
+      at: directoryURL,
+      withIntermediateDirectories: true
+    )
+
+    if FileManager.default.fileExists(atPath: historyURL.path) {
+      NSWorkspace.shared.activateFileViewerSelecting([historyURL])
+    } else {
+      NSWorkspace.shared.open(directoryURL)
     }
   }
 }

@@ -15,4 +15,4 @@
 "InstallZshIntegration" = "Install zsh integration";
 "CopyZshIntegration" = "Copy zsh integration";
 "ClearRetraceHistory" = "Clear Retrace history";
-"DeleteRetraceHistoryFile" = "Delete Retrace history file";
+"OpenRetraceHistoryInFinder" = "Show in Finder";
