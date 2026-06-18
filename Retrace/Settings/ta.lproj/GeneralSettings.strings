@@ -16,3 +16,13 @@
 "ChooseHistorySource" = "வரலாறு கோப்பைத் தேர்வு செய்";
 "RemoveHistorySource" = "வரலாறு கோப்பை அகற்று";
 "NoHistorySources" = "வரலாறு கோப்புகள் எதுவும் அமைக்கப்படவில்லை.";
+"ZshIntegrationRequired" = "Retrace records commands only after zsh integration is installed.";
+"RetraceHistorySource" = "Retrace zsh history file";
+"ZshIntegrationInstalled" = "zsh integration installed";
+"ZshIntegrationNotInstalled" = "zsh integration not installed";
+"InstallZshIntegration" = "Install zsh integration";
+"CopyZshIntegration" = "Copy zsh integration";
+"SyncUserZshHistory" = "Replace from ~/.zsh_history";
+"SyncUserZshHistoryTooltip" = "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty.";
+"ClearRetraceHistory" = "Clear Retrace history";
+"OpenRetraceHistoryInFinder" = "Show in Finder";

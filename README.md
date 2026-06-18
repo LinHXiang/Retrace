@@ -8,8 +8,8 @@ realized Maccy's interaction model was exactly what I
 wanted. So here it is: a minimal macOS menu bar app that
 searches your recent terminal commands.
 
-Retrace supports macOS and shell history files from zsh,
-bash, and fish.
+Retrace supports macOS and records zsh commands through a
+small hook installed in `~/.zshrc`.
 
 ## Installation
 
@@ -23,17 +23,18 @@ brew install --cask linhxiang/tap/retrace
 ## Usage
 
 - Open from the menu bar or press `Shift + Command + T`.
-- Reads commands from configured shell history files.
-- Default sources:
+- Reads commands from Retrace's own zsh history file:
 
   ```text
-  ~/.zsh_history
-  ~/.bash_history
-  ~/.local/share/fish/fish_history
+  ~/Library/Application Support/Retrace/zsh_history
   ```
 
-- Manage history sources in Preferences. You can enable,
-  disable, add, remove, or change the parser for a source.
+- Retrace automatically installs a marked zsh integration block
+  in `~/.zshrc` when it detects a zsh setup. You can also install
+  or copy the block from Preferences.
+- Preferences can replace Retrace's history file with the current
+  contents of `~/.zsh_history`. This is an overwrite of Retrace's
+  own file; your `~/.zsh_history` file is not changed.
 - Parses zsh extended history format:
 
   ```text
@@ -51,8 +52,9 @@ brew install --cask linhxiang/tap/retrace
 - Selected command goes to the system clipboard — nothing more.
 
 Retrace does not execute commands, paste into Terminal,
-connect to AI services, or read anything other than the
-configured shell history files.
+connect to AI services, or read anything other than its own
+zsh history file and the one-time/manual import source
+`~/.zsh_history`.
 
 ## Development
 

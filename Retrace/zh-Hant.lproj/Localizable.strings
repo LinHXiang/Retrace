@@ -4,7 +4,7 @@
 "about" = "關於";
 "quit" = "結束";
 "preferences" = "偏好設定…";
-"sync_existing_history" = "同步既有歷史";
+"sync_existing_history" = "用 ~/.zsh_history 覆蓋";
 "sync_existing_history_tooltip" = "用 ~/.zsh_history 覆蓋 Retrace 歷史。";
 "accessibility_alert_message" = "「Retrace「想要使用「輔助功能」控制此 Mac。";
 "accessibility_alert_comment" = "在{settings}中的{pane}頁面中授權此應用程式。\n\n按下 + 按鈕，選擇 Retrace 並勾選旁邊的核取方塊。";
@@ -22,7 +22,7 @@
 "install" = "安裝";
 "clear" = "清空";
 "delete" = "刪除";
-"sync" = "同步";
+"sync" = "覆蓋";
 "install_zsh_integration_message" = "安裝 zsh 整合？";
 "install_zsh_integration_comment" = "Retrace 會向 ~/.zshrc 寫入一段帶標記的輕量 hook。\n\n這個 hook 會把命令追加到：\n%@";
 "zsh_integration_installed_message" = "已安裝 zsh 整合";
@@ -37,11 +37,11 @@
 "retrace_history_cleared_message" = "已清空 Retrace 命令歷史";
 "retrace_history_cleared_comment" = "%@ 現在是空的。";
 "retrace_history_clear_failed_message" = "無法清空 Retrace 命令歷史";
-"sync_user_zsh_history_message" = "同步既有歷史？";
+"sync_user_zsh_history_message" = "覆蓋 Retrace 命令歷史？";
 "sync_user_zsh_history_comment" = "這會用 ~/.zsh_history 覆蓋 Retrace 命令歷史。\n\n不會修改 ~/.zsh_history。";
-"zsh_history_synced_message" = "已同步既有歷史";
+"zsh_history_synced_message" = "已覆蓋 Retrace 命令歷史";
 "zsh_history_synced_comment" = "Retrace 命令歷史現在和 ~/.zsh_history 一致。";
-"zsh_history_sync_failed_message" = "無法同步既有歷史";
+"zsh_history_sync_failed_message" = "無法覆蓋 Retrace 命令歷史";
 "zsh_history_empty_comment" = "~/.zsh_history 為空或不可用。";
 "delete_retrace_history_message" = "刪除 Retrace 命令歷史檔案？";
 "delete_retrace_history_comment" = "只會刪除：\n%@\n\n不會修改 ~/.zsh_history。zsh hook 會在記錄新命令時重新建立 Retrace 檔案。";

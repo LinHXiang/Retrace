@@ -17,7 +17,7 @@
 "ZshIntegrationNotInstalled" = "未安裝 zsh 整合";
 "InstallZshIntegration" = "安裝 zsh 整合";
 "CopyZshIntegration" = "複製 zsh 整合";
-"SyncUserZshHistory" = "同步既有歷史";
+"SyncUserZshHistory" = "用 ~/.zsh_history 覆蓋";
 "SyncUserZshHistoryTooltip" = "用 ~/.zsh_history 覆蓋 Retrace 歷史。~/.zsh_history 為空時不可用。";
 "ClearRetraceHistory" = "清空 Retrace 歷史";
 "OpenRetraceHistoryInFinder" = "在 Finder 中顯示";

@@ -4,7 +4,7 @@
 后来发现 Maccy 的交互方式正好满足我的需求。于是就做了这个：一个轻量
 的 macOS 菜单栏应用，用来搜索最近敲过的终端命令。
 
-Retrace 支持 macOS，以及 zsh、bash、fish 的 shell history 文件。
+Retrace 支持 macOS，并通过安装在 `~/.zshrc` 里的轻量 hook 记录 zsh 命令。
 
 ## 安装
 
@@ -18,16 +18,16 @@ brew install --cask linhxiang/tap/retrace
 ## 用法
 
 - 从菜单栏打开，或按 `Shift + Command + T`。
-- 读取已配置的 shell history 文件。
-- 默认来源：
+- 读取 Retrace 自己管理的 zsh 历史文件：
 
   ```text
-  ~/.zsh_history
-  ~/.bash_history
-  ~/.local/share/fish/fish_history
+  ~/Library/Application Support/Retrace/zsh_history
   ```
 
-- 可在偏好设置中管理 history 来源：启用、停用、添加、删除，或修改解析格式。
+- 检测到 zsh 环境时，Retrace 会自动向 `~/.zshrc` 安装一段带标记的 zsh 集成
+  block。也可以在偏好设置中手动安装或复制这段 block。
+- 偏好设置里可以用当前 `~/.zsh_history` 覆盖 Retrace 自己的历史文件。这个操作
+  覆盖的是 Retrace 文件，不会修改 `~/.zsh_history`。
 - 解析 zsh extended history 格式：
 
   ```text
@@ -43,7 +43,8 @@ brew install --cask linhxiang/tap/retrace
 - 选中的命令复制到剪贴板——仅此而已。
 
 Retrace 不会执行命令、不会粘贴到终端、不会接入 AI 服务，
-也不会读取已配置 shell history 文件以外的内容。
+也不会读取 Retrace 自己的 zsh 历史文件和一次性/手动导入来源
+`~/.zsh_history` 以外的内容。
 
 ## 开发
 
