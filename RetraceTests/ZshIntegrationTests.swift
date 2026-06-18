@@ -55,11 +55,101 @@ final class ZshIntegrationTests: XCTestCase {
     let directory = FileManager.default.temporaryDirectory
       .appendingPathComponent(UUID().uuidString, isDirectory: true)
     let zshrc = directory.appendingPathComponent(".zshrc")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     defer { try? FileManager.default.removeItem(at: directory) }
 
     try ZshIntegration.install(to: zshrc)
 
     let contents = try String(contentsOf: zshrc, encoding: .utf8)
     XCTAssertEqual(contents, ZshIntegration.block + "\n")
+  }
+
+  func testInstallAppendsBlockToExistingZshrc() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let zshrc = directory.appendingPathComponent(".zshrc")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try "export EDITOR=vim".write(to: zshrc, atomically: true, encoding: .utf8)
+
+    try ZshIntegration.install(to: zshrc)
+
+    let contents = try String(contentsOf: zshrc, encoding: .utf8)
+    XCTAssertEqual(contents, "export EDITOR=vim\n\n" + ZshIntegration.block + "\n")
+  }
+
+  func testShouldPromptForLikelyZshUserWithoutBlock() {
+    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/zsh",
+      zshHistoryExists: false,
+      zshrcContents: "export EDITOR=vim\n",
+      promptDismissed: false
+    ))
+  }
+
+  func testShouldPromptForUserWithZshHistory() {
+    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/bash",
+      zshHistoryExists: true,
+      zshrcContents: nil,
+      promptDismissed: false
+    ))
+  }
+
+  func testShouldNotPromptWhenBlockIsInstalled() {
+    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/zsh",
+      zshHistoryExists: false,
+      zshrcContents: ZshIntegration.block,
+      promptDismissed: false
+    ))
+  }
+
+  func testShouldNotPromptWhenDismissed() {
+    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/zsh",
+      zshHistoryExists: false,
+      zshrcContents: nil,
+      promptDismissed: true
+    ))
+  }
+
+  func testShouldNotPromptDuringDeferredPeriod() {
+    let now = Date(timeIntervalSince1970: 1_710_000_000)
+
+    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/zsh",
+      zshHistoryExists: false,
+      zshrcContents: nil,
+      promptDismissed: false,
+      promptDeferredUntil: now.addingTimeInterval(60),
+      now: now
+    ))
+    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/zsh",
+      zshHistoryExists: false,
+      zshrcContents: nil,
+      promptDismissed: false,
+      promptDeferredUntil: now.addingTimeInterval(-60),
+      now: now
+    ))
+  }
+
+  func testShouldNotPromptForNonZshUserWithoutZshHistory() {
+    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+      loginShell: "/bin/bash",
+      zshHistoryExists: false,
+      zshrcContents: nil,
+      promptDismissed: false
+    ))
+  }
+
+  func testShouldNotPromptWithoutShellOrZshHistory() {
+    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+      loginShell: nil,
+      zshHistoryExists: false,
+      zshrcContents: nil,
+      promptDismissed: false
+    ))
   }
 }

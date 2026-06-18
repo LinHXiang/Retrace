@@ -18,6 +18,8 @@ extension Defaults.Keys {
   static let showTitle = Key<Bool>("showTitle", default: true)
   static let commandHistorySize = Key<Int>("commandHistorySize", default: 50)
   static let historySources = Key<[HistorySource]>("historySources", default: HistorySource.defaultSources)
+  static let zshIntegrationPromptDismissed = Key<Bool>("zshIntegrationPromptDismissed", default: false)
+  static let zshIntegrationPromptDeferredUntil = Key<Date>("zshIntegrationPromptDeferredUntil", default: .distantPast)
   static let windowSize = Key<NSSize>("windowSize", default: NSSize(width: 450, height: 800))
   static let windowPosition = Key<NSPoint>("windowPosition", default: NSPoint(x: 0.5, y: 0.8))
 }

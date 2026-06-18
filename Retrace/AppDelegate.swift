@@ -1,3 +1,4 @@
+import AppKit
 import Defaults
 import SwiftUI
 
@@ -64,6 +65,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       onClose: { AppState.shared.popup.reset() }
     ) {
       ContentView()
+    }
+
+    showZshIntegrationPromptIfNeeded()
+  }
+
+  private func showZshIntegrationPromptIfNeeded() {
+    guard ZshIntegration.shouldPromptForInstall(
+      promptDismissed: Defaults[.zshIntegrationPromptDismissed],
+      promptDeferredUntil: Defaults[.zshIntegrationPromptDeferredUntil]
+    ) else {
+      return
+    }
+
+    let alert = NSAlert()
+    alert.messageText = "Install zsh integration?"
+    alert.informativeText = """
+    Retrace can record zsh commands immediately by adding a small hook to ~/.zshrc.
+
+    The hook appends commands to:
+    \(ZshIntegration.displayHistoryPath)
+    """
+    alert.alertStyle = .informational
+    alert.addButton(withTitle: "Install")
+    alert.addButton(withTitle: "Not Now")
+    alert.addButton(withTitle: "Don't Ask Again")
+    alert.addButton(withTitle: "Copy Block")
+
+    let response = alert.runModal()
+    switch response {
+    case .alertFirstButtonReturn:
+      ZshIntegrationUI.install(confirmFirst: false)
+    case .alertSecondButtonReturn:
+      Defaults[.zshIntegrationPromptDeferredUntil] = Date().addingTimeInterval(7 * 24 * 60 * 60)
+    case .alertThirdButtonReturn:
+      Defaults[.zshIntegrationPromptDismissed] = true
+    case .alertFourthButtonReturn:
+      ZshIntegrationUI.copyBlock()
+    default:
+      break
     }
   }
 

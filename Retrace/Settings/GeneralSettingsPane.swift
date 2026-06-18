@@ -99,6 +99,26 @@ struct GeneralSettingsPane: View {
                 Image(systemName: "arrow.uturn.backward")
               }
             }
+
+            Button {
+              ZshIntegrationUI.install(confirmFirst: true)
+            } label: {
+              Label {
+                Text("InstallZshIntegration", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "terminal")
+              }
+            }
+
+            Button {
+              ZshIntegrationUI.copyBlock()
+            } label: {
+              Label {
+                Text("CopyZshIntegration", tableName: "GeneralSettings")
+              } icon: {
+                Image(systemName: "doc.on.doc")
+              }
+            }
           }
           .controlSize(.small)
         }

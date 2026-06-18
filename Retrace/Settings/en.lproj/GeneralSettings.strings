@@ -12,6 +12,8 @@
 "HistorySources" = "Command history:";
 "AddHistorySource" = "Add File";
 "RestoreHistorySources" = "Restore Defaults";
+"InstallZshIntegration" = "Install zsh integration";
+"CopyZshIntegration" = "Copy zsh integration";
 "ChooseHistorySource" = "Choose history file";
 "RemoveHistorySource" = "Remove history file";
 "NoHistorySources" = "No history files configured.";
