@@ -250,78 +250,66 @@ final class ZshIntegrationTests: XCTestCase {
     XCTAssertTrue(ZshIntegration.userHistoryHasContent(at: userHistory))
   }
 
-  func testShouldPromptForLikelyZshUserWithoutBlock() {
-    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
+  func testShouldAutoInstallForLikelyZshUserWithoutBlock() {
+    XCTAssertTrue(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/zsh",
       zshHistoryExists: false,
       zshrcContents: "export EDITOR=vim\n",
-      promptDismissed: false
+      wasInstalled: false
     ))
   }
 
-  func testShouldPromptForUserWithZshHistory() {
-    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
+  func testShouldAutoInstallForUserWithZshHistory() {
+    XCTAssertTrue(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/bash",
       zshHistoryExists: true,
       zshrcContents: nil,
-      promptDismissed: false
+      wasInstalled: false
     ))
   }
 
-  func testShouldNotPromptWhenBlockIsInstalled() {
-    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+  func testShouldNotAutoInstallWhenBlockIsInstalled() {
+    XCTAssertFalse(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/zsh",
       zshHistoryExists: false,
       zshrcContents: ZshIntegration.block,
-      promptDismissed: false
+      wasInstalled: false
     ))
   }
 
-  func testShouldNotPromptWhenDismissed() {
-    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+  func testShouldNotAutoInstallWhenPreviouslyInstalledBlockIsMissing() {
+    XCTAssertFalse(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/zsh",
       zshHistoryExists: false,
-      zshrcContents: nil,
-      promptDismissed: true
+      zshrcContents: "export EDITOR=vim\n",
+      wasInstalled: true
     ))
   }
 
-  func testShouldNotPromptDuringDeferredPeriod() {
-    let now = Date(timeIntervalSince1970: 1_710_000_000)
-
-    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+  func testShouldNotAutoInstallWhenPreviouslyInstalledZshrcIsMissing() {
+    XCTAssertFalse(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/zsh",
       zshHistoryExists: false,
       zshrcContents: nil,
-      promptDismissed: false,
-      promptDeferredUntil: now.addingTimeInterval(60),
-      now: now
-    ))
-    XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
-      loginShell: "/bin/zsh",
-      zshHistoryExists: false,
-      zshrcContents: nil,
-      promptDismissed: false,
-      promptDeferredUntil: now.addingTimeInterval(-60),
-      now: now
+      wasInstalled: true
     ))
   }
 
-  func testShouldNotPromptForNonZshUserWithoutZshHistory() {
-    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+  func testShouldNotAutoInstallForNonZshUserWithoutZshHistory() {
+    XCTAssertFalse(ZshIntegration.shouldAutoInstall(
       loginShell: "/bin/bash",
       zshHistoryExists: false,
       zshrcContents: nil,
-      promptDismissed: false
+      wasInstalled: false
     ))
   }
 
-  func testShouldNotPromptWithoutShellOrZshHistory() {
-    XCTAssertFalse(ZshIntegration.shouldPromptForInstall(
+  func testShouldNotAutoInstallWithoutShellOrZshHistory() {
+    XCTAssertFalse(ZshIntegration.shouldAutoInstall(
       loginShell: nil,
       zshHistoryExists: false,
       zshrcContents: nil,
-      promptDismissed: false
+      wasInstalled: false
     ))
   }
 }

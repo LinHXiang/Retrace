@@ -1,9 +1,13 @@
 import AppKit
 import Defaults
 import SwiftUI
+import UserNotifications
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+  private static let maxZshIntegrationAutoInstallAttempts = 3
+
   var panel: FloatingPanel<ContentView>!
+  private var notificationAuthorizationGranted: Bool?
 
   @objc
   private lazy var statusItem: NSStatusItem = {
@@ -97,38 +101,141 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       ContentView()
     }
 
-    showZshIntegrationPromptIfNeeded()
+    scheduleZshIntegrationAutoInstallIfNeeded()
   }
 
-  private func showZshIntegrationPromptIfNeeded() {
-    guard ZshIntegration.shouldPromptForInstall(
-      promptDismissed: Defaults[.zshIntegrationPromptDismissed],
-      promptDeferredUntil: Defaults[.zshIntegrationPromptDeferredUntil]
+  private func scheduleZshIntegrationAutoInstallIfNeeded() {
+    guard !isRunningTests else { return }
+
+    DispatchQueue.global(qos: .utility).async { [weak self] in
+      self?.autoInstallZshIntegrationIfNeeded()
+    }
+  }
+
+  private func autoInstallZshIntegrationIfNeeded() {
+    migrateLegacyZshIntegrationPreferences()
+    guard !Defaults[.zshIntegrationAutoInstallDisabled] else { return }
+
+    let zshrcContents = ZshIntegration.zshrcContents()
+    if zshrcContents.map(ZshIntegration.isInstalled(in:)) == true {
+      Defaults[.zshIntegrationWasInstalled] = true
+      Defaults[.zshIntegrationAutoInstallAttempts] = 0
+      return
+    }
+
+    guard Defaults[.zshIntegrationAutoInstallAttempts] < Self.maxZshIntegrationAutoInstallAttempts else {
+      return
+    }
+
+    guard ZshIntegration.shouldAutoInstall(
+      zshrcContents: zshrcContents,
+      wasInstalled: Defaults[.zshIntegrationWasInstalled]
     ) else {
       return
     }
 
-    let alert = NSAlert()
-    alert.messageText = localized("install_zsh_integration_message")
-    alert.informativeText = localized("startup_zsh_integration_comment", ZshIntegration.displayHistoryPath)
-    alert.alertStyle = .informational
-    alert.addButton(withTitle: localized("install"))
-    alert.addButton(withTitle: localized("not_now"))
-    alert.addButton(withTitle: localized("dont_ask_again"))
-    alert.addButton(withTitle: localized("copy_block"))
+    do {
+      try ZshIntegration.install()
+      Defaults[.zshIntegrationWasInstalled] = true
+      Defaults[.zshIntegrationAutoInstallAttempts] = 0
+      NSLog("Retrace installed zsh integration automatically")
+      showNotification(
+        title: localized("zsh_integration_installed_message"),
+        informativeText: localized("zsh_integration_installed_comment")
+      )
+      DispatchQueue.main.async {
+        AppState.shared.footer.refreshHistoryActions()
+      }
+    } catch {
+      Defaults[.zshIntegrationAutoInstallAttempts] += 1
+      NSLog("Retrace could not install zsh integration automatically: %@", error.localizedDescription)
+      showNotification(
+        title: localized("zsh_integration_install_failed_message"),
+        informativeText: error.localizedDescription
+      )
+    }
+  }
 
-    let response = alert.runModal()
-    switch response {
-    case .alertFirstButtonReturn:
-      ZshIntegrationUI.install(confirmFirst: false)
-    case .alertSecondButtonReturn:
-      Defaults[.zshIntegrationPromptDeferredUntil] = Date().addingTimeInterval(7 * 24 * 60 * 60)
-    case .alertThirdButtonReturn:
-      Defaults[.zshIntegrationPromptDismissed] = true
-    case .alertFourthButtonReturn:
-      ZshIntegrationUI.copyBlock()
+  private func migrateLegacyZshIntegrationPreferences() {
+    guard Defaults[.zshIntegrationLegacyPromptDismissed] else { return }
+
+    Defaults[.zshIntegrationAutoInstallDisabled] = true
+    Defaults[.zshIntegrationLegacyPromptDismissed] = false
+  }
+
+  private func showNotification(title: String, informativeText: String) {
+    DispatchQueue.main.async { [weak self] in
+      self?.showNotificationOnMain(title: title, informativeText: informativeText)
+    }
+  }
+
+  private func showNotificationOnMain(title: String, informativeText: String) {
+    let center = UNUserNotificationCenter.current()
+
+    if let notificationAuthorizationGranted {
+      guard notificationAuthorizationGranted else { return }
+
+      deliverNotification(title: title, informativeText: informativeText, center: center)
+      return
+    }
+
+    center.getNotificationSettings { [weak self] settings in
+      DispatchQueue.main.async {
+        self?.handleNotificationSettings(
+          settings,
+          title: title,
+          informativeText: informativeText,
+          center: center
+        )
+      }
+    }
+  }
+
+  private func handleNotificationSettings(
+    _ settings: UNNotificationSettings,
+    title: String,
+    informativeText: String,
+    center: UNUserNotificationCenter
+  ) {
+    switch settings.authorizationStatus {
+    case .authorized, .provisional, .ephemeral:
+      notificationAuthorizationGranted = true
+      deliverNotification(title: title, informativeText: informativeText, center: center)
+    case .notDetermined:
+      center.requestAuthorization(options: [.alert, .sound]) { [weak self] granted, error in
+        DispatchQueue.main.async {
+          if let error {
+            NSLog("Retrace could not request notification authorization: %@", error.localizedDescription)
+          }
+          self?.notificationAuthorizationGranted = granted
+          guard granted else { return }
+
+          self?.deliverNotification(title: title, informativeText: informativeText, center: center)
+        }
+      }
     default:
-      break
+      notificationAuthorizationGranted = false
+    }
+  }
+
+  private func deliverNotification(
+    title: String,
+    informativeText: String,
+    center: UNUserNotificationCenter
+  ) {
+    let content = UNMutableNotificationContent()
+    content.title = title
+    content.body = informativeText
+
+    let request = UNNotificationRequest(
+      identifier: UUID().uuidString,
+      content: content,
+      trigger: nil
+    )
+    center.add(request) { error in
+      if let error {
+        NSLog("Retrace could not deliver notification: %@", error.localizedDescription)
+      }
     }
   }
 
@@ -163,5 +270,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   private func localized(_ key: String, _ arguments: CVarArg...) -> String {
     String(format: localized(key), arguments: arguments)
+  }
+
+  private var isRunningTests: Bool {
+    ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil ||
+      NSClassFromString("XCTestCase") != nil
   }
 }

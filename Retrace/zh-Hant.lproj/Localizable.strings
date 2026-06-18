@@ -23,12 +23,8 @@
 "clear" = "清空";
 "delete" = "刪除";
 "sync" = "同步";
-"not_now" = "稍後";
-"dont_ask_again" = "不再詢問";
-"copy_block" = "複製程式碼區塊";
 "install_zsh_integration_message" = "安裝 zsh 整合？";
 "install_zsh_integration_comment" = "Retrace 會向 ~/.zshrc 寫入一段帶標記的輕量 hook。\n\n這個 hook 會把命令追加到：\n%@";
-"startup_zsh_integration_comment" = "Retrace 可以透過向 ~/.zshrc 加入一個輕量 hook 來立即記錄 zsh 命令。\n\n這個 hook 會把命令追加到：\n%@";
 "zsh_integration_installed_message" = "已安裝 zsh 整合";
 "zsh_integration_installed_comment" = "Retrace 已更新 ~/.zshrc。";
 "zsh_integration_install_failed_message" = "無法安裝 zsh 整合";

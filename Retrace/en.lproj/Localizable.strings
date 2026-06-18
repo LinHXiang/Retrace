@@ -23,12 +23,8 @@
 "clear" = "Clear";
 "delete" = "Delete";
 "sync" = "Sync";
-"not_now" = "Not Now";
-"dont_ask_again" = "Don't Ask Again";
-"copy_block" = "Copy Block";
 "install_zsh_integration_message" = "Install zsh integration?";
 "install_zsh_integration_comment" = "Retrace will update ~/.zshrc with a small marked hook.\n\nThe hook appends commands to:\n%@";
-"startup_zsh_integration_comment" = "Retrace can record zsh commands immediately by adding a small hook to ~/.zshrc.\n\nThe hook appends commands to:\n%@";
 "zsh_integration_installed_message" = "zsh integration installed";
 "zsh_integration_installed_comment" = "Retrace updated ~/.zshrc.";
 "zsh_integration_install_failed_message" = "Could not install zsh integration";

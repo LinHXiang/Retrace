@@ -15,13 +15,12 @@ zsh 可能把历史记录保存在内存里，只在 shell 退出时写入文件
 
 在不依赖 `~/.zsh_history` 刷新时机的前提下记录 zsh 命令。
 
-Retrace 应该在用户明确确认后，把一段 zsh 集成 block 写入 `~/.zshrc`。这段
-block 使用 zsh hook，把用户执行过的命令追加写入 Retrace 自己管理的历史文件。
+Retrace 应该自动把一段 zsh 集成 block 写入 `~/.zshrc`。这段 block 使用 zsh
+hook，把用户执行过的命令追加写入 Retrace 自己管理的历史文件。
 Retrace 再把这个文件作为主要命令历史来源读取。
 
 ## 非目标
 
-- 不静默修改用户 shell 配置。
 - 不通过 Accessibility 截取终端 UI 文本。
 - 不包装或替换用户的终端。
 - 不要求 Retrace.app 正在运行时才能记录命令。
@@ -30,7 +29,8 @@ Retrace 再把这个文件作为主要命令历史来源读取。
 
 ## 方案
 
-只有在用户明确确认后，才向 `~/.zshrc` 安装一个带标记的 zsh 集成 block。
+启动时检测到用户使用 zsh 且 `~/.zshrc` 尚未包含 Retrace 标记 block 时，
+自动安装一个带标记的 zsh 集成 block。
 
 这个 block 必须可以重复安装：不存在时追加，已存在时只替换标记范围内的内容。
 
@@ -102,7 +102,7 @@ zsh preexec hook
 
 Retrace 不再把 `~/.zsh_history`、bash history、fish history 或用户手动添加的
 其他文件作为命令来源。`~/.zsh_history` 只可以用于启动时判断用户是否可能在用
-zsh，从而决定是否展示安装提示；它不是数据源。
+zsh，从而决定是否自动安装 zsh 集成；它不是数据源。
 
 为了让首次使用不显得完全空白，Retrace 可以在首次启动时尝试一次性导入：如果
 `~/Library/Application Support/Retrace/zsh_history` 不存在或为空，并且用户的
@@ -116,27 +116,17 @@ zsh，从而决定是否展示安装提示；它不是数据源。
 
 Retrace 启动时应该检查 zsh 集成是否已安装。
 
-只有同时满足以下条件时，才展示安装提示：
+只有同时满足以下条件时，才自动安装：
 
 1. 用户登录 shell 是 zsh，或者 Retrace 能以其他方式判断用户使用 zsh。
 2. `~/.zshrc` 不包含 Retrace 标记 block。
-3. 用户没有选择过 `Don't Ask Again`。
 
-提示必须明确说明：Retrace 会修改 `~/.zshrc`，并把命令追加写入：
+安装成功和失败都通过通知反馈。自动安装失败最多重试 3 次，之后不再在启动时反复
+打扰用户；用户仍然可以在 Preferences 里手动重新安装或复制 block。
 
-```text
-~/Library/Application Support/Retrace/zsh_history
-```
-
-提示提供这些操作：
-
-- Install
-- Not Now
-- Don't Ask Again
-- Copy Block
-
-`Not Now` 只跳过本次启动或一个短冷却周期。`Don't Ask Again` 关闭自动安装
-提示。用户仍然可以在 Preferences 里手动安装或复制 block。
+从旧版本升级时，如果用户曾经对安装提示选择过 `Don't Ask Again`，Retrace 会把它
+迁移成禁用自动安装，不会在升级后自动修改 `~/.zshrc`。
+旧版本的 `Not Now` 冷却期不再保留；升级后按新的自动安装规则执行。
 
 ## 安装体验
 
@@ -153,14 +143,13 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
 ~/Library/Application Support/Retrace/zsh_history
 ```
 
-`Install zsh integration` 应该：
+自动安装和 `Install zsh integration` 都应该：
 
-1. 展示确认对话框。
-2. 如果 `~/.zshrc` 不存在，创建它。
-3. 如果没有 Retrace block，追加一个带标记的 block。
-4. 如果已经有 Retrace block，只替换标记范围内的 block。
-5. 尽量逐字节保留 `~/.zshrc` 里其他用户内容。
-6. 展示成功或失败结果。
+1. 如果 `~/.zshrc` 不存在，创建它。
+2. 如果没有 Retrace block，追加一个带标记的 block。
+3. 如果已经有 Retrace block，只替换标记范围内的 block。
+4. 尽量逐字节保留 `~/.zshrc` 里其他用户内容。
+5. 自动安装失败时展示错误；手动安装展示成功或失败结果。
 
 `Copy zsh integration` 复制同一段 block，给想手动安装的用户使用。
 
@@ -187,32 +176,32 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
   如果之后观察到损坏，再加轻量锁。
 - 已存在同名 hook：使用 Retrace 前缀函数名，并通过标记 block 替换避免重复
   安装。
-- 用户删除 block：Retrace 不应该在没有再次明确操作的情况下重新安装。
+- 用户删除 block：如果 Retrace 已经观察到集成安装过，后续启动不再自动补回。
+  用户仍可在 Preferences 里手动重新安装。
+- 自动安装持续失败：最多自动尝试 3 次，避免每次启动都产生失败通知。
 
 ## 验收标准
 
 1. Retrace 命令历史记录被文档化并实现为 zsh-only。
 2. 内置默认历史来源只包含
    `~/Library/Application Support/Retrace/zsh_history`。
-3. app 启动时检查是否应该建议安装 zsh 集成。
-4. 启动提示只对疑似 zsh 用户展示，且要求用户没有已安装 Retrace block，也没有
-   选择过 `Don't Ask Again`。
-5. 启动提示在用户确认前不能修改 `~/.zshrc`。
-6. Preferences 暴露明确的 `Install zsh integration` 操作。
-7. 点击安装后，修改 `~/.zshrc` 前必须请求确认。
-8. 如果 `~/.zshrc` 不存在，安装流程会创建它。
-9. 如果 `~/.zshrc` 存在但没有 Retrace block，安装流程只追加一个标记 block。
-10. 如果 `~/.zshrc` 已有 Retrace block，安装流程替换该 block，而不是追加重复
+3. app 启动时检查是否应该自动安装 zsh 集成。
+4. 自动安装只对疑似 zsh 用户执行，且要求用户没有已安装 Retrace block，也没有
+   被 Retrace 记录为曾经安装过集成。
+5. Preferences 暴露明确的 `Install zsh integration` 操作，用于手动重新安装。
+6. 如果 `~/.zshrc` 不存在，安装流程会创建它。
+7. 如果 `~/.zshrc` 存在但没有 Retrace block，安装流程只追加一个标记 block。
+8. 如果 `~/.zshrc` 已有 Retrace block，安装流程替换该 block，而不是追加重复
     block。
-11. 标记 block 外的用户内容被保留。
-12. 安装后的 hook 会把命令写入
+9. 标记 block 外的用户内容被保留。
+10. 安装后的 hook 会把命令写入
     `~/Library/Application Support/Retrace/zsh_history`。
-13. 新执行的 zsh 命令会在 shell 退出前出现在 Retrace 自有历史文件里。
-14. Retrace 会把自有历史文件作为 zsh source 读取。
-15. 首次启动可以把现有 `~/.zsh_history` 复制到 Retrace 自有历史文件，但后续
+11. 新执行的 zsh 命令会在 shell 退出前出现在 Retrace 自有历史文件里。
+12. Retrace 会把自有历史文件作为 zsh source 读取。
+13. 首次启动可以把现有 `~/.zsh_history` 复制到 Retrace 自有历史文件，但后续
     不再读取 `~/.zsh_history`。
-16. zsh hook 不调用 sqlite、IPC、URL scheme 或 app 专用通知机制。
-17. 构建通过：
+14. zsh hook 不调用 sqlite、IPC、URL scheme 或 app 专用通知机制。
+15. 构建通过：
 
     ```sh
     xcodebuild -project Retrace.xcodeproj -scheme Retrace \
@@ -228,10 +217,10 @@ Retrace 启动时应该检查 zsh 集成是否已安装。
   - 没有末尾换行的 `.zshrc`
 - 单元测试 `HistorySource.defaultSources` 只包含 Retrace 自有 zsh 文件，且不包含
   `~/.zsh_history`、bash 或 fish 默认项。
-- 单元测试启动提示条件：
+- 单元测试自动安装条件：
   - 疑似 zsh 用户且没有 block
   - 已存在 Retrace block
-  - 用户选择过 `Don't Ask Again`
+  - 曾安装过但 block 已缺失
 - 单元测试旧 bash/fish 默认来源的迁移或重置行为。
 - 单元测试首次导入 `~/.zsh_history`：目标不存在、目标为空、目标已有内容、源不
   存在。

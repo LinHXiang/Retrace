@@ -38,21 +38,23 @@ enum ZshIntegration {
   }
 
   static func isInstalled(at url: URL = zshrcURL) -> Bool {
-    guard let data = try? Data(contentsOf: url) else { return false }
+    guard let contents = zshrcContents(at: url) else { return false }
 
-    return isInstalled(in: String(decoding: data, as: UTF8.self))
+    return isInstalled(in: contents)
   }
 
-  static func shouldPromptForInstall(
+  static func zshrcContents(at url: URL = zshrcURL) -> String? {
+    // Missing or unreadable means "no known block"; install() will surface write failures.
+    (try? Data(contentsOf: url)).map { String(decoding: $0, as: UTF8.self) }
+  }
+
+  static func shouldAutoInstall(
     loginShell: String?,
     zshHistoryExists: Bool,
     zshrcContents: String?,
-    promptDismissed: Bool,
-    promptDeferredUntil: Date = .distantPast,
-    now: Date = .now
+    wasInstalled: Bool
   ) -> Bool {
-    guard !promptDismissed else { return false }
-    guard now >= promptDeferredUntil else { return false }
+    guard !wasInstalled else { return false }
     guard loginShell?.hasSuffix("/zsh") == true || zshHistoryExists else { return false }
 
     if let zshrcContents {
@@ -62,22 +64,28 @@ enum ZshIntegration {
     return true
   }
 
-  static func shouldPromptForInstall(
-    zshrcURL: URL = zshrcURL,
+  static func shouldAutoInstall(
+    zshrcContents: String?,
     userZshHistoryURL: URL = userZshHistoryURL,
-    promptDismissed: Bool,
-    promptDeferredUntil: Date
+    wasInstalled: Bool
   ) -> Bool {
-    let zshrcContents = (try? Data(contentsOf: zshrcURL)).map {
-      String(decoding: $0, as: UTF8.self)
-    }
-
-    return shouldPromptForInstall(
+    shouldAutoInstall(
       loginShell: loginShell(),
       zshHistoryExists: FileManager.default.fileExists(atPath: userZshHistoryURL.path),
       zshrcContents: zshrcContents,
-      promptDismissed: promptDismissed,
-      promptDeferredUntil: promptDeferredUntil
+      wasInstalled: wasInstalled
+    )
+  }
+
+  static func shouldAutoInstall(
+    zshrcURL: URL = zshrcURL,
+    userZshHistoryURL: URL = userZshHistoryURL,
+    wasInstalled: Bool
+  ) -> Bool {
+    return shouldAutoInstall(
+      zshrcContents: zshrcContents(at: zshrcURL),
+      userZshHistoryURL: userZshHistoryURL,
+      wasInstalled: wasInstalled
     )
   }
 

@@ -18,8 +18,11 @@ extension Defaults.Keys {
   static let showTitle = Key<Bool>("showTitle", default: true)
   static let commandHistorySize = Key<Int>("commandHistorySize", default: 50)
   static let historySources = Key<[HistorySource]>("historySources", default: HistorySource.defaultSources)
-  static let zshIntegrationPromptDismissed = Key<Bool>("zshIntegrationPromptDismissed", default: false)
-  static let zshIntegrationPromptDeferredUntil = Key<Date>("zshIntegrationPromptDeferredUntil", default: .distantPast)
+  static let zshIntegrationAutoInstallAttempts = Key<Int>("zshIntegrationAutoInstallAttempts", default: 0)
+  static let zshIntegrationAutoInstallDisabled = Key<Bool>("zshIntegrationAutoInstallDisabled", default: false)
+  // Reads the pre-auto-install "Don't Ask Again" choice so upgrades keep honoring it.
+  static let zshIntegrationLegacyPromptDismissed = Key<Bool>("zshIntegrationPromptDismissed", default: false)
+  static let zshIntegrationWasInstalled = Key<Bool>("zshIntegrationWasInstalled", default: false)
   static let userZshHistoryImportAttempted = Key<Bool>("userZshHistoryImportAttempted", default: false)
   static let windowSize = Key<NSSize>("windowSize", default: NSSize(width: 450, height: 800))
   static let windowPosition = Key<NSPoint>("windowPosition", default: NSPoint(x: 0.5, y: 0.8))
