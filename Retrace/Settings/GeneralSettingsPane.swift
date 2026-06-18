@@ -9,7 +9,7 @@ struct GeneralSettingsPane: View {
   @Default(.searchMode) private var searchMode
   @Default(.commandHistorySize) private var commandHistorySize
   @State private var isZshIntegrationInstalled = ZshIntegration.isInstalled()
-  @State private var canSyncUserHistory = ZshIntegration.userHistoryHasContent()
+  @State private var canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
 
   private let sizeFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
@@ -127,17 +127,17 @@ struct GeneralSettingsPane: View {
 
             HStack(spacing: 8) {
               Button {
-                ZshIntegrationUI.syncUserHistory()
-                canSyncUserHistory = ZshIntegration.userHistoryHasContent()
+                ZshIntegrationUI.replaceRecordedHistoryWithUserHistory()
+                canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
               } label: {
                 Label {
-                  Text("SyncUserZshHistory", tableName: "GeneralSettings")
+                  Text("ReplaceWithLocalShellHistory", tableName: "GeneralSettings")
                 } icon: {
                   Image(systemName: "arrow.triangle.2.circlepath")
                 }
               }
-              .disabled(!canSyncUserHistory)
-              .help(Text("SyncUserZshHistoryTooltip", tableName: "GeneralSettings"))
+              .disabled(!canReplaceWithUserHistory)
+              .help(Text("ReplaceWithLocalShellHistoryTooltip", tableName: "GeneralSettings"))
 
               Button(role: .destructive) {
                 ZshIntegrationUI.clearRecordedHistory()
@@ -164,7 +164,7 @@ struct GeneralSettingsPane: View {
         }
         .onAppear {
           isZshIntegrationInstalled = ZshIntegration.isInstalled()
-          canSyncUserHistory = ZshIntegration.userHistoryHasContent()
+          canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
         }
       }
     }

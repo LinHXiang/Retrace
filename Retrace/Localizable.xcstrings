@@ -7501,7 +7501,7 @@
         }
       }
     },
-    "sync": {
+    "replace": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -7751,7 +7751,7 @@
         }
       }
     },
-    "sync_existing_history": {
+    "replace_with_local_shell_history": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -7810,7 +7810,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Replace from ~/.zsh_history"
+            "value": "Replace with Local Shell History"
           }
         },
         "eo": {
@@ -7990,18 +7990,18 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆盖"
+            "value": "覆盖为本地 Shell 历史记录"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆蓋"
+            "value": "覆蓋為本機 Shell 歷史記錄"
           }
         }
       }
     },
-    "sync_existing_history_tooltip": {
+    "replace_with_local_shell_history_tooltip": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -8060,7 +8060,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history."
+            "value": "Replace Retrace history with your local Shell history."
           }
         },
         "eo": {
@@ -8240,18 +8240,18 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆盖 Retrace 历史。"
+            "value": "用本地 Shell 历史记录覆盖 Retrace 历史。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆蓋 Retrace 歷史。"
+            "value": "用本機 Shell 歷史記錄覆蓋 Retrace 歷史。"
           }
         }
       }
     },
-    "sync_user_zsh_history_comment": {
+    "replace_retrace_history_comment": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -8310,7 +8310,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "This replaces Retrace command history with your local Shell history.\n\nYour local Shell history is not changed."
           }
         },
         "eo": {
@@ -8490,18 +8490,18 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "这会用 ~/.zsh_history 覆盖 Retrace 命令历史。\n\n不会修改 ~/.zsh_history。"
+            "value": "这会用本地 Shell 历史记录覆盖 Retrace 命令历史。\n\n不会修改本地 Shell 历史记录。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這會用 ~/.zsh_history 覆蓋 Retrace 命令歷史。\n\n不會修改 ~/.zsh_history。"
+            "value": "這會用本機 Shell 歷史記錄覆蓋 Retrace 命令歷史。\n\n不會修改本機 Shell 歷史記錄。"
           }
         }
       }
     },
-    "sync_user_zsh_history_message": {
+    "replace_retrace_history_message": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -10001,7 +10001,7 @@
         }
       }
     },
-    "zsh_history_sync_failed_message": {
+    "retrace_history_replace_failed_message": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -10251,7 +10251,7 @@
         }
       }
     },
-    "zsh_history_synced_comment": {
+    "retrace_history_replaced_comment": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -10310,7 +10310,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace command history now matches ~/.zsh_history."
+            "value": "Retrace command history now matches your local Shell history."
           }
         },
         "eo": {
@@ -10490,18 +10490,18 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace 命令历史现在和 ~/.zsh_history 一致。"
+            "value": "Retrace 命令历史现在和本地 Shell 历史记录一致。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace 命令歷史現在和 ~/.zsh_history 一致。"
+            "value": "Retrace 命令歷史現在和本機 Shell 歷史記錄一致。"
           }
         }
       }
     },
-    "zsh_history_synced_message": {
+    "retrace_history_replaced_message": {
       "localizations": {
         "ar": {
           "stringUnit": {

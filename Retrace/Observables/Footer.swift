@@ -2,6 +2,8 @@ import SwiftUI
 
 @Observable
 class Footer: ItemsContainer {
+  private static let replaceHistoryItemID = "replace-history"
+
   var items: [FooterItem] = []
 
   var selectedItem: FooterItem? {
@@ -22,11 +24,12 @@ class Footer: ItemsContainer {
         }
       },
       FooterItem(
-        title: "sync_existing_history",
-        help: "sync_existing_history_tooltip",
+        actionID: Self.replaceHistoryItemID,
+        title: "replace_with_local_shell_history",
+        help: "replace_with_local_shell_history_tooltip",
         isVisible: ZshIntegration.userHistoryHasContent()
       ) {
-        ZshIntegrationUI.syncUserHistory()
+        ZshIntegrationUI.replaceRecordedHistoryWithUserHistory()
         AppState.shared.footer.refreshHistoryActions()
       },
       FooterItem(
@@ -46,7 +49,7 @@ class Footer: ItemsContainer {
   }
 
   func refreshHistoryActions() {
-    guard let item = items.first(where: { $0.title == "sync_existing_history" }) else { return }
+    guard let item = items.first(where: { $0.actionID == Self.replaceHistoryItemID }) else { return }
 
     item.isVisible = ZshIntegration.userHistoryHasContent()
   }

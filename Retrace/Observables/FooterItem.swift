@@ -7,6 +7,7 @@ class FooterItem: Equatable, Identifiable, HasVisibility {
   }
 
   let id = UUID()
+  let actionID: String?
 
   var title: String
   var shortcuts: [KeyShortcut] = []
@@ -16,12 +17,14 @@ class FooterItem: Equatable, Identifiable, HasVisibility {
   var action: () -> Void
 
   init(
+    actionID: String? = nil,
     title: String,
     shortcuts: [KeyShortcut] = [],
     help: LocalizedStringKey? = nil,
     isVisible: Bool = true,
     action: @escaping () -> Void
   ) {
+    self.actionID = actionID
     self.title = title
     self.shortcuts = shortcuts
     self.help = help

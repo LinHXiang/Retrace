@@ -59,33 +59,33 @@ enum ZshIntegrationUI {
     }
   }
 
-  static func syncUserHistory() {
+  static func replaceRecordedHistoryWithUserHistory() {
     guard confirm(
-      messageKey: "sync_user_zsh_history_message",
-      informativeTextKey: "sync_user_zsh_history_comment",
-      confirmTitleKey: "sync"
+      messageKey: "replace_retrace_history_message",
+      informativeTextKey: "replace_retrace_history_comment",
+      confirmTitleKey: "replace"
     ) else {
       return
     }
 
     do {
-      let synced = try ZshIntegration.syncUserHistory()
+      let replaced = try ZshIntegration.replaceRecordedHistoryWithUserHistory()
       reloadHistorySources()
 
-      if synced {
+      if replaced {
         showResult(
-          messageKey: "zsh_history_synced_message",
-          informativeTextKey: "zsh_history_synced_comment"
+          messageKey: "retrace_history_replaced_message",
+          informativeTextKey: "retrace_history_replaced_comment"
         )
       } else {
         showResult(
-          messageKey: "zsh_history_sync_failed_message",
+          messageKey: "retrace_history_replace_failed_message",
           informativeTextKey: "zsh_history_empty_comment"
         )
       }
     } catch {
       showResult(
-        messageKey: "zsh_history_sync_failed_message",
+        messageKey: "retrace_history_replace_failed_message",
         informativeText: error.localizedDescription
       )
     }

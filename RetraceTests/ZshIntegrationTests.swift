@@ -196,7 +196,7 @@ final class ZshIntegrationTests: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: retraceHistory.path))
   }
 
-  func testSyncUserHistoryOverwritesRetraceHistory() throws {
+  func testReplaceRecordedHistoryWithUserHistoryOverwritesRetraceHistory() throws {
     let directory = FileManager.default.temporaryDirectory
       .appendingPathComponent(UUID().uuidString, isDirectory: true)
     let userHistory = directory.appendingPathComponent(".zsh_history")
@@ -206,16 +206,16 @@ final class ZshIntegrationTests: XCTestCase {
     try "old command\n".write(to: userHistory, atomically: true, encoding: .utf8)
     try ": 1710000000:0;new command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
 
-    let synced = try ZshIntegration.syncUserHistory(
+    let replaced = try ZshIntegration.replaceRecordedHistoryWithUserHistory(
       from: userHistory,
       to: retraceHistory
     )
 
-    XCTAssertTrue(synced)
+    XCTAssertTrue(replaced)
     XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), "old command\n")
   }
 
-  func testSyncUserHistoryDoesNotOverwriteWithEmptyUserHistory() throws {
+  func testReplaceRecordedHistoryWithUserHistoryDoesNotOverwriteWithEmptyUserHistory() throws {
     let directory = FileManager.default.temporaryDirectory
       .appendingPathComponent(UUID().uuidString, isDirectory: true)
     let userHistory = directory.appendingPathComponent(".zsh_history")
@@ -225,12 +225,12 @@ final class ZshIntegrationTests: XCTestCase {
     try Data().write(to: userHistory)
     try ": 1710000000:0;new command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
 
-    let synced = try ZshIntegration.syncUserHistory(
+    let replaced = try ZshIntegration.replaceRecordedHistoryWithUserHistory(
       from: userHistory,
       to: retraceHistory
     )
 
-    XCTAssertFalse(synced)
+    XCTAssertFalse(replaced)
     XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000000:0;new command\n")
   }
 

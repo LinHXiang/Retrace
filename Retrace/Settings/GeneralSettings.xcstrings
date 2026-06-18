@@ -5191,7 +5191,7 @@
         }
       }
     },
-    "SyncUserZshHistory": {
+    "ReplaceWithLocalShellHistory": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -5250,7 +5250,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Replace from ~/.zsh_history"
+            "value": "Replace with Local Shell History"
           }
         },
         "eo": {
@@ -5430,18 +5430,18 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆盖"
+            "value": "覆盖为本地 Shell 历史记录"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆蓋"
+            "value": "覆蓋為本機 Shell 歷史記錄"
           }
         }
       }
     },
-    "SyncUserZshHistoryTooltip": {
+    "ReplaceWithLocalShellHistoryTooltip": {
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -5500,7 +5500,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
+            "value": "Replace Retrace history with your local Shell history. Disabled when local Shell history is empty."
           }
         },
         "eo": {
@@ -5680,13 +5680,13 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆盖 Retrace 历史。~/.zsh_history 为空时不可用。"
+            "value": "用本地 Shell 历史记录替换 Retrace 历史。为空时不可用。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "用 ~/.zsh_history 覆蓋 Retrace 歷史。~/.zsh_history 為空時不可用。"
+            "value": "用本機 Shell 歷史記錄取代 Retrace 歷史。為空時不可用。"
           }
         }
       }

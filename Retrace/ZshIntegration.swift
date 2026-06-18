@@ -138,7 +138,7 @@ enum ZshIntegration {
     return true
   }
 
-  static func syncUserHistory(
+  static func replaceRecordedHistoryWithUserHistory(
     from userHistoryURL: URL = userZshHistoryURL,
     to retraceHistoryURL: URL = retraceZshHistoryURL
   ) throws -> Bool {
