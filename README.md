@@ -31,10 +31,10 @@ brew install --cask linhxiang/tap/retrace
 
 - Retrace automatically installs a marked zsh integration block
   in `~/.zshrc` when it detects a zsh setup. You can also install
-  or copy the block from Preferences.
-- Preferences can replace Retrace's history file with the current
-  contents of `~/.zsh_history`. This is an overwrite of Retrace's
-  own file; your `~/.zsh_history` file is not changed.
+  it manually from Preferences > Integration.
+- Preferences > General can replace Retrace's history file with the
+  current contents of `~/.zsh_history`. This is an overwrite of
+  Retrace's own file; your `~/.zsh_history` file is not changed.
 - Parses zsh extended history format:
 
   ```text

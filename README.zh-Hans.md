@@ -25,9 +25,9 @@ brew install --cask linhxiang/tap/retrace
   ```
 
 - 检测到 zsh 环境时，Retrace 会自动向 `~/.zshrc` 安装一段带标记的 zsh 集成
-  block。也可以在偏好设置中手动安装或复制这段 block。
-- 偏好设置里可以用当前 `~/.zsh_history` 覆盖 Retrace 自己的历史文件。这个操作
-  覆盖的是 Retrace 文件，不会修改 `~/.zsh_history`。
+  block。也可以在“偏好设置 > 集成”中手动安装。
+- “偏好设置 > 通用”里可以用当前 `~/.zsh_history` 覆盖 Retrace 自己的历史文件。
+  这个操作覆盖的是 Retrace 文件，不会修改 `~/.zsh_history`。
 - 解析 zsh extended history 格式：
 
   ```text
