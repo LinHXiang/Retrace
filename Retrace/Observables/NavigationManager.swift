@@ -124,12 +124,9 @@ class NavigationManager {
       } else {
         highlightFirst()
       }
-    } else if let footerItem = footer.firstVisibleItem(where: { $0.id == lead }) {
-      if let nextItem = footer.visibleItem(before: footerItem) {
-        selectFromKeyboardNavigation(footerItem: nextItem)
-      } else if let nextItem = history.lastVisibleItem {
-        selectFromKeyboardNavigation(item: nextItem)
-      }
+    } else if footer.firstVisibleItem(where: { $0.id == lead }) != nil,
+              let item = history.lastVisibleItem {
+      selectFromKeyboardNavigation(item: item)
     }
   }
 
@@ -139,38 +136,17 @@ class NavigationManager {
     if let historyItem = history.firstVisibleItem(where: { $0.id == lead }) {
       if let nextItem = history.visibleItem(after: historyItem) {
         selectFromKeyboardNavigation(item: nextItem)
-      } else if let nextItem = footer.firstVisibleItem {
-        selectFromKeyboardNavigation(footerItem: nextItem)
       } else if allowCycle {
         highlightFirst()
       }
-    } else if let footerItem = footer.firstVisibleItem(where: { $0.id == lead }) {
-      if let nextItem = footer.visibleItem(after: footerItem) {
-        selectFromKeyboardNavigation(footerItem: nextItem)
-      } else if let nextItem = footer.firstVisibleItem {
-        selectFromKeyboardNavigation(footerItem: nextItem)
-      } else if allowCycle {
-        // End of footer; cycle to the beginning
-        highlightFirst()
-      }
+    } else if footer.firstVisibleItem(where: { $0.id == lead }) != nil {
+      highlightFirst()
     }
   }
 
   func highlightLast() {
-    guard let lead = leadSelection else { return }
-
-    if let historyItem = history.firstVisibleItem(where: { $0.id == lead }) {
-      if historyItem == history.lastVisibleItem,
-         let nextItem = footer.firstVisibleItem {
-        selectFromKeyboardNavigation(footerItem: nextItem)
-      } else {
-        selectFromKeyboardNavigation(item: history.lastVisibleItem)
-      }
-    } else if footer.selectedItem != nil {
-      selectFromKeyboardNavigation(footerItem: footer.lastVisibleItem)
-    } else {
-      selectFromKeyboardNavigation(footerItem: footer.firstVisibleItem)
-    }
+    guard leadSelection != nil else { return }
+    selectFromKeyboardNavigation(item: history.lastVisibleItem)
   }
 
 }
