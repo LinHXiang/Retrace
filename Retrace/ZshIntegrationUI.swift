@@ -60,34 +60,51 @@ enum ZshIntegrationUI {
   }
 
   static func replaceRecordedHistoryWithUserHistory() {
-    guard confirm(
-      messageKey: "replace_retrace_history_message",
-      informativeTextKey: "replace_retrace_history_comment",
-      confirmTitleKey: "replace"
-    ) else {
-      return
-    }
-
-    do {
-      let replaced = try ZshIntegration.replaceRecordedHistoryWithUserHistory()
-      reloadHistorySources()
-
-      if replaced {
+    Task { @MainActor in
+      let snapshot: ZshIntegration.UserHistorySnapshot
+      do {
+        snapshot = try await Task.detached {
+          try ZshIntegration.userHistorySnapshot()
+        }.value
+      } catch {
         showResult(
-          messageKey: "retrace_history_replaced_message",
-          informativeTextKey: "retrace_history_replaced_comment"
+          messageKey: "retrace_history_replace_failed_message",
+          informativeText: error.localizedDescription
         )
-      } else {
+        return
+      }
+
+      guard snapshot.hasContent else {
         showResult(
           messageKey: "retrace_history_replace_failed_message",
           informativeTextKey: "zsh_history_empty_comment"
         )
+        return
       }
-    } catch {
-      showResult(
-        messageKey: "retrace_history_replace_failed_message",
-        informativeText: error.localizedDescription
-      )
+
+      guard confirm(
+        messageKey: "replace_retrace_history_message",
+        informativeText: localized("replace_retrace_history_comment", snapshot.commandCount),
+        confirmTitleKey: "replace"
+      ) else {
+        return
+      }
+
+      do {
+        try await Task.detached {
+          try ZshIntegration.replaceRecordedHistory(with: snapshot.data)
+        }.value
+        reloadHistorySources()
+        showResult(
+          messageKey: "retrace_history_replaced_message",
+          informativeTextKey: "retrace_history_replaced_comment"
+        )
+      } catch {
+        showResult(
+          messageKey: "retrace_history_replace_failed_message",
+          informativeText: error.localizedDescription
+        )
+      }
     }
   }
 
@@ -128,9 +145,21 @@ enum ZshIntegrationUI {
     informativeTextKey: String,
     confirmTitleKey: String
   ) -> Bool {
+    confirm(
+      messageKey: messageKey,
+      informativeText: localized(informativeTextKey, ZshIntegration.displayHistoryPath),
+      confirmTitleKey: confirmTitleKey
+    )
+  }
+
+  private static func confirm(
+    messageKey: String,
+    informativeText: String,
+    confirmTitleKey: String
+  ) -> Bool {
     let alert = NSAlert()
     alert.messageText = localized(messageKey)
-    alert.informativeText = localized(informativeTextKey, ZshIntegration.displayHistoryPath)
+    alert.informativeText = informativeText
     alert.alertStyle = .informational
     alert.addButton(withTitle: localized(confirmTitleKey))
     alert.addButton(withTitle: localized("cancel"))

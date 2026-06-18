@@ -349,6 +349,64 @@
         }
       }
     },
+    "HistoryPrivacyNote": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace liest nur die eigene Verlaufsdatei und die manuell importierte Quelle. Es führt keine Befehle aus, fügt nichts ins Terminal ein und verbindet sich nicht mit KI-Diensten."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace reads only its own history file and the manual import source. It does not execute commands, paste into Terminal, or connect to AI services."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace solo lee su propio archivo de historial y la fuente importada manualmente. No ejecuta comandos, no pega nada en Terminal y no se conecta a servicios de IA."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace lit uniquement son propre fichier d’historique et la source importée manuellement. Il n’exécute pas de commandes, ne colle rien dans le Terminal et ne se connecte pas à des services d’IA."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace は自身の履歴ファイルと手動でインポートしたソースだけを読み取ります。コマンドを実行したり、ターミナルへ貼り付けたり、AI サービスへ接続したりしません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace는 자체 기록 파일과 수동으로 가져온 원본만 읽습니다. 명령을 실행하거나 터미널에 붙여넣거나 AI 서비스에 연결하지 않습니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Retrace lê apenas seu próprio arquivo de histórico e a origem importada manualmente. Ele não executa comandos, não cola nada no Terminal e não se conecta a serviços de IA."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace 只读取自己的历史文件和手动导入来源，不会执行命令、不会粘贴到终端，也不会接入 AI 服务。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrace 只讀取自己的歷史檔案和手動匯入來源，不會執行命令、不會貼到終端，也不會接入 AI 服務。"
+          }
+        }
+      }
+    },
     "LaunchAtLogin": {
       "localizations": {
         "de": {

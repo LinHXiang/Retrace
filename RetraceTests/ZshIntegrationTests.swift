@@ -234,6 +234,38 @@ final class ZshIntegrationTests: XCTestCase {
     XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000000:0;new command\n")
   }
 
+  func testReplaceRecordedHistoryWithDataOverwritesRetraceHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try ": 1710000000:0;old command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
+
+    let replaced = try ZshIntegration.replaceRecordedHistory(
+      with: Data(": 1710000001:0;new command\n".utf8),
+      to: retraceHistory
+    )
+
+    XCTAssertTrue(replaced)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000001:0;new command\n")
+  }
+
+  func testUserHistoryEntryCountDeduplicatesParsedZshCommands() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try """
+    : 1710000000:0;git status
+    : 1710000001:0;git status
+    echo hello
+    """.write(to: userHistory, atomically: true, encoding: .utf8)
+
+    XCTAssertEqual(try ZshIntegration.userHistoryEntryCount(at: userHistory), 2)
+  }
+
   func testUserHistoryHasContent() throws {
     let directory = FileManager.default.temporaryDirectory
       .appendingPathComponent(UUID().uuidString, isDirectory: true)

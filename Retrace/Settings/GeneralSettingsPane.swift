@@ -76,9 +76,13 @@ struct GeneralSettingsPane: View {
           .font(.caption)
           .foregroundStyle(.secondary)
 
+          Text("HistoryPrivacyNote", tableName: "GeneralSettings")
+            .font(.caption)
+            .foregroundStyle(.secondary)
+            .fixedSize(horizontal: false, vertical: true)
+
           Button {
             ZshIntegrationUI.replaceRecordedHistoryWithUserHistory()
-            canReplaceWithUserHistory = ZshIntegration.userHistoryHasContent()
           } label: {
             Label {
               Text("ReplaceWithLocalShellHistory", tableName: "GeneralSettings")

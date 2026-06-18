@@ -1920,55 +1920,55 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Dies ersetzt den Retrace-Befehlsverlauf durch deinen lokalen Shell-Verlauf.\n\nRetrace zeigt nach dem Import %d Befehle an. Dein lokaler Shell-Verlauf wird nicht geändert."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with your local Shell history.\n\nYour local Shell history is not changed."
+            "value": "This replaces Retrace command history with your local Shell history.\n\nRetrace will show %d commands after import. Your local Shell history is not changed."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Esto reemplaza el historial de comandos de Retrace con tu historial local de Shell.\n\nRetrace mostrará %d comandos después de importar. Tu historial local de Shell no se modifica."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Cela remplace l’historique des commandes Retrace par votre historique Shell local.\n\nRetrace affichera %d commandes après l’import. Votre historique Shell local n’est pas modifié."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Retrace のコマンド履歴をローカル Shell 履歴で置き換えます。\n\nインポート後、Retrace には %d 件のコマンドが表示されます。ローカル Shell 履歴は変更されません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Retrace 명령 기록을 로컬 Shell 기록으로 대체합니다.\n\n가져온 후 Retrace에 명령 %d개가 표시됩니다. 로컬 Shell 기록은 변경되지 않습니다."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "This replaces Retrace command history with ~/.zsh_history.\n\nYour ~/.zsh_history file is not changed."
+            "value": "Isso substitui o histórico de comandos do Retrace pelo histórico local do Shell.\n\nO Retrace mostrará %d comandos após a importação. Seu histórico local do Shell não será alterado."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "这会用本地 Shell 历史记录覆盖 Retrace 命令历史。\n\n不会修改本地 Shell 历史记录。"
+            "value": "这会用本地 Shell 历史记录覆盖 Retrace 命令历史。\n\n导入后 Retrace 会显示 %d 条命令，不会修改本地 Shell 历史记录。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這會用本機 Shell 歷史記錄覆蓋 Retrace 命令歷史。\n\n不會修改本機 Shell 歷史記錄。"
+            "value": "這會用本機 Shell 歷史記錄覆蓋 Retrace 命令歷史。\n\n匯入後 Retrace 會顯示 %d 條命令，不會修改本機 Shell 歷史記錄。"
           }
         }
       }

@@ -2,6 +2,15 @@ import Darwin
 import Foundation
 
 enum ZshIntegration {
+  struct UserHistorySnapshot {
+    let data: Data
+    let commandCount: Int
+
+    var hasContent: Bool {
+      !data.isEmpty
+    }
+  }
+
   static let startMarker = "# >>> Retrace zsh integration >>>"
   static let endMarker = "# <<< Retrace zsh integration <<<"
   static let displayHistoryPath = "~/Library/Application Support/Retrace/zsh_history"
@@ -142,15 +151,38 @@ enum ZshIntegration {
     from userHistoryURL: URL = userZshHistoryURL,
     to retraceHistoryURL: URL = retraceZshHistoryURL
   ) throws -> Bool {
-    guard userHistoryHasContent(at: userHistoryURL) else { return false }
+    let data = try Data(contentsOf: userHistoryURL)
+    return try replaceRecordedHistory(
+      with: data,
+      to: retraceHistoryURL
+    )
+  }
+
+  static func replaceRecordedHistory(
+    with userHistoryData: Data,
+    to retraceHistoryURL: URL = retraceZshHistoryURL
+  ) throws -> Bool {
+    guard !userHistoryData.isEmpty else { return false }
 
     try FileManager.default.createDirectory(
       at: retraceHistoryURL.deletingLastPathComponent(),
       withIntermediateDirectories: true
     )
-    let data = try Data(contentsOf: userHistoryURL)
-    try data.write(to: retraceHistoryURL, options: .atomic)
+    try userHistoryData.write(to: retraceHistoryURL, options: .atomic)
     return true
+  }
+
+  static func userHistorySnapshot(at url: URL = userZshHistoryURL) throws -> UserHistorySnapshot {
+    let data = try Data(contentsOf: url)
+    let contents = String(decoding: data, as: UTF8.self)
+    return UserHistorySnapshot(
+      data: data,
+      commandCount: TerminalCommandHistory.parse(contents, kind: .zsh).count
+    )
+  }
+
+  static func userHistoryEntryCount(at url: URL = userZshHistoryURL) throws -> Int {
+    try userHistorySnapshot(at: url).commandCount
   }
 
   static func userHistoryHasContent(at url: URL = userZshHistoryURL) -> Bool {
