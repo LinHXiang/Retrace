@@ -13,7 +13,7 @@ struct FooterView: View {
         .padding(.horizontal, Popup.horizontalSeparatorPadding)
         .padding(.bottom, Popup.verticalSeparatorPadding)
 
-      ForEach(footer.items) { item in
+      ForEach(footer.visibleItems) { item in
         FooterItemView(item: item)
       }
     }

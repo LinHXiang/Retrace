@@ -11,8 +11,13 @@
 "CommandHistorySizeTooltip" = "最多顯示的命令數量。";
 
 "HistorySources" = "命令歷史：";
-"AddHistorySource" = "加入檔案";
-"RestoreHistorySources" = "恢復預設";
-"ChooseHistorySource" = "選擇歷史檔案";
-"RemoveHistorySource" = "移除歷史檔案";
-"NoHistorySources" = "尚未設定歷史檔案。";
+"ZshIntegrationRequired" = "只有安裝 zsh 整合後，Retrace 才會記錄命令。";
+"RetraceHistorySource" = "Retrace zsh 歷史檔案";
+"ZshIntegrationInstalled" = "已安裝 zsh 整合";
+"ZshIntegrationNotInstalled" = "未安裝 zsh 整合";
+"InstallZshIntegration" = "安裝 zsh 整合";
+"CopyZshIntegration" = "複製 zsh 整合";
+"SyncUserZshHistory" = "同步既有歷史";
+"SyncUserZshHistoryTooltip" = "用 ~/.zsh_history 覆蓋 Retrace 歷史。~/.zsh_history 為空時不可用。";
+"ClearRetraceHistory" = "清空 Retrace 歷史";
+"OpenRetraceHistoryInFinder" = "在 Finder 中顯示";

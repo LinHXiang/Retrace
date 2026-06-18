@@ -109,18 +109,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     let alert = NSAlert()
-    alert.messageText = "Install zsh integration?"
-    alert.informativeText = """
-    Retrace can record zsh commands immediately by adding a small hook to ~/.zshrc.
-
-    The hook appends commands to:
-    \(ZshIntegration.displayHistoryPath)
-    """
+    alert.messageText = localized("install_zsh_integration_message")
+    alert.informativeText = localized("startup_zsh_integration_comment", ZshIntegration.displayHistoryPath)
     alert.alertStyle = .informational
-    alert.addButton(withTitle: "Install")
-    alert.addButton(withTitle: "Not Now")
-    alert.addButton(withTitle: "Don't Ask Again")
-    alert.addButton(withTitle: "Copy Block")
+    alert.addButton(withTitle: localized("install"))
+    alert.addButton(withTitle: localized("not_now"))
+    alert.addButton(withTitle: localized("dont_ask_again"))
+    alert.addButton(withTitle: localized("copy_block"))
 
     let response = alert.runModal()
     switch response {
@@ -139,6 +134,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
     Task { @MainActor in
+      AppState.shared.footer.refreshHistoryActions()
       try? await AppState.shared.history.loadIfChanged()
       panel.toggle(height: AppState.shared.popup.height)
     }
@@ -148,6 +144,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc
   private func performStatusItemClick() {
     Task { @MainActor in
+      AppState.shared.footer.refreshHistoryActions()
       try? await AppState.shared.history.loadIfChanged()
       panel.toggle(height: AppState.shared.popup.height, at: .statusItem)
     }
@@ -158,5 +155,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if Defaults[.showRecentCommandInMenuBar] {
       statusItem.button?.title = AppState.shared.menuBarCommandText
     }
+  }
+
+  private func localized(_ key: String) -> String {
+    NSLocalizedString(key, comment: "")
+  }
+
+  private func localized(_ key: String, _ arguments: CVarArg...) -> String {
+    String(format: localized(key), arguments: arguments)
   }
 }

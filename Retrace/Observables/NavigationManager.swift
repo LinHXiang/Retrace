@@ -48,7 +48,7 @@ class NavigationManager {
   func select(id: UUID) {
     if let item = history.items.first(where: { $0.id == id }) {
       select(item: item, footerItem: nil)
-    } else if let item = footer.items.first(where: { $0.id == id }) {
+    } else if let item = footer.firstVisibleItem(where: { $0.id == id }) {
       select(item: nil, footerItem: item)
     } else {
       select(item: nil, footerItem: nil)
@@ -65,7 +65,7 @@ class NavigationManager {
   func selectWithoutScrolling(id: UUID) {
     if let item = history.items.first(where: { $0.id == id }) {
       selectWithoutScrolling(item: item, footerItem: nil)
-    } else if let item = footer.items.first(where: { $0.id == id }) {
+    } else if let item = footer.firstVisibleItem(where: { $0.id == id }) {
       selectWithoutScrolling(item: nil, footerItem: item)
     } else {
       selectWithoutScrolling(item: nil, footerItem: nil)

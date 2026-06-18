@@ -9,12 +9,12 @@ enum ZshIntegrationUI {
     do {
       try ZshIntegration.install()
       showResult(
-        message: "zsh integration installed",
-        informativeText: "Retrace updated ~/.zshrc."
+        messageKey: "zsh_integration_installed_message",
+        informativeTextKey: "zsh_integration_installed_comment"
       )
     } catch {
       showResult(
-        message: "Could not install zsh integration",
+        messageKey: "zsh_integration_install_failed_message",
         informativeText: error.localizedDescription
       )
     }
@@ -24,27 +24,22 @@ enum ZshIntegrationUI {
     NSPasteboard.general.clearContents()
     if NSPasteboard.general.setString(ZshIntegration.block, forType: .string) {
       showResult(
-        message: "zsh integration copied",
-        informativeText: "The zsh integration block is now on the clipboard."
+        messageKey: "zsh_integration_copied_message",
+        informativeTextKey: "zsh_integration_copied_comment"
       )
     } else {
       showResult(
-        message: "Could not copy zsh integration",
-        informativeText: "The clipboard did not accept the zsh integration block."
+        messageKey: "zsh_integration_copy_failed_message",
+        informativeTextKey: "zsh_integration_copy_failed_comment"
       )
     }
   }
 
   static func clearRecordedHistory() {
     guard confirm(
-      message: "Clear Retrace command history?",
-      informativeText: """
-      This clears only:
-      \(ZshIntegration.displayHistoryPath)
-
-      Your ~/.zsh_history file is not changed.
-      """,
-      confirmTitle: "Clear"
+      messageKey: "clear_retrace_history_message",
+      informativeTextKey: "clear_retrace_history_comment",
+      confirmTitleKey: "clear"
     ) else {
       return
     }
@@ -53,12 +48,12 @@ enum ZshIntegrationUI {
       try ZshIntegration.clearRecordedHistory()
       reloadHistorySources()
       showResult(
-        message: "Retrace command history cleared",
-        informativeText: "\(ZshIntegration.displayHistoryPath) is now empty."
+        messageKey: "retrace_history_cleared_message",
+        informativeTextKey: "retrace_history_cleared_comment"
       )
     } catch {
       showResult(
-        message: "Could not clear Retrace command history",
+        messageKey: "retrace_history_clear_failed_message",
         informativeText: error.localizedDescription
       )
     }
@@ -66,14 +61,9 @@ enum ZshIntegrationUI {
 
   static func syncUserHistory() {
     guard confirm(
-      message: "Sync from ~/.zsh_history?",
-      informativeText: """
-      This replaces Retrace command history with:
-      ~/.zsh_history
-
-      Your ~/.zsh_history file is not changed.
-      """,
-      confirmTitle: "Sync"
+      messageKey: "sync_user_zsh_history_message",
+      informativeTextKey: "sync_user_zsh_history_comment",
+      confirmTitleKey: "sync"
     ) else {
       return
     }
@@ -84,18 +74,18 @@ enum ZshIntegrationUI {
 
       if synced {
         showResult(
-          message: "zsh history synced",
-          informativeText: "Retrace command history now matches ~/.zsh_history."
+          messageKey: "zsh_history_synced_message",
+          informativeTextKey: "zsh_history_synced_comment"
         )
       } else {
         showResult(
-          message: "Could not sync zsh history",
-          informativeText: "~/.zsh_history is empty or unavailable."
+          messageKey: "zsh_history_sync_failed_message",
+          informativeTextKey: "zsh_history_empty_comment"
         )
       }
     } catch {
       showResult(
-        message: "Could not sync zsh history",
+        messageKey: "zsh_history_sync_failed_message",
         informativeText: error.localizedDescription
       )
     }
@@ -103,14 +93,9 @@ enum ZshIntegrationUI {
 
   static func deleteRecordedHistory() {
     guard confirm(
-      message: "Delete Retrace command history file?",
-      informativeText: """
-      This deletes only:
-      \(ZshIntegration.displayHistoryPath)
-
-      Your ~/.zsh_history file is not changed. The zsh hook will recreate the Retrace file when a new command is recorded.
-      """,
-      confirmTitle: "Delete"
+      messageKey: "delete_retrace_history_message",
+      informativeTextKey: "delete_retrace_history_comment",
+      confirmTitleKey: "delete"
     ) else {
       return
     }
@@ -119,12 +104,12 @@ enum ZshIntegrationUI {
       try ZshIntegration.deleteRecordedHistory()
       reloadHistorySources()
       showResult(
-        message: "Retrace command history file deleted",
-        informativeText: "\(ZshIntegration.displayHistoryPath) was deleted."
+        messageKey: "retrace_history_deleted_message",
+        informativeTextKey: "retrace_history_deleted_comment"
       )
     } catch {
       showResult(
-        message: "Could not delete Retrace command history file",
+        messageKey: "retrace_history_delete_failed_message",
         informativeText: error.localizedDescription
       )
     }
@@ -132,30 +117,33 @@ enum ZshIntegrationUI {
 
   private static func confirmInstall() -> Bool {
     confirm(
-      message: "Install zsh integration?",
-      informativeText: """
-      Retrace will update ~/.zshrc with a small marked hook.
-
-      The hook appends commands to:
-      \(ZshIntegration.displayHistoryPath)
-      """,
-      confirmTitle: "Install"
+      messageKey: "install_zsh_integration_message",
+      informativeTextKey: "install_zsh_integration_comment",
+      confirmTitleKey: "install"
     )
   }
 
   private static func confirm(
-    message: String,
-    informativeText: String,
-    confirmTitle: String
+    messageKey: String,
+    informativeTextKey: String,
+    confirmTitleKey: String
   ) -> Bool {
     let alert = NSAlert()
-    alert.messageText = message
-    alert.informativeText = informativeText
+    alert.messageText = localized(messageKey)
+    alert.informativeText = localized(informativeTextKey, ZshIntegration.displayHistoryPath)
     alert.alertStyle = .informational
-    alert.addButton(withTitle: confirmTitle)
-    alert.addButton(withTitle: "Cancel")
+    alert.addButton(withTitle: localized(confirmTitleKey))
+    alert.addButton(withTitle: localized("cancel"))
 
     return alert.runModal() == .alertFirstButtonReturn
+  }
+
+  private static func showResult(messageKey: String, informativeTextKey: String) {
+    showResult(messageKey: messageKey, informativeText: localized(informativeTextKey, ZshIntegration.displayHistoryPath))
+  }
+
+  private static func showResult(messageKey: String, informativeText: String) {
+    showResult(message: localized(messageKey), informativeText: informativeText)
   }
 
   private static func showResult(message: String, informativeText: String) {
@@ -163,8 +151,16 @@ enum ZshIntegrationUI {
     alert.messageText = message
     alert.informativeText = informativeText
     alert.alertStyle = .informational
-    alert.addButton(withTitle: "OK")
+    alert.addButton(withTitle: localized("ok"))
     alert.runModal()
+  }
+
+  private static func localized(_ key: String) -> String {
+    NSLocalizedString(key, comment: "")
+  }
+
+  private static func localized(_ key: String, _ arguments: CVarArg...) -> String {
+    String(format: localized(key), arguments: arguments)
   }
 
   private static func reloadHistorySources() {

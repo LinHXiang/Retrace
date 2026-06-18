@@ -22,6 +22,14 @@ class Footer: ItemsContainer {
         }
       },
       FooterItem(
+        title: "sync_existing_history",
+        help: "sync_existing_history_tooltip",
+        isVisible: ZshIntegration.userHistoryHasContent()
+      ) {
+        ZshIntegrationUI.syncUserHistory()
+        AppState.shared.footer.refreshHistoryActions()
+      },
+      FooterItem(
         title: "about",
         help: "about_tooltip"
       ) {
@@ -35,5 +43,11 @@ class Footer: ItemsContainer {
         AppState.shared.quit()
       }
     ]
+  }
+
+  func refreshHistoryActions() {
+    guard let item = items.first(where: { $0.title == "sync_existing_history" }) else { return }
+
+    item.isVisible = ZshIntegration.userHistoryHasContent()
   }
 }

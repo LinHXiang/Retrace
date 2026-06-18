@@ -19,11 +19,13 @@ class FooterItem: Equatable, Identifiable, HasVisibility {
     title: String,
     shortcuts: [KeyShortcut] = [],
     help: LocalizedStringKey? = nil,
+    isVisible: Bool = true,
     action: @escaping () -> Void
   ) {
     self.title = title
     self.shortcuts = shortcuts
     self.help = help
+    self.isVisible = isVisible
     self.action = action
   }
 }
