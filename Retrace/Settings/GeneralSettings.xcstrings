@@ -1,536 +1,12 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "AddHistorySource": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "إضافة ملف"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дадаць файл"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ফাইল যোগ করুন"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dodaj datoteku"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Afegeix un fitxer"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "زیادکردنی پەڕگە"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Přidat soubor"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Datei hinzufügen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Προσθήκη αρχείου"
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aldoni dosieron"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añadir archivo"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "افزودن فایل"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajouter un fichier"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הוסף קובץ"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "फ़ाइल जोड़ें"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dodaj datoteku"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fájl hozzáadása"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tambah File"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi file"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ファイルを追加"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "파일 추가"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pridėti failą"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pievienot failu"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Legg til fil"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bestand toevoegen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dodaj plik"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar ficheiro"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar arquivo"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adaugă fișier"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Добавить файл"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dodaj datoteko"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lägg till fil"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "கோப்பைச் சேர்"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เพิ่มไฟล์"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dosya Ekle"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати файл"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fayl qoʻshish"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thêm tệp"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add File"
-          }
-        }
-      }
-    },
-    "ChooseHistorySource": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "اختيار ملف السجل"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Выбраць файл гісторыі"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ইতিহাস ফাইল নির্বাচন করুন"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odaberi datoteku historije"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tria un fitxer d'historial"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "هەڵبژاردنی پەڕگەی مێژوو"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vybrat soubor historie"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verlaufsdatei auswählen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Επιλογή αρχείου ιστορικού"
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elekti historian dosieron"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elegir archivo de historial"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "انتخاب فایل تاریخچه"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choisir un fichier d’historique"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "בחר קובץ היסטוריה"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "इतिहास फ़ाइल चुनें"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odaberi datoteku povijesti"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Előzményfájl kiválasztása"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pilih file riwayat"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scegli file cronologia"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "履歴ファイルを選択"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "기록 파일 선택"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pasirinkti istorijos failą"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Izvēlēties vēstures failu"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Velg historikkfil"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geschiedenisbestand kiezen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wybierz plik historii"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Escolher ficheiro de histórico"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Escolher arquivo de histórico"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alege fișierul de istoric"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Выбрать файл истории"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Izberi datoteko zgodovine"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Välj historikfil"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "வரலாறு கோப்பைத் தேர்வு செய்"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เลือกไฟล์ประวัติ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geçmiş dosyasını seç"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вибрати файл історії"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tarix faylini tanlash"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chọn tệp lịch sử"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose History File"
-          }
-        }
-      }
-    },
     "ClearRetraceHistory": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Retrace-Verlauf leeren"
           }
         },
         "en": {
@@ -539,178 +15,34 @@
             "value": "Clear Retrace history"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Borrar historial de Retrace"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Effacer l’historique Retrace"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Retrace 履歴を消去"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Retrace 기록 지우기"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Retrace history"
+            "value": "Limpar histórico do Retrace"
           }
         },
         "zh-Hans": {
@@ -729,58 +61,10 @@
     },
     "CommandHistorySize": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حجم سجل الأوامر:"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Памер гісторыі каманд:"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "কমান্ড ইতিহাসের আকার:"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Veličina historije komandi:"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mida de l'historial d'ordres:"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "قەبارەی مێژووی فرمانەکان:"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Velikost historie příkazů:"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Größe des Befehlsverlaufs:"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Μέγεθος ιστορικού εντολών:"
           }
         },
         "en": {
@@ -789,64 +73,16 @@
             "value": "Command history size:"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Grando de komanda historio:"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tamaño del historial de comandos:"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "اندازهٔ تاریخچهٔ فرمان‌ها:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Taille de l’historique des commandes:"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "גודל היסטוריית הפקודות:"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "कमांड इतिहास का आकार:"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Veličina povijesti naredbi:"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Parancselőzmények mérete:"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ukuran riwayat perintah:"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dimensione cronologia comandi:"
           }
         },
         "ja": {
@@ -861,106 +97,10 @@
             "value": "명령어 기록 크기:"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komandų istorijos dydis:"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komandu vēstures lielums:"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Størrelse på kommandohistorikk:"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Grootte van opdrachtgeschiedenis:"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rozmiar historii poleceń:"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho do histórico de comandos:"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Tamanho do histórico de comandos:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dimensiunea istoricului comenzilor:"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Размер истории команд:"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Velikost zgodovine ukazov:"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Storlek på kommandohistorik:"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "கட்டளை வரலாறு அளவு:"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ขนาดประวัติคำสั่ง:"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komut geçmişi boyutu:"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Розмір історії команд:"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buyruqlar tarixi hajmi:"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kích thước lịch sử lệnh:"
           }
         },
         "zh-Hans": {
@@ -979,58 +119,10 @@
     },
     "CommandHistorySizeTooltip": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "الحد الأقصى لعدد الأوامر المعروضة."
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Максімальная колькасць каманд для паказу."
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "দেখানোর জন্য কমান্ডের সর্বোচ্চ সংখ্যা।"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksimalan broj komandi za prikaz."
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre màxim d'ordres que es mostraran."
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "زۆرترین ژمارەی فرمانەکان بۆ پیشاندان."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maximální počet zobrazených příkazů."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Maximale Anzahl anzuzeigender Befehle."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Μέγιστος αριθμός εντολών προς εμφάνιση."
           }
         },
         "en": {
@@ -1039,64 +131,16 @@
             "value": "Maximum number of commands to show."
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksimuma nombro de montrendaj komandoj."
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Número máximo de comandos que se mostrarán."
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حداکثر تعداد فرمان‌هایی که نمایش داده می‌شوند."
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Nombre maximal de commandes à afficher."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מספר הפקודות המרבי להצגה."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "दिखाए जाने वाले कमांड की अधिकतम संख्या।"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksimalan broj naredbi za prikaz."
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A megjelenítendő parancsok maximális száma."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jumlah maksimum perintah yang ditampilkan."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Numero massimo di comandi da mostrare."
           }
         },
         "ja": {
@@ -1111,106 +155,10 @@
             "value": "표시할 명령어의 최대 개수입니다."
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Didžiausias rodomų komandų skaičius."
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksimālais rādāmo komandu skaits."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksimalt antall kommandoer som vises."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maximum aantal weer te geven opdrachten."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maksymalna liczba wyświetlanych poleceń."
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Número máximo de comandos a mostrar."
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Número máximo de comandos a mostrar."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Numărul maxim de comenzi afișate."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Максимальное число отображаемых команд."
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Največje število prikazanih ukazov."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maximalt antal kommandon att visa."
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "காட்ட வேண்டிய கட்டளைகளின் அதிகபட்ச எண்ணிக்கை."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "จำนวนคำสั่งสูงสุดที่จะแสดง"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gösterilecek en fazla komut sayısı."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Максимальна кількість команд для показу."
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Koʻrsatiladigan buyruqlarning maksimal soni."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Số lệnh tối đa được hiển thị."
           }
         },
         "zh-Hans": {
@@ -1229,58 +177,10 @@
     },
     "CopyZshIntegration": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "zsh-Integration kopieren"
           }
         },
         "en": {
@@ -1289,178 +189,34 @@
             "value": "Copy zsh integration"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "Copiar integración de zsh"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "Copier l’intégration zsh"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "zsh 連携をコピー"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "zsh 통합 복사"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy zsh integration"
+            "value": "Copiar integração do zsh"
           }
         },
         "zh-Hans": {
@@ -1479,58 +235,10 @@
     },
     "Exact": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "دقيق"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дакладны"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "হুবহু"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tačno"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exact"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تەواو"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Přesné"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Exakt"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exact"
           }
         },
         "en": {
@@ -1539,64 +247,16 @@
             "value": "Exact"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ekzakta"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Exacta"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "دقیق"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Exacte"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מדויק"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exact"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Točno"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Egyező"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exact"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esatta"
           }
         },
         "ja": {
@@ -1611,106 +271,10 @@
             "value": "정확한"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tikslus"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Precīzi"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nøyaktig"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exact"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dokładne"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exata"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Exata"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exactă"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Точный"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Točno"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exakt"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "சரியான"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "แม่นยำ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kesin"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Чіткий"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aniq"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chính xác"
           }
         },
         "zh-Hans": {
@@ -1729,58 +293,10 @@
     },
     "Fuzzy": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "غامض"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Недакладны"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ঝাপসা"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "لێکچوو"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Přibližné"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
+            "value": "Unscharf"
           }
         },
         "en": {
@@ -1789,64 +305,16 @@
             "value": "Fuzzy"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Proksimuma"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Aproximada"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تقریبی"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Approximative"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מעורפל"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Netočno"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hasonló"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Approssimata"
           }
         },
         "ja": {
@@ -1861,106 +329,10 @@
             "value": "퍼지"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apytikslis"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fazimeklēšana"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuzzy"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rozmyte"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Difuso"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Aproximada"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aproximativă"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Неточный"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mehko"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ungefärlig"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "தெளிவில்லாமல்"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เลือน"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bulanık"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Нечіткий"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Noaniq"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gần đúng"
           }
         },
         "zh-Hans": {
@@ -1979,58 +351,10 @@
     },
     "HistorySources": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "سجل الأوامر:"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Гісторыя каманд:"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "কমান্ড ইতিহাস:"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Historija komandi:"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Historial d'ordres:"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "مێژووی فرمانەکان:"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Historie příkazů:"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Befehlsverlauf:"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ιστορικό εντολών:"
           }
         },
         "en": {
@@ -2039,64 +363,16 @@
             "value": "Command history:"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komanda historio:"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Historial de comandos:"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تاریخچهٔ فرمان‌ها:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Historique des commandes:"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "היסטוריית פקודות:"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "कमांड इतिहास:"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Povijest naredbi:"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Parancselőzmények:"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Riwayat perintah:"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cronologia comandi:"
           }
         },
         "ja": {
@@ -2111,106 +387,10 @@
             "value": "명령어 기록:"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komandų istorija:"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komandu vēsture:"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kommandohistorikk:"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opdrachtgeschiedenis:"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Historia poleceń:"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Histórico de comandos:"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Histórico de comandos:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Istoricul comenzilor:"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "История команд:"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zgodovina ukazov:"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kommandohistorik:"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "கட்டளை வரலாறு:"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ประวัติคำสั่ง:"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komut geçmişi:"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Історія команд:"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buyruqlar tarixi:"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lịch sử lệnh:"
           }
         },
         "zh-Hans": {
@@ -2229,58 +409,10 @@
     },
     "InstallZshIntegration": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
+            "value": "zsh-Integration installieren"
           }
         },
         "en": {
@@ -2289,178 +421,34 @@
             "value": "Install zsh integration"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
+            "value": "Instalar integración de zsh"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
+            "value": "Installer l’intégration zsh"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
+            "value": "zsh 連携をインストール"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
+            "value": "zsh 통합 설치"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Install zsh integration"
+            "value": "Instalar integração do zsh"
           }
         },
         "zh-Hans": {
@@ -2479,58 +467,10 @@
     },
     "LaunchAtLogin": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "التشغيل عند تسجيل الدخول"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Запускаць пры логіне"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "লগইন করার সময় চালু করুন"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Započni aplikacjiu pri prijavi"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Launch at login"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "کارپێکردن لەکاتی چوونەژوورەوەدا"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spustit při přihlášení"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Beim Anmelden starten"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Launch at login"
           }
         },
         "en": {
@@ -2539,64 +479,16 @@
             "value": "Launch at login"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lanĉi dum ensaluto"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Abrir al iniciar sesión"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "باز شدن هنگام ورود"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Lancer au démarrage"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "להפעיל עם הכניסה למערכת"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Launch at login"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pokreni nakon prijave"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Indítás a bejelentkezéssel együtt"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Luncurkan saat login"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apri al login"
           }
         },
         "ja": {
@@ -2611,106 +503,10 @@
             "value": "로그인 시 실행"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paleisti prisijungus"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Palaist lietotni pieteikšanās laikā"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Oppstart ved innlogging"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start bij inloggen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uruchom przy logowaniu"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Iniciar no login"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Iniciar no login"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide la login"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Запускать при логине"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zaženi ob prijavi"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Starta vid inloggning"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "உள்நுழைவில் தொடங்கவும்"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เปิดเมื่อเข้าสู่ระบบ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Girişte başlat"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Запуск при вході"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kirish paytida ishga tushirish"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Khởi động khi đăng nhập"
           }
         },
         "zh-Hans": {
@@ -2729,58 +525,10 @@
     },
     "Mixed": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "مختلط"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Змяшаны"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "মিশ্রিত"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Miješano"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixed"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تێکەڵ"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smíšené"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Gemischt"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixed"
           }
         },
         "en": {
@@ -2789,64 +537,16 @@
             "value": "Mixed"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Miksita"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Mezclada"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ترکیبی"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Mixte"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מעורבב"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixed"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mješoviti"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kevert"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixed"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mista"
           }
         },
         "ja": {
@@ -2861,106 +561,10 @@
             "value": "혼합"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mišrus"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jaukti"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Blandet"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixed"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mieszane"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mista"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Mista"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mixt"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Смешанный"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mešano"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Blandad"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "கலப்பு"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ผสม"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Karışık"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Змішаний"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aralash"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hỗn hợp"
           }
         },
         "zh-Hans": {
@@ -2977,310 +581,18 @@
         }
       }
     },
-    "NoHistorySources": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "لم يتم تكوين ملفات سجل."
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Файлы гісторыі не наладжаны."
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "কোনো ইতিহাস ফাইল কনফিগার করা নেই।"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nije podešena nijedna datoteka historije."
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No hi ha cap fitxer d'historial configurat."
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "هیچ پەڕگەیەکی مێژوو ڕێکنەخراوە."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nejsou nakonfigurovány žádné soubory historie."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine Verlaufsdateien konfiguriert."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Δεν έχουν ρυθμιστεί αρχεία ιστορικού."
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neniuj historiaj dosieroj estas agorditaj."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No hay archivos de historial configurados."
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "هیچ فایل تاریخچه‌ای پیکربندی نشده است."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aucun fichier d’historique configuré."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "לא הוגדרו קובצי היסטוריה."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "कोई इतिहास फ़ाइल कॉन्फ़िगर नहीं है।"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nema konfiguriranih datoteka povijesti."
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nincs beállítva előzményfájl."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Belum ada file riwayat yang dikonfigurasi."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessun file di cronologia configurato."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "履歴ファイルが設定されていません。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "설정된 기록 파일이 없습니다."
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nesukonfigūruota jokių istorijos failų."
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nav konfigurētu vēstures failu."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ingen historikkfiler er konfigurert."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geen geschiedenisbestanden geconfigureerd."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nie skonfigurowano plików historii."
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nenhum ficheiro de histórico configurado."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nenhum arquivo de histórico configurado."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu există fișiere de istoric configurate."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Файлы истории не настроены."
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ni nastavljenih datotek zgodovine."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Inga historikfiler har konfigurerats."
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "வரலாறு கோப்புகள் எதுவும் அமைக்கப்படவில்லை."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ยังไม่ได้กำหนดไฟล์ประวัติ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yapılandırılmış geçmiş dosyası yok."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Файли історії не налаштовано."
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tarix fayllari sozlanmagan."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa cấu hình tệp lịch sử nào."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No history files configured."
-          }
-        }
-      }
-    },
     "Open": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "فتح:"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Адчыніць:"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "খুলুন:"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Obrisati:"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open:"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "کردنەوە:"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otevřít:"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Öffnen:"
           }
         },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open:"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Open:"
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Malfermi:"
           }
         },
         "es": {
@@ -3289,52 +601,10 @@
             "value": "Abrir:"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "باز:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Ouvrir :"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "פתיחה:"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open:"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otvoriti:"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Megnyitás:"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buka:"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aprire:"
           }
         },
         "ja": {
@@ -3349,106 +619,10 @@
             "value": "열기:"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atidaryti:"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atvērt:"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Åpen:"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open:"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otwórz:"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir:"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Abrir:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide:"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Открыть:"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odpri:"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Öppna:"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "திறந்த:"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เปิด:"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Açmak:"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відкривати:"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ochish:"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở:"
           }
         },
         "zh-Hans": {
@@ -3467,58 +641,10 @@
     },
     "OpenRetraceHistoryInFinder": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
+            "value": "Im Finder anzeigen"
           }
         },
         "en": {
@@ -3527,178 +653,34 @@
             "value": "Show in Finder"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
+            "value": "Mostrar en Finder"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
+            "value": "Afficher dans le Finder"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
+            "value": "Finder に表示"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
+            "value": "Finder에서 보기"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
+            "value": "Mostrar no Finder"
           }
         },
         "zh-Hans": {
@@ -3717,58 +699,10 @@
     },
     "OpenTooltip": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "مفتاح الاختصار العام لفتح التطبيق.\nسيؤدي الضغط المتكرر على المفتاح الرئيسي أثناء الضغط باستمرار على مفاتيح التعديل إلى تحديد العنصر التالي في القائمة. في هذا الوضع، سيؤدي تحرير مفاتيح التعديل إلى تأكيد التحديد وإغلاق النافذة المنبثقة.\nالوضع الافتراضي: ⇧⌘T."
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Глабальная камбінацыя клавіш для адкрыцця праграмы.\nПаўторнае націсканне асноўнай клавішы з утрыманнем мадыфікатараў выбера наступны элемент у спісе. У гэтым рэжыме адпусканне клавіш-мадыфікатараў пацвердзіць выбар і закрые ўсплывальнае акно.\nПа змаўчанні: ⇧⌘T."
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "অ্যাপ্লিকেশন খোলার জন্য গ্লোবাল শর্টকাট চাবি।\nডিফল্ট: ⇧⌘T।"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globalna prečica za otvaranje aplikacije.\nPonovljeni pritisak na glavnu tipku dok držite modifikatore odabrat će sljedeću stavku na listi. U ovom načinu rada, otpuštanje modifikatorskih tipki potvrdit će odabir i zatvoriti skočni prozor.\nZadano: ⇧⌘T."
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global shortcut key to open Retrace.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the command window.\nDefault: ⇧⌘T."
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "کورتەدوگمەی گشتی بۆ کردنەوەی بەرنامەکە.\nداگرتنی دووبارەی دوگمە سەرەکییەکە لەکاتی هێشتنەوەی دوگمە یارمەتیدەرەکان، ئایتەمی دواتر لە لیستەکەدا دیاری دەکات. لەم حاڵەتەدا، بەردانی دوگمە یارمەتیدەرەکان دیاریکردنەکە پشتڕاست دەکاتەوە و پۆپئەپەکە دادەخات.\nبنەڕەت: ⇧⌘T."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globální klávesová zkratka pro otevření aplikace.\nPakliže opakovaně stisknete hlavní klávesu a podržíte modifikátory, vyberete další položku v seznamu. V tomto režimu uvolnění modifikátorových kláves potvrdí výběr a zavře vyskakovací okno.\nVýchozí: ⇧⌘T."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Globales Tastenkürzel zum Öffnen der Anwendung.\nEin wiederholtes Drücken der Haupttaste bei gleichzeitigem Halten der Modifikatortasten wählt das nächste Element in der Liste aus. In diesem Modus wird durch Loslassen der Modifikatortasten die Auswahl bestätigt und das Popup geschlossen.\nStandard: ⇧⌘T."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global shortcut key to open Retrace.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the command window.\nDefault: ⇧⌘T."
           }
         },
         "en": {
@@ -3777,64 +711,16 @@
             "value": "Global shortcut key to open Retrace.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the command window.\nDefault: ⇧⌘T."
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ĝenerala fulmoklavo por malfermi la aplikaĵon.\nRipetita premo de la ĉefa klavo dum tenado de modifaj klavoj elektos la sekvan eron en la listo. En ĉi tiu reĝimo, liberigo de la modifaj klavoj konfirmos la elekton kaj fermos la ŝprucfenestron.\nDefaŭlta: ⇧⌘T."
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tecla de acceso directo global para abrir la aplicación.\nUna pulsación repetida de la tecla principal mientras se mantienen pulsados los modificadores seleccionará el siguiente elemento de la lista. En este modo, al soltar las teclas modificadoras se confirmará la selección y se cerrará la ventana emergente.\nPor defecto: ⇧⌘T."
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "میانبر سراسری برای باز کردن برنامه.\nبا نگه داشتن کلیدهای تغییر (modifiers) و فشار دادن دوباره کلید اصلی، مورد بعدی در فهرست انتخاب می‌شود. در این حالت، رها کردن کلیدهای تغییر، انتخاب را تأیید کرده و پنجرهٔ بازشو را می‌بندد.\nمقدار پیش‌فرض: ⇧⌘T."
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Touche de raccourci globale pour ouvrir l'application.\nUne pression répétée sur la touche principale tout en maintenant les modificateurs enfoncés permet de sélectionner l'élément suivant dans la liste. Dans ce mode, le relâchement des touches de modification confirmera la sélection et fermera la fenêtre contextuelle.\nPar défaut : %@C."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מקש קיצור גלובלי לפתיחת היישום.\nלחיצה חוזרת על המקש הראשי תוך החזקת מקשי השינוי תבחר את הפריט הבא ברשימה. במצב זה, שחרור מקשי השינוי יאשר את הבחירה ויסגור את החלון הקופץ.\nברירת מחדל: ⇧⌘T."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global shortcut key to open Retrace.\nA repeated press of the main key while holding modifiers will select the next command in the list. In this mode, releasing modifier keys will confirm selection and close the command window.\nDefault: ⇧⌘T."
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globalna tipkovnica prečaca za otvaranje aplikacije.\nPonovljenim pritiskom na glavnu tipku dok držite modifikatore odabrat ćete sljedeću stavku na popisu. U ovom načinu rada, otpuštanjem modifikatorskih tipki potvrdit ćete odabir i zatvoriti skočni prozor.\nZadano: ⇧⌘T."
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globális gyorsbillentyű az alkalmazás megnyitásához.\nA fő billentyű ismételt lenyomása a módosítók lenyomva tartása mellett a következő elemet választja ki a listában. Ebben az üzemmódban a módosító billentyűk elengedése megerősíti a kiválasztást és bezárja a felugró ablakot.\nEgyértelmezett: ⇧⌘T."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tombol pintasan global untuk membuka aplikasi.\nTekan berulang kali tombol utama sambil menahan tombol modifikasi akan memilih item berikutnya dalam daftar. Dalam mode ini, melepaskan tombol modifikasi akan mengonfirmasi pemilihan dan menutup popup.\nDefault: ⇧⌘T."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Una pressione ripetuta del tasto principale mentre si tengono premuti i modificatori seleziona la voce successiva dell'elenco.\nIn questa modalità, rilasciando i tasti modificatori si conferma la selezione e si chiude il popup.\nDefault: ⇧⌘T."
           }
         },
         "ja": {
@@ -3849,106 +735,10 @@
             "value": "애플리케이션을 여는 글로벌 단축키.\n수식어를 누른 상태에서 메인 키를 반복해서 누르면 목록의 다음 항목이 선택됩니다. 이 모드에서는 수정자 키에서 손을 떼면 선택이 확인되고 팝업이 닫힙니다.\n기본값: ⇧⌘T."
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pasaulinis spartusis klavišas programai atidaryti.\nPakartotinai paspaudus pagrindinį klavišą ir laikant modifikatorių, bus pasirinktas kitas sąrašo elementas. Šiuo režimu atleidus modifikavimo klavišus bus patvirtintas pasirinkimas ir uždarytas iškylantysis langas.\nNumatytasis: ⇧⌘T."
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globālais īsceļu taustiņš, lai atvērtu programmu.\nPakāpeniski nospiežot galveno taustiņu, vienlaikus turot modifikatorus, tiek atlasīts nākamais elements sarakstā. Šajā režīmā, atlaižot modifikatoru taustiņus, tiks apstiprināta izvēle un aizvērts uznirstošais logs.\nNo noklusējuma: ⇧⌘T."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global hurtigtast for å åpne programmet.\nEt gjentatt trykk på hovedtasten mens modifikatortasten holdes inne, velger neste element i listen. I denne modusen vil du bekrefte valget og lukke popup-vinduet ved å slippe modifikatortastene.\nStandard: ⇧⌘T."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Een herhaalde druk op de hoofdtoets terwijl de modificatietoetsen ingedrukt worden gehouden, selecteert het volgende item in de lijst. In deze modus zal het loslaten van de modificatietoetsen de selectie bevestigen en het popupvenster sluiten.\nStandaard: ⇧⌘T."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globalny skrót klawiszowy do otwierania aplikacji.\nKrotne naciśnięcie klawisza głównego przy jednoczesnym przytrzymaniu klawiszy modyfikujących spowoduje wybranie następnego elementu na liście. W tym trybie zwolnienie klawiszy modyfikatorów potwierdzi wybór i zamknie wyskakujące okienko.\nDomyślnie: ⇧⌘T."
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o elemento seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T."
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Tecla de atalho global para abrir a aplicação.\nUma pressão repetida da tecla principal enquanto mantém as teclas modificadoras premidas irá selecionar o item seguinte na lista. Neste modo, soltar as teclas modificadoras confirmará a seleção e fechará o pop-up.\nPadrão: ⇧⌘T."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tastă globală de comandă rapidă pentru a deschide aplicația.\nO apăsare repetată a tastei principale, în timp ce taste \"modifier\" sunt menținute apăsate, va selecta următorul element din listă. Eliberare unei taste \"modifier\" va confirma selecția și va închide fereastra popup.\nImplicit: ⇧⌘T."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Глобальная клавиша быстрого доступа для открытия приложения.\nПовторное нажатие основной клавиши при удерживании модификаторов выберет следующий пункт в списке. В этом режиме, отпустив клавиши-модификаторы, вы подтвердите выбор и закроете всплывающее окно.\nПо умолчанию: ⇧⌘T."
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globalna bližnjična tipka za odpiranje aplikacije.\nPonavljajoč pritisk glavne tipke, medtem ko držite modifikatorje, izberete naslednjo postavko na seznamu. V tem načinu boste s sprostitvijo modifikacijskih tipk potrdili izbiro in zaprli pojavno okno.\nPrivzeto: ⇧⌘T."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globalt kortkommando för att öppna applikationen.\nFörval: ⇧⌘T."
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "திறந்த பயன்பாட்டிற்கு உலகளாவிய குறுக்குவழி விசை.\n இயல்புநிலை: ⇧⌘c."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "คีย์ลัดระดับโลกเพื่อเปิดแอปพลิเคชัน\nการกดคีย์หลักซ้ำ ๆ พร้อมกับค้างคีย์โมดิฟายเออร์ไว้ จะเลือกไอเท็มถัดไปในรายการ ในโหมดนี้ การปล่อยคีย์โมดิฟายเออร์จะยืนยันการเลือกและปิดป๊อปอัพ\nค่าเริ่มต้น: ⇧⌘T."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uygulamayı açmak için global kısayol tuşu.\nDeğiştiricileri basılı tutarken ana tuşa tekrar basmak listedeki bir sonraki öğeyi seçecektir. Bu modda, değiştirici tuşların bırakılması seçimi onaylayacak ve açılır pencereyi kapatacaktır.\nVarsayılan: ⇧⌘T."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Глобальна клавіша швидкого виклику програми.\nПовторне натискання основної клавіші з утриманням клавіш-модифікаторів призведе до вибору наступного елемента у списку. У цьому режимі відпускання клавіш-модифікаторів підтверджує вибір і закриває спливаюче вікно.\nЗа замовчуванням: ⇧⌘T."
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ilovani ochish uchun global yorliq.\nOʻzgartirgichlarni ushlab turganda asosiy tugmani qayta-qayta bosish roʻyxatdagi keyingi elementni tanlaydi. Bu rejimda modifikator tugmachalarini bo‘shatish tanlovni tasdiqlaydi va qalqib chiquvchi oynani yopadi.\nStandart: ⇧⌘T."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Phím tắt mở ứng dụng.\nNhấn giữ phím chính cùng với các phím sửa đổi sẽ chọn mục tiếp theo trong danh sách. Trong chế độ này, thả các phím sửa đổi sẽ xác nhận lựa chọn và đóng cửa sổ popup.\nMặc định: ⇧⌘T."
           }
         },
         "zh-Hans": {
@@ -3967,58 +757,10 @@
     },
     "Regex": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "التعبيرات العادية"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Рэгулярныя выразы"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "স্বাভাবিক অভিব্যক্তি"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regularni izrazi"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regular expressions"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ڕێجێکسەکان"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regulární výrazy"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Reguläre Ausdrücke"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regular expressions"
           }
         },
         "en": {
@@ -4027,64 +769,16 @@
             "value": "Regular expressions"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regulaj esprimoj"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Expresiones regulares"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عبارات منظم"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Expressions régulières"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ביטויים רגולריים"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regular expressions"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regularni izrazi"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reguláris kifejezés"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regular expressions"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Espressioni regolari"
           }
         },
         "ja": {
@@ -4099,106 +793,10 @@
             "value": "정규식"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reguliarios išraiškos"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regulārās izteiksmes"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vanlig uttrykk"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reguliere expressies"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyrażenia regularne"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Expressões regulares"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Expressões regulares"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Expresii regulate"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Регулярные выражения"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regularni izrazi - Regex"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reguljära uttryck"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "வழக்கமான வெளிப்பாடுகள்"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "นิพจน์ทั่วไป"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Düzenli ifadeler"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Регулярні вирази"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Muntazam ifodalar"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Biểu thức chính quy"
           }
         },
         "zh-Hans": {
@@ -4215,536 +813,12 @@
         }
       }
     },
-    "RemoveHistorySource": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "إزالة ملف السجل"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Выдаліць файл гісторыі"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ইতিহাস ফাইল সরান"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ukloni datoteku historije"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimina el fitxer d'historial"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "لابردنی پەڕگەی مێژوو"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odebrat soubor historie"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verlaufsdatei entfernen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Αφαίρεση αρχείου ιστορικού"
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Forigi historian dosieron"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminar archivo de historial"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حذف فایل تاریخچه"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer le fichier d’historique"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הסר קובץ היסטוריה"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "इतिहास फ़ाइल हटाएँ"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ukloni datoteku povijesti"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Előzményfájl eltávolítása"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hapus file riwayat"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rimuovi file cronologia"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "履歴ファイルを削除"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "기록 파일 제거"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pašalinti istorijos failą"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Noņemt vēstures failu"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fjern historikkfil"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geschiedenisbestand verwijderen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usuń plik historii"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover ficheiro de histórico"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover arquivo de histórico"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimină fișierul de istoric"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Удалить файл истории"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odstrani datoteko zgodovine"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ta bort historikfil"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "வரலாறு கோப்பை அகற்று"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ลบไฟล์ประวัติ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geçmiş dosyasını kaldır"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вилучити файл історії"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tarix faylini olib tashlash"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xóa tệp lịch sử"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remove History File"
-          }
-        }
-      }
-    },
-    "RestoreHistorySources": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "استعادة الافتراضيات"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Аднавіць прадвызначаныя"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ডিফল্ট পুনরুদ্ধার করুন"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vrati zadane postavke"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaura els valors per defecte"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "گەڕاندنەوەی بنەڕەتەکان"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Obnovit výchozí"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Standard wiederherstellen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Επαναφορά προεπιλογών"
-          }
-        },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restarigi defaŭltojn"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurar valores predeterminados"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "بازگردانی پیش‌فرض‌ها"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurer les valeurs par défaut"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "שחזר ברירות מחדל"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "डिफ़ॉल्ट बहाल करें"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vrati zadano"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alapértelmezések visszaállítása"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pulihkan Default"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ripristina predefiniti"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デフォルトに戻す"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "기본값 복원"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atkurti numatytuosius"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atjaunot noklusējumus"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gjenopprett standarder"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Standaardwaarden herstellen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Przywróć domyślne"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Repor predefinições"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurar padrões"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurează valorile implicite"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Восстановить по умолчанию"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Obnovi privzeto"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Återställ standardvärden"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "இயல்புநிலைகளை மீட்டமை"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "คืนค่าเริ่มต้น"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Varsayılanları Geri Yükle"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відновити типові"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Standartlarni tiklash"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Khôi phục mặc định"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restore Defaults"
-          }
-        }
-      }
-    },
     "RetraceHistorySource": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Retrace-zsh-Verlaufsdatei"
           }
         },
         "en": {
@@ -4753,178 +827,34 @@
             "value": "Retrace zsh history file"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Archivo de historial zsh de Retrace"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Fichier d’historique zsh de Retrace"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Retrace zsh 履歴ファイル"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Retrace zsh 기록 파일"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace zsh history file"
+            "value": "Arquivo de histórico zsh do Retrace"
           }
         },
         "zh-Hans": {
@@ -4943,58 +873,10 @@
     },
     "Search": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "البحث:"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пошук:"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "অনুসন্ধান:"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pretraga:"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search:"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "گەڕان:"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vyhledávání:"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Suche:"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search:"
           }
         },
         "en": {
@@ -5003,64 +885,16 @@
             "value": "Search:"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Serĉi:"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Buscar:"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "جستجو:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Recherche :"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "חיפוש:"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search:"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Traži:"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keresés:"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search:"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ricerca:"
           }
         },
         "ja": {
@@ -5075,106 +909,10 @@
             "value": "검색:"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paieška:"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meklēt:"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Søk:"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zoek:"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyszukiwanie:"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Procura:"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Busca:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Căutare:"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Поиск:"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Iskanje:"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sök:"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "தேடல்:"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ค้นหา:"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arama:"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пошук:"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Qidirish:"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tìm kiếm:"
           }
         },
         "zh-Hans": {
@@ -5193,55 +931,7 @@
     },
     "ReplaceWithLocalShellHistory": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
         "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "el": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace from ~/.zsh_history"
@@ -5253,61 +943,13 @@
             "value": "Replace with Local Shell History"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace from ~/.zsh_history"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
         "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace from ~/.zsh_history"
@@ -5325,103 +967,7 @@
             "value": "Replace from ~/.zsh_history"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace from ~/.zsh_history"
-          }
-        },
-        "vi": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace from ~/.zsh_history"
@@ -5443,55 +989,7 @@
     },
     "ReplaceWithLocalShellHistoryTooltip": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
         "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "el": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
@@ -5503,61 +1001,13 @@
             "value": "Replace Retrace history with your local Shell history. Disabled when local Shell history is empty."
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
         "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
@@ -5575,103 +1025,7 @@
             "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
-          }
-        },
-        "vi": {
           "stringUnit": {
             "state": "translated",
             "value": "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty."
@@ -5693,58 +1047,10 @@
     },
     "Title": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عام"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Асноўныя"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "সাধারণ"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opšte"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "گشتی"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Obecné"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Allgemein"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
           }
         },
         "en": {
@@ -5753,64 +1059,16 @@
             "value": "General"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ĝenerale"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "General"
           }
         },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عمومی"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Général"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "כללי"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "सामान्य"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opće"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Általános"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Umum"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generali"
           }
         },
         "ja": {
@@ -5825,106 +1083,10 @@
             "value": "일반"
           }
         },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bendra"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vispārīgi"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generelt"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Algemeen"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ogólne"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geral"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Geral"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Основные"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Splošno"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Allmänt"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "பொது"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ทั่วไป"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genel"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Загальні"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Asosiy"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cài đặt chung"
           }
         },
         "zh-Hans": {
@@ -5943,58 +1105,10 @@
     },
     "ZshIntegrationInstalled": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
+            "value": "zsh-Integration installiert"
           }
         },
         "en": {
@@ -6003,178 +1117,34 @@
             "value": "zsh integration installed"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
+            "value": "Integración de zsh instalada"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
+            "value": "Intégration zsh installée"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
+            "value": "zsh 連携はインストール済み"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
+            "value": "zsh 통합 설치됨"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration installed"
+            "value": "Integração do zsh instalada"
           }
         },
         "zh-Hans": {
@@ -6193,58 +1163,10 @@
     },
     "ZshIntegrationNotInstalled": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "zsh-Integration nicht installiert"
           }
         },
         "en": {
@@ -6253,178 +1175,34 @@
             "value": "zsh integration not installed"
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "Integración de zsh no instalada"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "Intégration zsh non installée"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "zsh 連携は未インストール"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "zsh 통합이 설치되지 않음"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "zsh integration not installed"
+            "value": "Integração do zsh não instalada"
           }
         },
         "zh-Hans": {
@@ -6443,58 +1221,10 @@
     },
     "ZshIntegrationRequired": {
       "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "be": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "bs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "ca": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "ckb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "Retrace zeichnet Befehle erst auf, nachdem die zsh-Integration installiert wurde."
           }
         },
         "en": {
@@ -6503,178 +1233,34 @@
             "value": "Retrace records commands only after zsh integration is installed."
           }
         },
-        "eo": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "fa": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "Retrace registra comandos solo después de instalar la integración de zsh."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "hr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "Retrace n’enregistre les commandes qu’après l’installation de l’intégration zsh."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "Retrace は zsh 連携をインストールした後にのみコマンドを記録します。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "lt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "lv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "Retrace는 zsh 통합을 설치한 후에만 명령을 기록합니다."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "sl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "uz": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrace records commands only after zsh integration is installed."
+            "value": "O Retrace só registra comandos depois que a integração do zsh é instalada."
           }
         },
         "zh-Hans": {
