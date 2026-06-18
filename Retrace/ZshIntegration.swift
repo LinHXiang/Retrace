@@ -29,6 +29,10 @@ enum ZshIntegration {
     FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".zsh_history")
   }
 
+  static var retraceZshHistoryURL: URL {
+    HistorySource.retraceZshHistoryURL
+  }
+
   static func isInstalled(in contents: String) -> Bool {
     markedBlockRange(in: contents) != nil
   }
@@ -103,6 +107,20 @@ enum ZshIntegration {
 
     let updatedContents = installedContents(from: contents)
     try updatedContents.write(to: url, atomically: true, encoding: .utf8)
+  }
+
+  static func clearRecordedHistory(at url: URL = retraceZshHistoryURL) throws {
+    try FileManager.default.createDirectory(
+      at: url.deletingLastPathComponent(),
+      withIntermediateDirectories: true
+    )
+    try Data().write(to: url, options: .atomic)
+  }
+
+  static func deleteRecordedHistory(at url: URL = retraceZshHistoryURL) throws {
+    guard FileManager.default.fileExists(atPath: url.path) else { return }
+
+    try FileManager.default.removeItem(at: url)
   }
 
   private static func loginShell() -> String? {

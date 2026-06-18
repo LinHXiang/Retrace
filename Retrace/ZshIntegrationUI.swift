@@ -35,17 +35,87 @@ enum ZshIntegrationUI {
     }
   }
 
-  private static func confirmInstall() -> Bool {
-    let alert = NSAlert()
-    alert.messageText = "Install zsh integration?"
-    alert.informativeText = """
-    Retrace will update ~/.zshrc with a small marked hook.
+  static func clearRecordedHistory() {
+    guard confirm(
+      message: "Clear Retrace command history?",
+      informativeText: """
+      This clears only:
+      \(ZshIntegration.displayHistoryPath)
 
-    The hook appends commands to:
-    \(ZshIntegration.displayHistoryPath)
-    """
+      Your ~/.zsh_history file is not changed.
+      """,
+      confirmTitle: "Clear"
+    ) else {
+      return
+    }
+
+    do {
+      try ZshIntegration.clearRecordedHistory()
+      reloadHistorySources()
+      showResult(
+        message: "Retrace command history cleared",
+        informativeText: "\(ZshIntegration.displayHistoryPath) is now empty."
+      )
+    } catch {
+      showResult(
+        message: "Could not clear Retrace command history",
+        informativeText: error.localizedDescription
+      )
+    }
+  }
+
+  static func deleteRecordedHistory() {
+    guard confirm(
+      message: "Delete Retrace command history file?",
+      informativeText: """
+      This deletes only:
+      \(ZshIntegration.displayHistoryPath)
+
+      Your ~/.zsh_history file is not changed. The zsh hook will recreate the Retrace file when a new command is recorded.
+      """,
+      confirmTitle: "Delete"
+    ) else {
+      return
+    }
+
+    do {
+      try ZshIntegration.deleteRecordedHistory()
+      reloadHistorySources()
+      showResult(
+        message: "Retrace command history file deleted",
+        informativeText: "\(ZshIntegration.displayHistoryPath) was deleted."
+      )
+    } catch {
+      showResult(
+        message: "Could not delete Retrace command history file",
+        informativeText: error.localizedDescription
+      )
+    }
+  }
+
+  private static func confirmInstall() -> Bool {
+    confirm(
+      message: "Install zsh integration?",
+      informativeText: """
+      Retrace will update ~/.zshrc with a small marked hook.
+
+      The hook appends commands to:
+      \(ZshIntegration.displayHistoryPath)
+      """,
+      confirmTitle: "Install"
+    )
+  }
+
+  private static func confirm(
+    message: String,
+    informativeText: String,
+    confirmTitle: String
+  ) -> Bool {
+    let alert = NSAlert()
+    alert.messageText = message
+    alert.informativeText = informativeText
     alert.alertStyle = .informational
-    alert.addButton(withTitle: "Install")
+    alert.addButton(withTitle: confirmTitle)
     alert.addButton(withTitle: "Cancel")
 
     return alert.runModal() == .alertFirstButtonReturn
@@ -58,6 +128,12 @@ enum ZshIntegrationUI {
     alert.alertStyle = .informational
     alert.addButton(withTitle: "OK")
     alert.runModal()
+  }
+
+  private static func reloadHistorySources() {
+    Task { @MainActor in
+      await AppState.shared.history.reloadSources()
+    }
   }
 }
 

@@ -79,44 +79,68 @@ struct GeneralSettingsPane: View {
             }
           }
 
-          HStack(spacing: 8) {
-            Button {
-              addHistorySource()
-            } label: {
-              Label {
-                Text("AddHistorySource", tableName: "GeneralSettings")
-              } icon: {
-                Image(systemName: "plus")
+          VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+              Button {
+                addHistorySource()
+              } label: {
+                Label {
+                  Text("AddHistorySource", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "plus")
+                }
+              }
+
+              Button {
+                historySources = HistorySource.defaultSources
+              } label: {
+                Label {
+                  Text("RestoreHistorySources", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "arrow.uturn.backward")
+                }
+              }
+
+              Button {
+                ZshIntegrationUI.install(confirmFirst: true)
+              } label: {
+                Label {
+                  Text("InstallZshIntegration", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "terminal")
+                }
+              }
+
+              Button {
+                ZshIntegrationUI.copyBlock()
+              } label: {
+                Label {
+                  Text("CopyZshIntegration", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "doc.on.doc")
+                }
               }
             }
 
-            Button {
-              historySources = HistorySource.defaultSources
-            } label: {
-              Label {
-                Text("RestoreHistorySources", tableName: "GeneralSettings")
-              } icon: {
-                Image(systemName: "arrow.uturn.backward")
+            HStack(spacing: 8) {
+              Button(role: .destructive) {
+                ZshIntegrationUI.clearRecordedHistory()
+              } label: {
+                Label {
+                  Text("ClearRetraceHistory", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "eraser")
+                }
               }
-            }
 
-            Button {
-              ZshIntegrationUI.install(confirmFirst: true)
-            } label: {
-              Label {
-                Text("InstallZshIntegration", tableName: "GeneralSettings")
-              } icon: {
-                Image(systemName: "terminal")
-              }
-            }
-
-            Button {
-              ZshIntegrationUI.copyBlock()
-            } label: {
-              Label {
-                Text("CopyZshIntegration", tableName: "GeneralSettings")
-              } icon: {
-                Image(systemName: "doc.on.doc")
+              Button(role: .destructive) {
+                ZshIntegrationUI.deleteRecordedHistory()
+              } label: {
+                Label {
+                  Text("DeleteRetraceHistoryFile", tableName: "GeneralSettings")
+                } icon: {
+                  Image(systemName: "trash")
+                }
               }
             }
           }

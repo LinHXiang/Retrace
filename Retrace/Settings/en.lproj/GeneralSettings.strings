@@ -14,6 +14,8 @@
 "RestoreHistorySources" = "Restore Defaults";
 "InstallZshIntegration" = "Install zsh integration";
 "CopyZshIntegration" = "Copy zsh integration";
+"ClearRetraceHistory" = "Clear Retrace history";
+"DeleteRetraceHistoryFile" = "Delete Retrace history file";
 "ChooseHistorySource" = "Choose history file";
 "RemoveHistorySource" = "Remove history file";
 "NoHistorySources" = "No history files configured.";
