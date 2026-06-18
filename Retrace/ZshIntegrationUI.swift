@@ -64,6 +64,43 @@ enum ZshIntegrationUI {
     }
   }
 
+  static func syncUserHistory() {
+    guard confirm(
+      message: "Sync from ~/.zsh_history?",
+      informativeText: """
+      This replaces Retrace command history with:
+      ~/.zsh_history
+
+      Your ~/.zsh_history file is not changed.
+      """,
+      confirmTitle: "Sync"
+    ) else {
+      return
+    }
+
+    do {
+      let synced = try ZshIntegration.syncUserHistory()
+      reloadHistorySources()
+
+      if synced {
+        showResult(
+          message: "zsh history synced",
+          informativeText: "Retrace command history now matches ~/.zsh_history."
+        )
+      } else {
+        showResult(
+          message: "Could not sync zsh history",
+          informativeText: "~/.zsh_history is empty or unavailable."
+        )
+      }
+    } catch {
+      showResult(
+        message: "Could not sync zsh history",
+        informativeText: error.localizedDescription
+      )
+    }
+  }
+
   static func deleteRecordedHistory() {
     guard confirm(
       message: "Delete Retrace command history file?",

@@ -9,11 +9,14 @@
 "Mixed" = "Mixed";
 "CommandHistorySize" = "Command history size:";
 "CommandHistorySizeTooltip" = "Maximum number of commands to show.";
-"ZshIntegration" = "zsh integration:";
 "HistorySources" = "Command history:";
 "ZshIntegrationRequired" = "Retrace records commands only after zsh integration is installed.";
 "RetraceHistorySource" = "Retrace zsh history file";
+"ZshIntegrationInstalled" = "zsh integration installed";
+"ZshIntegrationNotInstalled" = "zsh integration not installed";
 "InstallZshIntegration" = "Install zsh integration";
 "CopyZshIntegration" = "Copy zsh integration";
+"SyncUserZshHistory" = "Sync from zsh history";
+"SyncUserZshHistoryTooltip" = "Replace Retrace history with ~/.zsh_history. Disabled when ~/.zsh_history is empty.";
 "ClearRetraceHistory" = "Clear Retrace history";
 "OpenRetraceHistoryInFinder" = "Show in Finder";

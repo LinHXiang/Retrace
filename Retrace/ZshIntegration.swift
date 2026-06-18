@@ -130,6 +130,30 @@ enum ZshIntegration {
     return true
   }
 
+  static func syncUserHistory(
+    from userHistoryURL: URL = userZshHistoryURL,
+    to retraceHistoryURL: URL = retraceZshHistoryURL
+  ) throws -> Bool {
+    guard userHistoryHasContent(at: userHistoryURL) else { return false }
+
+    try FileManager.default.createDirectory(
+      at: retraceHistoryURL.deletingLastPathComponent(),
+      withIntermediateDirectories: true
+    )
+    let data = try Data(contentsOf: userHistoryURL)
+    try data.write(to: retraceHistoryURL, options: .atomic)
+    return true
+  }
+
+  static func userHistoryHasContent(at url: URL = userZshHistoryURL) -> Bool {
+    guard let attributes = try? FileManager.default.attributesOfItem(atPath: url.path),
+          let size = attributes[.size] as? NSNumber else {
+      return false
+    }
+
+    return size.uint64Value > 0
+  }
+
   static func clearRecordedHistory(at url: URL = retraceZshHistoryURL) throws {
     try FileManager.default.createDirectory(
       at: url.deletingLastPathComponent(),
@@ -175,4 +199,5 @@ enum ZshIntegration {
 
     return start.lowerBound..<end.upperBound
   }
+
 }

@@ -196,6 +196,60 @@ final class ZshIntegrationTests: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: retraceHistory.path))
   }
 
+  func testSyncUserHistoryOverwritesRetraceHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try "old command\n".write(to: userHistory, atomically: true, encoding: .utf8)
+    try ": 1710000000:0;new command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
+
+    let synced = try ZshIntegration.syncUserHistory(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertTrue(synced)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), "old command\n")
+  }
+
+  func testSyncUserHistoryDoesNotOverwriteWithEmptyUserHistory() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    let retraceHistory = directory.appendingPathComponent("zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    try Data().write(to: userHistory)
+    try ": 1710000000:0;new command\n".write(to: retraceHistory, atomically: true, encoding: .utf8)
+
+    let synced = try ZshIntegration.syncUserHistory(
+      from: userHistory,
+      to: retraceHistory
+    )
+
+    XCTAssertFalse(synced)
+    XCTAssertEqual(try String(contentsOf: retraceHistory, encoding: .utf8), ": 1710000000:0;new command\n")
+  }
+
+  func testUserHistoryHasContent() throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let userHistory = directory.appendingPathComponent(".zsh_history")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+
+    XCTAssertFalse(ZshIntegration.userHistoryHasContent(at: userHistory))
+
+    try Data().write(to: userHistory)
+    XCTAssertFalse(ZshIntegration.userHistoryHasContent(at: userHistory))
+
+    try "git status\n".write(to: userHistory, atomically: true, encoding: .utf8)
+    XCTAssertTrue(ZshIntegration.userHistoryHasContent(at: userHistory))
+  }
+
   func testShouldPromptForLikelyZshUserWithoutBlock() {
     XCTAssertTrue(ZshIntegration.shouldPromptForInstall(
       loginShell: "/bin/zsh",

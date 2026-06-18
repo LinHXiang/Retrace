@@ -10,11 +10,14 @@
 "CommandHistorySize" = "历史条数：";
 "CommandHistorySizeTooltip" = "最多显示的命令数量。";
 
-"ZshIntegration" = "zsh 集成：";
 "HistorySources" = "命令历史：";
 "ZshIntegrationRequired" = "只有安装 zsh 集成后，Retrace 才会记录命令。";
 "RetraceHistorySource" = "Retrace zsh 历史文件";
+"ZshIntegrationInstalled" = "已安装 zsh 集成";
+"ZshIntegrationNotInstalled" = "未安装 zsh 集成";
 "InstallZshIntegration" = "安装 zsh 集成";
 "CopyZshIntegration" = "复制 zsh 集成";
+"SyncUserZshHistory" = "从 zsh 历史同步";
+"SyncUserZshHistoryTooltip" = "用 ~/.zsh_history 覆盖 Retrace 历史。~/.zsh_history 为空时不可用。";
 "ClearRetraceHistory" = "清空 Retrace 历史";
 "OpenRetraceHistoryInFinder" = "在 Finder 中显示";
