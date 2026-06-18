@@ -25,7 +25,6 @@ struct ContentView: View {
 
               FooterView(footer: appState.footer)
             }
-            .animation(.default.speed(3), value: appState.history.items)
             .padding(.horizontal, Popup.horizontalPadding)
             .frame(minWidth: Popup.minimumListWidth, minHeight: 0)
             .layoutPriority(1)
