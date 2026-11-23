@@ -5,6 +5,7 @@ struct ContentView: View {
   @State private var modifierFlags = ModifierFlags()
   @State private var scenePhase: ScenePhase = .background
 
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
   @FocusState private var searchFocused: Bool
 
   var body: some View {
@@ -23,13 +24,18 @@ struct ContentView: View {
                 searchFocused: $searchFocused
               )
 
+              .disabled(appState.history.editingCommand != nil)
               FooterView(footer: appState.footer)
+                .allowsHitTesting(appState.history.editingCommand == nil)
             }
             .padding(.horizontal, Popup.horizontalPadding)
             .frame(minWidth: Popup.minimumListWidth, minHeight: 0)
             .layoutPriority(1)
 
-            if let selectedCommandItem = appState.navigator.selectedCommandItem {
+            if let command = appState.history.editingCommand {
+              FavoriteEditor(command: command, favorite: appState.history.all.first { $0.item.command == command }?.favorite)
+                .id(command)
+            } else if let selectedCommandItem = appState.navigator.selectedCommandItem {
               CommandPreviewView(item: selectedCommandItem)
                 .transition(.opacity)
             }
@@ -47,12 +53,18 @@ struct ContentView: View {
         }
       }
       .frame(maxWidth: .infinity, alignment: .leading)
+      .onChange(of: appState.history.editingCommand) { _, command in
+        searchFocused = command == nil
+        appState.popup.needsResize = true
+      }
       .font(AppFont.regular())
       .task {
         try? await appState.history.loadIfChanged()
       }
     }
-    .animation(.easeInOut(duration: 0.2), value: appState.searchVisible)
+    .animation(reduceMotion ? nil : .easeInOut(duration: 0.12), value: appState.searchVisible)
+    .environment(\.colorScheme, .dark)
+    .tint(ConsoleTheme.accent)
     .environment(appState)
     .environment(modifierFlags)
     .environment(\.scenePhase, scenePhase)
@@ -69,6 +81,7 @@ struct ContentView: View {
          let bundleIdentifier = Bundle.main.bundleIdentifier,
          window.identifier == NSUserInterfaceItemIdentifier(bundleIdentifier) {
         scenePhase = .background
+        appState.history.editingCommand = nil
       }
     }
   }

@@ -16,7 +16,7 @@ struct ListItemTitleView<Title: View>: View {
         .accessibilityIdentifier("command-history-item")
         .lineLimit(1)
         .truncationMode(.middle)
-        .foregroundStyle(isSelected ? Color.white : .primary)
+        .foregroundStyle(isSelected ? Color.black : .primary)
         // Workaround for macOS 26 to avoid flipped text.
         .drawingGroup()
     }

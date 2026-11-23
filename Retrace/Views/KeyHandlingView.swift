@@ -16,6 +16,7 @@ struct KeyHandlingView<Content: View>: View {
         // so pressing ⌘, on non-English layout doesn't open
         // preferences. Stick to NSEvent to fix this behavior.
 
+        if appState.history.editingCommand != nil { return .ignored }
         if searchFocused {
           // Ignore input when candidate window is open
           // https://stackoverflow.com/questions/73677444/how-to-detect-the-candidate-window-when-using-japanese-keyboard
@@ -73,6 +74,12 @@ struct KeyHandlingView<Content: View>: View {
           return .handled
         case .openPreferences:
           appState.openPreferences()
+          return .handled
+        case .editFavorite:
+          appState.history.editingCommand = appState.navigator.selectedCommandItem?.item.command
+          return .handled
+        case .toggleFavorites:
+          appState.history.toggleFavoritesFilter()
           return .handled
         case .togglePin:
           appState.history.togglePinSelectedItem()

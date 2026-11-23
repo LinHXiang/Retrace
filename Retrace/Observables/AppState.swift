@@ -4,6 +4,12 @@ import Foundation
 import Settings
 import SwiftUI
 
+private extension View {
+  func consoleSettings() -> some View {
+    font(AppFont.regular()).background(ConsoleTheme.panel).tint(ConsoleTheme.accent).preferredColorScheme(.dark)
+  }
+}
+
 @Observable
 class AppState {
   static let shared = AppState(history: CommandHistory.shared, footer: Footer())
@@ -73,7 +79,7 @@ class AppState {
           toolbarIcon: NSImage.gearshape!
         ) {
           GeneralSettingsPane()
-            .font(AppFont.regular())
+            .consoleSettings()
         },
         Settings.Pane(
           identifier: Settings.PaneIdentifier.integration,
@@ -81,7 +87,7 @@ class AppState {
           toolbarIcon: NSImage.terminal!
         ) {
           IntegrationSettingsPane()
-            .font(AppFont.regular())
+            .consoleSettings()
         },
         Settings.Pane(
           identifier: Settings.PaneIdentifier.appearance,
@@ -89,7 +95,7 @@ class AppState {
           toolbarIcon: NSImage.paintpalette!
         ) {
           AppearanceSettingsPane()
-            .font(AppFont.regular())
+            .consoleSettings()
         }
       ]
     )

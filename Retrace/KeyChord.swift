@@ -11,6 +11,8 @@ enum KeyChord: CaseIterable {
   case moveToPrevious
   case moveToFirst
   case openPreferences
+  case editFavorite
+  case toggleFavorites
   case togglePin
   case selectCurrentItem
   case close
@@ -119,6 +121,10 @@ enum KeyChord: CaseIterable {
     switch (key, modifierFlags) {
     case (.comma, [.command]):
       return .openPreferences
+    case (.d, [.command]):
+      return .editFavorite
+    case (.f, [.command, .shift]):
+      return .toggleFavorites
     case (.p, [.command]):
       return .togglePin
     case (.return, _),

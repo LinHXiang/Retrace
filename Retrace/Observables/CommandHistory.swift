@@ -340,12 +340,17 @@ struct TerminalCommandHistory {
 class CommandHistory: ItemsContainer {
   static let shared = CommandHistory()
 
+  var favoritesOnly = false
+  var editingCommand: String?
+  var removedFavorite: FavoriteCommand?
+  private var cachedEntries: [TerminalCommandHistoryEntry] = []
+
   var items: [CommandHistoryItemDecorator] = []
   var searchQuery: String = "" {
     didSet {
       throttler.throttle { [self] in
         Task { @MainActor in
-          updateItems(search.search(string: searchQuery, within: all))
+          refreshResults()
 
           if searchQuery.isEmpty {
             AppState.shared.navigator.select(item: visibleItems.first)
@@ -452,11 +457,18 @@ class CommandHistory: ItemsContainer {
 
   @MainActor
   private func load(history: TerminalCommandHistory, modificationDate: Date) async throws {
-    let entries = try await entries(for: history)
-    let pinnedCommands = Set(Defaults[.pinnedCommands])
-    let visibleEntries = entries.enumerated().compactMap { index, entry in
-      index < Defaults[.commandHistorySize] || pinnedCommands.contains(entry.command) ? entry : nil
-    }
+    cachedEntries = try await entries(for: history)
+    loadedHistoryModificationDate = modificationDate
+    rebuild()
+  }
+
+  @MainActor
+  private func rebuild(prefer command: String? = nil) {
+    let selected = command ?? AppState.shared.navigator.selectedCommandItem?.item.command
+    let favorites = Defaults[.favorites]
+    let byCommand = Dictionary(favorites.map { ($0.command, $0) }, uniquingKeysWith: { first, _ in first })
+    let visibleEntries = FavoriteCommand.entries(history: cachedEntries, favorites: favorites,
+      pins: Set(Defaults[.pinnedCommands]), limit: Defaults[.commandHistorySize])
 
     all = visibleEntries.map { entry in
       let item = CommandHistoryItem(command: entry.command)
@@ -465,22 +477,46 @@ class CommandHistory: ItemsContainer {
       }
       item.title = item.generateTitle()
       let decorator = CommandHistoryItemDecorator(item, showsRecordedAt: entry.timestamp != nil)
+      decorator.favorite = byCommand[entry.command]
       decorator.isPinned = isPinned(item)
       return decorator
     }
     all = sortPinnedFirst(all)
-    items = all
-    loadedHistoryModificationDate = modificationDate
+    refreshResults()
+    AppState.shared.navigator.select(item: items.first { $0.item.command == selected } ?? items.first)
+    AppState.shared.popup.needsResize = true
+  }
 
-    for item in items {
-      item.highlight("", [])
-    }
+  @MainActor
+  func toggleFavoritesFilter() {
+    favoritesOnly.toggle()
+    refreshResults()
+    AppState.shared.navigator.highlightFirst()
+    AppState.shared.popup.needsResize = true
+  }
 
-    updateVisibleShortcuts()
-    AppState.shared.appDelegate?.updateStatusItemTitle()
-    Task {
-      AppState.shared.popup.needsResize = true
-    }
+  @MainActor
+  private func refreshResults() {
+    let candidates = favoritesOnly ? all.filter { $0.favorite != nil } : all
+    updateItems(search.search(string: searchQuery, within: candidates))
+  }
+
+  @MainActor
+  func saveFavorite(_ favorite: FavoriteCommand) {
+    var values = Defaults[.favorites].filter { $0.command != favorite.command }
+    values.insert(favorite, at: 0)
+    Defaults[.favorites] = values
+    editingCommand = nil
+    removedFavorite = nil
+    rebuild(prefer: favorite.command)
+  }
+
+  @MainActor
+  func removeFavorite(_ favorite: FavoriteCommand) {
+    Defaults[.favorites] = Defaults[.favorites].filter { $0.command != favorite.command }
+    editingCommand = nil
+    removedFavorite = favorite
+    rebuild(prefer: favorite.command)
   }
 
   @MainActor
@@ -520,11 +556,28 @@ class CommandHistory: ItemsContainer {
   private func updateItems(_ newItems: [Search.SearchResult]) {
     items = sortPinnedFirst(newItems.map { result in
       let item = result.object
-      item.highlight(searchQuery, result.ranges)
+      item.highlight(searchQuery, result.aliasMatch ? [] : result.ranges)
+      item.highlightedAlias = nil
+      if result.aliasMatch, let alias = item.favorite?.alias {
+        var text = AttributedString(alias)
+        for range in result.ranges {
+          if let start = AttributedString.Index(range.lowerBound, within: text),
+             let end = AttributedString.Index(range.upperBound, within: text) {
+            text[start..<end].underlineStyle = .single
+          }
+        }
+        item.highlightedAlias = text
+      }
 
       return item
     })
 
+    if !searchQuery.isEmpty {
+      func exact(_ item: CommandHistoryItemDecorator) -> Bool {
+        item.favorite?.alias.caseInsensitiveCompare(searchQuery) == .orderedSame
+      }
+      items = items.filter(exact) + items.filter { !exact($0) }
+    }
     updateVisibleShortcuts()
     AppState.shared.appDelegate?.updateStatusItemTitle()
   }

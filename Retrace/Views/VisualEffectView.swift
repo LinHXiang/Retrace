@@ -1,30 +1,29 @@
 import SwiftUI
 
-struct PanelBackgroundView: View {
-  @Environment(\.colorScheme) private var colorScheme
+enum ConsoleTheme {
+  static let accent = Color(red: 0.84, green: 1, blue: 0.20)
+  static let panel = Color(white: 0.08)
+  static let surface = Color(white: 0.15)
+}
 
-  var body: some View {
-    backgroundColor
-      .overlay {
-        RoundedRectangle(cornerRadius: Popup.cornerRadius + Popup.horizontalPadding)
-          .stroke(borderColor, lineWidth: 1)
-      }
-    .clipShape(.rect(cornerRadius: Popup.cornerRadius + Popup.horizontalPadding))
-  }
-
-  private var backgroundColor: Color {
-    colorScheme == .dark
-      ? Color(red: 0.06, green: 0.06, blue: 0.055).opacity(0.98)
-      : Color(red: 0.965, green: 0.96, blue: 0.94).opacity(0.98)
-  }
-
-  private var borderColor: Color {
-    colorScheme == .dark
-      ? Color.white.opacity(0.12)
-      : Color.black.opacity(0.12)
+struct CutCorner: Shape {
+  func path(in rect: CGRect) -> Path {
+    let cut = min(9, rect.height / 3)
+    return Path { path in
+      path.move(to: rect.origin)
+      path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+      path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - cut))
+      path.addLine(to: CGPoint(x: rect.maxX - cut, y: rect.maxY))
+      path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+      path.closeSubpath()
+    }
   }
 }
 
-#Preview {
-  PanelBackgroundView()
+struct PanelBackgroundView: View {
+  var body: some View {
+    RoundedRectangle(cornerRadius: 12)
+      .fill(ConsoleTheme.panel)
+      .overlay { RoundedRectangle(cornerRadius: 12).strokeBorder(.white.opacity(0.22)) }
+  }
 }

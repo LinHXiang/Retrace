@@ -99,7 +99,7 @@ class Popup {
   func preferredHeight(for newHeight: CGFloat) -> CGFloat {
     var height = newHeight
 
-    let minimumHeight = headerHeight + Self.verticalPadding
+    let minimumHeight = AppState.shared.history.editingCommand == nil ? headerHeight + Self.verticalPadding : 210
 
     height = max(height, minimumHeight)
     height = min(height, Defaults[.windowSize].height)

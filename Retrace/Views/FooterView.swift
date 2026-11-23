@@ -13,6 +13,19 @@ struct FooterView: View {
         .padding(.horizontal, Popup.horizontalSeparatorPadding)
         .padding(.bottom, Popup.verticalSeparatorPadding)
 
+      HStack(spacing: 8) {
+        if appState.history.editingCommand == nil {
+          Text("↵ Copy")
+          Text("⌘D Favorite")
+        } else {
+          Text("↵ Save")
+          Text("Esc Cancel")
+        }
+        Spacer()
+      }
+      .font(AppFont.regular(size: 11))
+      .foregroundStyle(.secondary)
+      .padding(.horizontal, 10)
       ForEach(footer.visibleItems) { item in
         FooterItemView(item: item)
       }

@@ -28,6 +28,7 @@ class Search {
   struct SearchResult: Equatable {
     var score: Double?
     var object: Searchable
+    var aliasMatch = false
     var ranges: [Range<String.Index>] = []
   }
 
@@ -56,7 +57,11 @@ class Search {
   private func fuzzySearch(string: String, within: [Searchable]) -> [SearchResult] {
     let pattern = fuse.createPattern(from: string)
     let searchResults: [SearchResult] = within.compactMap { item in
-      fuzzySearch(for: pattern, in: item.title, of: item)
+      let command = fuzzySearch(for: pattern, in: item.title, of: item)
+      guard let alias = item.favorite?.alias, !alias.isEmpty,
+            var result = fuzzySearch(for: pattern, in: alias, of: item) else { return command }
+      result.aliasMatch = true
+      return (result.score ?? 0) <= (command?.score ?? .infinity) ? result : command
     }
     let sortedResults = searchResults.sorted(by: { ($0.score ?? 0) < ($1.score ?? 0) })
     return sortedResults
@@ -96,7 +101,19 @@ class Search {
     within: [Searchable],
     options: NSString.CompareOptions
   ) -> [SearchResult] {
-    return within.compactMap { simpleSearch(for: string, in: $0.title, of: $0, options: options) }
+    within.compactMap { item in
+      if let alias = item.favorite?.alias, !alias.isEmpty,
+         var result = simpleSearch(for: string, in: alias, of: item, options: options) {
+        result.aliasMatch = true
+        return result
+      }
+      if let result = simpleSearch(for: string, in: item.title, of: item, options: options) { return result }
+      // Search the original command even when its list title is shortened or escaped.
+      if let raw = item.item.command, raw != item.title, raw.range(of: string, options: options) != nil {
+        return SearchResult(object: item)
+      }
+      return nil
+    }
   }
 
   private func simpleSearch(

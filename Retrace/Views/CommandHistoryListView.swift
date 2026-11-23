@@ -42,6 +42,13 @@ struct CommandHistoryListView: View {
         IdentifiableListView(items: visibleItems) { item in
           CommandHistoryItemView(item: item)
         }
+        .overlay(alignment: .topLeading) {
+          if visibleItems.isEmpty && appState.history.favoritesOnly {
+            Text(appState.history.searchQuery.isEmpty ? "No favorites yet · ⌘D to add" : "No matching favorites")
+              .foregroundStyle(.secondary).padding(10)
+          }
+        }
+        .frame(minHeight: visibleItems.isEmpty && appState.history.favoritesOnly ? 44 : 0)
         .padding(.top, Popup.verticalSeparatorPadding)
         .padding(.bottom, bottomPadding)
         .task(id: appState.navigator.scrollTarget) {

@@ -1,28 +1,29 @@
-import Defaults
 import SwiftUI
 
 struct HeaderView: View {
   @State private var appState = AppState.shared
-
   @FocusState.Binding var searchFocused: Bool
 
   var body: some View {
-    HStack(alignment: .top, spacing: 0) {
-      HStack(alignment: .center, spacing: 0) {
-        ListHeaderView(
-          searchFocused: $searchFocused,
-          searchQuery: $appState.history.searchQuery
-        )
-        .padding(.horizontal, Popup.horizontalPadding)
+    HStack(spacing: 8) {
+      if appState.searchVisible {
+        ListHeaderView(searchFocused: $searchFocused, searchQuery: $appState.history.searchQuery)
       }
-      .opacity(appState.searchVisible ? 1 : 0)
-      .layoutPriority(1)
+      Spacer(minLength: 0)
+      if let removed = appState.history.removedFavorite {
+        Button("Undo removal") { appState.history.saveFavorite(removed) }
+      }
+      Button {
+        appState.history.toggleFavoritesFilter()
+      } label: {
+        Label(appState.history.favoritesOnly ? "Favorites" : "All commands", systemImage: appState.history.favoritesOnly ? "star.fill" : "line.3.horizontal.decrease")
+          .padding(.horizontal, 9).padding(.vertical, 4)
+          .background(appState.history.favoritesOnly ? ConsoleTheme.accent : ConsoleTheme.surface, in: CutCorner())
+          .foregroundStyle(appState.history.favoritesOnly ? Color.black : .white)
+      }.buttonStyle(.plain).help("Toggle favorites (⇧⌘F)")
     }
-    .padding(.top, Popup.verticalPadding)
-    .padding(.horizontal, 10)
-    .animation(.default.speed(3), value: appState.navigator.leadSelection)
-    .background(.clear)
-    .frame(maxHeight: !appState.searchVisible ? 0 : nil, alignment: .top)
+    .disabled(appState.history.editingCommand != nil)
+    .padding(.vertical, 5).padding(.horizontal, 10)
     .readHeight(appState, into: \.popup.headerHeight)
   }
 }

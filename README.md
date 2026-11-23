@@ -49,6 +49,8 @@ brew install --cask linhxiang/tap/retrace
   to copy, `Esc` to close.
 - Press `Command + P` to pin or unpin the selected command.
   Pinned commands stay at the top of the list.
+- Press `⌘D` or click the star to save a favorite with an optional alias. Open it again to rename or remove it. Removal can be undone.
+- Press `⇧⌘F` to filter favorites. Search by alias or command, then press Return to copy the original command. Favorites survive history replacement.
 - Selected command goes to the system clipboard — nothing more.
 
 Retrace does not execute commands, paste into Terminal,
